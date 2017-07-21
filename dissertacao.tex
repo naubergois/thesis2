@@ -1278,6 +1278,15 @@ The solution, named HybridQ, uses the GA, SA and Tabu Search algorithms in a col
 
 The exploration phase uses a markov model, as shown in Fig. \ref{fig:mdphybridq}, the proposed MDP model  has three main states based on response time. A test may have a response time greater than 1.2 times the maximum response time allowed, between 0.8 and 1.2 times the maximum response time allowed or less than 0.8 times the maximum response time allowed. The values of 1.2 and 0.8 were chosen from the assumption of a tolerance margin of 20\% for the application under test. This margin may be higher or lower depending on the business requirements of the application.
 
+
+\begin{figure}[h!]
+\center
+\includegraphics[width=0.4\textwidth]{./images/mdp3.png}
+\caption{Markov Decision Process used by HybridQ}
+\label{fig:mdphybridq}
+\end{figure}
+
+
 The algorithm maintains three different tables ( Table \ref{pab:mdp}), one for each state. The selection of which table to use depends on the response time of the application.
 
 \begin{algorithm}[h]
@@ -1389,8 +1398,14 @@ The main objective of the exploitation phase is to choose the best neighboring s
 
 The Q-learning algorithm is used by Tabu Search or Simulated Annealing to obtain the neighbors and in the mutation operator of the genetic algorithm. Unlike the traditional processes of obtaining neighboring solutions such as random change and permutation, the decision to change a genome gene is made from the action that has the highest value of Q. Fig. \ref{fig:neighservice} presents how one of the neighbors of a test is generated using Q-Learning in IAdapter. The solution uses a service called Q-Neighborhood Service to generate the neighbor from the action that has the highest value of Q.
 
+\begin{figure}[h!]
+\center
+\includegraphics[width=0.6\textwidth]{./images/q-neighborservice.png}
+\caption{HybridQ NeighborHood Service}
+\label{fig:neighservice}
+\end{figure}
 
-\section{Experiment}
+\section{Experiment with HybridQ Algorithm}
 
 We conducted one experiment in order to verify the effectiveness of the HybridQ. The iterated racing procedure (irace) was applied as an automatic algorithm conguration tool for tunning metaheuristics parameters. Iterated racing is a generalization of the iterated F-race procedure to automatize the arduous task of configuring the parameters of an optimization algorithm \cite{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}. The best parameters obtaind from irace was a population size of 5 individuals, a crossover value of 0.7551, a mutation value of 0.7947, an elitism value of 0.5356 and the maximum number of iterations of 16. The experiment ran for 16 generations in an docker evinronment on a server with 16 Gb of memory and 500 Gb hard disk. The experiment used an initial population of 5 individuals by metaheuristics. The genetic algorithm used the top 4 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 79\% of the population on each generation. The experiments use tabu search, genetic algorithms, simulated annealing, the hybrid metaheuristic approach and the HybridQ approach. 
 
@@ -1422,7 +1437,7 @@ The following research question is addressed:
 
 The independent variable is the algorithms used in each experiment. The dependent variables are: the optimal solution found by each algorithm, the number of requests to find optimal solution and the time of execution needed by each algorithm.
 
-\subsection{Hypotheses}
+\subsection{Experiment Hypotheses}
 
 \begin{itemize}
 \item With regard to the optimal solution found by each algorithm:
@@ -1508,6 +1523,14 @@ Figure \ref{fig:experiment1} presents the number of requests by maximum fitness 
 \item 1 users on Main Page. 
 \end{itemize}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/experiment1.png}
+\caption{Maximum fitness value by number of requests}
+\label{fig:experiment1}
+\end{figure}
+
+
 The t-Test and Wilcoxon Rank Sum Test was applied using the R language. The test results show that HybridQ and HybriD algorithms is superior than GA, Tabu Search and Simulated Annealing with p < 0.02. t-Test shows that the mean of HybridQ fitness value is superior than Hybrid.
 
 \begin{lstlisting}
@@ -1551,20 +1574,20 @@ Among the future works of the research, new experiments should be performed comp
 
 \chapter{Search-based stress testing using multi-objective heuristics}
 
-This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:step2} presents the multiobjective implemented solution life cycle. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  (Figure \ref{fig:step2}  -\ding{203}). The multiobjective algorithm generates a new set of individuals based on crossover or/and mutant operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine runs each workload (Figure \ref{fig:step2}  -\ding{206}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:step2}  -\ding{207}).  After all these steps the cycle begins until the maximum number of generations is reached (Figure \ref{fig:step2}  -\ding{208}).
+This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:step2}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:step2}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:step2}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
 
 \begin{figure}[!h]
 
 \centering
-\includegraphics[width=0.6\textwidth]{./images/step3.png}
-\caption{Multiobjective implemented solution life cycle}
-\label{fig:step2}
+\includegraphics[width=0.8\textwidth]{./images/step3.png}
+\caption{Flowchart of implemented algorithms}
+\label{fig:flowchart}
 \end{figure}
 
 
 \section{Experiment with multi-object NSGA-II algorithm}
 
-In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 miliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
+In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 miliseconds.  The whole process of stress  tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
 
 
 \begin{itemize}
@@ -1634,7 +1657,7 @@ Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results o
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\textwidth]{./images/pareto0curve.png}
+\includegraphics[width=0.8\textwidth]{./images/pareto0curve.png}
     \caption{Experiment Pareto Frontier}
 \label{fig:paretofrontier1}
 \end{figure}
@@ -1689,7 +1712,7 @@ The experiment was conducted with the JPetStore application in two cycles with o
 \begin{figure}[!h]
 \centering
 \includegraphics[width=1\textwidth]{./images/outliers.png}
-\caption{Results obtained in the first test cycle}
+\caption{Results obtained without Noise Reduction}
 \label{fig:outliers}
 \end{figure}
 
@@ -1754,7 +1777,7 @@ MOEA/D found two scenarios that approached the established service level for the
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 \centering
-\caption{Hybervolume by algorithm to the second cycle of the experiment}
+\caption{Hybervolume by algorithm with Noise Reduction}
 \label{tab:hypervolume}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -1777,12 +1800,39 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 \begin{minipage}{.5\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{./images/nsgaiinoise.png}
-\caption{Maximum fitness value by number of requests}
+\caption{NSGA II Pareto Frontier}
 \label{fig:paretofrontier2}
 \end{minipage}
 \end{figure}
 
 
+\begin{figure}[h]
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{./images/spea2noise.png}
+\caption{SPEA2 Pareto Frontier}
+\label{fig:spea2}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{./images/paesnoise.png}
+\caption{PAES Pareto Frontier}
+\label{fig:paes}
+\end{minipage}
+\end{figure}
+
+
+\section{Comparative Experiment between HybridQ and MOEA/D Multi-objective Metaheuristics}
+
+This section presents the experimental results carried out to  compare the MOEA/D multi-objective with HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 10000 seconds.  The whole process of stress  tests, which run for 1 days and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. Fig. presents the results of first cycle of executions. 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/singlewithmulti.png}
+    \caption{Experiment Pareto Frontier}
+\label{fig:paretofrontier1}
+\end{figure}
 
 % conference papers do not normally have an appendix
 
@@ -1816,6 +1866,8 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
 \chapter{Conclusion}
+
+This chapter presents our conclusions, revisits the contributions, shows some limitations, and proposals for future work.
 
 In this thesis we dealt with the use of hybrid metaheuristics and Q-Learning in Stress Testing. This thesis presented an hybrid and an hybrid with Q-Learning metaheuristic approaches that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. A tool named IAdapter (\url{github.com/naubergois/newiadapter}), a JMeter plugin for performing search-based load tests, was developed. Six experiments were conducted to validate the proposed approach. The first experiment was performed on an emulated component. The second and third experiments are conducted in an testbed developed appplication. The fourth  experiment was performed using an installed Moodle application. The fifth and sixth experiments are performned using an installed JPetStore application.
 
