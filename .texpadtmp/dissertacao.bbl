@@ -1,0 +1,953 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
+  \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.52 }
+
+\bibitem[Afzal, Torkar e Feldt 2009]{Afzal2009a}
+\abntrefinfo{Afzal, Torkar e Feldt}{AFZAL; TORKAR; FELDT}{2009}
+{AFZAL, W.; TORKAR, R.; FELDT, R. {A systematic review of search-based testing
+  for non-functional system properties}. In:  . [S.l.]: Elsevier B.V., 2009.
+  v.~51, n.~6, p. 957--976.
+ISBN 0950-5849.
+ISSN 09505849.}
+
+\bibitem[Alander, Mantere e Turunen 1998]{Alander}
+\abntrefinfo{Alander, Mantere e Turunen}{ALANDER; MANTERE; TURUNEN}{1998}
+{ALANDER, J. T.~J.; MANTERE, T.; TURUNEN, P. {Genetic Algorithm Based Software
+  Testing}. In:  \emph{Neural Nets and Genetic Algorithms}. [S.l.: s.n.],
+  1998.}
+
+\bibitem[Alesio et al. 2014]{DiAlesio2014}
+\abntrefinfo{Alesio et al.}{ALESIO et al.}{2014}
+{ALESIO, S. D. et al. {Worst-Case Scheduling of Software Tasks -- A Constraint
+  Optimization Model to Support Performance Testing}. In:  . [S.l.: s.n.],
+  2014. p. 813--830.}
+
+\bibitem[Alesio et al. 2015]{Alesio2015}
+\abntrefinfo{Alesio et al.}{ALESIO et al.}{2015}
+{ALESIO, S. D.~I. et al. {Combining Genetic Algorithms and Constraint
+  Programming}. In:  . [S.l.: s.n.], 2015. v.~25, n.~1.}
+
+\bibitem[Aleti, Moser e Grunske 2016]{Aleti2016}
+\abntrefinfo{Aleti, Moser e Grunske}{ALETI; MOSER; GRUNSKE}{2016}
+{ALETI, A.; MOSER, I.; GRUNSKE, L. {Analysing the fitness landscape of
+  search-based software testing problems}.
+\emph{Automated Software Engineering}, p. 1--19, 2016.
+ISSN 15737535.}
+
+\bibitem[Anand et al. 2013]{Anand2013}
+\abntrefinfo{Anand et al.}{ANAND et al.}{2013}
+{ANAND, S. et al. {An orchestrated survey of methodologies for automated
+  software test case generation}. In:  . [S.l.: s.n.], 2013. v.~86, p.
+  1978--2001.
+ISSN 01641212.}
+
+\bibitem[Araiza-Illan, Pipe e Eder 2016]{Araiza-Illan2016}
+\abntrefinfo{Araiza-Illan, Pipe e Eder}{ARAIZA-ILLAN; PIPE; EDER}{2016}
+{ARAIZA-ILLAN, D.; PIPE, A.~G.; EDER, K. {Model-based Test Generation for
+  Robotic Software: Automata versus Belief-Desire-Intention Agents}.
+p. 1--16, 2016.
+Dispon{\'\i}vel em: $<$http://arxiv.org/abs/1609.08439$>$.}
+
+\bibitem[Arantes et al. 2014]{Arantes2014}
+\abntrefinfo{Arantes et al.}{ARANTES et al.}{2014}
+{ARANTES, A.~O. et al. {Tool support for generating model-based test cases via
+  web}.
+\emph{International Journal of Web Engineering and Technology}, v.~9, n.~1, p.
+  62--96, 2014.
+ISSN 14761289.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1504/IJWET.2014.063041$>$.}
+
+\bibitem[Arcaini, Gargantini e Riccobene 2015]{Arcaini2015}
+\abntrefinfo{Arcaini, Gargantini e Riccobene}{ARCAINI; GARGANTINI;
+  RICCOBENE}{2015}
+{ARCAINI, P.; GARGANTINI, A.; RICCOBENE, E. {Improving Model-based Test
+  Generation by Model Decomposition}.
+\emph{Proceedings of the 2015 10th Joint Meeting on Foundations of Software
+  Engineering}, p. 119--130, 2015.
+Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/2786805.2786837$>$.}
+
+\bibitem[Arcelli, Cortellessa e Trubiani 2012]{Arcelli2012}
+\abntrefinfo{Arcelli, Cortellessa e Trubiani}{ARCELLI; CORTELLESSA;
+  TRUBIANI}{2012}
+{ARCELLI, D.; CORTELLESSA, V.; TRUBIANI, C. {Antipattern-Based Model
+  Refactoring for Software Performance Improvement}. In:  . [s.n.], 2012. p.
+  33--42.
+ISBN 9781450313469. Dispon{\'\i}vel em:
+  $<$http://doi.acm.org/10.1145/2304696.2304704$>$.}
+
+\bibitem[Arslan et al. 2015]{Arslan2015}
+\abntrefinfo{Arslan et al.}{ARSLAN et al.}{2015}
+{ARSLAN, M. et al. {Automatic performance analysis of cloud based load testing
+  of web-application {\&} its comparison with traditional load testing}.
+\emph{2015 6th IEEE International Conference on Software Engineering and
+  Service Science (ICSESS)}, v. 2015-Novem, n. September, p. 140--144, 2015.
+ISSN 23270594.
+Dispon{\'\i}vel em:
+  $<$http://www.scopus.com/inward/record.url?eid=2-s2.0-84958250651{\&}partnerID=tZOtx3y1$>$.}
+
+\bibitem[Avritzer e Larson 1993]{Avritzer1993}
+\abntrefinfo{Avritzer e Larson}{AVRITZER; LARSON}{1993}
+{AVRITZER, A.; LARSON, B. {Load Testing Software Using Deterministic State
+  Testing}. In:  . New York, NY, USA: ACM, 1993.  (ISSTA '93), p. 82--88.
+ISBN 0-89791-608-5. Dispon{\'\i}vel em:
+  $<$http://doi.acm.org/10.1145/154183.154244$>$.}
+
+\bibitem[Avritzer e Weyuker 1994]{Avritzer1994}
+\abntrefinfo{Avritzer e Weyuker}{AVRITZER; WEYUKER}{1994}
+{AVRITZER, A.; WEYUKER, E. {Generating test suites for software load testing}.
+  In:  . New York, New York, USA: ACM Press, 1994. p. 44--57.
+ISBN 0897916832.}
+
+\bibitem[Avritzer e Weyuker 1995]{Avritzer1995b}
+\abntrefinfo{Avritzer e Weyuker}{AVRITZER; WEYUKER}{1995}
+{AVRITZER, A.; WEYUKER, E. {The automatic generation of load test suites and
+  the assessment of the resulting software}.
+\emph{IEEE Transactions on Software Engineering}, v.~21, n.~9, p. 705--716,
+  1995.
+ISSN 0098-5589.
+Dispon{\'\i}vel em:
+  $<$http://ieeexplore.ieee.org/xpl/login.jsp?tp={\&}arnumber=464549{\&}url=http{\%}3A{\%}2F{\%}2Fieeexplore.ieee.org{\%}2Fxpls{\%}2Fabs{\_}all.jsp{\%}3Farnumber{\%}3D464549
+  http://ieeexplore.ieee.org/xpl/login.jsp?tp={\&}arnumber=464549{\&}url=http://ieeexplore.ieee.org/xpls/abs{\_}all.jsp?arnumbe$>$.}
+
+\bibitem[Bai et al. 2011]{Bai2011a}
+\abntrefinfo{Bai et al.}{BAI et al.}{2011}
+{BAI, X. et al. {Cloud testing tools}. In:  \emph{Proceedings - 6th IEEE
+  International Symposium on Service-Oriented System Engineering, SOSE 2011}.
+  [S.l.: s.n.], 2011. p. 1--12.
+ISBN 9781467304108.}
+
+\bibitem[Barber 1999]{Barber1999}
+\abntrefinfo{Barber}{BARBER}{1999}
+{BARBER, S. {User Community Modeling Language ( UCML {\texttrademark} ) v1 . 1
+  for Performance Test Workloads UCML {\texttrademark} Overview}. In:  . [S.l.:
+  s.n.], 1999. p.~1--9.}
+
+\bibitem[Barros e Shiau 2007]{Barros2007}
+\abntrefinfo{Barros e Shiau}{BARROS; SHIAU}{2007}
+{BARROS, M.~D.; SHIAU, J. {Web services wind tunnel: On performance testing
+  large-scale stateful web services}. In:  . [S.l.: s.n.], 2007.}
+
+\bibitem[Bayan e Cangussu 2008]{Bayan2008}
+\abntrefinfo{Bayan e Cangussu}{BAYAN; CANGUSSU}{2008}
+{BAYAN, M.; CANGUSSU, J.~W. {Automatic feedback, control-based, stress and load
+  testing}.
+\emph{Proceedings of the 2008 ACM symposium on Applied computing - SAC '08},
+  p.~661, 2008.
+ISSN 1063-6773.
+Dispon{\'\i}vel em:
+  $<$http://portal.acm.org/citation.cfm?doid=1363686.1363847$>$.}
+
+\bibitem[Blum e Roli 2003]{Blum2003}
+\abntrefinfo{Blum e Roli}{BLUM; ROLI}{2003}
+{BLUM, C.; ROLI, A. {Metaheuristics in combinatorial optimization: overview and
+  conceptual comparison}.
+\emph{ACM Computing Surveys}, v.~35, n.~3, p. 189--213, 2003.
+ISSN 02545330.}
+
+\bibitem[Briand, Labiche e Shousha 2005]{Briand2005}
+\abntrefinfo{Briand, Labiche e Shousha}{BRIAND; LABICHE; SHOUSHA}{2005}
+{BRIAND, L.~C.; LABICHE, Y.; SHOUSHA, M. {Stress testing real-time systems with
+  genetic algorithms}. In:  . [S.l.: s.n.], 2005. p.~1021.
+ISBN 1595930108.}
+
+\bibitem[Brown et al. 1998]{brown1998antipatterns}
+\abntrefinfo{Brown et al.}{BROWN et al.}{1998}
+{BROWN, W.~H. et al. \emph{AntiPatterns: refactoring software, architectures,
+  and projects in crisis}. [S.l.]: John Wiley \& Sons, Inc., 1998.}
+
+\bibitem[Buchs, Lucio e Chen 2009]{Buchs2009}
+\abntrefinfo{Buchs, Lucio e Chen}{BUCHS; LUCIO; CHEN}{2009}
+{BUCHS, D.; LUCIO, L.; CHEN, A. {Model checking techniques for test generation
+  from business process models}.
+\emph{Reliable Software Technologies--Ada-Europe 2009}, p. 59--74, 2009.}
+
+\bibitem[Cai, Grundy e Hosking 2007]{Cai2007}
+\abntrefinfo{Cai, Grundy e Hosking}{CAI; GRUNDY; HOSKING}{2007}
+{CAI, Y.; GRUNDY, J.; HOSKING, J. {Synthesizing client load models for
+  performance engineering via web crawling}.
+\emph{Proceedings of the twenty-second IEEE/ACM international conference on
+  Automated software engineering - ASE '07}, p.~353, 2007.
+Dispon{\'\i}vel em:
+  $<$http://portal.acm.org/citation.cfm?doid=1321631.1321684$>$.}
+
+\bibitem[Canfora et al. 2005]{Canfora}
+\abntrefinfo{Canfora et al.}{CANFORA et al.}{2005}
+{CANFORA, G. et al. {An approach for QoS-aware service composition based on
+  genetic algorithms}. In:  . [S.l.: s.n.], 2005.
+ISBN 1595930108.}
+
+\bibitem[Corporation 2007]{Corporation2007}
+\abntrefinfo{Corporation}{CORPORATION}{2007}
+{CORPORATION, M. \emph{{Performance Testing Guidance for Web Applications}}.
+  United States?: Microsoft Press, nov. 2007.
+288~p.
+Dispon{\'\i}vel em:
+  $<$http://www.amazon.com/Performance-Testing-Guidance-Web-Applications/dp/0735625700
+  http://msdn.microsoft.com/en-us/library/bb924375.aspx$>$.}
+
+\bibitem[Cortellessa e Frittella 2007]{Cortellessa2007}
+\abntrefinfo{Cortellessa e Frittella}{CORTELLESSA; FRITTELLA}{2007}
+{CORTELLESSA, V.; FRITTELLA, L. {A Framework for Automated Generation of
+  Architectural Feedback from Software Performance Analysis}. In:  . [S.l.:
+  s.n.], 2007. p. 171--185.}
+
+\bibitem[Dean e Don 2003]{dean2003managing}
+\abntrefinfo{Dean e Don}{DEAN; DON}{2003}
+{DEAN, L.; DON, W. \emph{Managing Software Requirements: A Use Case Approach}.
+  [S.l.]: Addison Wesley, 2003.}
+
+\bibitem[Deb 2001]{deb2001multi}
+\abntrefinfo{Deb}{DEB}{2001}
+{DEB, K. \emph{Multi-objective optimization using evolutionary algorithms}.
+  [S.l.]: John Wiley \& Sons, 2001.}
+
+\bibitem[Deb et al. 2000]{Deb2000}
+\abntrefinfo{Deb et al.}{DEB et al.}{2000}
+{DEB, K. et al. {A fast elitist non-dominated sorting genetic algorithm for
+  multi-objective optimization: NSGA-II}.
+\emph{Parallel Problem Solving from Nature PPSN VI}, p. 849--858, 2000.
+ISSN 10871357.
+Dispon{\'\i}vel em: $<$http://repository.ias.ac.in/83498/$>$.}
+
+\bibitem[Deb, Mohan e Mishra 2005]{Deb2005}
+\abntrefinfo{Deb, Mohan e Mishra}{DEB; MOHAN; MISHRA}{2005}
+{DEB, K.; MOHAN, M.; MISHRA, S. {Evaluating the epislon-domination based
+  multiobjective evolutionary algorithm for a quick computation of
+  Pareto-optimal solutions}.
+\emph{Evolutionary Computation Journal}, v.~13, n.~4, p. 501--525, 2005.}
+
+\bibitem[{Di Alesio} et al. 2013]{DiAlesio2013}
+\abntrefinfo{{Di Alesio} et al.}{{Di Alesio} et al.}{2013}
+{{Di Alesio}, S. et al. {Stress testing of task deadlines: A constraint
+  programming approach}. In:  . [S.l.: s.n.], 2013. p. 158--167.
+ISBN 9781479923663.}
+
+\bibitem[{Di Lucca} e Fasolino 2006]{DiLucca2006}
+\abntrefinfo{{Di Lucca} e Fasolino}{{Di Lucca}; FASOLINO}{2006}
+{{Di Lucca}, G.~a.; FASOLINO, A.~R. {Testing Web-based applications: The state
+  of the art and future trends}. In:  . [S.l.: s.n.], 2006. v.~48, p.
+  1172--1186.
+ISBN 0-7695-2413-3.
+ISSN 09505849.}
+
+\bibitem[{Di Pietro}, While e Barone 2004]{DiPietro2004}
+\abntrefinfo{{Di Pietro}, While e Barone}{{Di Pietro}; WHILE; BARONE}{2004}
+{{Di Pietro}, A.; WHILE, L.; BARONE, L. {Applying evolutionary algorithms to
+  problems with noisy, time-consuming fitness functions}.
+\emph{Proceedings of the 2004 Congress on Evolutionary Computation}, p.
+  1254--1261, 2004.
+Dispon{\'\i}vel em:
+  $<$http://ieeexplore.ieee.org/xpl/freeabs{\_}all.jsp?arnumber=1331041$>$.}
+
+\bibitem[Draheim et al. 2006]{Draheim2006b}
+\abntrefinfo{Draheim et al.}{DRAHEIM et al.}{2006}
+{DRAHEIM, D. et al. {Realistic load testing of Web applications}. In:
+  \emph{Conference on Software Maintenance and Reengineering (CSMR'06)}. [S.l.:
+  s.n.], 2006.
+ISBN 0-7695-2536-9.
+ISSN 1052-8725.}
+
+\bibitem[Dustin, Rashka e Paul 1999]{Dustin1999}
+\abntrefinfo{Dustin, Rashka e Paul}{DUSTIN; RASHKA; PAUL}{1999}
+{DUSTIN, E.; RASHKA, J.; PAUL, J. \emph{{Automated Software Testing:
+  Introduction, Management, and Performance}}. [S.l.: s.n.], 1999. 575~p.
+ISBN 0201432870.}
+
+\bibitem[Enoiu, Sundmark e Pettersson 2013]{Enoiu2013}
+\abntrefinfo{Enoiu, Sundmark e Pettersson}{ENOIU; SUNDMARK; PETTERSSON}{2013}
+{ENOIU, E.~P.; SUNDMARK, D.; PETTERSSON, P. {Model-based test suite generation
+  for function block diagrams using the UPPAAL model checker}.
+\emph{Proceedings - IEEE 6th International Conference on Software Testing,
+  Verification and Validation Workshops, ICSTW 2013}, p. 158--167, 2013.}
+
+\bibitem[Erinle 2013]{Erinle2013}
+\abntrefinfo{Erinle}{ERINLE}{2013}
+{ERINLE, B. \emph{{Performance Testing With JMeter 2.9}}. [S.l.: s.n.], 2013.
+ISBN 9781782165842.}
+
+\bibitem[Fang et al. 2012]{Fang2012}
+\abntrefinfo{Fang et al.}{FANG et al.}{2012}
+{FANG, L. et al. {Formal model-based test for AUTOSAR multicore RTOS}.
+\emph{Proceedings - IEEE 5th International Conference on Software Testing,
+  Verification and Validation, ICST 2012}, p. 251--259, 2012.
+ISSN 2159-4848.}
+
+\bibitem[Feitelson 2013]{Feitelson2013}
+\abntrefinfo{Feitelson}{FEITELSON}{2013}
+{FEITELSON, D.~G. \emph{{Workload Modeling for Computer Systems Performance
+  Evaluation}}. [S.l.]: Cambridge University Press, 2013.}
+
+\bibitem[Ganesan et al. 2016]{Ganesan2016}
+\abntrefinfo{Ganesan et al.}{GANESAN et al.}{2016}
+{GANESAN, D. et al. {Experience Report: Model-Based Test Automation of a
+  Concurrent Flight Software Bus}.
+\emph{Proceedings - International Symposium on Software Reliability
+  Engineering, ISSRE}, p. 445--454, 2016.
+ISSN 10719458.}
+
+\bibitem[Garousi 2006]{Garousi2006}
+\abntrefinfo{Garousi}{GAROUSI}{2006}
+{GAROUSI, V. {Traffic-aware Stress Testing of Distributed Real-Time Systems
+  based on UML Models using Genetic Algorithms}. In:  . [S.l.: s.n.], 2006.
+ISBN 9780494262252.}
+
+\bibitem[Garousi 2008]{Garousi2008}
+\abntrefinfo{Garousi}{GAROUSI}{2008}
+{GAROUSI, V. {Empirical analysis of a genetic algorithm-based stress test
+  technique}. In:  . [S.l.: s.n.], 2008. p.~1743.
+ISBN 9781605581309.}
+
+\bibitem[Garousi 2010]{Garousi2010}
+\abntrefinfo{Garousi}{GAROUSI}{2010}
+{GAROUSI, V. {A Genetic Algorithm-Based Stress Test Requirements Generator Tool
+  and Its Empirical Evaluation}. In:  . [S.l.: s.n.], 2010. v.~36, n.~6, p.
+  778--797.
+ISSN 0098-5589.}
+
+\bibitem[Gay, Rayadurgam e Heimdahl 2016]{Gay2016}
+\abntrefinfo{Gay, Rayadurgam e Heimdahl}{GAY; RAYADURGAM; HEIMDAHL}{2016}
+{GAY, G.; RAYADURGAM, S.; HEIMDAHL, M.~P. {Automated Steering of Model-Based
+  Test Oracles to Admit Real Program Behaviors}.
+\emph{IEEE Transactions on Software Engineering}, PP, n.~99, 2016.
+ISSN 00985589.}
+
+\bibitem[Giese, Graf e Wirtz 1999]{Giese1999}
+\abntrefinfo{Giese, Graf e Wirtz}{GIESE; GRAF; WIRTZ}{1999}
+{GIESE, H.; GRAF, J.; WIRTZ, G. {Seamless visual object-oriented behavior
+  modeling for distributed software systems}.
+\emph{Visual Languages, 1999. Proceedings. 1999 IEEE Symposium on}, p.
+  156--199, 1999.}
+
+\bibitem[Glover e Mart{\'{i}} 1986]{Glover1986}
+\abntrefinfo{Glover e Mart{\'{i}}}{GLOVER; MART{\'{I}}}{1986}
+{GLOVER, F.; MART{\'{I}}, R. {Tabu Search}. In:  . [S.l.: s.n.], 1986. p.
+  1--16.}
+
+\bibitem[Gois et al. 2016]{Gois2016}
+\abntrefinfo{Gois et al.}{GOIS et al.}{2016}
+{GOIS, N. et al. {Improving Stress Search Based Testing using a Hybrid
+  Metaheuristic Approach}. In:  \emph{Proceedings of the 2016 Latin American
+  Computing Conference (CLEI)}. [S.l.: s.n.], 2016. p. 718--728.
+ISBN 978-1-5090-1632-7.}
+
+\bibitem[Gonçalves 2014]{Goncalves2014}
+\abntrefinfo{Gonçalves}{GONçALVES}{2014}
+{GONçALVES, M.~C. {Um Processo de Infer\^{e}ncia de Desempenho para Apoiar o
+  Planejamento da Capacidade de Aplicações na Nuvem Um Processo de
+  Inferência de Desempenho para Apoiar o Planejamento da Capacidade de
+  Aplicações na Nuvem}. In:  . [S.l.: s.n.], 2014.}
+
+\bibitem[Grechanik, Fu e Xie 2012]{Grechanik2012}
+\abntrefinfo{Grechanik, Fu e Xie}{GRECHANIK; FU; XIE}{2012}
+{GRECHANIK, M.; FU, C.; XIE, Q. {Automatically finding performance problems
+  with feedback-directed learning software testing}. In:  . [S.l.]: Ieee, 2012.
+  p. 156--166.
+ISBN 978-1-4673-1067-3.}
+
+\bibitem[Greenwald, Hall e Serrano 2003]{Greenwald2003}
+\abntrefinfo{Greenwald, Hall e Serrano}{GREENWALD; HALL; SERRANO}{2003}
+{GREENWALD, A.; HALL, K.; SERRANO, R. {Correlated Q-learning}. In:  . [s.n.],
+  2003. p. 84--89. Dispon{\'\i}vel em:
+  $<$http://www.aaai.org/Papers/Symposia/Spring/2002/SS-02-02/SS02-02-012.pdf$>$.}
+
+\bibitem[Gross, Jones e Eyres 2000]{Gross2000}
+\abntrefinfo{Gross, Jones e Eyres}{GROSS; JONES; EYRES}{2000}
+{GROSS, H.; JONES, B.~F.; EYRES, D.~E. {Structural performance measure of
+  evolutionary testing applied to worst-case timing of real-time systems}. In:
+  . [S.l.: s.n.], 2000. v.~147, n.~2, p. 25--30.
+ISBN 0818669101.
+ISSN 14625970.}
+
+\bibitem[Halili 2008]{Halili2008}
+\abntrefinfo{Halili}{HALILI}{2008}
+{HALILI, E.~H. \emph{{Apache JMeter: A practical beginner's guide to automated
+  testing and performance measurement for your websites.}} [S.l.: s.n.], 2008.
+ISSN 1098-6596.
+ISBN 9788578110796.}
+
+\bibitem[Harman, Jia e Zhang 2015]{Harman2015}
+\abntrefinfo{Harman, Jia e Zhang}{HARMAN; JIA; ZHANG}{2015}
+{HARMAN, M.; JIA, Y.; ZHANG, Y. {Achievements , open problems and challenges
+  for search based software testing}.
+\emph{8th IEEE International Conference on Software Testing, Verification and
+  Validation (ICST)}, n.~Icst, 2015.
+Dispon{\'\i}vel em: $<$http://www0.cs.ucl.ac.uk/staff/mharman/icst15.pdf$>$.}
+
+\bibitem[Harman e McMinn 2010]{Harman2010}
+\abntrefinfo{Harman e McMinn}{HARMAN; MCMINN}{2010}
+{HARMAN, M.; MCMINN, P. {A theoretical and empirical study of search-based
+  testing: Local, global, and hybrid search}. In:  . [S.l.: s.n.], 2010. v.~36,
+  n.~2, p. 226--247.
+ISBN 0098-5589.
+ISSN 00985589.}
+
+\bibitem[Hessel 2007]{Hessel2007}
+\abntrefinfo{Hessel}{HESSEL}{2007}
+{HESSEL, A. \emph{{Model-Based Test Case Generation for Real-Time Systems}}.
+  [S.l.: s.n.], 2007.
+ISBN 9789155468835.}
+
+\bibitem[Hierons et al. 2009]{Hierons2009}
+\abntrefinfo{Hierons et al.}{HIERONS et al.}{2009}
+{HIERONS, R.~M. et al. {Using formal specifications to support testing}. In:  .
+  [S.l.: s.n.], 2009. v.~41, n.~2, p. 1--76.
+ISSN 0360-0300.}
+
+\bibitem[Hong, Wang e Chen 2000]{hong2000simultaneously}
+\abntrefinfo{Hong, Wang e Chen}{HONG; WANG; CHEN}{2000}
+{HONG, T.-P.; WANG, H.-S.; CHEN, W.-C. Simultaneously applying multiple
+  mutation operators in genetic algorithms. In:  . [S.l.]: Springer, 2000.
+  v.~6, n.~4, p. 439--455.}
+
+\bibitem[Illes et al. 2005]{Illes2005}
+\abntrefinfo{Illes et al.}{ILLES et al.}{2005}
+{ILLES, T. et al. {Criteria for Software Testing Tool Evaluation – A Task
+  Oriented View}.
+v.~2, p. 213--222, 2005.}
+
+\bibitem[{J. Wegener, K. Grimm, M. Grochtmann, H. Sthamer}
+  1996]{J.WegenerK.GrimmM.GrochtmannH.Sthamer1996}
+\abntrefinfo{{J. Wegener, K. Grimm, M. Grochtmann, H. Sthamer}}{{J. Wegener, K.
+  Grimm, M. Grochtmann, H. Sthamer}}{1996}
+{{J. Wegener, K. Grimm, M. Grochtmann, H. Sthamer}, B.~J. {Systematic testing
+  of real-time systems}. In:  . [S.l.: s.n.], 1996.}
+
+\bibitem[Janssens e Pangilinan 2010]{janssens2010multiple}
+\abntrefinfo{Janssens e Pangilinan}{JANSSENS; PANGILINAN}{2010}
+{JANSSENS, G.; PANGILINAN, J. Multiple criteria performance analysis of
+  non-dominated sets obtained by multi-objective evolutionary algorithms for
+  optimisation.
+\emph{Artificial Intelligence Applications and Innovations}, Springer, p.
+  94--103, 2010.}
+
+\bibitem[Jeong et al. 2016]{Jeong2016}
+\abntrefinfo{Jeong et al.}{JEONG et al.}{2016}
+{JEONG, S.-y. et al. {State Transition Based Test Model and Test Case
+  Generation Technique for Embedded System: An Empirical Approach}.
+v.~10, n.~11, p. 233--254, 2016.}
+
+\bibitem[Jiang 2010]{Jiang2010}
+\abntrefinfo{Jiang}{JIANG}{2010}
+{JIANG, Z.
+\emph{{Automated analysis of load testing results}}.
+Tese (Doutorado), 2010.
+Dispon{\'\i}vel em: $<$http://dl.acm.org/citation.cfm?id=1831726$>$.}
+
+\bibitem[Kim 2005]{Kim2005}
+\abntrefinfo{Kim}{KIM}{2005}
+{KIM, G.~B. {A method of generating massive virtual clients and model-based
+  performance test}.
+\emph{Proceedings - International Conference on Quality Software}, v.~2005, p.
+  250--254, 2005.
+ISSN 15506002.}
+
+\bibitem[Kiran, Mohapatra e Swamy 2015]{Kiran2015}
+\abntrefinfo{Kiran, Mohapatra e Swamy}{KIRAN; MOHAPATRA; SWAMY}{2015}
+{KIRAN, S.; MOHAPATRA, A.; SWAMY, R. {Experiences in performance testing of web
+  applications with Unified Authentication platform using Jmeter}.
+\emph{2nd International Symposium on Technology Management and Emerging
+  Technologies, ISTMET 2015 - Proceeding}, p. 74--78, 2015.}
+
+\bibitem[Kitchenham e Charters 2007]{Kitchenham2007}
+\abntrefinfo{Kitchenham e Charters}{KITCHENHAM; CHARTERS}{2007}
+{KITCHENHAM, B.; CHARTERS, S. {Guidelines for performing Systematic Literature
+  Reviews in Software Engineering}.
+\emph{Engineering}, v.~2, p.~1051, 2007.
+ISSN 00010782.}
+
+\bibitem[Knowles e Corne 1999]{Knowles1999}
+\abntrefinfo{Knowles e Corne}{KNOWLES; CORNE}{1999}
+{KNOWLES, J.; CORNE, D. {The Pareto archived evolution strategy: a new baseline
+  algorithm$\backslash$nfor Pareto multiobjective optimisation}.
+\emph{Proceedings of the 1999 Congress on Evolutionary Computation-CEC99 (Cat.
+  No. 99TH8406)}, v.~1, p. 98--105, 1999.
+ISSN 1879-1026.}
+
+\bibitem[Lacour, Klamroth e Fonseca 2015]{Lacour2015}
+\abntrefinfo{Lacour, Klamroth e Fonseca}{LACOUR; KLAMROTH; FONSECA}{2015}
+{LACOUR, R.; KLAMROTH, K.; FONSECA, C.~M. {A box decomposition algorithm to
+  compute the hypervolume indicator}.
+\emph{Computers and Operations Research}, p. 1--21, 2015.
+ISSN 03050548.}
+
+\bibitem[Lenz, Chimiak-Opoka e Breu 2007]{Lenz2007}
+\abntrefinfo{Lenz, Chimiak-Opoka e Breu}{LENZ; CHIMIAK-OPOKA; BREU}{2007}
+{LENZ, C.; CHIMIAK-OPOKA, J.; BREU, R. {Model-Driven Testing of SOA-based
+  Software}.
+\emph{{\ldots} of the SEMSOA Workshop on Software {\ldots}}, 2007.
+Dispon{\'\i}vel em:
+  $<$http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.128.7626{\&}rep=rep1{\&}type=pdf$>$.}
+
+\bibitem[Lewis, Dobbs e Veerapillai 2005]{Lewis2005}
+\abntrefinfo{Lewis, Dobbs e Veerapillai}{LEWIS; DOBBS; VEERAPILLAI}{2005}
+{LEWIS, W.~E.; DOBBS, D.; VEERAPILLAI, G. \emph{{Software testing and
+  continuous quality improvement}}. [s.n.], 2005. 688~p.
+ISBN 1420080733. Dispon{\'\i}vel em:
+  $<$http://books.google.com/books?id=fgaBDd0TfT8C{\&}pgis=1$>$.}
+
+\bibitem[Luo et al. 2015]{Luo2015}
+\abntrefinfo{Luo et al.}{LUO et al.}{2015}
+{LUO, Q. et al. {FOREPOST: finding performance problems automatically with
+  feedback-directed learning software testing}. In:  . [S.l.: s.n.], 2015. p.
+  1--51.
+ISBN 1066401594.
+ISSN 15737616.}
+
+\bibitem[{Manuel López-Ibãnez, Jérémie Dubois-Lacoste, Leslie Pérez
+  Cáceres, Mauro Birattari}
+  2016]{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}
+\abntrefinfo{{Manuel López-Ibãnez, Jérémie Dubois-Lacoste, Leslie Pérez
+  Cáceres, Mauro Birattari}}{{Manuel López-Ibãnez, Jérémie Dubois-Lacoste,
+  Leslie Pérez Cáceres, Mauro Birattari}}{2016}
+{{Manuel López-Ibãnez, Jérémie Dubois-Lacoste, Leslie Pérez Cáceres,
+  Mauro Birattari}, T.~S. {The irace package: Iterated racing for automatic
+  algorithm configuration}.
+\emph{Operations Research Perspectives}, v.~3, p. 43--58, 2016.
+ISSN 22147160.}
+
+\bibitem[Marinescu et al. 2015]{Marinescu2015}
+\abntrefinfo{Marinescu et al.}{MARINESCU et al.}{2015}
+{MARINESCU, R. et al. \emph{{A Research Overview of Tool-Supported Model-based
+  Testing of Requirements-based Designs}}. [S.l.: s.n.], 2015. 89--140~p.
+ISSN 00652458.
+ISBN 9780128021323.}
+
+\bibitem[{Mark Utting} e Legeard 2012]{MarkUtting2012}
+\abntrefinfo{{Mark Utting} e Legeard}{{Mark Utting}; LEGEARD}{2012}
+{{Mark Utting}, A.~P.; LEGEARD, B. {A taxonomy of model-based testing
+  approaches}. In:  . [S.l.: s.n.], 2012. v.~24, n.~8, p. 297--312.
+ISBN 1099-1689.
+ISSN 10991689.}
+
+\bibitem[{Matnei Filho} e Vergilio 2016]{MatneiFilho2016}
+\abntrefinfo{{Matnei Filho} e Vergilio}{{Matnei Filho}; VERGILIO}{2016}
+{{Matnei Filho}, R.~A.; VERGILIO, S.~R. {A multi-objective test data generation
+  approach for mutation testing of feature models}.
+\emph{Journal of Software Engineering Research and Development}, Journal of
+  Software Engineering Research and Development, v.~4, n.~1, p.~4, 2016.
+ISSN 2195-1721.
+Dispon{\'\i}vel em:
+  $<$http://jserd.springeropen.com/articles/10.1186/s40411-016-0030-9$>$.}
+
+\bibitem[{Matthias Beyer, Winfried Dulz} 2014]{Paper2014}
+\abntrefinfo{{Matthias Beyer, Winfried Dulz}}{{Matthias Beyer, Winfried
+  Dulz}}{2014}
+{{Matthias Beyer, Winfried Dulz}, K.-S.~H. {Performance Issues in Statistical
+  Testing}.
+n. April 2006, 2014.}
+
+\bibitem[McConaghy et al. 2011]{McConaghy2011}
+\abntrefinfo{McConaghy et al.}{MCCONAGHY et al.}{2011}
+{MCCONAGHY, T. et al. {Trustworthy genetic programming-based synthesis of
+  analog circuit topologies using hierarchical domain-specific building
+  blocks}.
+\emph{IEEE Transactions on Evolutionary Computation}, v.~15, n.~4, p. 557--570,
+  2011.
+ISSN 1089778X.}
+
+\bibitem[Menasc{\'{e}} 2002]{Menasce2002b}
+\abntrefinfo{Menasc{\'{e}}}{MENASC{\'{E}}}{2002}
+{MENASC{\'{E}}, D.~A. {Load Testing, Benchmarking, and Application Performance
+  Management for the Web}.
+\emph{Int. CMG Conference}, n. January 2002, p. 271--282, 2002.}
+
+\bibitem[Menasc{\'{e}} e Mason 2002]{Menasce2002a}
+\abntrefinfo{Menasc{\'{e}} e Mason}{MENASC{\'{E}}; MASON}{2002}
+{MENASC{\'{E}}, D.~A.; MASON, G. {TPC-W : A Benchmark for E-commerce}. In:  .
+  [S.l.: s.n.], 2002. p.~1--6.}
+
+\bibitem[Michalak 2014]{Michalak2014}
+\abntrefinfo{Michalak}{MICHALAK}{2014}
+{MICHALAK, K. {The effects of asymmetric neighborhood assignment in the MOEA/D
+  algorithm}.
+\emph{Applied Soft Computing Journal}, Elsevier B.V., v.~25, p. 97--106, 2014.
+ISSN 15684946.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1016/j.asoc.2014.07.029$>$.}
+
+\bibitem[Model-based generation of testbeds for web services
+  2008]{Bertolino2008}
+\abntrefinfo{Model-based\ldots}{MODEL-BASED\ldots}{2008}
+{MODEL-BASED generation of testbeds for web services. In:  . [S.l.: s.n.],
+  2008. p. 266--282.
+ISBN 978-3-540-68514-2, 978-3-540-68524-1.
+ISSN 978-3-540-68514-2.}
+
+\bibitem[{Mohammad S. Obaidat} e Zarai]{MohammadS.Obaidat}
+\abntrefinfo{{Mohammad S. Obaidat} e Zarai}{{Mohammad S. Obaidat}; ZARAI}{}
+{{Mohammad S. Obaidat}, P.~N.; ZARAI, F. \emph{{Modeling and Simulation of
+  Computer Networks and Systems Methodologies and Applications}}. [S.l.: s.n.].
+ISBN 9780128008874.}
+
+\bibitem[Molyneaux 2009]{Molyneaux2009}
+\abntrefinfo{Molyneaux}{MOLYNEAUX}{2009}
+{MOLYNEAUX, I. \emph{{The Art of Application Performance Testing: Help for
+  Programmers and Quality Assurance}}. 1st. ed. [S.l.]: "O'Reilly Media, Inc.",
+  2009. 159~p.
+ISBN 9780596551056.}
+
+\bibitem[Moscher e F{\"o}gen 2017]{moscher2017facing}
+\abntrefinfo{Moscher e F{\"o}gen}{MOSCHER; F{\"O}GEN}{2017}
+{MOSCHER, M.; F{\"O}GEN, K. Facing synthetic workload generation as part of
+  performance testing--a tools approach.
+\emph{Full-scale Software Engineering/The Art of Software Testing}, p.~38,
+  2017.}
+
+\bibitem[Mueller e Wegener 1998]{Mueller1998}
+\abntrefinfo{Mueller e Wegener}{MUELLER; WEGENER}{1998}
+{MUELLER, F.; WEGENER, J. {A comparison of static analysis and evolutionary
+  testing for the verification of timing constraints}. In:  . [S.l.: s.n.],
+  1998.
+ISBN 0-8186-8569-7.}
+
+\bibitem[Nachiyappan e Justus 2015]{Nachiyappan2015}
+\abntrefinfo{Nachiyappan e Justus}{NACHIYAPPAN; JUSTUS}{2015}
+{NACHIYAPPAN, S.; JUSTUS, S. {Cloud Testing Tools and Its Challenges : A
+  Comparative Study}.
+\emph{Procedia - Procedia Computer Science}, Elsevier Masson SAS, v.~50, p.
+  482--489, 2015.
+ISSN 1877-0509.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1016/j.procs.2015.04.018$>$.}
+
+\bibitem[Oltean, Abraham e Mario 2005]{Oltean2005}
+\abntrefinfo{Oltean, Abraham e Mario}{OLTEAN; ABRAHAM; MARIO}{2005}
+{OLTEAN, M.; ABRAHAM, A.; MARIO, K. {Multiobjective Optimization Using Adaptive
+  Pareto Archived Evolution Strategy}.
+p.~1--6, 2005.}
+
+\bibitem[Penta, Canfora e Esposito 2007]{Penta2007}
+\abntrefinfo{Penta, Canfora e Esposito}{PENTA; CANFORA; ESPOSITO}{2007}
+{PENTA, M.~D.; CANFORA, G.; ESPOSITO, G. {Search-based testing of service level
+  agreements}. In:  \emph{Proceedings of the 9th annual conference on Genetic
+  and evolutionary computation}. [S.l.: s.n.], 2007. p. 1090--1097.
+ISBN 9781595936974.}
+
+\bibitem[Perry 2004]{Perry2004}
+\abntrefinfo{Perry}{PERRY}{2004}
+{PERRY, W.~E. \emph{{Effective methods for software testing}}. [s.n.], 2004.
+ISSN 14337851.
+ISBN 9780764598371. Dispon{\'\i}vel em:
+  $<$http://onlinelibrary.wiley.com/doi/10.1002/cbdv.200490137/abstract$\backslash$nhttp://scholar.google.com/scholar?hl=en{\&}btnG=Search{\&}q=intitle:Effective+Methods+for+Software+Testing{\#}2$\backslash$nhttp://scholar.google.com/scholar?hl=en{\&}btnG=Search{\&}q=intitle:Effective+methods+for$>$.}
+
+\bibitem[Pohlheim, Conrad e Griep 2005]{Pohlheim2005}
+\abntrefinfo{Pohlheim, Conrad e Griep}{POHLHEIM; CONRAD; GRIEP}{2005}
+{POHLHEIM, H.; CONRAD, M.; GRIEP, A. {Evolutionary Safety Testing of Embedded
+  Control Software by Automatically Generating Compact Test Data Sequences}.
+  In:  . [S.l.: s.n.], 2005. p. 804----814.}
+
+\bibitem[Puchinger e Raidl 2005]{Puchinger2005}
+\abntrefinfo{Puchinger e Raidl}{PUCHINGER; RAIDL}{2005}
+{PUCHINGER, J.; RAIDL, R. {Combining Metaheuristics and Exact Algorithms in
+  Combinatorial Optimization : A Survey and Classification}. In:  . [S.l.:
+  s.n.], 2005. v.~3562, p. 41--53.
+ISBN 9783540263197.
+ISSN 03029743.}
+
+\bibitem[Puschner e Nossal 1998]{Puschner1998}
+\abntrefinfo{Puschner e Nossal}{PUSCHNER; NOSSAL}{1998}
+{PUSCHNER, P.; NOSSAL, R. {Testing the results of static worst-case
+  execution-time analysis}. In:  . [S.l.: s.n.], 1998.
+ISBN 0-8186-9212-X.
+ISSN 1052-8725.}
+
+\bibitem[Raidl, Puchinger e Blum 2010]{raidl2010metaheuristic}
+\abntrefinfo{Raidl, Puchinger e Blum}{RAIDL; PUCHINGER; BLUM}{2010}
+{RAIDL, G.~R.; PUCHINGER, J.; BLUM, C. Metaheuristic hybrids. In:
+  \emph{Handbook of metaheuristics}. [S.l.]: Springer, 2010. p. 469--496.}
+
+\bibitem[Raidl 2006]{Raidl2006}
+\abntrefinfo{Raidl}{RAIDL}{2006}
+{RAIDL, R. {A Unified View on Hybrid Metaheuristics}. In:  . [S.l.: s.n.],
+  2006. p. 1--12.
+ISBN 9783540463849.
+ISSN 03029743.}
+
+\bibitem[Rajeshwari 2016]{Rajeshwari2016}
+\abntrefinfo{Rajeshwari}{RAJESHWARI}{2016}
+{RAJESHWARI, B.~S. {Service Level Agreement based Scheduling Techniques in
+  Cloud : A Survey Service Level Agreement based Scheduling Techniques in Cloud
+  : A Survey}.
+n. January, 2016.}
+
+\bibitem[Rakshit, Konar e Das 2017]{Rakshit2017}
+\abntrefinfo{Rakshit, Konar e Das}{RAKSHIT; KONAR; DAS}{2017}
+{RAKSHIT, P.; KONAR, A.; DAS, S. {Noisy evolutionary optimization algorithms
+  – A comprehensive survey}.
+\emph{Swarm and Evolutionary Computation}, Elsevier, v.~33, p. 18--45, 2017.
+ISSN 22106502.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1016/j.swevo.2016.09.002$>$.}
+
+\bibitem[Rauf, Iqbal e Malik 2009]{Rauf2009}
+\abntrefinfo{Rauf, Iqbal e Malik}{RAUF; IQBAL; MALIK}{2009}
+{RAUF, I.; IQBAL, M. Z.~Z.; MALIK, Z.~I. {Model Based Testing of Web Service
+  Composition Using UML Profile}.
+\emph{2nd Workshop on Model-based Testing in Practice, MOTIP 2009}, 2009.
+Dispon{\'\i}vel em: $<$http://www.fokus.fraunhofer.de/go/motip09$>$.}
+
+\bibitem[Rodrigues et al. 2014]{Rodrigues2014}
+\abntrefinfo{Rodrigues et al.}{RODRIGUES et al.}{2014}
+{RODRIGUES, E.~M. et al. {Evaluating Capture and Replay and Model-based
+  Performance Testing Tools: An Empirical Comparison}.
+\emph{Proceedings of the 8th ACM/IEEE International Symposium on Empirical
+  Software Engineering and Measurement}, p. 9:1----9:8, 2014.
+ISSN 19493789.
+Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/2652524.2652587$>$.}
+
+\bibitem[{San Miguel} e Takada 2016]{SanMiguel2016}
+\abntrefinfo{{San Miguel} e Takada}{{San Miguel}; TAKADA}{2016}
+{{San Miguel}, J.~L.; TAKADA, S. {GUI and Usage Model-based Test Case
+  Generation for Android Applications with Change Analysis}.
+\emph{Proceedings of the 1st International Workshop on Mobile Development}, p.
+  43--44, 2016.
+Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/3001854.3001865$>$.}
+
+\bibitem[Sandler, Badgett e Thomas 2004]{Sandler2004}
+\abntrefinfo{Sandler, Badgett e Thomas}{SANDLER; BADGETT; THOMAS}{2004}
+{SANDLER, C.; BADGETT, T.; THOMAS, T. {The Art of Software Testing}. In:  .
+  [S.l.]: John Wiley \& Sons, 2004. p.~200.
+ISBN 9781118133156.}
+
+\bibitem[Schaefer, Do e Slator 2013]{Schaefer2013}
+\abntrefinfo{Schaefer, Do e Slator}{SCHAEFER; DO; SLATOR}{2013}
+{SCHAEFER, C.; DO, H.; SLATOR, B.~M. {Crushinator: A framework towards
+  game-independent testing}.
+\emph{2013 28th IEEE/ACM International Conference on Automated Software
+  Engineering, ASE 2013 - Proceedings}, p. 726--729, 2013.}
+
+\bibitem[Shousha 2003]{shousha2003performance}
+\abntrefinfo{Shousha}{SHOUSHA}{2003}
+{SHOUSHA, M.
+\emph{Performance Stress Testing of Real-Time Systems Using Genetic
+  Algorithms}.
+Tese (Doutorado) --- Carleton University Ottawa, 2003.}
+
+\bibitem[Siegmund, Ng e Deb 2013]{Siegmund2013}
+\abntrefinfo{Siegmund, Ng e Deb}{SIEGMUND; NG; DEB}{2013}
+{SIEGMUND, F.; NG, A. H.~C.; DEB, K. {A comparative study of dynamic resampling
+  strategies for guided Evolutionary Multi-objective Optimization}.
+\emph{2013 IEEE Congress on Evolutionary Computation, CEC 2013}, n. 2013008, p.
+  1826--1835, 2013.}
+
+\bibitem[Silveira, Rodrigues e Zorzo 2011]{Silveira2011}
+\abntrefinfo{Silveira, Rodrigues e Zorzo}{SILVEIRA; RODRIGUES; ZORZO}{2011}
+{SILVEIRA, M. da; RODRIGUES, E.; ZORZO, A. {Generation of Scripts for
+  Performance Testing Based on UML Models.} In:  . [S.l.: s.n.], 2011.}
+
+\bibitem[Smith e Williams 2002]{Smith2002}
+\abntrefinfo{Smith e Williams}{SMITH; WILLIAMS}{2002}
+{SMITH, C.; WILLIAMS, L. {Software Performance AntiPatterns; Common Performance
+  Problems and their Solutions}. In:  . [s.n.], 2002. v.~2, p. 797--806.
+  Dispon{\'\i}vel em:
+  $<$http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.100.6968{\&}rep=rep1{\&}type=pdf$>$.}
+
+\bibitem[Smith e Williams 2000]{Smith2000}
+\abntrefinfo{Smith e Williams}{SMITH; WILLIAMS}{2000}
+{SMITH, C.~U.; WILLIAMS, L.~G. {Software performance antipatterns}. In:  .
+  [s.n.], 2000. p. 127--136.
+ISBN 158113195X. Dispon{\'\i}vel em:
+  $<$http://portal.acm.org/citation.cfm?doid=350391.350420$>$.}
+
+\bibitem[Smith e Williams 2003]{Smith2003}
+\abntrefinfo{Smith e Williams}{SMITH; WILLIAMS}{2003}
+{SMITH, C.~U.; WILLIAMS, L.~G. {More New Software Performance AntiPatterns:
+  EvenMore Ways to Shoot Yourself in the Foot}. In:  . [s.n.], 2003. p.
+  717--725. Dispon{\'\i}vel em:
+  $<$http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.123.4517{\&}rep=rep1{\&}type=pdf$>$.}
+
+\bibitem[Sridhar, Srinivasulu e Mohapatra 2013]{Sridhar2013}
+\abntrefinfo{Sridhar, Srinivasulu e Mohapatra}{SRIDHAR; SRINIVASULU;
+  MOHAPATRA}{2013}
+{SRIDHAR, A.; SRINIVASULU, D.; MOHAPATRA, D.~P. {Model-based test-case
+  generation for Simulink/Stateflow using dependency graph approach}.
+\emph{Proceedings of the 2013 3rd IEEE International Advance Computing
+  Conference, IACC 2013}, p. 1414--1419, 2013.}
+
+\bibitem[Sullivan et al. 1998]{Sullivan}
+\abntrefinfo{Sullivan et al.}{SULLIVAN et al.}{1998}
+{SULLIVAN, M.~O. et al. {Testing Temporal Correctness of Real-Time Systems ---
+  A New Approach Using Genetic Algorithms and Cluster Analysis ---}. In:  .
+  [S.l.: s.n.], 1998. p. 1--20.}
+
+\bibitem[Sutton e Barto 2012]{Sutton2012}
+\abntrefinfo{Sutton e Barto}{SUTTON; BARTO}{2012}
+{SUTTON, R.~S.; BARTO, A.~G. Reinforcement learning. In:  . [S.l.: s.n.], 2012.
+  v.~3, n.~9, p.~322.
+ISBN 0262193981.
+ISSN 18726240.}
+
+\bibitem[Talbi 2009]{talbi2009metaheuristics}
+\abntrefinfo{Talbi}{TALBI}{2009}
+{TALBI, E.-G. \emph{Metaheuristics: from design to implementation}. [S.l.]:
+  John Wiley \& Sons, 2009.}
+
+\bibitem[Talbi 2013]{Talbi2013}
+\abntrefinfo{Talbi}{TALBI}{2013}
+{TALBI, E.-G. \emph{{Metaheuristics: From Design to Implementation}}. [S.l.:
+  s.n.], 2013. 1689--1699~p.
+ISSN 1098-6596.
+ISBN 9788578110796.}
+
+\bibitem[Tervonen e Kingdom 2017]{Tervonen2017}
+\abntrefinfo{Tervonen e Kingdom}{TERVONEN; KINGDOM}{2017}
+{TERVONEN, T.; KINGDOM, U. {Evaluation of multi-objective optimization
+  approaches for solving green supply chain design problems : Evaluation of
+  multi-objective optimization approaches for solving green supply chain design
+  problems}.
+n. April, 2017.}
+
+\bibitem[Tracey 2000]{tracey2000search}
+\abntrefinfo{Tracey}{TRACEY}{2000}
+{TRACEY, N.~J.
+\emph{A search-based automated test-data generation framework for
+  safety-critical software}.
+Tese (Doutorado) --- Citeseer, 2000.}
+
+\bibitem[Tracey, Clark e Mander 1998]{Tracey1998}
+\abntrefinfo{Tracey, Clark e Mander}{TRACEY; CLARK; MANDER}{1998}
+{TRACEY, N.~J.; CLARK, J.~a.; MANDER, K.~C. {Automated Programme Flaw Finding
+  using Simulated Annealing}. In:  . [S.l.: s.n.], 1998.}
+
+\bibitem[Trent e Sake 1995]{Trent1995}
+\abntrefinfo{Trent e Sake}{TRENT; SAKE}{1995}
+{TRENT, G.; SAKE, M. {WebSTONE: The first generation in {\{}HTTP{\}} server
+  benchmarking}. In:  . [S.l.: s.n.], 1995.}
+
+\bibitem[Trubiani 2011]{Trubiani2011}
+\abntrefinfo{Trubiani}{TRUBIANI}{2011a}
+{TRUBIANI, C. {Automated generation of architectural feedback from software
+  performance analysis results Catia Trubiani}.
+\emph{Language}, 2011.}
+
+\bibitem[Trubiani 2011]{Vetoio2011}
+\abntrefinfo{Trubiani}{TRUBIANI}{2011b}
+{TRUBIANI, C. {PhD Thesis in Computer Science Automated generation of
+  architectural feedback from software performance analysis results Catia
+  Trubiani}.
+\emph{Language}, 2011.}
+
+\bibitem[Utting e Legeard 2010]{utting2010practical}
+\abntrefinfo{Utting e Legeard}{UTTING; LEGEARD}{2010}
+{UTTING, M.; LEGEARD, B. \emph{Practical model-based testing: a tools
+  approach}. [S.l.]: Morgan Kaufmann, 2010.}
+
+\bibitem[Vogele et al. 2016]{Vogele2016}
+\abntrefinfo{Vogele et al.}{VOGELE et al.}{2016}
+{VOGELE, C. et al. {WESSBAS: extraction of probabilistic workload
+  specifications for load testing and performance prediction???a model-driven
+  approach for session-based application systems}. In:  . Springer Berlin
+  Heidelberg, 2016. p. 1--35.
+ISSN 16191374. Dispon{\'\i}vel em:
+  $<$"http://dx.doi.org/10.1007/s10270-016-0566-5$>$.}
+
+\bibitem[Wang, Zhou e Li 2013]{Wang2013}
+\abntrefinfo{Wang, Zhou e Li}{WANG; ZHOU; LI}{2013}
+{WANG, X.; ZHOU, B.; LI, W. {Model-based load testing of web applications}. In:
+   . [s.n.], 2013. v.~36, n.~1, p. 74--86.
+ISSN 0253-3839. Dispon{\'\i}vel em:
+  $<$http://www.tandfonline.com/doi/abs/10.1080/02533839.2012.726028$>$.}
+
+\bibitem[Wegener e Grochtmann 1998]{Wegener1998}
+\abntrefinfo{Wegener e Grochtmann}{WEGENER; GROCHTMANN}{1998}
+{WEGENER, J.; GROCHTMANN, M. {Verifying timing constraints of real-time systems
+  by means of evolutionary testing}. In:  . [S.l.: s.n.], 1998. v.~15, n.~3, p.
+  275--298.
+ISBN 0922-6443.
+ISSN 0922-6443.}
+
+\bibitem[Wegener et al. 1997]{Wegener1997}
+\abntrefinfo{Wegener et al.}{WEGENER et al.}{1997}
+{WEGENER, J. et al. {Testing real-time systems using genetic algorithms}. In:
+  . [s.n.], 1997. v.~6, n.~2, p. 127--135.
+ISSN 0963-9314, 1573-1367. Dispon{\'\i}vel em:
+  $<$http://www.springerlink.com/index/uh26067rt3516765.pdf$>$.}
+
+\bibitem[{Wegener, Joachim and Pitschinetz, Roman and Sthamer} 2000]{Stations}
+\abntrefinfo{{Wegener, Joachim and Pitschinetz, Roman and Sthamer}}{{Wegener,
+  Joachim and Pitschinetz, Roman and Sthamer}}{2000}
+{{Wegener, Joachim and Pitschinetz, Roman and Sthamer}, H. {Automated Testing
+  of Real-Time Tasks}. In:  . [S.l.: s.n.], 2000.}
+
+\bibitem[Wert, Happe e Happe 2013]{Wert2013a}
+\abntrefinfo{Wert, Happe e Happe}{WERT; HAPPE; HAPPE}{2013}
+{WERT, A.; HAPPE, J.; HAPPE, L. {Supporting swift reaction: Automatically
+  uncovering performance problems by systematic experiments}. In:  . [S.l.:
+  s.n.], 2013. p. 552--561.
+ISBN 9781467330763.
+ISSN 02705257.}
+
+\bibitem[Wert et al. 2014]{Wert2014}
+\abntrefinfo{Wert et al.}{WERT et al.}{2014}
+{WERT, A. et al. {Automatic detection of performance anti-patterns in
+  inter-component communications}. In:  . [s.n.], 2014. p. 3--12.
+ISBN 9781450325776. Dispon{\'\i}vel em:
+  $<$http://dx.doi.org/10.1145/2602576.2602579$>$.}
+
+\bibitem[Wieczorek, Stefanescu e Roth 2010]{Wieczorek2010}
+\abntrefinfo{Wieczorek, Stefanescu e Roth}{WIECZOREK; STEFANESCU; ROTH}{2010}
+{WIECZOREK, S.; STEFANESCU, A.; ROTH, A. {Model-Driven Service Integration
+  Testing - A Case Study}.
+\emph{Quality of Information and Communications Technology (QUATIC), 2010
+  Seventh International Conference on the}, p. 292--297, 2010.}
+
+\bibitem[Williams e Smith 2002]{Williams2002}
+\abntrefinfo{Williams e Smith}{WILLIAMS; SMITH}{2002}
+{WILLIAMS, L.~G.; SMITH, C.~U. {PASASM : A Method for the Performance
+  Assessment of Software Architectures}.
+\emph{Proceedings of the third international workshop on Software and
+  performance - WOSP '02}, n. January 2002, p.~179, 2002.
+Dispon{\'\i}vel em:
+  $<$http://portal.acm.org/citation.cfm?doid=584369.584397$>$.}
+
+\bibitem[{Xinying Cai} 2007]{XinyingCai2007}
+\abntrefinfo{{Xinying Cai}}{{Xinying Cai}}{2007}
+{{Xinying Cai}, H.~Z. {Model-based Test Generation for Software Product Line}.
+2007.}
+
+\bibitem[Ye 2007]{Ye2007}
+\abntrefinfo{Ye}{YE}{2007}
+{YE, L. {Model-Based Testing Approach for Web Applications}.
+n.~June, 2007.}
+
+\bibitem[Yoo e Harman 2007]{Yoo2007}
+\abntrefinfo{Yoo e Harman}{YOO; HARMAN}{2007}
+{YOO, S.; HARMAN, M. {Pareto efficient multi-objective test case selection}.
+\emph{Proceedings of the 2007 international symposium on Software testing and
+  analysis - ISSTA '07}, p.~140, 2007.
+Dispon{\'\i}vel em:
+  $<$http://doi.acm.org/10.1145/1273463.1273483{\%}5Cnhttp://dl.acm.org/ft{\_}gateway.cfm?id=1273483{\&}type=pdf{\%}5Cnhttp://portal.acm.org/citation.cfm?doid=1273463.1273483$>$.}
+
+\bibitem[Yuen e Ramli 2009]{Yuen2009}
+\abntrefinfo{Yuen e Ramli}{YUEN; RAMLI}{2009}
+{YUEN, T.~J.; RAMLI, R. {Comparison of Computational Efficiency of Moea
+  $\backslash$ D and Nsga-Ii for Passive Vehicle Suspension Optimization}.
+v.~2, n.~Cd, 2009.}
+
+\bibitem[Zhang e Li 2007]{Zhang2007}
+\abntrefinfo{Zhang e Li}{ZHANG; LI}{2007}
+{ZHANG, Q.; LI, H. {MOEA/D: A Multiobjective Evolutionary Algorithm Based on
+  Decomposition}.
+\emph{IEEE Transactions on Evolutionary Computation}, v.~11, n.~6, p. 712--731,
+  2007.
+ISSN 1089-778X.}
+
+\bibitem[Zitzler, Laumanns e Thiele 2001]{Zitzler2001}
+\abntrefinfo{Zitzler, Laumanns e Thiele}{ZITZLER; LAUMANNS; THIELE}{2001}
+{ZITZLER, E.; LAUMANNS, M.; THIELE, L. {SPEA2: Improving the Strength Pareto
+  Evolutionary Algorithm}.
+\emph{Evolutionary Methods for Design Optimization and Control with
+  Applications to Industrial Problems}, p. 95--100, 2001.
+ISSN 03772217.}
+
+\bibitem[Zitzler e Thiele 1999]{Zitzler1999}
+\abntrefinfo{Zitzler e Thiele}{ZITZLER; THIELE}{1999}
+{ZITZLER, E.; THIELE, L. {Multiobjective evolutionary algorithms: a comparative
+  case study$\backslash$nand the strength Pareto approach}.
+\emph{IEEE Transactions on Evolutionary Computation}, v.~3, n.~4, p. 257--271,
+  1999.
+ISSN 1089-778X.}
+
+\end{thebibliography}
