@@ -179,31 +179,31 @@ This thesis addresses the use of hybrid and multi-objective metaheuristics in co
 
 With regard to the result of tests using multi-objective  metaheuristics:
 \begin{itemize}
-\item $H1_{0}$ (A null hypothesis) :the multi-objective metaheuristics do not found relevant test results to the SLA definition.
+\item $H1_{0}$ (null hypothesis) :the multi-objective metaheuristics do not found relevant test results to the SLA definition.
 \item $H1_{1}$  : the multi-objective metaheuristics  found relevant test results to the SLA definition.
 \end{itemize}
 
 \begin{itemize}
-\item $H2_{0}$ (A null hypothesis) :the multi-objective metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
+\item $H2_{0}$ (null hypothesis) :the multi-objective metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
 \item $H2_{1}$  : the multi-objective metaheuristics proposed approach found more relevant test results than the state-of-art approaches of the area.
 \end{itemize}
 
 With regard to the result of tests using hybrid metaheuristics:
 \begin{itemize}
-\item $H3_{0}$ (A null hypothesis) :the hybrid metaheuristics do not found relevant test results to the SLA definition.
+\item $H3_{0}$ (null hypothesis) :the hybrid metaheuristics do not found relevant test results to the SLA definition.
 \item $H3_{1}$  : the hybrid metaheuristics  found relevant test results to the SLA definition.
 \end{itemize}
 
 
 \begin{itemize}
-\item $H4_{0}$ (A null hypothesis) :the hybrid metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
+\item $H4_{0}$ (null hypothesis) :the hybrid metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
 \item $H4_{1}$  : the hybrid metaheuristics  proposed approach found more relevant test results than the state-of-art approaches of the area.
 \end{itemize}
 
 With regard to the result of tests using hybrid metaheuristics with reinforcement learning:
 
 \begin{itemize}
-\item $H5_{0}$ (A null hypothesis) :the use of hybrid algorithm with reinforcement learning  do not optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.
+\item $H5_{0}$ (null hypothesis) :the use of hybrid algorithm with reinforcement learning  do not optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.
 \item $H5_{1}$  : the use of hybrid algorithm with reinforcement learning optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.
 \end{itemize}
 
@@ -222,7 +222,7 @@ The main contributions of this thesis are follows:
  
 \item We present a hybrid algorithm with Q-Learning approach. The approach uses reinforcement learning  to optimize the choice of neighboring solutions, reducing the time needed to obtain the scenarios with the longest response time. This proposal refers to Hypothesis $H5_{1}$ (Chapter 5).
 
-\item Comprehensive investigation on the use of multi-objective metaheuristics on search-based stress testing. We investigate t the benefits of multiobjective metaheuristics in search-based stress testing. This proposal refers to Hypotheses $H1_{1}$ and $H2_{1}$ 
+\item Comprehensive investigation on the use of multi-objective metaheuristics on search-based stress testing. We investigate t the benefits of multiobjective metaheuristics in search-based stress testing. Part of the results were published in \cite{Gois2017}. This proposal refers to Hypotheses $H1_{1}$ and $H2_{1}$ 
  (Chapter 6).
 \end{itemize}
 
@@ -257,8 +257,7 @@ The remainder of this thesis is organized as follows:
 
 \chapter{Metaheuristics and Reinforcement Learning}
 
-In this Chapter, we discuss the relevant state-of-the-art considering the main contributions
-of this thesis: the single and multi-objective metaheuristics and and reinforcement learning.
+This chapter presentes concepts and definitions essentials to understanding considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
 
 \section{Metaheuristics}
 
@@ -676,14 +675,11 @@ In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{
 
 \section{Summary}
 
-Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. opulation-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures.
+Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. opulation-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards.
 
+\chapter{Search-based Stress Testing}
 
-The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests.
-
-
-\chapter{Search-Based Stress Testing}
-
+In this chapter, we introduce the context where this thesis is inserted and discuss the relevant state-of-the-art related to Search-based Stress Testing.
 
 \section{Load, Performance and Stress Testing}
 
@@ -716,7 +712,7 @@ The main difference between load tests, performance tests and stress tests are:
 \end{itemize}
 
 
-\subsection{Search-Based Testing}
+\section{Search-Based Testing}
 
 Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions \cite{Afzal2009a} \cite{Harman2015}.
 
@@ -843,6 +839,10 @@ Di Penta et al. \cite{Penta2007} used GA to create test data that violated quali
 
 Gois et al. proposes a hybrid metaheuristic approach using genetic algorithms, simulated annealing, and tabu search algorithms to perform stress testing. A tool named IAdapter, a JMeter plugin used for performing search-based stress tests, was developed. Two experiments were performed to validate the solution. In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The significance level adopted was 0.05. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach.
 In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of the previously established six generations \cite{Gois2016}.
+
+\section{Summary}
+
+The stress testing verifies the system behavior against heavy workloads, which are executed to evaluate a system beyond its limits, validate system response in activity peaks, and verify whether the system is able to recover from these conditions. Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions.  Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique.
 
 \chapter{Stress Search Based Testing using Hybrid Metaheuristic}
 
@@ -1168,7 +1168,7 @@ The independent variables are the test scenarios (antipatterns and happy scenari
 
 With regard to the antipatterns found by hybrid metaheuristic:
 \begin{itemize}
-\item $H_{0}$ (A null hypothesis) :the best workloads found in the experiments contain antipatterns
+\item $H_{0}$ (null hypothesis) :the best workloads found in the experiments contain antipatterns
 \item $H_{1}$  : the best workloads found in the experiments do not contain antipatterns.
 \end{itemize}
 
@@ -1574,7 +1574,7 @@ Among the future works of the research, new experiments should be performed comp
 
 \chapter{Search-based stress testing using multi-objective heuristics}
 
-This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:step2}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:step2}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:step2}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
+This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
 
 \begin{figure}[!h]
 
@@ -1603,7 +1603,7 @@ The experiments used an initial population of 17 individuals by metaheuristic. T
 
 \begin{equation}
 \begin{aligned}
-objective function 1 =-3*numberOfUsers\\
+objective function 1 =numberOfUsers\\
 -penalty\\
 \end{aligned}
 \end{equation}
@@ -1643,7 +1643,7 @@ The independent variable is the NSGA-II algorithm used in the test. The dependen
 \begin{itemize}
 \item With regard to multi-objective algorithms applied in the experiment:
 \begin{itemize}
-\item $H_{0}$ (A null hypothesis) : The NSGA-II didn't find workloads that meet the two objective functions used in the experiment.
+\item $H_{0}$ (null hypothesis) : The NSGA-II didn't find workloads that meet the two objective functions used in the experiment.
 \item $H_{1}$  : The NSGA-II  algorithm found workloads that meet the two objective functions used in the experiment.
 \end{itemize}
 \end{itemize}
@@ -1667,7 +1667,7 @@ Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results o
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[!h]
 \centering
-\caption{Pareto Frontier Workloads}
+\caption{Experiment Results}
 \label{tab:results}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -1695,7 +1695,7 @@ In this work, we just evaluate the use of one multi-objective algorithm. However
 
 The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was extended.  One experiment was conducted to validate the proposed approach. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The whole process of stress  tests, which ran for 3 days and 492 executions, was carried out without the need for monitoring by a test designer.  The experiment found 9 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
 
-\section{Comparative experiment of Multi-Objecttive algorithms with Noise Reduction}
+\section{Comparative experiment of Multi-Objective algorithms with Noise Reduction}
 
 
 In this section,  we present the experimental results,  in which we carried out compare four multi-objective algorithms:
@@ -1707,7 +1707,7 @@ In this section,  we present the experimental results,  in which we carried out 
 \item MOEAD
 \end{itemize}
 
-The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 10000 seconds.  The whole process of stress  tests, which run for 4 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, We adopted the use of a noise reduction strategy in a new test cycle.
+The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 4 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, We adopted the use of a noise reduction strategy in a new test cycle.
 
 \begin{figure}[!h]
 \centering
@@ -1741,7 +1741,7 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 \begin{itemize}
 \item With regard to multi-objective algorithms applied in the experiment and the test results:
 \begin{itemize}
-\item $H_{0}$ (A null hypothesis) : The multi-objective with  higher value of hypervolume don't find the scenarios with higher response time and lower number of users.
+\item $H_{0}$ (null hypothesis) : The multi-objective with  higher value of hypervolume don't find the scenarios with higher response time and lower number of users.
 \item $H_{1}$  : The multi-objective with  higher value of hypervolume find the scenarios with higher response time and lower number of users.
 \end{itemize}
 \end{itemize}
@@ -1770,7 +1770,7 @@ Table \ref{tab:hypervolume} shows the hypervolume value of each algorithm. For t
 
 \end{itemize}
 
-MOEA/D found two scenarios that approached the established service level for the experiment of 1000 miliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 miliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level.
+MOEA/D found two scenarios that approached the established service level for the experiment of 1000 miliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 miliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level. Figures \ref{fig:moeadnoise}, \ref{fig:paretofrontier2}, \ref{fig:spea2} and  \ref{fig:paes} present the pareto frontier for each algorithm.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
@@ -1821,18 +1821,202 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 \end{minipage}
 \end{figure}
 
+\subsection{Experiment Conclusion}
 
-\section{Comparative Experiment between HybridQ and MOEA/D Multi-objective Metaheuristics}
+The multi-objective with  higher value of hypervolume find the scenarios with higher response time and lower number of users. However, each algorithm presented relevant results for stress testing. MOEA/D was the algorithm with the highest hypervolume value.
 
-This section presents the experimental results carried out to  compare the MOEA/D multi-objective with HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 10000 seconds.  The whole process of stress  tests, which run for 1 days and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. Fig. presents the results of first cycle of executions. 
+\subsection{Threats to Validity}
+
+The nondeterministic nature of the problem does not guarantee that the same pareto frontier will be found in different test executions. The workloads found by the MOEA/D algorithm  do not dominante all the workloads found by the others algorithms.
+
+\section{A Survey Study of use of Multi-Objective Algorithms in Search-based Stress testing}
+
+We conducted a survey study to evaluate the use of multi-objective algorithm by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. The team consists of 4 test designers from 36 to 39 years old. A test designer has 12 years of stress testing experience and 3 test designers has from 1 to 5 years of testing experience.
+
+The experiment took place in july of this year and consists of two stages. The first stage consisted of using the IAdapter tool by test designers. In the second stage the designers answered a set of questions to evaluate the applied techniques and the IAdapter tool. The initial proposal was evaluate the use the JMeter tool with and without the IAdapter plugin. However, the time available for the experiment was reduced due to the participation of test designers in some company projects, allowing the application of the experiment only with the IAdapter plugin. All the test designers who participated in the experiment already had previous experience of using the Apache JMeter tool.
+
+At the beginning of the experiment, the test designers had brief guidelines for using IAdapter and the technique of search-based stress testing. After the initial orientations, the designers generated the initial population and started the tests. The experiment used the HybridQ and MOEA/D algorithms. The questionnaires had 3 objective questions using the Likert scale and two open questions related to the strengths and weaknesses of the applied techniques. The first question asks if there is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Question 1}
+\label{tab:question1}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                            \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.6\textwidth} \textbf{ \\ There is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios\\ } \end{minipage}}  \\ \hline
+\textbf{Response Item}                                                                       & \textbf{Number of answers}                                         \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                              & 4                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                       & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                     & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                     & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                           & 0                                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+The second question asks if there is an improvement in the use of search-based stress testing. Most test designers agreed that the use of search-based tests can improve the team's current test practice using an approach based on capturing and replay test scripts.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Question 2}
+\label{tab:question2}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                            \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF} \begin{minipage}{0.6\textwidth} \textbf{The use of search-based tests could improve the practice of stress testing} \end{minipage} } \\ \hline
+\textbf{Response Item}                                                       & \textbf{Number of answers}                         \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                              & 0                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                       & 3                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                     & 1                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                     & 0                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                           & 0                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+The third question asks if the IAdapter tool  found an important test usually not found by the testers.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Question 3}
+\label{my-label}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                                      \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{\begin{tabular}[c]{@{}l@{}}The IAdapter tool found an important test not ussually\\ found by the testers\end{tabular}}} \\ \hline
+\textbf{Response Item}                                                                            & \textbf{Number of answers}                                              \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                                   & 0                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                            & 3                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                          & 0                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                          & 1                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                                & 0                                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+Among the positive points cited by the test designers are:
+
+\begin{itemize}
+\item Automatic identification of new test scenarios.
+\item Identification of the best or worst test scenario.
+\item Ease of Use, which allowed test designers to concentrate more on the analysis of results rather than the execution and design of the tests.
+\item The tool allows you to quickly configure multiple test batteries.
+\item Ability to use learning algorithms.
+\item The tool enables the implementation of new algorithms, making it available according to JMeter standards.
+\end{itemize}
+
+Among the negative points cited by the test designers are:
+
+\begin{itemize}
+\item There is still no way to turn off the verbosity of the plugin's log.
+\item Cannot use other databases besides mysql.
+\item Absence of a parameter for setting the minimum number of users.
+\item Graphics need to be a bit more intuitive.
+\end{itemize}
+
+
+\section{Comparative Experiment between HybridQ and MOEA/D}
+
+This section presents the experimental results carried out to  compare the MOEA/D multi-objective with HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. 
+
+\subsection{Experiment Research Questions}
+
+The following research question is addressed:
+\begin{itemize}
+\item The solutions presented by a single objective algorithm are dominated by all solutions presented by a multi-objective algorithm?
+\end{itemize}
+
+\subsection{Variables}
+
+The independent variable is the algorithms: HybridQ and MOEA/D. The dependent variables are the pareto frontier points found by each algorithm.
+
+\subsection{Experiment Hypotheses}
+
+\begin{itemize}
+\item With regard to multi-objective algorithms applied in the experiment:
+\begin{itemize}
+\item $H_{0}$  (null hypothesis) : All solutions found by HybridQ are not dominated by the MOEA/D algorithm.
+\item $H_{1}$ : All solutions found by HybridQ are dominated by the MOEA/D algorithm.
+\end{itemize}
+\end{itemize}
+
+\subsection{Experiment Results}
+
+Fig. \ref{fig:singlewithmulti} presents the result of the experiment. Most of the individuals found by the HybridQ algorithm are dominated by those found by MOEA/D. The exception is a single maximum point found by HybridQ. From the results, a hybrid collaborative approach was proposed, where the results between the MOEA / D and HybridQ algorithms would be shared. 
 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./images/singlewithmulti.png}
-    \caption{Experiment Pareto Frontier}
-\label{fig:paretofrontier1}
+    \caption{HybridQ and MOEA/D Pareto Frontier}
+\label{fig:singlewithmulti}
 \end{figure}
+
+\section{Collaborative approach between HybridQ and MOEA/D}
+
+This section presents a collaborative approach using HybridQ and MOEA/D. The propose consist of each algorithm share our best individuals with each other. A new experiment was performed to evaluate the proposed apporach. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 28 previously established  generations by the algorithm.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/moeadhybridq.png}
+    \caption{Colaborative approach Pareto Frontier}
+\label{fig:singlewithmulti}
+\end{figure}
+
+\subsection{Experiment Research Questions}
+
+The following research question is addressed:
+\begin{itemize}
+\item The combined use of MOEA/D with Hybrid could improve the results obtained by the previous experiments with MOEA/D?
+\end{itemize}
+
+
+\subsection{Variables}
+
+The independent variable is the collaborative approach of the algorithms HybridQ and MOEA/D. The dependent variable are the hypervolume found by the new approach.
+
+\subsection{Experiment Results}
+
+At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. 
+
+\subsection{Experiment Conclusion}
+
+The new approach obtain a hypervolume of 10.84 at the end of 50 generations. The solution found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds. The results presented by the new approach in the experiment surpass previous approaches for the same number of generations.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[!h]
+\centering
+\caption{Experiment Results}
+\label{tab:results}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+\textbf{N.} & \textbf{\begin{tabular}[c]{@{}l@{}}USERS\\ \end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}RESP \\ TIME\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}c@{}}Dogs\\ Users\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}l@{}}Enter\\ Catalog\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Fish\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Register\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Add\\ Rem.\\ Cart\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Cart\\ Users\end{tabular}} \\ \hline
+\ding{202}           & 1                                                        & 115                                                        &                                                           &                                                                  &               &                   &                                                                    1 &               \\ \hline
+\ding{203}           & 19                                                       & 473                                                        & 6                                                         &                                                                & 5             &               4   &                                                                    4 &               \\ \hline
+\ding{204}          & 27                                                      & 644                                                        & 17                                                         &                                                                &         3      &                   &                                                                    & 7             \\ \hline
+\ding{205}           & 28                                                      & 774                                                        &                                                          & 8                                                                &    3          & 3                 &                                                                   8 &     6          \\ \hline
+\ding{206}           & 31                                                      & 1396                                                       & 6                                                          &                                                                &              &    13             & 4                                                                   & 8               \\ \hline
+\ding{207}           & 90                                                     & 1860                                                        & 12                                                          & 11                                                              & 3             &        3          & 30                                                                  &   31            \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+
+The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established level of service.
+
 
 % conference papers do not normally have an appendix
 
@@ -1869,9 +2053,13 @@ This section presents the experimental results carried out to  compare the MOEA/
 
 This chapter presents our conclusions, revisits the contributions, shows some limitations, and proposals for future work.
 
-In this thesis we dealt with the use of hybrid metaheuristics and Q-Learning in Stress Testing. This thesis presented an hybrid and an hybrid with Q-Learning metaheuristic approaches that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. A tool named IAdapter (\url{github.com/naubergois/newiadapter}), a JMeter plugin for performing search-based load tests, was developed. Six experiments were conducted to validate the proposed approach. The first experiment was performed on an emulated component. The second and third experiments are conducted in an testbed developed appplication. The fourth  experiment was performed using an installed Moodle application. The fifth and sixth experiments are performned using an installed JPetStore application.
+In this thesis we deal with the use of hybrid metaheuristics, reinforcement learning and multi-objective metaheuristics in Search-based stress testing. A tool named IAdapter (\url{github.com/naubergois/newiadapter}), a JMeter plugin for performing search-based load tests, was developed. Several experiments were conducted to validate the proposed approach.
 
-IAdapter Testbed is an open-source facility that provides software tools for search based test research. The testbed tool emulates test scenarios in a controled environment using mock objects and implementing performance antipatterns.
+\section{Summary of contributions}
+
+
+
+
 
 The main contributions of this research are as follows: The presentation of a hybrid metaheuristic using Q-learning  approach for use in stress tests; the development of a Testbed tool the development of a JMeter plugin  for search-based tests and  the automation of the stress test execution process.
 
@@ -2339,9 +2527,11 @@ UCML                                        & \cite{Barber1999}       & Function
                                         & \begin{minipage}{0.4\textwidth}\cite{Silveira2011}\end{minipage}     & Functional           & 2011          \\ \cline{2-4}
                                         &
 \cite{Vogele2016}    & Transition-based      & 2016          \\ \cline{2-4}
+&
+\cite{DiAlesio2017}   & Functional      & 2017          \\ \cline{2-4}
 
 
-\multirow{-9}{*}{UML}                   & \begin{minipage}{0.4\textwidth}\cite{Lenz2007}\end{minipage}         & Functional           & 2007          \\ \hline
+\multirow{-10}{*}{UML}                   & \begin{minipage}{0.4\textwidth}\cite{Lenz2007}\end{minipage}         & Transition-based           & 2007          \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2720,7 +2910,7 @@ There are three approaches to stress test execution: Live-User Based Executions,
 The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing use a model to describle the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of test because it depends intrinsically of the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Funcional-based notations, Stochastic notations, Transition-based and State-based notations. 
 
 There are several antipatterns that detailed features about common performance problems. Antipatterns
-are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented to an experiment presented in the chapter 4.
+are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented by IAdapter to an experiment presented in chapter 4.
 
 
 

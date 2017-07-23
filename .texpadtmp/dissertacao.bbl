@@ -27,6 +27,14 @@ ISSN 09505849.}
   Optimization Model to Support Performance Testing}. In:  . [S.l.: s.n.],
   2014. p. 813--830.}
 
+\bibitem[Alesio e Sen 2017]{DiAlesio2017}
+\abntrefinfo{Alesio e Sen}{ALESIO; SEN}{2017}
+{ALESIO, S. D.; SEN, S. {Using UML/MARTE to support performance tuning and
+  stress testing in real-time systems}.
+\emph{Software and Systems Modeling}, Springer Berlin Heidelberg, 2017.
+ISSN 1619-1366.
+Dispon{\'\i}vel em: $<$http://link.springer.com/10.1007/s10270-017-0585-x$>$.}
+
 \bibitem[Alesio et al. 2015]{Alesio2015}
 \abntrefinfo{Alesio et al.}{ALESIO et al.}{2015}
 {ALESIO, S. D.~I. et al. {Combining Genetic Algorithms and Constraint
@@ -327,6 +335,13 @@ ISSN 00985589.}
 \abntrefinfo{Glover e Mart{\'{i}}}{GLOVER; MART{\'{I}}}{1986}
 {GLOVER, F.; MART{\'{I}}, R. {Tabu Search}. In:  . [S.l.: s.n.], 1986. p.
   1--16.}
+
+\bibitem[Gois, Porfirio e Coelho 2017]{Gois2017}
+\abntrefinfo{Gois, Porfirio e Coelho}{GOIS; PORFIRIO; COELHO}{2017}
+{GOIS, N.; PORFIRIO, P.; COELHO, A. {A multi-objective metaheuristic approach
+  to search-based stress testing}. In:  \emph{Proceedings of the 2017 IEEE
+  International Conference on Computer and Information Technology (CIT)}.
+  [S.l.: s.n.], 2017.}
 
 \bibitem[Gois et al. 2016]{Gois2016}
 \abntrefinfo{Gois et al.}{GOIS et al.}{2016}
