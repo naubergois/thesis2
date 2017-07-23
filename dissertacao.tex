@@ -1243,7 +1243,7 @@ In the second experiment, the metaheuristics converged to scenarios with a happy
 \subsection{Threats to validity}
 \begin{itemize}
 \item Construct Validity:
-In this work, we just evaluate the use of four antipatterns. However, several antipatterns could be applied.  The testbed's common representation and the strategies used for crossover and neighborhood operators need of a better design, using an abstraction pattern to contemplate a major number of possible solutions.
+In this experiment, we just evaluate the use of four antipatterns. However, several antipatterns could be applied.  The common representation and the strategies used for crossover and neighborhood operators need of a better design, using an abstraction pattern to contemplate a major number of possible solutions.
 \item Conclusion Validity:
 The Tower Babel antipattern was not excluded by the metaheuristics used in the experiment, requiring new studies with new approaches and experiments.
 \end{itemize}
@@ -1574,7 +1574,23 @@ Among the future works of the research, new experiments should be performed comp
 
 \chapter{Search-based stress testing using multi-objective heuristics}
 
-This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
+This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics makes it possible to create a model that performs search-based stress tests with  two distinct objectives. 
+
+The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
+
+From the results of the experiments, we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective heuristic in conjunction with the HybridQ algorithm. The chapter presents the adaptions implemented in three algorithms (SEDR, HybridQ and MOEA/D),four evaluation experiments and a survey applied in a non-functional test team. 
+
+\section{SEDR, HybridQ and MOEA/D adaptions}
+
+The experiments uses a customized version of the SEDR algorithm for noise reduction. The algorithm runs as long as each workload has at least 3 samples or the SEDR condition is satisfied for all workloads ( Figure \ref{fig:sedrcustomized} - \ding{202}). The algorithm add all workloads in OUTLIERS list to the list of execution ( Figure \ref{fig:sedrcustomized} - \ding{203}). All workloads are performed and the SEDR condition is verified  ( Figure \ref{fig:sedrcustomized} - \ding{204} and \ding{205} ). If the SEDR condition is satisfied the workload is removed from OUTLIERS list ( Figure \ref{fig:sedrcustomized} - \ding{206}) otherwise the workload is included in the list if it is no longer present ( Figure \ref{fig:sedrcustomized} - \ding{207}). 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{./images/suspectlist.png}
+\caption{SEDR customized algorithm}
+\label{fig:sedrcustomized}
+\end{figure}
+
 
 \begin{figure}[!h]
 
@@ -1585,9 +1601,21 @@ This chapter present experiments to assert the benefits of multiobjective metahe
 \end{figure}
 
 
+
+We propose a collaborative hybrid algorithm that uses MOEA/D and HybridQ. The approach consists of each algorithm share our best individuals with each other. Fig. \ref{fig:co2} presents the simple adaptations included in the algorithms that uses the best individuals found by each algorithm.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/collaborative2.png}
+\caption{Use of the  algorithms collaboratively}
+\label{fig:co2}
+\end{figure}
+
+
+
 \section{Experiment with multi-object NSGA-II algorithm}
 
-In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 miliseconds.  The whole process of stress  tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
+In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 miliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
 
 
 \begin{itemize}
@@ -1693,7 +1721,7 @@ In this work, we just evaluate the use of one multi-objective algorithm. However
 \subsection{Experiment Conclusion}
 
 
-The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was extended.  One experiment was conducted to validate the proposed approach. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The whole process of stress  tests, which ran for 3 days and 492 executions, was carried out without the need for monitoring by a test designer.  The experiment found 9 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
+The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. One experiment was conducted to validate the proposed approach. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The experiment found 8 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
 
 \section{Comparative experiment of Multi-Objective algorithms with Noise Reduction}
 
@@ -1707,7 +1735,7 @@ In this section,  we present the experimental results,  in which we carried out 
 \item MOEAD
 \end{itemize}
 
-The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 4 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, We adopted the use of a noise reduction strategy in a new test cycle.
+The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. \ref{fig:outliers} presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, we adopted the use of a noise reduction strategy in a new test cycle. The hypervolume metric was used to compare the algorithms. We used the emoa package of the R language to calculate the hypervolume.
 
 \begin{figure}[!h]
 \centering
@@ -1716,14 +1744,6 @@ The experiment was conducted with the JPetStore application in two cycles with o
 \label{fig:outliers}
 \end{figure}
 
-The experiments uses a customized version of the SEDR algorithm for noise reduction. The algorithm runs as long as each workload has at least 3 samples or the SEDR condition is satisfied for all workloads ( Figure \ref{fig:sedrcustomized} - \ding{202}). The algorithm add all workloads in OUTLIERS list to the list of execution ( Figure \ref{fig:sedrcustomized} - \ding{203}). All workloads are performed and the SEDR condition is verified  ( Figure \ref{fig:sedrcustomized} - \ding{204} and \ding{205} ). If the SEDR condition is satisfied the workload is removed from OUTLIERS list ( Figure \ref{fig:sedrcustomized} - \ding{206}) otherwise the workload is included in the list if it is no longer present ( Figure \ref{fig:sedrcustomized} - \ding{207}). The hypervolume metric was used to compare the algorithms. We used the emoa package of the R language to calculate the hypervolume.
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.6\textwidth]{./images/suspectlist.png}
-\caption{SEDR customized algorithm}
-\label{fig:sedrcustomized}
-\end{figure}
 
 \subsection{Experiment Research Questions}
 
@@ -1827,7 +1847,7 @@ The multi-objective with  higher value of hypervolume find the scenarios with hi
 
 \subsection{Threats to Validity}
 
-The nondeterministic nature of the problem does not guarantee that the same pareto frontier will be found in different test executions. The workloads found by the MOEA/D algorithm  do not dominante all the workloads found by the others algorithms.
+Due to the nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions. The workloads found by the MOEA/D algorithm  do not dominante all workloads found by all others algorithms.
 
 \section{A Survey Study of use of Multi-Objective Algorithms in Search-based Stress testing}
 
@@ -1842,7 +1862,7 @@ At the beginning of the experiment, the test designers had brief guidelines for 
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[h]
 \centering
-\caption{Question 1}
+\caption{Survey of use of Multi-Objective Algorithms - Question 1}
 \label{tab:question1}
 \begin{tabular}{|l|l|}
 \hline
@@ -1864,7 +1884,7 @@ The second question asks if there is an improvement in the use of search-based s
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[h]
 \centering
-\caption{Question 2}
+\caption{Survey of use of Multi-Objective Algorithms - Question 2}
 \label{tab:question2}
 \begin{tabular}{|l|l|}
 \hline
@@ -1887,7 +1907,7 @@ The third question asks if the IAdapter tool  found an important test usually no
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[h]
 \centering
-\caption{Question 3}
+\caption{Survey of use of Multi-Objective Algorithms - Question 3}
 \label{my-label}
 \begin{tabular}{|l|l|}
 \hline
@@ -1960,9 +1980,9 @@ Fig. \ref{fig:singlewithmulti} presents the result of the experiment. Most of th
 \label{fig:singlewithmulti}
 \end{figure}
 
-\section{Collaborative approach between HybridQ and MOEA/D}
+\section{Experiment with HybridQ and MOEA/D Collaborative approach}
 
-This section presents a collaborative approach using HybridQ and MOEA/D. The propose consist of each algorithm share our best individuals with each other. A new experiment was performed to evaluate the proposed apporach. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 28 previously established  generations by the algorithm.
+This section presents an experiment with to evaluate the collaborative approach using HybridQ and MOEA/D. The propose consist of each algorithm share our best individuals with each other. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
 
 \begin{figure}[h]
 \centering
@@ -1985,11 +2005,11 @@ The independent variable is the collaborative approach of the algorithms HybridQ
 
 \subsection{Experiment Results}
 
-At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. 
+At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. The new approach obtain a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} presents 6 workloads that which are the pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds.
 
 \subsection{Experiment Conclusion}
 
-The new approach obtain a hypervolume of 10.84 at the end of 50 generations. The solution found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds. The results presented by the new approach in the experiment surpass previous approaches for the same number of generations.
+The results presented by the new approach in the experiment surpass previous approaches for the same number of generations.
 
 
 % Please add the following required packages to your document preamble:
@@ -1998,7 +2018,7 @@ The new approach obtain a hypervolume of 10.84 at the end of 50 generations. The
 \begin{table}[!h]
 \centering
 \caption{Experiment Results}
-\label{tab:results}
+\label{tab:results2}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
 \rowcolor[HTML]{C0C0C0}
@@ -2015,7 +2035,9 @@ The new approach obtain a hypervolume of 10.84 at the end of 50 generations. The
 \section{Conclusion}
 
 
-The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established level of service.
+The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when comparesd with NSGA II, SPEA2 and PAES. The MOEA / D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. Thus, we propose the collaborative use of  MOEA/D and HybridQ algorithms.  The collaborative approach improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
+
+For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions.
 
 
 % conference papers do not normally have an appendix
@@ -2055,29 +2077,48 @@ This chapter presents our conclusions, revisits the contributions, shows some li
 
 In this thesis we deal with the use of hybrid metaheuristics, reinforcement learning and multi-objective metaheuristics in Search-based stress testing. A tool named IAdapter (\url{github.com/naubergois/newiadapter}), a JMeter plugin for performing search-based load tests, was developed. Several experiments were conducted to validate the proposed approach.
 
-\section{Summary of contributions}
+\section{Summary of contributions and Achievements}
+
+
+First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid algorithm uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to perform performance, load, and stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach when compared with the other algorithms. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool \cite{Gois2016}. 
+
+
+The thesis hypothesis $H3_{1}$ was satisfied taking into account that the scenarios found in the experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hipothesis $H4_{1}$ was partially satisfied since tests with all the approaches related to the state-of-art could not be compared. The algorithm surpassed the approaches that use genetic algorithms, tabu search and simulated annealing. 
 
 
 
+In order to improve the efficiency of our proposal, we use the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because q-learning. The reasearch has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtain the best fitness value with minor number of requests. 
 
 
-The main contributions of this research are as follows: The presentation of a hybrid metaheuristic using Q-learning  approach for use in stress tests; the development of a Testbed tool the development of a JMeter plugin  for search-based tests and  the automation of the stress test execution process.
-
-\section{Achievements}
-
-Two experiments were performed to validate the hybrid metaheuristic,two experiments were conducted to validate the testbed tool and two experiments where conducted to validate the hybridQ metaheuristic. The experiments uses genetic, algorithms, tabu search and simulated annealing.
-
-In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The significant level adopted was 0.05. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach.
-
-The second and third experiments ran for 17 generations. The experiments used an initial population of 4 individuals by metaheuristic. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool. In both experiments the hybridQ metaheuristic returned individuals with higher fitness scores. However, the Hybrid metaheuristic made twice as many requests than Tabu Search to overcome it. The SA algorithm obtained the worst fitness values. The algorithm initially used a scenario with an antipattern and found neighbors that still using the antipatterns over the 17 generations of the experiment.
-
-In the second experiment the metaheuristics converged to scenarios with an happy path, excluding the scenarios with the use of an antipatterns.The first individual has 153 users on Happy Scenario 2, 16 users on Happy Scenario 1 and a response time of 13 seconds. None of the four best individuals has one of the antipatterns used in the experiment.
+The thesis hypothesis $H5_{1}$ was satisfied taking into account that the experiment reveal that the best solutions found by the new
+Hybrid q-learning approach were on average 5.98\% better than that achieved by our previous Hybrid approach without q-learning
 
 
-In the third experiment,  the metaheuristics converged to scenarios with an happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing antipattern.  The individual with best fitness value has 121 users on Happy Scenario 2, 171 users on Happy Scenario 1 and a response time of 11 seconds. None of the four best individuals has one of the antipatterns used in the experiment.
+We also proposed the use of multi-objective algorithms in search-based stress testing. To this end we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. Several experiments were performed to evaluate the proposed approaches. The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
 
+The thesis hypothesis $H1_{1}$ was satisfied taking into account that the scenarios found in the multi-objective experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hipothesis $H2_{1}$ was partially satisfied since all the previous approaches in search-based tests do not present a pareto frontier, because studies are needed to comparing the present approach with others such as model-based or FOREPOST tests.
 
-In the fourth experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established. The small number of samples of the experiment is insufficient to give a statistical significance to the results of the Wilcoxon procedure. However, it is noted that, in four of six generations, the collaborative approach presented the best values. The experiment succeeded in finding 29 individuals whose maximum time expected by the application was obtained.
+Table \ref{conclusion} present the thesis hypotheses and obtained results.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\caption{Thesis hypotheses}
+\label{conclusion}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\textbf{Metaheuristic}                                                                                         & \textbf{Hypotheses}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       & \begin{tabular}[c]{@{}l@{}}H1: the multi-objective metaheuristics found\\  relevant test results to the SLA definition.\end{tabular}                                                                                                                                         & Satisfied                \\ \cline{2-3} 
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Multiobjective}}                                              & \begin{tabular}[c]{@{}l@{}}H2: The multi-objective metaheuristics \\ proposed approach found more relevant test results \\ than the state-of-art approaches of the area.\end{tabular}                                                                                        & Partially satisfied      \\ \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       & \begin{tabular}[c]{@{}l@{}}H3: The hybrid metaheuristics found relevant test \\ results to the SLA definition.\end{tabular}                                                                                                                                                  & Satisfied                \\ \cline{2-3} 
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Hybrid}}                                                      & \begin{tabular}[c]{@{}l@{}}H4: The hybrid metaheuristics proposed approach \\ found more relevant test results than\\  the state-of-art approaches of the area.\end{tabular}                                                                                                 & Partially satisfied      \\ \hline
+\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Hybrid + \\ Reinforcement \\ Learning\end{tabular}} & \begin{tabular}[c]{@{}l@{}}H5: The use of hybrid algorithm with reinforcement \\ learning optimize the choice of neighboring \\ solutions to explore, reducing the time needed to obtain\\  the scenarios with the longest response \\ time in the application.\end{tabular} & Satisfied                \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Open Issues and Future Works}
 
