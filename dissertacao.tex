@@ -1151,7 +1151,7 @@ Table \ref{fig:gened} presents the percentage of genes in all test scenarios by 
 
 \subsection{Third Experiment: AntiPatterns}
 
-In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two phases in order to verify the effectiveness of the hybrid algorithm. Each experiment use two different antipatterns and happy scenarios. The experiment ran for 17 generations. The experiments used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiments uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiments, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected.
+In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  The first step uses The Ramp and Circuitous Treasure Hunt antipattern. The second step uses The Tower Babel and Unbalanced Processing antipattern. Each step use two different antipatterns and happy scenarios. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
 \subsection{Experiment Research Questions}
 
@@ -1172,7 +1172,7 @@ With regard to the antipatterns found by hybrid metaheuristic:
 \item $H_{1}$  : the best workloads found in the experiments do not contain antipatterns.
 \end{itemize}
 
-\subsection{The Ramp and Circuitous Treasure Hunt experiment}
+\subsection{The Ramp and Circuitous Treasure Hunt step}
 
 The experiment was carried out for 8 continuous hours.  All tests in the experiment were conducted without the need of a tester, automating the process of executing and designing performance test scenarios.In this experiment, Scenarios were generated with the Ramp and Circuitous Treasure antipattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios. Figure \ref{fig:boxplot1} present the fitness value obtained by each metaheuristic.
 
@@ -1204,7 +1204,7 @@ Hybrid & 16 & 143 & 426740 & Happy 1 \& 2
 
 
 
-\subsection{The Tower Babel  and Unbalanced Processing}
+\subsection{The Tower Babel  and Unbalanced Processing step}
 
 
 The experiment was carried out for 6 continuous hours. In this experiment, Scenarios were generated with Tower Babel and Unbalanced Processing antipattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios.
@@ -1259,10 +1259,7 @@ In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was
 
 In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established.
 
-There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is difficult to ensure that the execution times generated in the experiments represents global optimum. More experimentation is also required to determine the
-most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process.
-
-Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight
+The third experiment was conducted to validate the use of antipatterns with Hybrid algorithm. The experiments use genetic, algorithms, tabu search, simulated annealing and the hybrid algorithm.  We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  In the first step, none of the best workloads has one of the antipattern scenarios. In the second step,  the metaheuristics converged to scenarios with an happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing antipattern. In both experiments the hybrid metaheuristic returned individuals with higher fitness scores. 
 
 
 \chapter{Stress Search-based Testing using HybridQ approach}
@@ -1557,17 +1554,7 @@ In this work, we just evaluate the use of single objective algorithm. However, s
 
 \section{Conclusion}
 
-The present study extends the article "Improving stress search based testing using a hybrid metaheuristic approach" in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search for application failures One experiment was conducted to validate the proposed approach. The experiments use genetic algorithms, tabu search, simulated annealing, the hybrid approach and the hybridQ algorithm. The experiment ran for 17 generations. The experiment used an initial population of 5 individuals by metaheuristics. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool.  HybridQ found the individuals with a greater response time. The scenario with greater fitness has 38 users with the Search Page, Add to Cart feature, Removing Item and Main Page features. GA is the algorithm that obtain the best fitness value with minor number of requests. All algorithms consume the same time of test (6 hours). There is a range of future improvements in the proposed approach:
-
-\begin{itemize}
-\item Also as a typical search strategy, it is difficult to ensure that the execution times generated in the experiments represent global optimum. 
-\item More experimentation is also required to determine the most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process. 
-\item The fitness approach of the Gois et al. solution are based on two conflict measures: number of users and execution time. A multi-objective algorithm should be more adequate. 
-\item It is necessary to compare the current approach with the constraint programming approaches presented in the state of art.
-
-\end{itemize}
-
-Among the future works of the research, new experiments should be performed comparing the proposed approach with the use of constraint programming. New research with multi-objective heuristic algorithms must be performed.
+The present study extends the article "Improving stress search based testing using a hybrid metaheuristic approach" in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search for application failures One experiment was conducted to validate the proposed approach. The experiments use genetic algorithms, tabu search, simulated annealing, the hybrid approach and the hybridQ algorithm. The experiment ran for 17 generations. The experiment used an initial population of 5 individuals by metaheuristics. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool.  HybridQ found the individuals with a greater response time. The scenario with greater fitness has 38 users with the Search Page, Add to Cart feature, Removing Item and Main Page features. GA is the algorithm that obtain the best fitness value with minor number of requests. All algorithms consume the same time of test (6 hours). 
 
 
 \FloatBarrier
@@ -2123,7 +2110,9 @@ Table \ref{conclusion} present the thesis hypotheses and obtained results.
 \section{Open Issues and Future Works}
 
 There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is difficult to ensure that the execution times generated in the experiments represents global optimum. More experimentation is also required to determine the
-most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process.
+most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process. 
+
+For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions.
 
 
 Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight.
