@@ -1,6 +1,6 @@
 \select@language {english}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces An example of neighborhood for a permutation \cite {Talbi2013}.\relax }}{36}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Categories of metaheuristc combinations \cite {Puchinger2005} \relax }}{39}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Categories of metaheuristic combinations \cite {Puchinger2005} \relax }}{39}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces An optimized Pareto front example\relax }}{40}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces NSGA-II Algorithm\relax }}{43}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Comparison between SPEA-2 and NSGA-II \cite {Deb2005}\relax }}{45}
@@ -18,7 +18,7 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Average, median, maximum and minimal fitness value by Search Method\relax }}{73}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Finesse value by generation in all tests\relax }}{74}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Markov Decision Process used by HybridQ\relax }}{78}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces HybridQ NeighborHood Service\relax }}{80}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces HybridQ Neighborhood Service\relax }}{80}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Maximum fitness value by number of requests\relax }}{85}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces SEDR customized algorithm\relax }}{88}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Flowchart of implemented algorithms\relax }}{89}
@@ -30,7 +30,9 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces SPEA2 Pareto Frontier\relax }}{97}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces PAES Pareto Frontier\relax }}{97}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{100}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Colaborative approach Pareto Frontier\relax }}{101}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{101}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{103}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{104}
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Load, Performance and Stress Test Process \cite {Jiang2010}\cite {Erinle2013}\relax }}{121}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces TPC-W architecture \cite {MohammadS.Obaidat} \cite {Menasce2002a}\relax }}{128}
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Load Runner Scripting\relax }}{129}

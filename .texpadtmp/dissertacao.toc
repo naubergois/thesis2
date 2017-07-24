@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {4.4}Experiments with Hybrid Algorithm}{66}
 \contentsline {subsection}{\numberline {4.4.1}First Experiment: Emulated Class Test}{67}
 \contentsline {subsection}{\numberline {4.4.2}Second Experiment: Moodle Application Test}{68}
-\contentsline {subsection}{\numberline {4.4.3}Third Experiment: AntiPatterns}{70}
+\contentsline {subsection}{\numberline {4.4.3}Third Experiment: Antipatterns}{70}
 \contentsline {subsection}{\numberline {4.4.4}Experiment Research Questions}{72}
 \contentsline {subsection}{\numberline {4.4.5}Variables}{72}
 \contentsline {subsection}{\numberline {4.4.6}Experiment Hypotheses}{72}
@@ -87,9 +87,11 @@
 \contentsline {section}{\numberline {6.6}Experiment with HybridQ and MOEA/D Collaborative approach}{100}
 \contentsline {subsection}{\numberline {6.6.1}Experiment Research Questions}{101}
 \contentsline {subsection}{\numberline {6.6.2}Variables}{101}
-\contentsline {subsection}{\numberline {6.6.3}Experiment Results}{102}
-\contentsline {subsection}{\numberline {6.6.4}Experiment Conclusion}{102}
-\contentsline {section}{\numberline {6.7}Conclusion}{102}
+\contentsline {subsection}{\numberline {6.6.3}Experiment Hypotheses}{101}
+\contentsline {subsection}{\numberline {6.6.4}Experiment Results}{102}
+\contentsline {subsection}{\numberline {6.6.5}Experiment Conclusion}{102}
+\contentsline {section}{\numberline {6.7}Analysis of Pareto Frontier in Multiple Executions}{102}
+\contentsline {section}{\numberline {6.8}Conclusion}{103}
 \contentsline {chapter}{\numberline {7}Conclusion}{105}
 \contentsline {section}{\numberline {7.1}Summary of contributions and Achievements}{105}
 \contentsline {section}{\numberline {7.2}Open Issues}{107}

@@ -99,7 +99,9 @@ framexleftmargin=20pt
 \begin{quote} 
 \centering 
     Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning. 
+    (Albert Einstein)
 \end{quote}
+
 \vspace*{\fill}
 
 
@@ -144,7 +146,7 @@ Automation of testing is a crucial concern. Through
 automation, large-scale thorough testing can become
 practical and scalable. However, the automated generation of test cases presents challenges. The general problem involves finding a (partial) solution to the path sensitization problem. That is, the problem of finding an input to drive the software down a chosen path \cite{Harman2010} \cite{dean2003managing}.
 
-Software performance is a pervasive quality, because it is affected by every aspect of the design, code, and execution environment. Performance failures occur when a software product is unable to meet its overall objectives due to inadequate performance. Such failures negatively impact the projects by increasing costs, decreasing revenue or both \cite{Vetoio2011}. Stress testing of enterprise applications is manual,laborious, costly, and not particulary effective. When running many different test cases and observing application’s behavior, testers intuitively sense that there are certain properties of test cases that are likely to reveal performance bugs \cite{Grechanik2012}. Manual analysis of load testing is inefficient and error prone due to limited knowledge of test analyst about system under test \cite{Arslan2015}.
+Software performance is a pervasive quality, because it is affected by every aspect of the design, code, and execution environment. Performance failures occur when a software product is unable to meet its overall objectives due to inadequate performance. Such failures negatively impact the projects by increasing costs, decreasing revenue or both \cite{Vetoio2011}. Stress testing of enterprise applications is manual,laborious, costly, and not particularly effective. When running many different test cases and observing application’s behavior, testers intuitively sense that there are certain properties of test cases that are likely to reveal performance bugs \cite{Grechanik2012}. Manual analysis of load testing is inefficient and error prone due to limited knowledge of test analyst about system under test \cite{Arslan2015}.
 
 Typically, stress testing is accomplished using test scripts, which are programs that test designers write to automate testing. These test scripts performs actions or mimicking user actions on GUI objects of the system to feed input data. Current approaches to load testing suffer from limitations. Their cost-effectiveness is highly dependent on the particular test scenarios that are used yet there is no support for choosing those scenarios. A poor choice of scenarios could lead to underestimating system response time thereby missing an opportunity to detect a performance \cite{Grechanik2012}.
 
@@ -210,7 +212,7 @@ With regard to the result of tests using hybrid metaheuristics with reinforcemen
 
 
 
-The purpose of this thesis is to show the validity of this hypotheses through the development of a testbed tool, algorithms that use hybrid metaheuristics,Q-learning and multi-objective metaheuristics. This thesis will be useful for stress test practitioners and software engineering researchers interested in large-scale testing software systems.
+The purpose of this thesis is to show the validity of this hypotheses through the development of algorithms that use hybrid metaheuristics,reinforcement learning and multi-objective metaheuristics. This thesis will be useful for stress test practitioners and software engineering researchers interested in large-scale testing software systems.
 
 
 \section{Contributions}
@@ -257,7 +259,7 @@ The remainder of this thesis is organized as follows:
 
 \chapter{Metaheuristics and Reinforcement Learning}
 
-This chapter presentes concepts and definitions essentials to understanding considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
+This chapter presents concepts and definitions essentials to understanding considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
 
 \section{Metaheuristics}
 
@@ -384,7 +386,7 @@ There are two main categories of metaheuristic combinations: collaborative combi
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{./images/metaheuristc2.png}
-\caption{Categories of metaheuristc combinations \cite{Puchinger2005} }
+\caption{Categories of metaheuristic combinations \cite{Puchinger2005} }
 \label{fig:metaheuristc}
 \end{figure}
 
@@ -416,7 +418,7 @@ spread along the Pareto frontier.
 
 The approximation of the Pareto-optimal set involves itself two objectives: minimize the distance to the optimal front and maximize the diversity of the generated solutions. There are two fundamental issues when designing a multiobjective evolutionary algorithm: mating selection and environmental selection. The first issue is related to the question of how to guide the search towards the Pareto-optimal front. The procedure to fill the mating pool is usually randomized. The second issue is related with the question of which individuals to keep during the evolution process. In most modern EMO algorithms these two concepts are realized in the following way: Environmental selection or Mating selection \cite{Zitzler2001}.
 
-In  Environmental selection, an archive is maintained which contains a representation of the nondominated front among all solutions considered so far. A member of the archive is only removed if i) a solution has been found that dominates it or ii) the maximum archive size is exceeded and the portion of the front where the archive member is located is overcrowded \cite{Zitzler2001}.
+In  Environmental selection, an archive is maintained which contains a representation of the non-dominated front among all solutions considered so far. A member of the archive is only removed if i) a solution has been found that dominates it or ii) the maximum archive size is exceeded and the portion of the front where the archive member is located is overcrowded \cite{Zitzler2001}.
 
 In Mating selection, the pool of individuals is evaluated in two phases. First all individuals are compared on the basis of the Pareto dominance. Basically, the information which individuals each individual dominates, is dominated by or is indifferent to is used to define a ranking on the generation pool. Afterwards, this ranking is refined by the incorporation of density information. Various density estimation techniques are used to measure the size of the niche in which a specific individual is located \cite{Zitzler2001}.
 
@@ -451,7 +453,7 @@ However, not all fronts can be included in the new population. Thus, Deb et al. 
 
 \subsubsection{SPEA2: Improving the Strength Pareto Evolutionary Algorithm}
 
-SPEA uses a regular population and an archive. Starting with an initial population and an empty archive the following steps are performed per iteration. First, all nondominated population members are copied to the archive; any dominated individuals or duplicates are removed. If the size of the updated archive exceeds a predefined limit, further archive members are deleted by a clustering technique which preserves the characteristics of the nondominated front. Afterwards, fitness values are assigned to both archive and population members. Each individual i in the archive is assigned a strength value S(i) $\in$ [0, 1], which at the same time represents its fitness value F(i). 0 indicates a non-dominated individual,whereas a high value points out that the individual is dominated by many other ones. S(i) is the number of population members j that are dominated by or equal to i with respect to the objective values, divided by the population size plus one. The algorithmic framework of SPEA2 is described in Alg. \ref{spea2}. An initial population $P_{0}$ and an initial archive are created. The fitness value of all individuals are calculated in population and in the archive (external set). All nondominated individual are copied to the new archive. Finally, the algorithm select the individual using a tournament selection \cite{Zitzler2001} \cite{Tervonen2017} \cite{MatneiFilho2016}.
+SPEA uses a regular population and an archive. Starting with an initial population and an empty archive the following steps are performed per iteration. First, all non-dominated population members are copied to the archive; any dominated individuals or duplicates are removed. If the size of the updated archive exceeds a predefined limit, further archive members are deleted by a clustering technique which preserves the characteristics of the non-dominated front. Afterwards, fitness values are assigned to both archive and population members. Each individual i in the archive is assigned a strength value S(i) $\in$ [0, 1], which at the same time represents its fitness value F(i). 0 indicates a non-dominated individual,whereas a high value points out that the individual is dominated by many other ones. S(i) is the number of population members j that are dominated by or equal to i with respect to the objective values, divided by the population size plus one. The algorithmic framework of SPEA2 is described in Alg. \ref{spea2}. An initial population $P_{0}$ and an initial archive are created. The fitness value of all individuals are calculated in population and in the archive (external set). All non-dominated individual are copied to the new archive. Finally, the algorithm select the individual using a tournament selection \cite{Zitzler2001} \cite{Tervonen2017} \cite{MatneiFilho2016}.
 
 \begin{algorithm}[h]
   \caption{SPEA2 Algorithm \cite{Zitzler2001}}\label{spea2}
@@ -465,21 +467,21 @@ SPEA uses a regular population and an archive. Starting with an initial populati
     \State Set T to zero
     \State Calculate the fitness value of individuals in $P_{t}$
     \State Calculate the fitness value of individuals in $\overset{-}{P}_{t}$
-    \State Environmental Selection - Copy all nondominated individuals in $P_{t}$ and $\overset{-}{P}_{t}$  to $\overset{-}{P}_{t+1}$
+    \State Environmental Selection - Copy all non-dominated individuals in $P_{t}$ and $\overset{-}{P}_{t}$  to $\overset{-}{P}_{t+1}$
     \If {size of  $\overset{-}{P}_{t+1}$ exceeds  $ \overset{-}{N}$ }
     \State reduce  $\overset{-}{P}_{t+1}$ by means of truncation operator
     \ElsIf { size of  $\overset{-}{P}_{t+1}$ less than  $\overset{-}{N}$ }
     \State fill $\overset{-}{P}_{t+1}$ with dominated individuals in $P_{t}$ and $\overset{-}{P}_{t}$
     \EndIf
     \If {t $\gg$ T or another stopping criterion is satisfied }
-    \State set A to the set of decision vectors represented by nondominated individuals in $\overset{-}{P}_{t+1}$
+    \State set A to the set of decision vectors represented by non-dominated individuals in $\overset{-}{P}_{t+1}$
     \State Stop
     \EndIf
     \State Mating selection - Perform binary tournament selection with replacement on $\overset{-}{P}_{t+1}$ in order to fill the mating pool
   \end{algorithmic}
 \end{algorithm}
 
-The main differences between SPEA2 and NSGA-II are the diversity assignment and replacement. NSGA-II uses a fast non-dominated sorting algorithm and uses Pareto optimality levels as the primary criterion to select solutions. SPEA2 derives the strength of each solution from the number of other solutions it dominates. NSGA-II uses the crowding-distance to maintain a well-spread set of solutions whereas SPEA2 applies the k-nearest neighbor approach (Figure \ref{fig:speansga}) \cite{Tervonen2017} \cite{Deb2005}.
+The main differences between SPEA2 and NSGA-II are the diversity assignment and replacement. NSGA-II uses a fast non-dominated sorting algorithm and uses Pareto optimal levels as the primary criterion to select solutions. SPEA2 derives the strength of each solution from the number of other solutions it dominates. NSGA-II uses the crowding-distance to maintain a well-spread set of solutions whereas SPEA2 applies the k-nearest neighbor approach (Figure \ref{fig:speansga}) \cite{Tervonen2017} \cite{Deb2005}.
 
 
 \begin{figure}[h]
@@ -502,11 +504,11 @@ The main differences between SPEA2 and NSGA-II are the diversity assignment and 
 
 Pareto Archived Evolution Strategy(PAES) is an  evolutionary algorithm which employs
 local search for the generation of new candidate solutions but
-utilises population information in its selection procedure. The PAES algorithm was developed with two main objectives. The first of these was that the algorithm should be strictly confined to local search i.e. it should use a small change (mutation) operator only, and move from a current solution to a nearby neighbour. The second objective was that the algorithm should be a true Pareto optimiser, treating all nondominated solutions as having equal value \cite{Knowles1999}.
+utilises population information in its selection procedure. The PAES algorithm was developed with two main objectives. The first of these was that the algorithm should be strictly confined to local search i.e. it should use a small change (mutation) operator only, and move from a current solution to a nearby neighbour. The second objective was that the algorithm should be a true Pareto optimiser, treating all non-dominated solutions as having equal value \cite{Knowles1999}.
 
 In PAES one parent generates by mutation one
 offspring. The offspring is compared with the parent. If the offspring dominates the parent, the offspring is accepted as
-the next parent and the iteration continues. If the parent dominates the offspring, the offspring is discarded and the new mutated solution (a new offspring) is generated. If the offspring and the parent do not dominate each other, a comparison set of previously nondominated individuals is used \cite{Knowles1999}\cite{Oltean2005}. The algorithmic framework of PAES is described in Alg. \ref{paes}.
+the next parent and the iteration continues. If the parent dominates the offspring, the offspring is discarded and the new mutated solution (a new offspring) is generated. If the offspring and the parent do not dominate each other, a comparison set of previously non-dominated individuals is used \cite{Knowles1999}\cite{Oltean2005}. The algorithmic framework of PAES is described in Alg. \ref{paes}.
 
 
 \begin{algorithm}[h]
@@ -533,7 +535,7 @@ the next parent and the iteration continues. If the parent dominates the offspri
 
 \subsubsection{A Multiobjective Evolutionary Algorithm Based on Decomposition}
 
-The Multiobjective Evolutionary Algorithm Based on Decomposition (MOEA/D) is a multiobjective evolutionary algorithm competitive to other well-known multiobjective optimization evolutionary algorithms (MOEAs) such as NSGA-II or SPEA-2 \cite{Michalak2014}. MOEA/D decomposes a multiobjective optimization problem into a number of scalar optimization subproblems and optimizes them simultaneously. Each subproblem is optimized by only using information from its several neighboring subproblems, which makes MOEA/D have lower computational complexity at each generation than MOGLS and nondominated sorting genetic
+The Multiobjective Evolutionary Algorithm Based on Decomposition (MOEA/D) is a multiobjective evolutionary algorithm competitive to other well-known multiobjective optimization evolutionary algorithms (MOEAs) such as NSGA-II or SPEA-2 \cite{Michalak2014}. MOEA/D decomposes a multiobjective optimization problem into a number of scalar optimization subproblems and optimizes them simultaneously. Each subproblem is optimized by only using information from its several neighboring subproblems, which makes MOEA/D have lower computational complexity at each generation than MOGLS and non-dominated sorting genetic
 algorithm II (NSGA-II) \cite{Zhang2007}. 
 
 NSGA-II, SPEA2 and PAES algorithms  do not associate each individual solution with
@@ -541,7 +543,7 @@ any particular scalar optimization problem. In a scalar objective optimization p
 on their objective function values and the task of a scalar objective evolutionary algorithm (EA) is often to find one single
 optimal solution. MOEA/D explicitly decomposes the problem into scalar optimization subproblems.It solves these subproblems simultaneously by evolving
 a population of solutions. At each generation, the population is
-composed of the best solution found so far for each subproblem. The neighborhood relations among these subproblems are defined based on the distances between their aggregation coefficient vectors \cite{Zhang2007} \cite{McConaghy2011}. Fig. \ref{fig:moead} MOEA/D create a set of subproblems $W_{i}$. Each subproblem $W_{i}$ is improved to obtain the pareto frontier \cite{McConaghy2011}. 
+composed of the best solution found so far for each subproblem. The neighborhood relations among these subproblems are defined based on the distances between their aggregation coefficient vectors \cite{Zhang2007} \cite{McConaghy2011}. Fig. \ref{fig:moead} MOEA/D create a set of subproblems $W_{i}$. Each subproblem $W_{i}$ is improved to obtain the Pareto frontier \cite{McConaghy2011}. 
 
 
 \begin{figure}[h]
@@ -585,7 +587,7 @@ use of Tchebycheff approach as the decomposition method, with dynamical resource
 
 \subsubsection{Comparing Multi-Objective Metaheuristics}
 
-Deb states that are two orthogonals goals for any multi-objective algorithm \cite{deb2001multi}:
+Deb states that are two orthogonal goals for any multi-objective algorithm \cite{deb2001multi}:
 
 \begin{itemize}
 \item Identify solutions as close as possible  to the true Pareto frontier;
@@ -623,9 +625,9 @@ the objectives falls below a chosen threshold value \cite{Siegmund2013}. It was 
     \State \textbf{input :} Solution s
     \State Draw $b_{min}\ge 2$ initial samples of s, F(s)
     \State Calculate mean of the available fitness for each of the \textit{m} objectives: $\mu_{i}(s)$, i=1,...,m
-    \State Calculate standart desviation: $\sigma_{i}=\sqrt{ \frac{1}{n-1} \sum_{n}^{j=1} (F^i_{j}-\mu_{i}(s))^2} $
-    \State Calculate the standart error: $se_{i}(s)=\frac{\sigma_{i}}{\sqrt{n}}$
-    \State Calculate an aggregation og the standart errors $\overline{se}(s)$
+    \State Calculate standard deviation: $\sigma_{i}=\sqrt{ \frac{1}{n-1} \sum_{n}^{j=1} (F^i_{j}-\mu_{i}(s))^2} $
+    \State Calculate the standard error: $se_{i}(s)=\frac{\sigma_{i}}{\sqrt{n}}$
+    \State Calculate an aggregation of the standard errors $\overline{se}(s)$
     \State Stop if  $\overline{se}(s)$ > threshold or $b_{s}\ge b_{max}$ otherwise go to step 2
   \end{algorithmic}
 \end{algorithm}
@@ -635,7 +637,7 @@ SEDR noise reduction is used by this research in multi-objective scenarios exper
 
 \section{Reinforcement Learning}
 
-Reinforcement learning (RL) refers to both a learning problem and a subfield of machine learning. As a learning problem, it refers to learning to control a system so as to maximize some numerical value which represents a long-term objective. The basic idea of Reinforcement learning  is simply to capture the most important aspects of the real problem, facing a learning agent interacting with its environment to achieve a goal \cite{Sutton2012}. Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner needs to discover which actions yield the most reward by trying them \cite{Sutton2012}.
+Reinforcement learning (RL) refers to both a learning problem and a sub-field of machine learning. As a learning problem, it refers to learning to control a system so as to maximize some numerical value which represents a long-term objective. The basic idea of Reinforcement learning  is simply to capture the most important aspects of the real problem, facing a learning agent interacting with its environment to achieve a goal \cite{Sutton2012}. Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner needs to discover which actions yield the most reward by trying them \cite{Sutton2012}.
 
 A typical setting where
 reinforcement learning operates is shown in Figure \ref{fig:agentenv}: A controller receives the controlled
@@ -650,12 +652,12 @@ action which is sent back to the system.
 \label{fig:agentenv}
 \end{figure}
 
-In Reinforcement Learning, an agent wanders in an unknown environment and tries to maximize its long term return by performing actions and receiving rewards. The challenge is to understand how a current action will affect future rewards. A good way to model this task is with Markov Decision Processes (MDP). Markov decision processes (MDPs) provide a mathematical framework for modeling decision making. In Reinforcement Learning, all agents act in two phases: Exploration vs Explotation. In Exploration phase, the agents try to discover better action selections to improve its knowledge. In Exploitation phase, the agents try to maximize its reward, based on what is already know.
+In Reinforcement Learning, an agent wanders in an unknown environment and tries to maximize its long term return by performing actions and receiving rewards. The challenge is to understand how a current action will affect future rewards. A good way to model this task is with Markov Decision Processes (MDP). Markov decision processes (MDPs) provide a mathematical framework for modeling decision making. In Reinforcement Learning, all agents act in two phases: Exploration vs Exploitation. In Exploration phase, the agents try to discover better action selections to improve its knowledge. In Exploitation phase, the agents try to maximize its reward, based on what is already know.
 
 One of the challenges that arise from reinforcement learning is the trade-off between exploration and exploitation. To obtain a large reward, a reinforcement learning
 agent must prefer actions that it has tried in the past and found to be effective in producing reward. But to discover such actions, it has to try actions that it has not selected before. The agent has to exploit what it already knows in order to obtain a reward, but it also has to explore in order to make better action selections in the future.
 
-Q-learning is a model-free reinforcement learning technique. Q-learning is a multiagent learning algorithm that learns equilibrium policies in Markov games, just as Q-learning learns to optimize policies in Markov decision processes \cite{Greenwald2003}.
+Q-learning is a model-free reinforcement learning technique. Q-learning is a multi-agent learning algorithm that learns equilibrium policies in Markov games, just as Q-learning learns to optimize policies in Markov decision processes \cite{Greenwald2003}.
 
 Q-learning and related algorithms try to learn the optimal policy from its history of interaction with the environment. A history of an agent is a sequence of state-action-rewards.Where $s_{n}$ is a state, $a_{n}$ is an action and $r_{n}$ is a reward:
 
@@ -675,7 +677,7 @@ In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{
 
 \section{Summary}
 
-Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. opulation-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards.
+Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards.
 
 \chapter{Search-based Stress Testing}
 
@@ -730,7 +732,7 @@ The aim of the SBSE repository is to contain every SBSE paper. Although no repos
 \label{fig:sbsesbst}
 \end{figure}
 
-SBST has made many achievements, and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties, a topic that remains relatively under-explored, compared to structural testing.  Fig. \ref{fig:nonfunctional} shows the non-funtional SBST by year, data comes from the Harman et al., Afzal et al. and the SBSE repository \cite{Aleti2016} \cite{Harman2015}.
+SBST has made many achievements, and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties, a topic that remains relatively under-explored, compared to structural testing.  Fig. \ref{fig:nonfunctional} shows the non-functional SBST by year, data comes from the Harman et al., Afzal et al. and the SBSE repository \cite{Aleti2016} \cite{Harman2015}.
 
 
 \begin{figure}[h]
@@ -754,7 +756,7 @@ There are many kinds of non-functional search based tests  \cite{Afzal2009a}:
 
 There is a great difficulty in
 comparing some approaches present in the state of
-the art, due to the lack of availability of the tools used. The present research intends to compare the proposed approach with other methods based on the use of single or multiobjective metaheuristics.A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes \cite{Afzal2009a}.  Fig. \ref{fig:metabykind} shows a comparison between the range of metaheuristcs and the type of non-functional search based test.The Data comes from Afzal et al. \cite{Afzal2009a}. Afzal's work adds to some of the latest research in this area (\cite{Garousi2006} \cite{Garousi2010} \cite{DiAlesio2013} \cite{DiAlesio2014} \cite{Alesio2015} \cite{Gois2016}). The thesis focus is use  hybrid and multiobjective metaheuristics in Quality of Service and Execution Time tests (Search-based stress testing).
+the art, due to the lack of availability of the tools used. The present research intends to compare the proposed approach with other methods based on the use of single or multiobjective metaheuristics.A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes \cite{Afzal2009a}.  Fig. \ref{fig:metabykind} shows a comparison between the range of metaheuristics and the type of non-functional search based test.The Data comes from Afzal et al. \cite{Afzal2009a}. Afzal's work adds to some of the latest research in this area (\cite{Garousi2006} \cite{Garousi2010} \cite{DiAlesio2013} \cite{DiAlesio2014} \cite{Alesio2015} \cite{Gois2016}). The thesis focus is use  hybrid and multiobjective metaheuristics in Quality of Service and Execution Time tests (Search-based stress testing).
 
 
 \begin{figure}[h]
@@ -802,7 +804,7 @@ Wegener et al., 1996 and 1997 \\
 \end{tabular}
 \end{table}
 
-The studies can be grouped into two main groups: Search-Based Stress Tesing on Safety-critical systems or Search-Based Stress Testing on non Safety-critical systems.
+The studies can be grouped into two main groups: Search-Based Stress Testing on Safety-critical systems or Search-Based Stress Testing on non Safety-critical systems.
 
 
 \subsection{Search-Based Stress Testing on Safety-critical Systems}
@@ -817,7 +819,7 @@ The concurrent nature of embedded software makes  the order of external events t
 renders performance analysis and testing increasingly
 challenging. This aspect is reflected by the fact that most existing testing approaches target system functionality rather than performance \cite{DiAlesio2013}. Reactive real-time systems must react to external events within time constraints. Triggered tasks must execute within deadlines. Shousha develops a methodology for the derivation of test cases that aims at maximizing the chance of critical deadline misses \cite{shousha2003performance}.
 
-The main goal of Search-Based Stress testing of Safety-critical systems is finding a combination of inputs that causes the system to delay task completion to the greastest extent possible. The followed approaches use metaheuristics to discover the worst-case execution times. Wegener et al. \cite{Wegener1997} used GAs to search for input situations that produce very long or very short execution times. The fitness function used was the execution time of an individual measured in micro seconds \cite{Wegener1997}. Alander et al. \cite{Alander} performed experiments in a simulator environment to measure extreme response times of protection relay software using genetic algorithms. The fitness function used was the response time of the tested software. The results showed that GA generated more input cases with longer response times \cite{Alander}.
+The main goal of Search-Based Stress testing of Safety-critical systems is finding a combination of inputs that causes the system to delay task completion to the greatest extent possible. The followed approaches use metaheuristics to discover the worst-case execution times. Wegener et al. \cite{Wegener1997} used GAs to search for input situations that produce very long or very short execution times. The fitness function used was the execution time of an individual measured in micro seconds \cite{Wegener1997}. Alander et al. \cite{Alander} performed experiments in a simulator environment to measure extreme response times of protection relay software using genetic algorithms. The fitness function used was the response time of the tested software. The results showed that GA generated more input cases with longer response times \cite{Alander}.
 
 Wegener and Grochtmann performed a  experimentation
 to compare GA with random testing. The fitness function used was the execution duration measured in processor cycles.  The results showed that, with a large number of input parameters, GA obtained more extreme execution times with less or equal testing effort than random testing \cite{J.WegenerK.GrimmM.GrochtmannH.Sthamer1996} \cite{Wegener1998}. Gro et. al. \cite{Gross2000} presented a prediction model  which can be used to predict evolutionary testability. The research confirmed that there is a relationship between the complexity of a test object and the ability of a search algorithm to produce input parameters according to B/WCET \cite{Gross2000}. Briand et al. \cite{Briand2005} used GA to find the sequence of arrival times of events for aperiodic tasks, which will cause the greatest delays in the execution of the target task. A prototype tool named real-time test tool (RTTT) was developed to facilitate the execution of runs of a GA. Two case studies were conducted and results illustrated that RTTT was a useful tool to stress a system under test \cite{Briand2005}.
@@ -1174,7 +1176,7 @@ Table \ref{fig:gened} presents the percentage of genes in all test scenarios by 
 %\label{fig:gened}
 %\end{figure}
 
-\subsection{Third Experiment: AntiPatterns}
+\subsection{Third Experiment: Antipatterns}
 
 In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  The first step uses The Ramp and Circuitous Treasure Hunt antipattern. The second step uses The Tower Babel and Unbalanced Processing antipattern. Each step use two different antipatterns and happy scenarios. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
@@ -1290,7 +1292,7 @@ The third experiment was conducted to validate the use of antipatterns with Hybr
 \chapter{Stress Search-based Testing using HybridQ approach}
 
 
-This chapter presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.The research assumes that HybridQ is more expensive than Hybrid because q-learning. The reasearch has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. 
+This chapter presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.The research assumes that HybridQ is more expensive than Hybrid because q-learning. The research has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. 
 
 
 The solution, named HybridQ, uses the GA, SA and Tabu Search algorithms in a collaborative approach. Just like most reinforcement learning problems the proposed solution works in two different phases: exploration and exploitation. The following subsections show details of the exploration and exploitation phases and the integration between metaheuristics and the Q-Learning algorithm.
@@ -1350,7 +1352,7 @@ Algorithm \ref{hybridqexploration} shows the main steps of exploration phase. Th
 
  
 
-Unlike the traditional approach, The update of Q values for each action also occurs in the exploitation phase. The exploration phase ends when no value of Q equals zero for a state, ie, unlike the traditional approach an agent belonging to one state may be in the exploration phase while another agent may be in the explotation phase. Table \ref{pab:mdp} presents hypothetical Q-values for a test. In Table \ref{pab:mdp}, it can be observed that the agents in the Service Level state are in the exploitation phase because there is no other value of Q that equals to zero.
+Unlike the traditional approach, The update of Q values for each action also occurs in the exploitation phase. The exploration phase ends when no value of Q equals zero for a state, ie, unlike the traditional approach an agent belonging to one state may be in the exploration phase while another agent may be in the exploitation phase. Table \ref{pab:mdp} presents hypothetical Q-values for a test. In Table \ref{pab:mdp}, it can be observed that the agents in the Service Level state are in the exploitation phase because there is no other value of Q that equals to zero.
 
 
 % Please add the following required packages to your document preamble:
@@ -1371,7 +1373,7 @@ Phase                         & Exploration         & Exploration         \\
 Increment Users               & 0.2                 & 0.11                \\
 Reduce Users                  & 0.1                 & -0.2                \\
 \rowcolor[HTML]{F8FF00} 
-Phase                         & Explotation         & Explotation         \\
+Phase                         & Exploitation         & Exploitation         \\
 \rowcolor[HTML]{C0C0C0} 
 \textbf{Bellow Service Level} & \textbf{Scenario 1} & \textbf{Scenario 2} \\
 Increment Users               & 0.0                 & 0.2                 \\
@@ -1423,13 +1425,13 @@ The Q-learning algorithm is used by Tabu Search or Simulated Annealing to obtain
 \begin{figure}[h!]
 \center
 \includegraphics[width=0.6\textwidth]{./images/q-neighborservice.png}
-\caption{HybridQ NeighborHood Service}
+\caption{HybridQ Neighborhood Service}
 \label{fig:neighservice}
 \end{figure}
 
 \section{Experiment with HybridQ Algorithm}
 
-We conducted one experiment in order to verify the effectiveness of the HybridQ. The iterated racing procedure (irace) was applied as an automatic algorithm conguration tool for tunning metaheuristics parameters. Iterated racing is a generalization of the iterated F-race procedure to automatize the arduous task of configuring the parameters of an optimization algorithm \cite{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}. The best parameters obtaind from irace was a population size of 5 individuals, a crossover value of 0.7551, a mutation value of 0.7947, an elitism value of 0.5356 and the maximum number of iterations of 16. The experiment ran for 16 generations in an docker evinronment on a server with 16 Gb of memory and 500 Gb hard disk. The experiment used an initial population of 5 individuals by metaheuristics. The genetic algorithm used the top 4 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 79\% of the population on each generation. The experiments use tabu search, genetic algorithms, simulated annealing, the hybrid metaheuristic approach and the HybridQ approach. 
+We conducted one experiment in order to verify the effectiveness of the HybridQ. The iterated racing procedure (irace) was applied as an automatic algorithm conguration tool for tunning metaheuristics parameters. Iterated racing is a generalization of the iterated F-race procedure to automatize the arduous task of configuring the parameters of an optimization algorithm \cite{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}. The best parameters obtained from irace was a population size of 5 individuals, a crossover value of 0.7551, a mutation value of 0.7947, an elitism value of 0.5356 and the maximum number of iterations of 16. The experiment ran for 16 generations in an docker environment on a server with 16 Gb of memory and 500 Gb hard disk. The experiment used an initial population of 5 individuals by metaheuristics. The genetic algorithm used the top 4 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 79\% of the population on each generation. The experiments use tabu search, genetic algorithms, simulated annealing, the hybrid metaheuristic approach and the HybridQ approach. 
 
 
 The objective function applied is intended to maximize the response time of the scenarios being tested.  In these experiments, better fitness values coincide with finding scenarios with higher values of response time. A penalty is applied when the response time is greater than the  maximum response time expected. The experiment used the following fitness (goal) function:
@@ -1500,7 +1502,7 @@ The experiments use the follow application features:
 \begin{itemize}
 \item Main page: The main page of the application.
 \item Search item: The application searches a product.
-\item Product detail: The application shows  detais about one item product.
+\item Product detail: The application shows  details about one item product.
 \item Add to Cart: The application adds a product to shopping cart.
 \item View Cart:The application displays the shopping cart.
 \item Remove Item: The application remove item from shopping cart. 
@@ -1553,7 +1555,7 @@ Figure \ref{fig:experiment1} presents the number of requests by maximum fitness 
 \end{figure}
 
 
-The t-Test and Wilcoxon Rank Sum Test was applied using the R language. The test results show that HybridQ and HybriD algorithms is superior than GA, Tabu Search and Simulated Annealing with p < 0.02. t-Test shows that the mean of HybridQ fitness value is superior than Hybrid.
+The t-Test and Wilcoxon Rank Sum Test was applied using the R language. The test results show that HybridQ and HybridQ algorithms is superior than GA, Tabu Search and Simulated Annealing with p < 0.02. t-Test shows that the mean of HybridQ fitness value is superior than Hybrid.
 
 \begin{lstlisting}
 	Welch Two Sample t-test
@@ -1579,7 +1581,7 @@ In this work, we just evaluate the use of single objective algorithm. However, s
 
 \section{Conclusion}
 
-The present study extends the article "Improving stress search based testing using a hybrid metaheuristic approach" in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search for application failures One experiment was conducted to validate the proposed approach. The experiments use genetic algorithms, tabu search, simulated annealing, the hybrid approach and the hybridQ algorithm. The experiment ran for 17 generations. The experiment used an initial population of 5 individuals by metaheuristics. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool.  HybridQ found the individuals with a greater response time. The scenario with greater fitness has 38 users with the Search Page, Add to Cart feature, Removing Item and Main Page features. GA is the algorithm that obtain the best fitness value with minor number of requests. All algorithms consume the same time of test (6 hours). 
+The present study extends the article "Improving stress search based testing using a hybrid metaheuristic approach" in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search for application failures One experiment was conducted to validate the proposed approach. The experiments use genetic algorithms, tabu search, simulated annealing, the hybrid approach and the HybridQ algorithm. The experiment ran for 17 generations. The experiment used an initial population of 5 individuals by metaheuristics. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool.  HybridQ found the individuals with a greater response time. The scenario with greater fitness has 38 users with the Search Page, Add to Cart feature, Removing Item and Main Page features. GA is the algorithm that obtain the best fitness value with minor number of requests. All algorithms consume the same time of test (6 hours). 
 
 
 \FloatBarrier
@@ -1627,7 +1629,7 @@ We propose a collaborative hybrid algorithm that uses MOEA/D and HybridQ. The ap
 
 \section{Experiment with multi-object NSGA-II algorithm}
 
-In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 miliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
+In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. The experiment was conducted to validate the use of NSGA-II multiobjective algorithm with a real implemented application. The first attemps to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with high response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 milliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the follow application features:
 
 
 \begin{itemize}
@@ -1691,7 +1693,7 @@ The independent variable is the NSGA-II algorithm used in the test. The dependen
 
 \subsection{Results}
 
-Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results obtained in the experiment. The experiment found 9 optimal workloads (Pareto Frontier) that present a lower number of users with high response times. Workload number 1 with a single user accessing the dog scenario provided a response time of 245 miliseconds.  Workload number 2 with a single user accessing the dog scenario, 7 users accessing the Enter Catalog feature and 3 users in register functionality, provided a response time of 400 seconds.
+Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results obtained in the experiment. The experiment found 9 optimal workloads (Pareto Frontier) that present a lower number of users with high response times. Workload number 1 with a single user accessing the dog scenario provided a response time of 245 milliseconds.  Workload number 2 with a single user accessing the dog scenario, 7 users accessing the Enter Catalog feature and 3 users in register functionality, provided a response time of 400 seconds.
 
 
 
@@ -1747,7 +1749,7 @@ In this section,  we present the experimental results,  in which we carried out 
 \item MOEAD
 \end{itemize}
 
-The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. \ref{fig:outliers} presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, we adopted the use of a noise reduction strategy in a new test cycle. The hypervolume metric was used to compare the algorithms. We used the emoa package of the R language to calculate the hypervolume.
+The experiment was conducted with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. \ref{fig:outliers} presents the results of first cycle of executions. Several tests obtained response times higher than similar scenarios in other executions. After analyse the obtained results, We found that one of the reasons of higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, we adopted the use of a noise reduction strategy in a new test cycle. The hypervolume metric was used to compare the algorithms. We used the emoa package of the R language to calculate the hypervolume.
 
 \begin{figure}[!h]
 \centering
@@ -1771,7 +1773,7 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 \subsection{Experiment Hypotheses}
 
 \begin{itemize}
-\item With regard to multi-objective algorithms applied in the experiment and the test results:
+\item With regard to relevance of test results:
 \begin{itemize}
 \item $H_{0}$ (null hypothesis) : The multi-objective with  higher value of hypervolume don't find the scenarios with higher response time and lower number of users.
 \item $H_{1}$  : The multi-objective with  higher value of hypervolume find the scenarios with higher response time and lower number of users.
@@ -1779,7 +1781,7 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 \end{itemize}
 
 \begin{itemize}
-\item With regard to multi-objective algorithms applied in the experiment:
+\item With regard to hypervolume of multi-objective algorithms applied in the experiment:
 \begin{itemize}
 \item $H_{1}$  : MOEA/D is the algorithm with higher value of hypervolume in the experiments.
 \item $H_{2}$  : NSGA-II is the algorithm with higher value of hypervolume in the experiments.
@@ -1794,22 +1796,22 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 Table \ref{tab:hypervolume} shows the hypervolume value of each algorithm. For the hypervolume calculus, the values of number of users and response time were transformed to a same scale. The highest hypervolume algorithm was the MOEA/D. The test scenarios present in the Pareto frontier were:
 
 \begin{itemize}
-\item 1 user on Enter the Catalog scenario and response time of 18 miliseconds;
-\item 5 users and response time of 35 miliseconds (1 user on Dog scenario, 1 user on Register scenario, 1 user on Fish scenario and 1 user on Cart scenario);
-\item 22 users and response time of 788 miliseconds (3 users on AddRemoveCart scenario, 7 users on Fish scenario, 5 users on Cart scenario and 7 users on Register scenario);
-\item 72 users and response time of 1074 miliseconds (14 users on Fish scenario, 11 users on Register scenario, 11 users on Cart scenario, 19 users on Enter the Catalog scenario and 17 users on Dogs scenario)
+\item 1 user on Enter the Catalog scenario and response time of 18 milliseconds;
+\item 5 users and response time of 35 milliseconds (1 user on Dog scenario, 1 user on Register scenario, 1 user on Fish scenario and 1 user on Cart scenario);
+\item 22 users and response time of 788 milliseconds (3 users on AddRemoveCart scenario, 7 users on Fish scenario, 5 users on Cart scenario and 7 users on Register scenario);
+\item 72 users and response time of 1074 milliseconds (14 users on Fish scenario, 11 users on Register scenario, 11 users on Cart scenario, 19 users on Enter the Catalog scenario and 17 users on Dogs scenario)
 \item 89 users and response time of 1396 ( 8 users on Dogs scenario, 35 users on Cart scenario, 29 users on AddRemoveCart scenario, 7 users on Enter the Catalog scenario and 10 users on Fish scenario)
 
 \end{itemize}
 
-MOEA/D found two scenarios that approached the established service level for the experiment of 1000 miliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 miliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level. Figures \ref{fig:moeadnoise}, \ref{fig:paretofrontier2}, \ref{fig:spea2} and  \ref{fig:paes} present the pareto frontier for each algorithm.
+MOEA/D found two scenarios that approached the established service level for the experiment of 1000 milliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 milliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level. Figures \ref{fig:moeadnoise}, \ref{fig:paretofrontier2}, \ref{fig:spea2} and  \ref{fig:paes} present the Pareto frontier for each algorithm.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 \centering
-\caption{Hybervolume by algorithm with Noise Reduction}
+\caption{Hypervolume by algorithm with Noise Reduction}
 \label{tab:hypervolume}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -1859,13 +1861,13 @@ The multi-objective with  higher value of hypervolume find the scenarios with hi
 
 \subsection{Threats to Validity}
 
-Due to the nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions. The workloads found by the MOEA/D algorithm  do not dominante all workloads found by all others algorithms.
+Due to the non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions. The workloads found by the MOEA/D algorithm  do not dominate all workloads found by all others algorithms.
 
 \section{A Survey Study of use of Multi-Objective Algorithms in Search-based Stress testing}
 
 We conducted a survey study to evaluate the use of multi-objective algorithm by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. The team consists of 4 test designers from 36 to 39 years old. A test designer has 12 years of stress testing experience and 3 test designers has from 1 to 5 years of testing experience.
 
-The experiment took place in july of this year and consists of two stages. The first stage consisted of using the IAdapter tool by test designers. In the second stage the designers answered a set of questions to evaluate the applied techniques and the IAdapter tool. The initial proposal was evaluate the use the JMeter tool with and without the IAdapter plugin. However, the time available for the experiment was reduced due to the participation of test designers in some company projects, allowing the application of the experiment only with the IAdapter plugin. All the test designers who participated in the experiment already had previous experience of using the Apache JMeter tool.
+The experiment took place in July of this year and consists of two stages. The first stage consisted of using the IAdapter tool by test designers. In the second stage the designers answered a set of questions to evaluate the applied techniques and the IAdapter tool. The initial proposal was evaluate the use the JMeter tool with and without the IAdapter plugin. However, the time available for the experiment was reduced due to the participation of test designers in some company projects, allowing the application of the experiment only with the IAdapter plugin. All the test designers who participated in the experiment already had previous experience of using the Apache JMeter tool.
 
 At the beginning of the experiment, the test designers had brief guidelines for using IAdapter and the technique of search-based stress testing. After the initial orientations, the designers generated the initial population and started the tests. The experiment used the HybridQ and MOEA/D algorithms. The questionnaires had 3 objective questions using the Likert scale and two open questions related to the strengths and weaknesses of the applied techniques. The first question asks if there is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios.
 
@@ -1924,7 +1926,7 @@ The third question asks if the IAdapter tool  found an important test usually no
 \begin{tabular}{|l|l|}
 \hline
 \multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                                      \\ \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{\begin{tabular}[c]{@{}l@{}}The IAdapter tool found an important test not ussually\\ found by the testers\end{tabular}}} \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{\begin{tabular}[c]{@{}l@{}}The IAdapter tool found an important test not usually\\ found by the testers\end{tabular}}} \\ \hline
 \textbf{Response Item}                                                                            & \textbf{Number of answers}                                              \\ \hline
 \cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                                   & 0                                                                       \\ \hline
 \cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                            & 3                                                                       \\ \hline
@@ -1957,7 +1959,7 @@ Among the negative points cited by the test designers are:
 
 \section{Comparative Experiment between HybridQ and MOEA/D}
 
-This section presents the experimental results carried out to  compare the MOEA/D multi-objective with HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. 
+This section presents the experimental results carried out to  compare the MOEA/D multi-objective with HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 days and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. 
 
 \subsection{Experiment Research Questions}
 
@@ -1968,12 +1970,12 @@ The following research question is addressed:
 
 \subsection{Variables}
 
-The independent variable is the algorithms: HybridQ and MOEA/D. The dependent variables are the pareto frontier points found by each algorithm.
+The independent variable is the algorithms: HybridQ and MOEA/D. The dependent variables are the Pareto frontier points found by each algorithm.
 
 \subsection{Experiment Hypotheses}
 
 \begin{itemize}
-\item With regard to multi-objective algorithms applied in the experiment:
+\item With regard to multi-objective and single objective algorithms applied in the experiment:
 \begin{itemize}
 \item $H_{0}$  (null hypothesis) : All solutions found by HybridQ are not dominated by the MOEA/D algorithm.
 \item $H_{1}$ : All solutions found by HybridQ are dominated by the MOEA/D algorithm.
@@ -1994,12 +1996,12 @@ Fig. \ref{fig:singlewithmulti} presents the result of the experiment. Most of th
 
 \section{Experiment with HybridQ and MOEA/D Collaborative approach}
 
-This section presents an experiment with to evaluate the collaborative approach using HybridQ and MOEA/D. The propose consist of each algorithm share our best individuals with each other. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 miliseconds.  The whole process of stress  tests, which run for 1 days and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
+This section presents an experiment with to evaluate the collaborative approach using HybridQ and MOEA/D. The propose consist of each algorithm share our best individuals with each other. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 days and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./images/moeadhybridq.png}
-    \caption{Colaborative approach Pareto Frontier}
+    \caption{Collaborative approach Pareto Frontier}
 \label{fig:singlewithmulti}
 \end{figure}
 
@@ -2015,9 +2017,20 @@ The following research question is addressed:
 
 The independent variable is the collaborative approach of the algorithms HybridQ and MOEA/D. The dependent variable are the hypervolume found by the new approach.
 
+\subsection{Experiment Hypotheses}
+
+\begin{itemize}
+\item With regard to hypervolume:
+\begin{itemize}
+\item $H_{0}$  (null hypothesis) : The hypervolume of the new approach don't surpass the previous experiments.
+\item $H_{1}$ : The hypervolume of the new approach surpass the previous experiments.
+\end{itemize}
+\end{itemize}
+
+
 \subsection{Experiment Results}
 
-At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. The new approach obtain a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds.
+At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. The new approach obtain a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the Pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 milliseconds.
 
 \subsection{Experiment Conclusion}
 
@@ -2044,12 +2057,34 @@ The results presented by the new approach in the experiment surpass previous app
 \end{tabular}
 \end{table}
 
+\section{Analysis of Pareto Frontier  in Multiple Executions}
+
+This section presents an initial study to evaluate the Pareto Frontier difference in multiple executions. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 2 days and 983 executions. The tool automatically selected the next scenarios to be run up to the limit of 23 previously established  generations by the algorithm. Three executions were carried out with different initial populations. Figs. presents the comparative results between executions 1, 2 and 3.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/comparative.png}
+    \caption{Collaborative approach Pareto Frontier}
+\label{fig:comp1}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/comparative2.png}
+    \caption{Collaborative approach Pareto Frontier}
+\label{fig:comp2}
+\end{figure}
+
+
+
 \section{Conclusion}
 
 
-The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when comparesd with NSGA II, SPEA2 and PAES. The MOEA / D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. Thus, we propose the collaborative use of  MOEA/D and HybridQ algorithms.  The collaborative approach improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
+The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA / D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. Thus, we propose the collaborative use of  MOEA/D and HybridQ algorithms.  The collaborative approach improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
 
-For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions.
+For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to Pareto frontier in different executions.
 
 
 % conference papers do not normally have an appendix
@@ -2095,11 +2130,11 @@ In this thesis we deal with the use of hybrid metaheuristics, reinforcement lear
 First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid algorithm uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to perform performance, load, and stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach when compared with the other algorithms. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool \cite{Gois2016}. 
 
 
-The thesis hypothesis $H3_{1}$ was satisfied taking into account that the scenarios found in the experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hipothesis $H4_{1}$ was partially satisfied since tests with all the approaches related to the state-of-art could not be compared. The algorithm surpassed the approaches that use genetic algorithms, tabu search and simulated annealing. 
+The thesis hypothesis $H3_{1}$ was satisfied taking into account that the scenarios found in the experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hypothesis $H4_{1}$ was partially satisfied since tests with all the approaches related to the state-of-art could not be compared. The algorithm surpassed the approaches that use genetic algorithms, tabu search and simulated annealing. 
 
 
 
-In order to improve the efficiency of our proposal, we use the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because q-learning. The reasearch has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtain the best fitness value with minor number of requests. 
+In order to improve the efficiency of our proposal, we use the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because q-learning. The research has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtain the best fitness value with minor number of requests. 
 
 
 The thesis hypothesis $H5_{1}$ was satisfied taking into account that the experiment reveal that the best solutions found by the new
@@ -2108,7 +2143,7 @@ Hybrid q-learning approach were on average 5.98\% better than that achieved by o
 
 We also proposed the use of multi-objective algorithms in search-based stress testing. To this end we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. Several experiments were performed to evaluate the proposed approaches. The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
 
-The thesis hypothesis $H1_{1}$ was satisfied taking into account that the scenarios found in the multi-objective experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hipothesis $H2_{1}$ was partially satisfied since all the previous approaches in search-based tests do not present a pareto frontier, because studies are needed to comparing the present approach with others such as model-based or FOREPOST tests.
+The thesis hypothesis $H1_{1}$ was satisfied taking into account that the scenarios found in the multi-objective experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hypothesis $H2_{1}$ was partially satisfied since all the previous approaches in search-based tests do not present a Pareto frontier, because studies are needed to comparing the present approach with others such as model-based or FOREPOST tests.
 
 Table \ref{conclusion} present the thesis hypotheses and obtained results.
 
@@ -2137,9 +2172,9 @@ Table \ref{conclusion} present the thesis hypotheses and obtained results.
 There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is difficult to ensure that the execution times generated in the experiments represents global optimum. More experimentation is also required to determine the
 most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process. 
 
-For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions. 
+For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to Pareto frontier in different executions. 
 
-The choice of a fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behaviour. 
+The choice of a fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behaviour. The fitness function is still manually adjusted and additional studies need to be performed to get the best weight values for the fitness function.
 
 
 \section{Future Works}
@@ -2292,7 +2327,7 @@ A stress test need to perform hundreds or thousands of concurrent requests  to t
 
 \subsection{Stress Testing Tools}
 
-There are several tools to execution of stress testing. Stress testing tools are software products based on workload models to generate request sequences similar to real requests. They are designed and implemented as versatile software tools for performing tuning or capacity planning studies. Ussualy, the tool functions is semi-automated, whereas the execution of the tests itself is performed by a tool, the choice of scenarios to be executed as well as the decision to start new execution batteries are activities of the test designer or tester. Normally, load test tools uses test scripts. Test scripts are written in a GUI testing framework or a backend server-directed performance tool such as JMeter. These frameworks are the basis on which performance testing is mostly done in industry. Performance test scripts imitate large numbers of users to create a significant load on the application under tests. Stress testing tools typically have the following components \cite{Grechanik2012} \cite{Molyneaux2009}:
+There are several tools to execution of stress testing. Stress testing tools are software products based on workload models to generate request sequences similar to real requests. They are designed and implemented as versatile software tools for performing tuning or capacity planning studies. Usually, the tool functions is semi-automated, whereas the execution of the tests itself is performed by a tool, the choice of scenarios to be executed as well as the decision to start new execution batteries are activities of the test designer or tester. Normally, load test tools uses test scripts. Test scripts are written in a GUI testing framework or a back-end server-directed performance tool such as JMeter. These frameworks are the basis on which performance testing is mostly done in industry. Performance test scripts imitate large numbers of users to create a significant load on the application under tests. Stress testing tools typically have the following components \cite{Grechanik2012} \cite{Molyneaux2009}:
 
 \begin{itemize}
 \item Scripting module: Enable recording of end-user activities in different middleware protocols;
@@ -2327,7 +2362,7 @@ Penã-Ortiz et al. present a study where stress test tools are compared using 12
 \item Client parameterization. This is the ability to parameterize generator nodes.
 \item Workload types. Some generators organize the workload in categories or types.
 \item Testing the Web application functionality (functional testing).
-\item Multiplatform refers to a software package that is implemented in multiple types of computer platforms, interoperating among them.
+\item Multi-platform refers to a software package that is implemented in multiple types of computer platforms, inter-operating among them.
 \item Differences between LAN and WAN.
 \item The generator should be a friendly application.
 \item The load test tool has performance reports.
@@ -2347,20 +2382,21 @@ Penã-Ortiz et al. present a study where stress test tools are compared using 12
 \hline
 \rowcolor[HTML]{EFEFEF}
 \textbf{Feature/Tool}         & \textbf{WebStone} & \textbf{SpecWeb} & \textbf{SURGE} & \textbf{Web Polygraph} & \textbf{TPC-W} \\ \hline
-\cellcolor[HTML]{EFEFEF} \begin{minipage}{0.2\textwidth} Analytical-Based\\ Architecture \\ \end{minipage} & Full support      & Full support     & Full support   & Full support           & Full support   \\ \hline
-\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Distributed\\ Architecture \\   \end{minipage}    & Full support      & Full support     & Full support   & Full support           &                \\ \hline
-\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Business-Based Architecture \\ \end{minipage}  &                   & Partial Suport   &                & Partial Suport         & Full support   \\ \hline
-\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Client\\ Parameterization \\\end{minipage}       & Full support      & Full support     &                & Partial Suport         & Full support   \\ \hline
-\cellcolor[HTML]{EFEFEF}Workload Types                &                   & Full support     &                &                        & Full support   \\ \hline
+\cellcolor[HTML]{EFEFEF} \begin{minipage}{0.2\textwidth} Analytical-Based\\ Architecture \\ \end{minipage} & Full sup.      & Full sup.     & Full sup.   & Full sup.           & Full sup.   \\ \hline
+\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Distributed\\ Architecture \\   \end{minipage}    & Full sup.      & Full sup.     & Full sup.   & Full sup.           &                \\ \hline
+\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Business-Based Architecture \\ \end{minipage}  &                   & Partial Support   &                & Partial Support         & Full sup.   \\ \hline
+\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Client\\ Parameterization \\\end{minipage}       & Full sup.      & Full sup.     &                & Partial Support         & Full sup.   \\ \hline
+\cellcolor[HTML]{EFEFEF}Workload Types                &                   & Full sup.     &                &                        & Full sup.   \\ \hline
 \cellcolor[HTML]{EFEFEF}Functional Testing            &                   &                  &                &                        &                \\ \hline
 \cellcolor[HTML]{EFEFEF}LAN and WAN                   &                   &                  &                &                        &                \\ \hline
-\cellcolor[HTML]{EFEFEF}Multi-platform                & Full support      & Full support     & Full support   & Full support           & Full support   \\ \hline
+\cellcolor[HTML]{EFEFEF}Multi-platform                & Full sup.      & Full sup.     & Full sup.   & Full sup.           & Full sup.   \\ \hline
 \cellcolor[HTML]{EFEFEF}Ease of Use                   &                   &                  &                &                        &                \\ \hline
-\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Performance Reports\end{minipage}           & Partial Suport    & Full support     &                & Full support           & Full support   \\ \hline
-\cellcolor[HTML]{EFEFEF}Open Source                   & Full support      &                  & Full support   & Partial Suport         & Full support   \\ \hline
-\cellcolor[HTML]{EFEFEF}User’s Dynamism               &                   &                  &                &                        & Partial Suport \\ \hline
+\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.2\textwidth}Performance Reports\end{minipage}           & Partial Support    & Full sup.     &                & Full sup.           & Full sup.   \\ \hline
+\cellcolor[HTML]{EFEFEF}Open Source                   & Full sup.      &                  & Full sup.   & Partial Support         & Full sup.   \\ \hline
+\cellcolor[HTML]{EFEFEF}User’s Dynamism               &                   &                  &                &                        & Partial Support \\ \hline
 \end{tabular}
 \end{table}
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
@@ -2373,18 +2409,18 @@ Penã-Ortiz et al. present a study where stress test tools are compared using 12
 \hline
 \rowcolor[HTML]{EFEFEF}
 \textbf{Feature/Tool}         & \textbf{LoadRunner} & \textbf{WebLOAD} & \textbf{JMeter} \\ \hline
-\cellcolor[HTML]{EFEFEF}Analytical-Based Architecture & Partial Suport      & Partial Suport   & Partial Suport  \\ \hline
+\cellcolor[HTML]{EFEFEF}Analytical-Based Architecture & Partial Support      & Partial Support   & Partial Support  \\ \hline
 \cellcolor[HTML]{EFEFEF}Distributed Architecture      & Full support        & Full support     & Full support    \\ \hline
 \cellcolor[HTML]{EFEFEF}Business-Based Architecture   & Full support        & Full support     & Full support    \\ \hline
 \cellcolor[HTML]{EFEFEF}Client Parameterization       & Full support        & Full support     & Full support    \\ \hline
-\cellcolor[HTML]{EFEFEF}Workload Types                & Full support        & Full support     & Partial Suport  \\ \hline
-\cellcolor[HTML]{EFEFEF}Functional Testing            & Full support        & Full support     & Partial Suport  \\ \hline
+\cellcolor[HTML]{EFEFEF}Workload Types                & Full support        & Full support     & Partial Support  \\ \hline
+\cellcolor[HTML]{EFEFEF}Functional Testing            & Full support        & Full support     & Partial Support  \\ \hline
 \cellcolor[HTML]{EFEFEF}LAN and WAN                   &                     &                  &                 \\ \hline
 \cellcolor[HTML]{EFEFEF}Multi-platform                & Full support        & Full support     & Full support    \\ \hline
-\cellcolor[HTML]{EFEFEF}Ease of Use                   & Full support        & Full support     & Partial Suport  \\ \hline
-\cellcolor[HTML]{EFEFEF}Performance Reports           & Partial Suport      & Full support     & Full support    \\ \hline
-\cellcolor[HTML]{EFEFEF}Open Source                   &                     &                  & Partial Suport  \\ \hline
-\cellcolor[HTML]{EFEFEF}User’s Dynamism               & Partial Suport      & Partial Suport   & Partial Suport  \\ \hline
+\cellcolor[HTML]{EFEFEF}Ease of Use                   & Full support        & Full support     & Partial Support  \\ \hline
+\cellcolor[HTML]{EFEFEF}Performance Reports           & Partial Support      & Full support     & Full support    \\ \hline
+\cellcolor[HTML]{EFEFEF}Open Source                   &                     &                  & Partial Support  \\ \hline
+\cellcolor[HTML]{EFEFEF}User’s Dynamism               & Partial Support      & Partial Support   & Partial Support  \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2392,7 +2428,7 @@ Penã-Ortiz et al. present a study where stress test tools are compared using 12
 
 WebStone was designed by Silicon Graphics in 1996 to measure the performance of Web server software and hardware products. Nowadays, both executable and source actualized code for WebStone are available for free. The benchmark generates a Web server load by simulating multiple Web clients navigating a website. All the testing done by the benchmark is controlled by a Webmaster, which is a program that can be run on one of the client computers or on a different one \cite{MohammadS.Obaidat} \cite{Trent1995} .
 
-TPC Benchmarkt (TPC-W) is a transactional Web benchmark defined by the Transaction Processing Performance Council that models a representative e-commerce evaluating the architecture performance on a generic profile.The models uses a remote browser emulator to generate requests to server under test. TPC-W adopts the CBMG model to define the workloads in spite of this model only characterizing user dynamic behavior partially. The remote browser emulators are located in the client side and generate workload towards the e-commerce Web application, which is located in the server side (e-commerce server) \cite{MohammadS.Obaidat} \cite{Menasce2002a}.
+TPC Benchmarkt (TPC-W) is a transitional Web benchmark defined by the Transaction Processing Performance Council that models a representative e-commerce evaluating the architecture performance on a generic profile.The models uses a remote browser emulator to generate requests to server under test. TPC-W adopts the CBMG model to define the workloads in spite of this model only characterizing user dynamic behavior partially. The remote browser emulators are located in the client side and generate workload towards the e-commerce Web application, which is located in the server side (e-commerce server) \cite{MohammadS.Obaidat} \cite{Menasce2002a}.
 
 \begin{figure}[h]
 \centering
@@ -2440,7 +2476,7 @@ Apache JMeter is used to generate heavy loads on the servers or objects to test 
 \item Samplers: Load injectors module responsible to send requests to a server, while Logical Controllers let you customize its logic.
 \item Timers: allow JMeter to delay between each request.
 \item Assertions: test if the application under test it is returning the correct results.
-\item Configuration Elements: configure detais about the request protocol and test elements.
+\item Configuration Elements: configure details about the request protocol and test elements.
 \end{itemize}
 
 
@@ -2492,7 +2528,7 @@ Generative models are indirect in the sense that they do not model the statistic
 \end{figure}
 
 
-Both load models have their advantages and disadvantages. In general, loads resulting from realistic-load based design techniques (Descriptive models) can be used to detect both functional and non-functional problems. However, the test durations are usually longer and the test analysis is more difficult. Loads resulting from fault-inducing load design techniques (Generative models) take less time to uncover potential functional and non-functional problems, where the resulting loads usually only cover a small portion of the testing objectives \cite{Jiang2010}. The presented research work uses a generative model.
+Both load models have their advantages and disadvantages. In general, loads resulting from realistic-load based design techniques (Descriptive models) can be used to detect both functional and non-functional problems. However, the test duration are usually longer and the test analysis is more difficult. Loads resulting from fault-inducing load design techniques (Generative models) take less time to uncover potential functional and non-functional problems, where the resulting loads usually only cover a small portion of the testing objectives \cite{Jiang2010}. The presented research work uses a generative model.
 
 
 There are two main approaches to design generative or descriptive workloads:
@@ -2503,25 +2539,25 @@ There are two main approaches to design generative or descriptive workloads:
 \end{itemize}
 
 
-Model-based test is an approach that automates test case generation and execution in order to reduce software testing cost. Search-based techniques is commom used to generate optimal test data that satisfies every transition and constraint in the state model \cite{Saeed2017}. 
+Model-based test is an approach that automates test case generation and execution in order to reduce software testing cost. Search-based techniques is common used to generate optimal test data that satisfies every transition and constraint in the state model \cite{Saeed2017}. 
 
 Search-Based Stress testing will be detail explained in the chapter 3. Three other approaches use neither a model-based test nor a search-based test.
 
 \subsection{Model-based Stress Testing}
 
-Model-based testing is an application  of models to represent the desired behavior of a System Under Test or to represent testing strategies in a test. Some research aproaches proposes models to simulate or  generate realistic loads. Model-based testing (MBT) is a variant of testing that relies on explicit behaviour models that encode the intended behaviours of a system under test. Test cases are generated from one of these models or their combination \cite{MarkUtting2012} \cite{Bertolino2008}. There are many different modelling notations that have been used for modelling the behaviour of systems for test generation purposes \cite{MarkUtting2012} \cite{Hierons2009}.
+Model-based testing is an application  of models to represent the desired behavior of a System Under Test or to represent testing strategies in a test. Some research approaches proposes models to simulate or  generate realistic loads. Model-based testing (MBT) is a variant of testing that relies on explicit behaviour models that encode the intended behaviours of a system under test. Test cases are generated from one of these models or their combination \cite{MarkUtting2012} \cite{Bertolino2008}. There are many different modelling notations that have been used for modelling the behaviour of systems for test generation purposes \cite{MarkUtting2012} \cite{Hierons2009}.
 
 \begin{itemize}
-\item State-Based (or Pre/Post) Notations. These model a system as a collection of variables, which represent a snapshot of the internal state of the system, plus some operations that modify those variables. Each operation is usually defined by a precondition and a postcondition, or the postcondition may be written as explicit code that updates the state \cite{MarkUtting2012}.
+\item State-Based (or Pre/Post) Notations. These model a system as a collection of variables, which represent a snapshot of the internal state of the system, plus some operations that modify those variables. Each operation is usually defined by a precondition and a post-condition, or the post-condition may be written as explicit code that updates the state \cite{MarkUtting2012}.
 \item Transition-based Notations. These focus on describing the transitions between different states
 of the system. Typically, they are graphical node-and-arc notations, like finite state machines
-(FSMs). Examples of transition-based notations used for MBT include FSMs themselves, statecharts, labelled transition systems and I/O automata \cite{MarkUtting2012}.
+(FSMs). Examples of transition-based notations used for MBT include FSMs themselves, state-charts, labelled transition systems and I/O automata \cite{MarkUtting2012}.
 \item History-based Notations. These notations model a system by describing the allowable traces
-of its behaviour over time. Message-sequence charts and related formalisms are also included in this group. These are
+of its behaviour over time. Message-sequence charts and related formalism are also included in this group. These are
 graphical and textual notations for specifying sequences of interactions between components \cite{MarkUtting2012}.
 \item Functional Notations. These describe a system as a collection of mathematical functions. The
 functions may be first-order only, as in the case of algebraic specifications, or higher-order, as in
-notations like HOL \cite{MarkUtting2012}. Functional models also show the functionality of the system from the user’s perspective \cite{Ye2007}. This research also classified in the  functional notation paradigm the studies that used more than one uml diagram. 
+notations like HOL \cite{MarkUtting2012}. Functional models also show the functionality of the system from the user’s perspective \cite{Ye2007}. This research also classified in the  functional notation paradigm the studies that used more than one UML diagram. 
 \item Operational Notations. These describe a system as a collection of executable processes,
 executing in parallel. They are particularly suited to describing distributed systems and
 communications protocols. Examples include process algebras such as CSP or CCS as well as
@@ -2536,7 +2572,7 @@ to model continuous systems \cite{MarkUtting2012}.
 \end{itemize}
 
 
-Table \ref{modelsummary} presents the papers found by the survey about model-based tests. All results was classified by model and paradigm. The most used paradigms in model-based stress testing are:  Funcional-based notations, Stochastic notations, Transition-based and State-based notations. 
+Table \ref{modelsummary} presents the papers found by the survey about model-based tests. All results was classified by model and paradigm. The most used paradigms in model-based stress testing are:  Functional-based notations, Stochastic notations, Transition-based and State-based notations. 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -2557,7 +2593,7 @@ BeliefDesire-Intention                  & \cite{Araiza-Illan2016} & Operational 
 \multirow{-4}{*}{Markov-Chains}         & \cite{Avritzer1993}     & Stochastic Notation         & 1993          \\ \hline
 MCM Model                               & \begin{minipage}{0.4\textwidth}\cite{Wieczorek2010}\end{minipage}    & State-based          & 2010          \\ \hline
                                         & \begin{minipage}{0.4\textwidth}\cite{Enoiu2013}\end{minipage}        & UPPAAL model checker & 2013          \\ \cline{2-4}
-\multirow{-2}{*}{Other Aproaches}       & \begin{minipage}{0.4\textwidth}\cite{Arcaini2015}\end{minipage}      & Model Decomposition  & 2015          \\ \hline
+\multirow{-2}{*}{Other Approaches}       & \begin{minipage}{0.4\textwidth}\cite{Arcaini2015}\end{minipage}      & Model Decomposition  & 2015          \\ \hline
 Petri Nets                              & \cite{Buchs2009}        & Operational          & 2009          \\ \hline
                                         & \cite{Cai2007}          & Stochastic Notation    & 2007          \\ \cline{2-4}
                                         
@@ -2602,10 +2638,10 @@ UCML                                        & \cite{Barber1999}       & Function
 \subsubsection{Functional Notation}
 
 All possible answers of the system, including exceptions, are defined in the functional
-model.  The functional notation defines the authorized input values and models all the possible functional errors during execution \cite{utting2010practical}. Among the several functional models approaches, we can highlight the User Community Modeling Language (UCML). A UCML is a set of symbols that can be used to create visual system usage models and depict associated parameters \cite{Wang2013}. The Fig. \ref{fig:ucml} shows a sample where all users realize a login into the application unde test. Once logged in, 40\% of the users navigates on the aplication, 30\%  of the users realizes downloads. 20\% of users realizes uploads and 10\% of users performs deletions. 
+model.  The functional notation defines the authorized input values and models all the possible functional errors during execution \cite{utting2010practical}. Among the several functional models approaches, we can highlight the User Community Modeling Language (UCML). A UCML is a set of symbols that can be used to create visual system usage models and depict associated parameters \cite{Wang2013}. The Fig. \ref{fig:ucml} shows a sample where all users realize a login into the application under test. Once logged in, 40\% of the users navigates on the application, 30\%  of the users realizes downloads. 20\% of users realizes uploads and 10\% of users performs deletions. 
 
 Garousi et al. proposes derivate Stress Test Requirements from an UML model. The input model consists of a number of UML diagrams. Some of
-them are standard in mainstream development methodologies and others are needed to describe the distributed architecture of the system under test (Fig. \ref{fig:modelbased}). Cai and Zeng use activity diagrams to describle variation points in use cases. Variation points describe what varies between the applications of an software product line \cite{XinyingCai2007}. Raulf et al. present an approach for testing of web service compositions using UML profile for Business Process Execution Language (BPEL) \cite{Rauf2009}. Schaefer et al. present the Crushinator, a framework that provides a game-independent testing tool simulating clients that perform http requests using a UML model \cite{Schaefer2013}. Moscher and  Fögen compares the techniques Capture and Replay (CR) and Model-Based Testing (MBT) are using a model named PLeTsPerf. PLeTsPerf describe the system under tests using use cases and activity diagrams \cite{moscher2017facing}. Kim proposes a approach to generate massive virtual clients and realistic traffic. A session is composed of a series of the expected operations made by a user in the target domain using a uml class and a sequence diagram \cite{Kim2005}.
+them are standard in mainstream development methodologies and others are needed to describe the distributed architecture of the system under test (Fig. \ref{fig:modelbased}). Cai and Zeng use activity diagrams to describe variation points in use cases. Variation points describe what varies between the applications of an software product line \cite{XinyingCai2007}. Raulf et al. present an approach for testing of web service compositions using UML profile for Business Process Execution Language (BPEL) \cite{Rauf2009}. Schaefer et al. present the Crushinator, a framework that provides a game-independent testing tool simulating clients that perform http requests using a UML model \cite{Schaefer2013}. Moscher and  Fögen compares the techniques Capture and Replay (CR) and Model-Based Testing (MBT) are using a model named PLeTsPerf. PLeTsPerf describe the system under tests using use cases and activity diagrams \cite{moscher2017facing}. Kim proposes a approach to generate massive virtual clients and realistic traffic. A session is composed of a series of the expected operations made by a user in the target domain using a UML class and a sequence diagram \cite{Kim2005}.
 
 
 
@@ -2614,9 +2650,9 @@ them are standard in mainstream development methodologies and others are needed 
 
 For many software programs, probabilistic models are a useful asset in
 modeling statistical behavior, such that coverage testing is possible by automating
-test-case selection, execution and evaluation. Ussualy, the stochastic notations are used in Markov Chains and Stochastic Formcharts. 
+test-case selection, execution and evaluation. Usually, the stochastic notations are used in Markov Chains and Stochastic Formcharts. 
 
-Avritzer and Weyuker present two variants markov chain approach to realize load and stress tests and an automatic generation of load test suites approach \cite{Avritzer1993} \cite{Avritzer1995b}. Barros et al. provide techniques for load pattern characterization via the application of Markov Chains to performance evaluation of stateful systems \cite{Barros2007}. Cai et al. uses a stochastic form chart as its client loading model \cite{Cai2007}. The work of Draheim and Weber’s Formoriented analysis is a methodology for the specification of ultra-thin client based systems. Form-oriented models describe a web application as a bipartite state machine which consists of pages, actions, and transitions between them. Stochastic Formcharts are the combination of formoriented model and probability features. The Fig. \ref{fig:stform} shows a sample where all users have a probability of 100\% of realize a login into the application under test. Once logged in, users have a probability of 40\% of navigate on the application and so on \cite{Draheim2006b} \cite{Marinescu2015}.
+Avritzer and Weyuker present two variants markov chain approach to realize load and stress tests and an automatic generation of load test suites approach \cite{Avritzer1993} \cite{Avritzer1995b}. Barros et al. provide techniques for load pattern characterization via the application of Markov Chains to performance evaluation of stateful systems \cite{Barros2007}. Cai et al. uses a stochastic form chart as its client loading model \cite{Cai2007}. The work of Draheim and Weber’s Form-oriented analysis is a methodology for the specification of ultra-thin client based systems. Form-oriented models describe a web application as a bipartite state machine which consists of pages, actions, and transitions between them. Stochastic Formcharts are the combination of form-oriented model and probability features. The Fig. \ref{fig:stform} shows a sample where all users have a probability of 100\% of realize a login into the application under test. Once logged in, users have a probability of 40\% of navigate on the application and so on \cite{Draheim2006b} \cite{Marinescu2015}.
 
 
 \begin{figure}[!ht]
@@ -2654,9 +2690,9 @@ transition-based notations are best for control-oriented applications. Instead o
 map each input state to the corresponding output state. Based on the notations
 used, the model can be annotated with triggering events, which are
 conditions sufficient for the transition to take place, or guards that are necessary
-preconditions for the transition to be fired. The common techniques used for generating test-cases from transition-based notations are Finite State Machines (FSM), Labeled Transition Systems and UML statecharts \cite{Marinescu2015}.
+preconditions for the transition to be fired. The common techniques used for generating test-cases from transition-based notations are Finite State Machines (FSM), Labeled Transition Systems and UML state-charts \cite{Marinescu2015}.
 
-Arantes et al. present a tool named WEB-PerformCharts that generate test cases using statecharts or FSMs \cite{Arantes2014}. Gay et al. present propose an automated steering framework that can adjust the behavior of the model to better match the behavior of the system under test to reduce the rate of false positives.  The model is defined as a transition system \cite{Gay2016}. Hessel addressed in her study two model-based problems: how to formalize a coverage criteria and how to generate a test suite to a formal timed system model \cite{Hessel2007}. Ganesan describe how we created a test automation architecture for testing concurrent inter-task communication as carried out by the software bus. The model uses a FSM \cite{Ganesan2016}. Hierons et al. show a formal specification approach to support functional or non-functional tests \cite{Hierons2009}. Vogele et al. presents an approach that aims to automate the extraction and transformation of workload specifications for an model-based performance prediction of session-based application systems.  The research also presents transformations to the common load testing tool Apache JMeter and to the Palladio Component Model \cite{Vogele2016} \cite{utting2010practical}. The workload specification formalism (Workload Model) consists of the following components, which are detailed below and illustrated in Fig. \ref{fig:vogel}:
+Arantes et al. present a tool named WEB-PerformCharts that generate test cases using state-charts or FSMs \cite{Arantes2014}. Gay et al. present propose an automated steering framework that can adjust the behavior of the model to better match the behavior of the system under test to reduce the rate of false positives.  The model is defined as a transition system \cite{Gay2016}. Hessel addressed in her study two model-based problems: how to formalize a coverage criteria and how to generate a test suite to a formal timed system model \cite{Hessel2007}. Ganesan describe how we created a test automation architecture for testing concurrent inter-task communication as carried out by the software bus. The model uses a FSM \cite{Ganesan2016}. Hierons et al. show a formal specification approach to support functional or non-functional tests \cite{Hierons2009}. Vogele et al. presents an approach that aims to automate the extraction and transformation of workload specifications for an model-based performance prediction of session-based application systems.  The research also presents transformations to the common load testing tool Apache JMeter and to the Palladio Component Model \cite{Vogele2016} \cite{utting2010practical}. The workload specification formalism (Workload Model) consists of the following components, which are detailed below and illustrated in Fig. \ref{fig:vogel}:
 \begin{itemize}
 \item An Application Model, specifying allowed sequences of service invocations and SUT-specific details for generating valid requests.
 \item A set of Behavior Models,each providing a probabilistic representation of user sessions in terms of invoked services.
@@ -2710,7 +2746,7 @@ a state transition model based to test case generation \cite{Jeong2016}. Wieczor
 
 \subsection{Other Approaches}
 
-A set of other approaches dont use model-based tests or search-based tests:
+A set of other approaches don't use model-based tests or search-based tests:
 
 \begin{itemize}
 \item Automatic feedback, control-based, stress and load testing \cite{Bayan2008};
@@ -2719,7 +2755,7 @@ A set of other approaches dont use model-based tests or search-based tests:
 Performance Assessment of Software Architectures \cite{Williams2002}.
 \end{itemize}
 
-Bayan and Cangussu present a apporach based on the application of a feedback
+Bayan and Cangussu present a approach based on the application of a feedback
 PID (Proportional, Integral, and Derivative) controller to drive the input and make the system achieve a specified level of resource usage. For example, if the user defines the system should be tested with a memory use of 95\%, starting from an initial input value, the PID controller will automatically change the input(s) until the desired level of stress has been achieved \cite{Bayan2008}.
 
 Williams and Smith describe the PASA method, a method for performance assessment of software architectures. PASA uses the principles and techniques of software performance engineering (SPE) to determine whether an architecture is capable of supporting its performance objectives  \cite{Williams2002}. Among the three approaches presented, we can highlight FOREPOST that develops a plugin of the JMeter tool to generate test cases using unsupervised learning.
@@ -2768,7 +2804,7 @@ antipatterns because their use produces negative consequences.
 Blob or The God Class                   &                              & \begin{minipage}{0.3\textwidth} \cite{Wert2014} \\ \cite{Smith2000} \\ \cite{Trubiani2011} \\\cite{Vetoio2011} \\ \cite{Cortellessa2007} \\\cite{Smith2003} \end{minipage} &  &  &  &  \\ \cline{1-1} \cline{3-3}
 Circuitous Treasure Hunt                &                              & \begin{minipage}{0.4\textwidth} \cite{Wert2014} \\ \cite{Trubiani2011}  \\ \cite{Vetoio2011} \\ \cite{Smith2003} \\ \cite{Smith2002} \end{minipage}                        &  &  &  &  \\ \cline{1-1} \cline{3-3}
 Empty Semi Trucks                       &                              & \begin{minipage}{0.3\textwidth} \cite{Wert2014} \\\cite{Trubiani2011} \\ \cite{Arcelli2012} \\ \cite{Vetoio2011}                                       \end{minipage} &  &  &  &  \\ \cline{1-1} \cline{3-3}
-\begin{minipage}{0.3\textwidth} Excessive Dynamic\\ Aloccation  \end{minipage}          &                              & \begin{minipage}{0.4\textwidth} \cite{Trubiani2011} \\ \cite{Vetoio2011} \\ \cite{Smith2003} \\ \cite{Smith2002} \end{minipage}                                       &  &  &  &  \\ \cline{1-1} \cline{3-3}
+\begin{minipage}{0.3\textwidth} Excessive Dynamic\\ Allocation  \end{minipage}          &                              & \begin{minipage}{0.4\textwidth} \cite{Trubiani2011} \\ \cite{Vetoio2011} \\ \cite{Smith2003} \\ \cite{Smith2002} \end{minipage}                                       &  &  &  &  \\ \cline{1-1} \cline{3-3}
 More is Less                            &                              &  \begin{minipage}{0.4\textwidth} \cite{Vetoio2011} \\\cite{Trubiani2011} \\ \cite{Smith2003}   \end{minipage}                                                        &  &  &  &  \\ \cline{1-1} \cline{3-3}
 One-Lane Bridge                         &                              &  \begin{minipage}{0.4\textwidth} \cite{Vetoio2011} \\ \cite{Trubiani2011} \\ \cite{Smith2003} \\ \cite{Smith2002}                                        
   
@@ -2873,7 +2909,7 @@ The pipe and filter architectures  and extensive processing antipattern represen
 \end{figure}
 
 
-Circuitous Treasure Hunt antipattern occurs when software retrieves data from a first componet, uses those results in a second component, retrieves data from the second component, and so on, until the last results are obtained \cite{Smith2002} \cite{Smith2003}. Circuitous Treasure Hunt
+Circuitous Treasure Hunt antipattern occurs when software retrieves data from a first component, uses those results in a second component, retrieves data from the second component, and so on, until the last results are obtained \cite{Smith2002} \cite{Smith2003}. Circuitous Treasure Hunt
 are typical performance antipatterns that causes  unnecessarily high amount of frequent database requests. The Circuitous Treasure Hunt antipattern is a result of a bad database schema or query design. A common Circuitous Treasure Hunt design creates a data dependency between single queries. For instance, a query requires the
 result of a previous query as input. The longer the chain of
 dependencies between individual queries the more the Circuitous
@@ -2968,9 +3004,9 @@ More is Less occurs when a system spends more time "thrashing” than accomplish
 Stress testing investigates the behavior of the system under conditions
 that overload its resources \cite{Sandler2004} \cite{Lewis2005}. The core activities in conducting an usual Load, Performance and Stress tests are  Identify the test environment, Identify acceptance criteria, Plan and design tests, Prepare the test environment, Record the test plan, Run the tests and Analyze results. This research focuses on the generation and execution of test cases. It is not scope of the research the automatic analysis of the results and the treatment of log of tests. The two main approaches to creating workloads are generative and descriptive workload approaches. The main goal of descriptive workloads is to ensure that the system can function correctly once. Generative workloads  aims to design loads, which are likely to cause functional or non-functional problem. 
 
-There are three approaches to stress test execution: Live-User Based Executions, Driver Based Executions and Emulation Based Executions. This thesis focuses on user Driver Based Executions where each workload perform serveral requests to application under test to measure the response time. Apache jmeter was the tool chosen for current research due to its open license, the use of plugins and the ease of integration with jmetal and jgap frameworks.
+There are three approaches to stress test execution: Live-User Based Executions, Driver Based Executions and Emulation Based Executions. This thesis focuses on user Driver Based Executions where each workload perform several requests to application under test to measure the response time. Apache jmeter was the tool chosen for current research due to its open license, the use of plugins and the ease of integration with jmetal and jgap frameworks.
 
-The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing use a model to describle the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of test because it depends intrinsically of the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Funcional-based notations, Stochastic notations, Transition-based and State-based notations. 
+The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing use a model to describe the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of test because it depends intrinsically of the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Functional-based notations, Stochastic notations, Transition-based and State-based notations. 
 
 There are several antipatterns that detailed features about common performance problems. Antipatterns
 are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented by IAdapter to an experiment presented in chapter 4.
@@ -2981,7 +3017,7 @@ are conceptually similar to patterns in that they document recurring solutions t
 
 
 
-IAdapter is a JMeter plugin designed to perform search-based stress tests. Fig. \ref{fig:iadapterlifecycle} presents the IAdapter Life Cycle. The main difference between IAdapter and JMeter tool is that the IAdapter provide an automated test execution where the new test scenarios are choosen by the test tool.  In a test with JMeter, the tests scenarios are usually chosen by a test designer.
+IAdapter is a JMeter plugin designed to perform search-based stress tests. Fig. \ref{fig:iadapterlifecycle} presents the IAdapter Life Cycle. The main difference between IAdapter and JMeter tool is that the IAdapter provide an automated test execution where the new test scenarios are chosen by the test tool.  In a test with JMeter, the tests scenarios are usually chosen by a test designer.
 
 \begin{figure}[h]
 \centering
@@ -3010,7 +3046,7 @@ WorkLoadThreadGroup is a component that creates an initial population and config
 \vspace*{-.075in}
 
 
-In this section, We present the IAdapter main architecture. The testbed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extends AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and store the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
+In this section, We present the IAdapter main architecture. The test-bed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extends AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and store the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -3031,9 +3067,9 @@ In this section, We present the IAdapter main architecture. The testbed tool pro
 
 \subsection{Test Module}
 
-The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extends the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represent an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named MultiObjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
+The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extends the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represent an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named Multiobjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
 
-Figure. \ref{fig:step2} presents the Test Module life cycle. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheurist select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The choosen metaheurist generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the choosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
+Figure. \ref{fig:step2} presents the Test Module life cycle. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
