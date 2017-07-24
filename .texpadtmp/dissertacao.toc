@@ -92,7 +92,8 @@
 \contentsline {section}{\numberline {6.7}Conclusion}{102}
 \contentsline {chapter}{\numberline {7}Conclusion}{105}
 \contentsline {section}{\numberline {7.1}Summary of contributions and Achievements}{105}
-\contentsline {section}{\numberline {7.2}Open Issues and Future Works}{107}
+\contentsline {section}{\numberline {7.2}Open Issues}{107}
+\contentsline {section}{\numberline {7.3}Future Works}{107}
 \contentsline {chapter}{Bibliography}{109}
 \contentsline {chapter}{Appendix{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Stress Testing}{119}
 \contentsline {section}{\numberline {A.1}Research Questions}{119}
@@ -123,4 +124,5 @@
 \contentsline {subsection}{\numberline {B.2.3}Test Scenario library}{156}
 \contentsline {subsection}{\numberline {B.2.4}Operation Services}{156}
 \contentsline {subsection}{\numberline {B.2.5}External Dependencies}{156}
-\contentsline {subsubsection}{JGAP}{156}
+\contentsline {subsubsection}{jMetal}{157}
+\contentsline {subsubsection}{JGAP}{157}

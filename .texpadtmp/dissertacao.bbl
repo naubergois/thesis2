@@ -260,6 +260,12 @@ Dispon{\'\i}vel em:
 ISBN 0-7695-2536-9.
 ISSN 1052-8725.}
 
+\bibitem[Durillo et al. 2006]{Durillo2006}
+\abntrefinfo{Durillo et al.}{DURILLO et al.}{2006}
+{DURILLO, J.~J. et al. jmetal: a java framework for developing multi-objective
+  optimization metaheuristics.
+\emph{Science And Technology}, v.~01, n. March 2016, p. 1--12, 2006.}
+
 \bibitem[Dustin, Rashka e Paul 1999]{Dustin1999}
 \abntrefinfo{Dustin, Rashka e Paul}{DUSTIN; RASHKA; PAUL}{1999}
 {DUSTIN, E.; RASHKA, J.; PAUL, J. \emph{{Automated Software Testing:

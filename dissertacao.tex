@@ -2017,7 +2017,7 @@ The independent variable is the collaborative approach of the algorithms HybridQ
 
 \subsection{Experiment Results}
 
-At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. The new approach obtain a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} presents 6 workloads that which are the pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds.
+At the end of 28 generations, the new approach obtain a hypervolume value of the 10.29. The new approach obtain a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 miliseconds.
 
 \subsection{Experiment Conclusion}
 
@@ -2132,17 +2132,23 @@ Table \ref{conclusion} present the thesis hypotheses and obtained results.
 \end{tabular}
 \end{table}
 
-\section{Open Issues and Future Works}
+\section{Open Issues}
 
 There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is difficult to ensure that the execution times generated in the experiments represents global optimum. More experimentation is also required to determine the
 most appropriate and robust parameters. Lastly, there is a need for an adequate termination criterion to stop the search process. 
 
-For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions.
+For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and nondeterministic nature of the problem, we do not guarantee that the same pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to pareto frontier in different executions. 
 
+The choice of a fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behaviour. 
+
+
+\section{Future Works}
 
 Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight.
 
-...
+
+
+
 \appendix
 
 ...
@@ -3104,6 +3110,13 @@ The services are responsible for performing some operations performed by metaheu
 \end{figure}
 
 \subsection{External Dependencies}
+
+This section briefly present the two main external dependencies of the IAdapter: jMetal and JGAP.
+
+\subsubsection{jMetal}
+
+jMetal, an object-oriented Java-based framework aimed at facilitating the development of metaheuristics for solving multi-objective optimization problems. jMetal provides
+a rich set of classes which can be used as the building blocks of multi-objective metaheuristics; thus, taking advantage of code-reusing. The framework also incorporates a significant set of problems used as a benchmark in many comparative studies \cite{Durillo2006}. 
 
 \subsubsection{JGAP}
 
