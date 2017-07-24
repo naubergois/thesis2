@@ -1,21 +1,22 @@
 \select@language {english}
 \contentsline {table}{\numberline {3.1}{\ignorespaces Distribution of the research studies over the range of applied metaheuristics\relax }}{57}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Maximum value of the fitness function by algorithm\relax }}{68}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Results obtained from the second experiment\relax }}{68}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Example of individuals obtained in the second experiment\relax }}{69}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Percentage of genes in each scenario by generation \relax }}{69}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Best individuals found in the first experiment\relax }}{71}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Best individuals found by hybrid algorithm in the second experiment\relax }}{72}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Hypothetical MDP Q-values \relax }}{78}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Q values for response times bellow than service level\relax }}{82}
-\contentsline {table}{\numberline {6.1}{\ignorespaces Experiment Results\relax }}{90}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Hybervolume by algorithm with Noise Reduction\relax }}{94}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 1\relax }}{95}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 2\relax }}{96}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 3\relax }}{96}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Experiment Results\relax }}{100}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Thesis hypotheses\relax }}{105}
-\contentsline {table}{\numberline {A.1}{\ignorespaces Benchmarks group\relax }}{125}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Software products\relax }}{126}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Summary of studies in model-based stress testing\relax }}{147}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Performance antipatterns\relax }}{148}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Main differences between Alesio's \cite {Alesio2015} and IAdapter's approaches\relax }}{60}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Maximum value of the fitness function by algorithm\relax }}{70}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Results obtained from the second experiment\relax }}{70}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Example of individuals obtained in the second experiment\relax }}{71}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Percentage of genes in each scenario by generation \relax }}{71}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Best individuals found in the first experiment\relax }}{73}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Best individuals found by hybrid algorithm in the second experiment\relax }}{74}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Hypothetical MDP Q-values \relax }}{80}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Q values for response times bellow than service level\relax }}{84}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Experiment Results\relax }}{92}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Hybervolume by algorithm with Noise Reduction\relax }}{96}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 1\relax }}{97}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 2\relax }}{98}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Survey of use of Multi-Objective Algorithms - Question 3\relax }}{98}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Experiment Results\relax }}{102}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Thesis hypotheses\relax }}{107}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Benchmarks group\relax }}{127}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Software products\relax }}{128}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Summary of studies in model-based stress testing\relax }}{149}
+\contentsline {table}{\numberline {A.4}{\ignorespaces Performance antipatterns\relax }}{150}

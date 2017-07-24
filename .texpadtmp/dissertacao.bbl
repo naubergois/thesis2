@@ -290,6 +290,13 @@ ISSN 2159-4848.}
 {FEITELSON, D.~G. \emph{{Workload Modeling for Computer Systems Performance
   Evaluation}}. [S.l.]: Cambridge University Press, 2013.}
 
+\bibitem[Fiebrink, Mckay e Fujinaga 2005]{Fiebrink2005}
+\abntrefinfo{Fiebrink, Mckay e Fujinaga}{FIEBRINK; MCKAY; FUJINAGA}{2005}
+{FIEBRINK, R.; MCKAY, C.; FUJINAGA, I. {Combining d2k and jgap for efficient
+  feature weighting for classification tasks in music information retrieval}.
+\emph{Ismir}, p. 510--513, 2005.
+Dispon{\'\i}vel em: $<$ismir2005.ismir.net/proceedings/2121.pdf?$>$.}
+
 \bibitem[Ganesan et al. 2016]{Ganesan2016}
 \abntrefinfo{Ganesan et al.}{GANESAN et al.}{2016}
 {GANESAN, D. et al. {Experience Report: Model-Based Test Automation of a
@@ -712,6 +719,16 @@ Dispon{\'\i}vel em: $<$http://www.fokus.fraunhofer.de/go/motip09$>$.}
 ISSN 19493789.
 Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/2652524.2652587$>$.}
 
+\bibitem[Saeed, {Ab Hamid} e Sani 2017]{Saeed2017}
+\abntrefinfo{Saeed, {Ab Hamid} e Sani}{SAEED; {Ab Hamid}; SANI}{2017}
+{SAEED, A.; {Ab Hamid}, S.~H.; SANI, A.~A. {Cost and Effectiveness of
+  Search-Based Techniques for Model-Based Testing: An Empirical Analysis}.
+\emph{International Journal of Software Engineering and Knowledge Engineering},
+  v.~27, n.~04, p. 601--622, 2017.
+ISSN 0218-1940.
+Dispon{\'\i}vel em:
+  $<$http://www.worldscientific.com/doi/abs/10.1142/S021819401750022X$>$.}
+
 \bibitem[{San Miguel} e Takada 2016]{SanMiguel2016}
 \abntrefinfo{{San Miguel} e Takada}{{San Miguel}; TAKADA}{2016}
 {{San Miguel}, J.~L.; TAKADA, S. {GUI and Usage Model-based Test Case
@@ -916,6 +933,13 @@ ISBN 9781450325776. Dispon{\'\i}vel em:
   performance - WOSP '02}, n. January 2002, p.~179, 2002.
 Dispon{\'\i}vel em:
   $<$http://portal.acm.org/citation.cfm?doid=584369.584397$>$.}
+
+\bibitem[Woehrle 2012]{Woehrle2012}
+\abntrefinfo{Woehrle}{WOEHRLE}{2012}
+{WOEHRLE, M. {Search-based stress testing of wireless network protocol stacks}.
+\emph{Proceedings - IEEE 5th International Conference on Software Testing,
+  Verification and Validation, ICST 2012}, p. 794--803, 2012.
+ISSN 2159-4848.}
 
 \bibitem[{Xinying Cai} 2007]{XinyingCai2007}
 \abntrefinfo{{Xinying Cai}}{{Xinying Cai}}{2007}

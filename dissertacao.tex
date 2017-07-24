@@ -796,6 +796,9 @@ Wegener et al., 1996 and 1997 \\
 \setlength{\extrarowheight}{20pt}
 \begin{tabular}[c]{@{}l@{}}
 \begin{minipage}{0.1\textwidth}\small Customized \\ Algorithm \end{minipage}\end{tabular} & \cellcolor[HTML]{FFFFFF} & \cellcolor[HTML]{FFFFFF}  \begin{minipage}{0.3\textwidth}   \small  \textnormal{   \raggedleft Pohlheim, 1999 \cite{Pohlheim2005}  } \end{minipage} & \cellcolor[HTML]{FFFFFF} \\[4ex] \cline{2-4}
+\setlength{\extrarowheight}{20pt}
+\begin{tabular}[c]{@{}l@{}}
+\begin{minipage}{0.1\textwidth}\small SIBEA  \\  Multi-object \\ algorithm  \end{minipage}\end{tabular} & \cellcolor[HTML]{FFFFFF} \begin{minipage}{0.3\textwidth}   \small  \textnormal{\raggedleft Woehrle, 2012  \cite{Woehrle2012} } \end{minipage} & \cellcolor[HTML]{FFFFFF} & \cellcolor[HTML]{FFFFFF} \\[4ex] \cline{2-4}
 \end{tabular}
 \end{table}
 
@@ -839,6 +842,28 @@ Di Penta et al. \cite{Penta2007} used GA to create test data that violated quali
 
 Gois et al. proposes a hybrid metaheuristic approach using genetic algorithms, simulated annealing, and tabu search algorithms to perform stress testing. A tool named IAdapter, a JMeter plugin used for performing search-based stress tests, was developed. Two experiments were performed to validate the solution. In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The significance level adopted was 0.05. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach.
 In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of the previously established six generations \cite{Gois2016}.
+
+\section{Similar approaches}
+
+This research and Alesio's approach \cite{Alesio2015} use a hybrid approach with a functional tool in different contexts. Table \ref{tab:alesiogois} presents the main differences between Alesio's and IAdapter's approaches. Whereas the present research uses an approach based on usage scenarios performing tests on an application installed in an available environment, Alesio uses sequence diagrams  to select for arrival time of tasks in systems from  safety-critical domains. 
+
+
+\begin{table}[h]
+\centering
+\caption{Main differences between Alesio's \cite{Alesio2015} and IAdapter's approaches}
+\label{tab:alesiogois}
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+                                                                                  & Alesio et al. \cite{Alesio2015}                                                                                                             & This thesis                                                                                                                            \\ \hline
+\multicolumn{1}{|l|}{Metaheuristcs}                                               & \begin{tabular}[c]{@{}l@{}}GA+ \\ Constraint Programming\end{tabular}                                                      & \begin{tabular}[c]{@{}l@{}}GA+SA+\\ Tabu Search\end{tabular}                                                                           \\ \hline
+\multicolumn{1}{|l|}{Inputs}                                                      & \begin{tabular}[c]{@{}l@{}}Design Model (Time and \\ Concurrency\\  Information)\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Number of Users\\ and\ Test scenarios\end{tabular}                                                     \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Main\\ Objective\end{tabular}}    & \begin{tabular}[c]{@{}l@{}}Find task arrival times\\ of aperiodic tasks that\\  maximizing\\  deadline misses\end{tabular} & \begin{tabular}[c]{@{}l@{}}Find the number of\\  users and \\ test scenarios that\\ maximizing\\ the response time\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Main \\ Application\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Systems from \\ safety-critical \\ domains\end{tabular}                                         & \begin{tabular}[c]{@{}l@{}}Web and Mobile \\ applications\end{tabular}                                                                 \\ \hline
+\end{tabular}
+\end{table}
+
+Woehrle and this thesis use multi-objective algorithms to stress testing in different contexts. Woehrle formulate stress testing of protocol stacks on specific topologies as a multi-objective optimization problem and use an evolutionary algorithm for finding a set of small topologies that particularly stress the protocol stack of a wireless network \cite{Woehrle2012}. 
+
 
 \section{Summary}
 
@@ -2472,6 +2497,8 @@ There are two main approaches to design generative or descriptive workloads:
 \end{itemize}
 
 
+Model-based test is an approach that automates test case generation and execution in order to reduce software testing cost. Search-based techniques is commom used to generate optimal test data that satisfies every transition and constraint in the state model \cite{Saeed2017}. 
+
 Search-Based Stress testing will be detail explained in the chapter 3. Three other approaches use neither a model-based test nor a search-based test.
 
 \subsection{Model-based Stress Testing}
@@ -3078,6 +3105,11 @@ The services are responsible for performing some operations performed by metaheu
 
 \subsection{External Dependencies}
 
+\subsubsection{JGAP}
+
+JGAP  is a GA package written in Java and distributed freely. Its design is modular, it is well documented and
+easily extensible, and active developer and user communities
+promote continual improvements. These characteristics support our goals of portability and flexibility. JGap allows in quite nice object way to set lots of genetic properties and use different population transformations. During the JGAP evolution process, chromosomes are exposed to multiple genetic operators that represent mating, mutation, etc. and then are chosen for the next generation during a natural selection phase based upon their fitness which is a measure of how optimal that solution is relative to other potential solutions. JGAP lets us choose what gene class to use to represent each gene in the chromosome. That provides the most flexibility and convenience \cite{Fiebrink2005}.
 
 
 %\include{apendice2}

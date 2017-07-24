@@ -18,7 +18,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 14590 items from 5000.
+Reallocated field_info (elt_size=4) to 14800 items from 5000.
 Database file #1: ../abnt-options.bib
 Database file #2: ../bibliografia.bib
 Repeated entry---line 233 of file ../bibliografia.bib
@@ -193,239 +193,239 @@ Repeated entry---line 3305 of file ../bibliografia.bib
  : @inproceedings{Gois2016
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3351 of file ../bibliografia.bib
+Repeated entry---line 3399 of file ../bibliografia.bib
  : @article{Garousi2010
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3377 of file ../bibliografia.bib
+Repeated entry---line 3425 of file ../bibliografia.bib
  : @article{Avritzer1994
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3388 of file ../bibliografia.bib
+Repeated entry---line 3436 of file ../bibliografia.bib
  : @phdthesis{Garousi2006
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3417 of file ../bibliografia.bib
+Repeated entry---line 3465 of file ../bibliografia.bib
  : @article{Garousi2008
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3457 of file ../bibliografia.bib
+Repeated entry---line 3505 of file ../bibliografia.bib
  : @article{Wegener1997
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3471 of file ../bibliografia.bib
+Repeated entry---line 3519 of file ../bibliografia.bib
  : @inproceedings{Alander
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3480 of file ../bibliografia.bib
+Repeated entry---line 3528 of file ../bibliografia.bib
  : @article{Barros2007
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3537 of file ../bibliografia.bib
+Repeated entry---line 3585 of file ../bibliografia.bib
  : @article{Sandler2004
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3551 of file ../bibliografia.bib
+Repeated entry---line 3599 of file ../bibliografia.bib
  : @book{Erinle2013
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3558 of file ../bibliografia.bib
+Repeated entry---line 3606 of file ../bibliografia.bib
  : @misc{Corporation2007
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3601 of file ../bibliografia.bib
+Repeated entry---line 3649 of file ../bibliografia.bib
  : @article{Goncalves2014
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3606 of file ../bibliografia.bib
+Repeated entry---line 3654 of file ../bibliografia.bib
  : @book{Feitelson2013
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3667 of file ../bibliografia.bib
+Repeated entry---line 3715 of file ../bibliografia.bib
  : @article{DiLucca2006
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3679 of file ../bibliografia.bib
+Repeated entry---line 3727 of file ../bibliografia.bib
  : @article{Harman2015
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3691 of file ../bibliografia.bib
+Repeated entry---line 3739 of file ../bibliografia.bib
  : @article{Anand2013
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3702 of file ../bibliografia.bib
+Repeated entry---line 3750 of file ../bibliografia.bib
  : @inproceedings{Penta2007
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3711 of file ../bibliografia.bib
+Repeated entry---line 3759 of file ../bibliografia.bib
  : @article{Barber1999
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3718 of file ../bibliografia.bib
+Repeated entry---line 3766 of file ../bibliografia.bib
  : @article{Silveira2011
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3725 of file ../bibliografia.bib
+Repeated entry---line 3773 of file ../bibliografia.bib
  : @article{Grechanik2012
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3758 of file ../bibliografia.bib
+Repeated entry---line 3806 of file ../bibliografia.bib
  : @misc{dean2003managing
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3781 of file ../bibliografia.bib
+Repeated entry---line 3829 of file ../bibliografia.bib
  : @article{Harman2010
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3797 of file ../bibliografia.bib
+Repeated entry---line 3845 of file ../bibliografia.bib
  : @book{MohammadS.Obaidat
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3824 of file ../bibliografia.bib
+Repeated entry---line 3872 of file ../bibliografia.bib
  : @book{Talbi2013
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3844 of file ../bibliografia.bib
+Repeated entry---line 3892 of file ../bibliografia.bib
  : @article{Greenwald2003
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3856 of file ../bibliografia.bib
+Repeated entry---line 3904 of file ../bibliografia.bib
  : @article{MarkUtting2012
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3872 of file ../bibliografia.bib
+Repeated entry---line 3920 of file ../bibliografia.bib
  : @article{Hierons2009
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3886 of file ../bibliografia.bib
+Repeated entry---line 3934 of file ../bibliografia.bib
  : @phdthesis{shousha2003performance
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3893 of file ../bibliografia.bib
+Repeated entry---line 3941 of file ../bibliografia.bib
  : @article{hong2000simultaneously
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3904 of file ../bibliografia.bib
+Repeated entry---line 3952 of file ../bibliografia.bib
  : @article{Vogele2016
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3921 of file ../bibliografia.bib
+Repeated entry---line 3969 of file ../bibliografia.bib
  : @article{Menasce2002a
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3931 of file ../bibliografia.bib
+Repeated entry---line 3979 of file ../bibliografia.bib
  : @article{Sutton2012
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3968 of file ../bibliografia.bib
+Repeated entry---line 4016 of file ../bibliografia.bib
  : @article{Bertolino2008
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3982 of file ../bibliografia.bib
+Repeated entry---line 4030 of file ../bibliografia.bib
  : @article{MarkUtting2012
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3998 of file ../bibliografia.bib
+Repeated entry---line 4046 of file ../bibliografia.bib
  : @article{Trent1995
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4006 of file ../bibliografia.bib
+Repeated entry---line 4054 of file ../bibliografia.bib
  : @article{Luo2015
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4093 of file ../bibliografia.bib
+Repeated entry---line 4141 of file ../bibliografia.bib
  : @phdthesis{tracey2000search
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4105 of file ../bibliografia.bib
+Repeated entry---line 4153 of file ../bibliografia.bib
  : @article{Tracey1998
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4128 of file ../bibliografia.bib
+Repeated entry---line 4176 of file ../bibliografia.bib
  : @article{Mueller1998
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4150 of file ../bibliografia.bib
+Repeated entry---line 4198 of file ../bibliografia.bib
  : @article{Puschner1998
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4169 of file ../bibliografia.bib
+Repeated entry---line 4217 of file ../bibliografia.bib
  : @article{J.WegenerK.GrimmM.GrochtmannH.Sthamer1996
  :                                                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4189 of file ../bibliografia.bib
+Repeated entry---line 4237 of file ../bibliografia.bib
  : @article{Briand2005
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4199 of file ../bibliografia.bib
+Repeated entry---line 4247 of file ../bibliografia.bib
  : @article{Canfora
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4245 of file ../bibliografia.bib
+Repeated entry---line 4293 of file ../bibliografia.bib
  : @article{Wegener1998
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4259 of file ../bibliografia.bib
+Repeated entry---line 4307 of file ../bibliografia.bib
  : @book{Halili2008
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4276 of file ../bibliografia.bib
+Repeated entry---line 4324 of file ../bibliografia.bib
  :  @book{Lewis2005
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4411 of file ../bibliografia.bib
+Repeated entry---line 4459 of file ../bibliografia.bib
  : @article{Knowles1999
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4453 of file ../bibliografia.bib
+Repeated entry---line 4501 of file ../bibliografia.bib
  : @article{Zhang2007
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4503 of file ../bibliografia.bib
+Repeated entry---line 4551 of file ../bibliografia.bib
  : @article{Michalak2014
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4855 of file ../bibliografia.bib
+Repeated entry---line 4903 of file ../bibliografia.bib
  : @article{Hierons2009
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4869 of file ../bibliografia.bib
+Repeated entry---line 4917 of file ../bibliografia.bib
  : @article{MarkUtting2012
  :                        ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4885 of file ../bibliografia.bib
+Repeated entry---line 4933 of file ../bibliografia.bib
  : @article{Wang2013
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4911 of file ../bibliografia.bib
+Repeated entry---line 4959 of file ../bibliografia.bib
  : @article{Bertolino2008
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4979 of file ../bibliografia.bib
+Repeated entry---line 5027 of file ../bibliografia.bib
  : @article{Cai2007
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4992 of file ../bibliografia.bib
+Repeated entry---line 5040 of file ../bibliografia.bib
  : @article{Barber1999
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5027 of file ../bibliografia.bib
+Repeated entry---line 5075 of file ../bibliografia.bib
  : @inproceedings{Barros2007
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5040 of file ../bibliografia.bib
+Repeated entry---line 5088 of file ../bibliografia.bib
  : @article{Silveira2011
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5050 of file ../bibliografia.bib
+Repeated entry---line 5098 of file ../bibliografia.bib
  : @article{Avritzer1994
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5064 of file ../bibliografia.bib
+Repeated entry---line 5112 of file ../bibliografia.bib
  : @article{Anand2013
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5078 of file ../bibliografia.bib
+Repeated entry---line 5126 of file ../bibliografia.bib
  : @inproceedings{Draheim2006b
  :                            ,
 I'm skipping whatever remains of this entry
@@ -442,45 +442,45 @@ Warning--campo year vazio ou faltando em MohammadS.Obaidat
 | Em caso de duvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 137 entries,
+You've used 140 entries,
             6523 wiz_defined-function locations,
-            2117 strings with 39650 characters,
-and the built_in function-call counts, 121232 in all, are:
-= -- 9688
-> -- 4834
-< -- 192
-+ -- 1859
-- -- 1450
-* -- 9041
-:= -- 16056
-add.period$ -- 640
-call.type$ -- 138
-change.case$ -- 1589
-chr.to.int$ -- 247
-cite$ -- 138
-duplicate$ -- 5604
-empty$ -- 8710
-format.name$ -- 6894
-if$ -- 29117
+            2141 strings with 40369 characters,
+and the built_in function-call counts, 124136 in all, are:
+= -- 9922
+> -- 4952
+< -- 198
++ -- 1902
+- -- 1485
+* -- 9268
+:= -- 16429
+add.period$ -- 653
+call.type$ -- 141
+change.case$ -- 1626
+chr.to.int$ -- 253
+cite$ -- 141
+duplicate$ -- 5744
+empty$ -- 8898
+format.name$ -- 7057
+if$ -- 29801
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 2429
-newline$ -- 730
-num.names$ -- 675
-pop$ -- 3197
+missing$ -- 2484
+newline$ -- 749
+num.names$ -- 690
+pop$ -- 3269
 preamble$ -- 2
-purify$ -- 581
+purify$ -- 594
 quote$ -- 0
-skip$ -- 6349
+skip$ -- 6492
 stack$ -- 1
-substring$ -- 4707
-swap$ -- 2821
-text.length$ -- 155
+substring$ -- 4861
+swap$ -- 2898
+text.length$ -- 160
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 75
 warning$ -- 2
-while$ -- 1055
+while$ -- 1082
 width$ -- 0
-write$ -- 2255
+write$ -- 2306
 (There were 102 error messages)
