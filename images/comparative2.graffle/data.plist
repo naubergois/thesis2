@@ -52,6 +52,24 @@
 	<key>GraphicsList</key>
 	<array>
 		<dict>
+			<key>Bounds</key>
+			<string>{{579, 268.5}, {112, 221.5}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>1</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
 			<key>Class</key>
 			<string>LineGraphic</string>
 			<key>ID</key>
@@ -1210,7 +1228,7 @@ Dominated Solutions}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-07-24 18:09:51 +0000</string>
+	<string>2017-07-25 00:25:12 +0000</string>
 	<key>Modifier</key>
 	<string>Francisco Gois</string>
 	<key>NotesVisible</key>

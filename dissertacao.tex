@@ -156,63 +156,36 @@ growth in the complexity of software makes the cost of testing has only continue
 space are evaluated with respect to the fitness function using a metaheuristic search technique. Search-based software testing is the application of metaheuristic search techniques to generate software
 tests cases or perform test execution \cite{Afzal2009a}.
 
-Experimentation is important to realistically and accurately test and evaluate search-based stress tests. Experimentation on algorithms is usually made by simulation. Experiments involving search based tests are inherently complex and typically time-consuming to set up and execute. Such experiments are also extremely difficult to repeat. People who might want to duplicate published results, for example, must devote substantial resources to setting up and the environmental conditions are likely to be substantially different.
+Search-based stress testing (SBST) is seen as a promising approach to verify timing constraints \cite{Afzal2009a}. A common objective of a load search-based test is to find  scenarios that produce execution times that violate the specified timing constraints \cite{Sullivan}. 
 
-Search-based testing (SBST) is seen as a promising approach to verify timing constraints \cite{Afzal2009a}. A common objective of a load search-based test is to find  scenarios that produce execution times that violate the specified timing constraints \cite{Sullivan}. Experiments involving search-based tests are inherently complex and typically time-consuming to set up and
-execute. Such experiments are also extremely difficult to
-repeat. People who might want to duplicate published results, for example, must devote substantial resources to setting up and the environmental conditions are likely to be substantially different.
+Experimentation is important to realistically and accurately evaluate search-based stress tests. Experimentation on algorithms is usually made by simulation. Experiments involving search based tests are inherently complex and typically time-consuming and extremely difficult to repeat. People who might want to duplicate published results, for example, must devote substantial resources to setting up and the environmental conditions are likely to be substantially different.
 
+Usually,   search-based test methods are based on single objective optimization. However, multi-objective heuristics may be more suitable in non-functional search-based tests, since these tests usually aim to obtain a result with more than one objective, for example,  maximize the number of users of an application, minimizing your response time. Multi-objective evolutionary algorithms (MOEAs) are widely used for solving multi-objective problems (MOPs) because they produce a complete set of solutions in a single run. 
 
-Usually,   search-based test methods are based on single objective optimization. Multi-objective evolutionary algorithms (MOEAs) are widely used for solving multi-objective problems (MOPs) because they produce a complete set of solutions in a single run. 
+Most of the commercial or academic tools don't use MOEAs in search-based stress tests. Several tools provide support for process and running tests with different approaches. While some of the tools use model-based tests, other set of tools use a scripting-based approach.  Stress testing tools are important to verify compliance with the service levels of an application.
 
-None of the commercial or academic tools studied by this thesis use MOEAs in search-based stress tests. Several tools provide support for process and running tests with different approaches. While some of the tools are open source, other tools are provided by companies in different business models. Some tools still using scripting-based approach, other tools already use model-based testing.  Stress testing tools are important to verify compliance with the service levels of an application.
-
-Service Level Agreements (SLAs)  are documents that specify realistic performance guarantees as well as
+Service Level is the service the customer hopes to reiceve \cite{Parasuraman1991}. Service Level Agreements (SLAs)  are documents that specify realistic performance guarantees as well as
 penalties for non-compliance \cite{Menasce2002b}.   SLAs are made between providers and customers that include service quality, resources
 capability, scalability, obligations and consequences in case of
 violations. Satisfying SLA is very important and a challenging
-issue \cite{Rajeshwari2016}. 
+issue \cite{Rajeshwari2016}. Decision making and definition of an SLA involves finding the appropriate response times for a test application. The main motivation of this thesis is to propose a new set of techniques that could help to define the response time of SLAs using search-based stress testing. The next sections present the Research Questions, Contributions and the Thesis Outline. 
 
-The main motivation of this thesis was to propose new set of techniques that could help to define the corrected response time of SLAs using Stress Testing. 
+\section{Research Questions}
 
-\section{Research Hypotheses}
-
-This thesis addresses the use of hybrid and multi-objective metaheuristics in conjunction with reinforcement learning techniques in search-based stress tests. A tool named IAdapter (www.iadapter.org, github.com/naubergois/newiadapter), a JMeter plugin for performing search-based stress tests, was developed.  Several experiments was conducted to validate the proposed approach. The thesis proposes to use search-based tests techniques to provide more automation in tasks of test case design and execution, and provide results that help the decision-making in SLAs. To achieve to this goal, five hypotheses were proposed:
-
-With regard to the result of tests using multi-objective  metaheuristics:
-\begin{itemize}
-\item $H1_{0}$ (null hypothesis) :the multi-objective metaheuristics do not found relevant test results to the SLA definition.
-\item $H1_{1}$  : the multi-objective metaheuristics  found relevant test results to the SLA definition.
-\end{itemize}
+This thesis addresses the use of hybrid and multi-objective metaheuristics in conjunction with reinforcement learning techniques in search-based stress tests. A tool named IAdapter (www.iadapter.org, github.com/naubergois/newiadapter), a JMeter plugin for performing search-based stress tests, was developed. The thesis use a Noise Reduction algorithm named SEDR in the experiments of the chapter 6. Considering these  motivations and the objective of this thesis, the main research questions which this thesis addresses are:
 
 \begin{itemize}
-\item $H2_{0}$ (null hypothesis) :the multi-objective metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
-\item $H2_{1}$  : the multi-objective metaheuristics proposed approach found more relevant test results than the state-of-art approaches of the area.
-\end{itemize}
 
-With regard to the result of tests using hybrid metaheuristics:
-\begin{itemize}
-\item $H3_{0}$ (null hypothesis) :the hybrid metaheuristics do not found relevant test results to the SLA definition.
-\item $H3_{1}$  : the hybrid metaheuristics  found relevant test results to the SLA definition.
+\item \textbf{(Research Question 1)} How to improve search-based stress testing using single-objective metaheuristics?
+
+\item \textbf{(Research Question 2)} How to improve the choice of neighboring solutions in a single-objective metaheuristic to explore, reducing the time needed to obtain the scenarios with the longest response time in the application?
+
+\item \textbf{(Research Question 3)} How to use multi-objective metaheuristics in search-based stress testing to obtain a pareto frontier to improve the definition of SLAs?
+
 \end{itemize}
 
 
-\begin{itemize}
-\item $H4_{0}$ (null hypothesis) :the hybrid metaheuristics proposed approach do not found more relevant test results than the state-of-art approaches of the area.
-\item $H4_{1}$  : the hybrid metaheuristics  proposed approach found more relevant test results than the state-of-art approaches of the area.
-\end{itemize}
-
-With regard to the result of tests using hybrid metaheuristics with reinforcement learning:
-
-\begin{itemize}
-\item $H5_{0}$ (null hypothesis) :the use of hybrid algorithm with reinforcement learning  do not optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.
-\item $H5_{1}$  : the use of hybrid algorithm with reinforcement learning optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application.
-\end{itemize}
-
-
-
-
-The purpose of this thesis is to show the validity of this hypotheses through the development of algorithms that use hybrid metaheuristics,reinforcement learning and multi-objective metaheuristics. This thesis will be useful for stress test practitioners and software engineering researchers interested in large-scale testing software systems.
+In the next section, we show the main contribution of this thesis based on the research questions presented.
 
 
 \section{Contributions}
@@ -220,21 +193,21 @@ The purpose of this thesis is to show the validity of this hypotheses through th
 The main contributions of this thesis are follows:
 
 \begin{itemize}
-\item We propose  a hybrid algorithm approach in search-based stress testing. The approach  uses Tabu Search, Simulated Annealing and Genetic Algorithms. The study presents three experiments. The results were published in  \cite{Gois2016}. This proposal refers to Hypotheses $H3_{1}$ and $H4_{1}$ (Chapter 4).
+\item We propose  a hybrid algorithm approach in search-based stress testing. The approach  uses Tabu Search, Simulated Annealing and Genetic Algorithms. The thesis presents three experiments. The results were published in  \cite{Gois2016}. This proposal refers to our \textbf{Research Question 1} (Chapter 4).
  
-\item We present a hybrid algorithm with Q-Learning approach. The approach uses reinforcement learning  to optimize the choice of neighboring solutions, reducing the time needed to obtain the scenarios with the longest response time. This proposal refers to Hypothesis $H5_{1}$ (Chapter 5).
+\item We present a hybrid algorithm with Q-Learning approach. The approach uses reinforcement learning  to optimize the choice of neighboring solutions, reducing the time needed to obtain the scenarios with the longest response time. This proposal refers to our \textbf{Research Question 2} (Chapter 5).
 
-\item Comprehensive investigation on the use of multi-objective metaheuristics on search-based stress testing. We investigate t the benefits of multiobjective metaheuristics in search-based stress testing. Part of the results were published in \cite{Gois2017}. This proposal refers to Hypotheses $H1_{1}$ and $H2_{1}$ 
- (Chapter 6).
+\item  We investigate the benefits of multiobjective metaheuristics in search-based stress testing. A comprehensive investigation on the use of multi-objective metaheuristics on search-based stress testing was conducted. Part of the results were published in \cite{Gois2017}.This proposal refers to our \textbf{Research Question 3} (Chapter 6).
+
 \end{itemize}
 
 
 The secondary contributions of this thesis are follows:
 
 \begin{itemize}
-\item The Survey presented in the Appendix A
+\item The Survey of Stress Testing presented in the Appendix A
 \item The IAdapter tool presented in the Appendix B
-\item The Noise Reduction approach extended of SEDR algorithm.
+\item A Noise Reduction approach extended of SEDR algorithm used in the experiments of the chapter 6.
 \end{itemize}
 
 
@@ -246,7 +219,7 @@ The remainder of this thesis is organized as follows:
 \textbf{Chapter 2} presents initial concepts about the use of metaheuristics, hybrid metaheuristics, multi-objective metaheuristics and reinforcement learning. The chapter briefly presents the Trajectory and Population-based Metaheuristics.  Subsequently, presents Hybrid and Multi-Objective metaheuristics. Finally, briefly introduces the Reinforcement Learning concepts. 
 \\
 
-\textbf{Chapter 3} reviews the state of the art literature in search-based stress testing. In particular, two categories of approaches are out-lined: (i) Search-Based Stress Testing on Safety-critical systems; (ii) Search-Based Stress Testing on non Safety-critical systems. The chapter also presents the thesis focus and main approaches used in  the state-of-art of this area.
+\textbf{Chapter 3} the context where this thesis is inserted and present concepts about Search-based Stress Testing. In particular, two categories of approaches are out-lined: (i) Search-Based Stress Testing on Safety-critical systems; (ii) Search-Based Stress Testing on non Safety-critical systems.
 \\
 
 \textbf{Chapter 4} presents a hybrid approach that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was developed. Three experiments were conducted to validate the proposed approach. The first experiment was performed on an emulated component, and the second one was performed using an installed Moodle application. The chapter presents the solution representation and the objective function of the proposed approach.
@@ -677,7 +650,7 @@ In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{
 
 \section{Summary}
 
-Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards.
+Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Population-based methods are better in identifying promising areas in the search space from which trajectory methods can quickly reach good local optima. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Software is pervasive, which raises the value of testing it. Sometimes is necessary a noisy reduction strategy in stress tests. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards. The next chapter presents the state-of-art of search-based stress testing.
 
 \chapter{Search-based Stress Testing}
 
@@ -719,7 +692,7 @@ The main difference between load tests, performance tests and stress tests are:
 Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions \cite{Afzal2009a} \cite{Harman2015}.
 
 
-Search Based Software Testing (SBST) is the sub-area of Search Based Software Engineering concerned with software testing. Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique \cite{Afzal2009a} \cite{Aleti2016} \cite{Harman2015}. A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search and genetic algorithms.
+Search-based Software Testing (SBST) is the sub-area of Search Based Software Engineering concerned with software testing. Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique \cite{Afzal2009a} \cite{Aleti2016} \cite{Harman2015}. A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search and genetic algorithms.
 
 In the academic context, a number of studies proving the efficacy of metaheuristics to automate test execution can be found in literature. Figure \ref{fig:sbsesbst}  shows the growth in papers published on SBST and SBSE. The data is taken from the SBSE repository (\url{http://crestweb.cs.ucl.ac.uk/resources/sbse_repository/}) and Afzal et al. \cite{Afzal2009a} \cite{Harman2015}.
 The aim of the SBSE repository is to contain every SBSE paper. Although no repository can guarantee 100\% precision and recall, the SBSE repository has proved sufficiently usable that it has formed the basis of several other detailed analyses of the literature \cite{Harman2015}.
@@ -754,9 +727,9 @@ There are many kinds of non-functional search based tests  \cite{Afzal2009a}:
 \item Safety: Safety testing is an important component of the testing strategy of safety critical systems where the systems are required to meet safety constraints.
 \end{itemize}
 
-There is a great difficulty in
+A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes \cite{Afzal2009a}.  Fig. \ref{fig:metabykind} shows a comparison between the range of metaheuristics and the type of non-functional search based test.The Data comes from Afzal et al. \cite{Afzal2009a}. Afzal's work adds to some of the latest research in this area (\cite{Garousi2006} \cite{Garousi2010} \cite{DiAlesio2013} \cite{DiAlesio2014} \cite{Alesio2015} \cite{Gois2016}). The thesis focus is use  hybrid and multiobjective metaheuristics in Quality of Service and Execution Time tests (Search-based stress testing). There is a great difficulty in
 comparing some approaches present in the state of
-the art, due to the lack of availability of the tools used. The present research intends to compare the proposed approach with other methods based on the use of single or multiobjective metaheuristics.A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes \cite{Afzal2009a}.  Fig. \ref{fig:metabykind} shows a comparison between the range of metaheuristics and the type of non-functional search based test.The Data comes from Afzal et al. \cite{Afzal2009a}. Afzal's work adds to some of the latest research in this area (\cite{Garousi2006} \cite{Garousi2010} \cite{DiAlesio2013} \cite{DiAlesio2014} \cite{Alesio2015} \cite{Gois2016}). The thesis focus is use  hybrid and multiobjective metaheuristics in Quality of Service and Execution Time tests (Search-based stress testing).
+the art, due to the lack of availability of the tools used. The present research intends to compare the proposed approach with other methods based on the use of single or multiobjective metaheuristics. 
 
 
 \begin{figure}[h]
@@ -871,9 +844,17 @@ Woehrle and this thesis use multi-objective algorithms to stress testing in diff
 
 The stress testing verifies the system behavior against heavy workloads, which are executed to evaluate a system beyond its limits, validate system response in activity peaks, and verify whether the system is able to recover from these conditions. Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions.  Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique.
 
+SBST has made many achievements, and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties. A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes. The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space.  The application of SBST algorithms to  stress tests involves finding the best- and worst-case execution times (B/WCET) to determine whether timing constraints are fulfilled. here are two measurement units normally associated with the fitness function in a stress test: processor cycles and execution time. The processor cycle approach describes a fitness function in terms of processor cycles. The execution time approach involves executing the application under test and measuring the execution time. Processor cycles measurement is deterministic in the sense that it is independent of system load and results in the same execution times for the same set of input parameters.
+
+The studies can be grouped into two main groups: Search-Based Stress Testing on Safety-critical systems or Search-Based Stress Testing on non Safety-critical systems. Domains such as avionics feature safety-critical systems, whose failure could result in catastrophic consequences.  The importance of software in such systems is permanently increasing due to the need of a higher system
+flexibility. For this reason, software components of these systems are usually subject to safety certification. 
+
+Usually, the application of Search-Based Stress Testing on non safety-critical systems deals with the generation of test cases that causes Service Level Agreement (SLA) violations.T racey et al.  used simulated annealing (SA) to test four
+simple programs. The results of the research presented that the use of SA was more effective with a larger parameter space. Di Penta et al. used GA to create test data that violated quality of service (QoS) constraints, causing SLA violations. The approach was applied to two case studies. The first case study was an audio processing workflow, and the second case study, a service producing charts. The next chapter presents the first contribution of this thesis.
+
 \chapter{Stress Search Based Testing using Hybrid Metaheuristic}
 
-This chapter presents an study of the use a hybrid algorithm in search-based stress testing. The study uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on  uses the three algorithms collaboratively (hybrid metaheuristic approach).
+This chapter presents an study of the use a hybrid algorithm in search-based stress testing. The research uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on  uses the three algorithms collaboratively (hybrid metaheuristic approach).
 
 In the first approach, the algorithms do not share their best individuals among themselves. Each algorithm evolves in a separate way (Fig. \ref{fig:firstaproach}). The second approach uses the algorithms in a collaborative mode (hybrid metaheuristic). In this approach, the three algorithms share their best individuals found (Fig. \ref{fig:secondapproach}). 
 
@@ -2059,13 +2040,24 @@ The results presented by the new approach in the experiment surpass previous app
 
 \section{Analysis of Pareto Frontier  in Multiple Executions}
 
-This section presents an initial study to evaluate the Pareto Frontier difference in multiple executions. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 2 days and 983 executions. The tool automatically selected the next scenarios to be run up to the limit of 23 previously established  generations by the algorithm. Three executions were carried out with different initial populations. Figs. presents the comparative results between executions 1, 2 and 3.
+This section presents an initial study to evaluate the Pareto Frontier difference in multiple executions. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 2 days and 983 executions. The tool automatically selected the next scenarios to be run up to the limit of 23 previously established  generations by the algorithm. Three executions were carried out with different initial populations. Figs. \ref{fig:comp1} and \ref{fig:comp2} presents the comparative results between the three executions (1, 2 and 3).
 
+\subsection{Experiment Research Questions}
+
+The following research question is addressed:
+\begin{itemize}
+\item There is an acceptable variation of the Pareto frontier for the three test executions?
+\end{itemize}
+
+
+\subsection{Variables}
+
+The independent variable is three test executions using collaborative approach withthe algorithms HybridQ and MOEA/D. The dependent variable are the hypervolume and pareto frontier found by each test execution.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./images/comparative.png}
-    \caption{Collaborative approach Pareto Frontier}
+    \caption{Pareto Frontier of the first and second test executions}
 \label{fig:comp1}
 \end{figure}
 
@@ -2073,11 +2065,38 @@ This section presents an initial study to evaluate the Pareto Frontier differenc
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./images/comparative2.png}
-    \caption{Collaborative approach Pareto Frontier}
+    \caption{Pareto Frontier of the second and third test executions}
 \label{fig:comp2}
 \end{figure}
 
+\subsection{Experiment Hypotheses}
 
+
+\begin{itemize}
+\item $H_{0}$  (null hypothesis) : The hypervolume variation of the three tests performed is greater than 10\%.
+\item $H_{1}$ : The hypervolume variation of the three tests performed is less than 10\%.
+\end{itemize}
+
+
+\subsection{Experiment Results}
+
+Table \ref{tab:results2} presents the experiment results. The variation between stayed around 17\%. Further studies are needed to ascertain more accurately the variation of the pareto frontier.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\caption{Experiment Results}
+\label{my-label}
+\begin{tabular}{|l|l|ll}
+\cline{1-2}
+\cellcolor[HTML]{EFEFEF}\textbf{Test Execution} & \cellcolor[HTML]{EFEFEF}\textbf{HyperVolume} &                                                     &                                        \\ \hline
+1                                               & 9.377189                                     & \multicolumn{1}{l|}{\textbf{Average}}               & \multicolumn{1}{l|}{8.652338}          \\ \hline
+2                                               & 9.648418                                     & \multicolumn{1}{l|}{\textbf{Standard Desviation}}   & \multicolumn{1}{l|}{1.49652728764998}  \\ \hline
+3                                               & 6.931407                                     & \multicolumn{1}{l|}{\textbf{Percentual desviation}} & \multicolumn{1}{l|}{0.172962185209359} \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Conclusion}
 
@@ -2127,25 +2146,17 @@ In this thesis we deal with the use of hybrid metaheuristics, reinforcement lear
 \section{Summary of contributions and Achievements}
 
 
-First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid algorithm uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to perform performance, load, and stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach when compared with the other algorithms. All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool \cite{Gois2016}. 
+First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid algorithm uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to perform performance, load, and stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach when compared with the other algorithms (\textbf{Research Question 1}). All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool \cite{Gois2016}. 
 
 
-The thesis hypothesis $H3_{1}$ was satisfied taking into account that the scenarios found in the experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hypothesis $H4_{1}$ was partially satisfied since tests with all the approaches related to the state-of-art could not be compared. The algorithm surpassed the approaches that use genetic algorithms, tabu search and simulated annealing. 
+In order to improve the efficiency of our proposal, we use the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because q-learning. The research has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtain the best fitness value with minor number of requests (\textbf{Research Question 2}). 
 
 
+We also proposed the use of multi-objective algorithms in search-based stress testing. To this end we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. Several experiments were performed to evaluate the proposed approaches. The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improve the hypervolume values obtained and found more relevant workloads than the previous experiments (\textbf{Research Question 3}). 
 
-In order to improve the efficiency of our proposal, we use the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because q-learning. The research has as premise that the same application under performance tests can be submitted to more than one cycle of tests execution, reducing the cost of the exploration phase of the q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtain the best fitness value with minor number of requests. 
+The thesis Research Question 3 was satisfied taking into account that the scenarios found in the experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level.
 
-
-The thesis hypothesis $H5_{1}$ was satisfied taking into account that the experiment reveal that the best solutions found by the new
-Hybrid q-learning approach were on average 5.98\% better than that achieved by our previous Hybrid approach without q-learning
-
-
-We also proposed the use of multi-objective algorithms in search-based stress testing. To this end we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. Several experiments were performed to evaluate the proposed approaches. The use of multiobjective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improve the hypervolume values obtained and found more relevant workloads than the previous experiments. 
-
-The thesis hypothesis $H1_{1}$ was satisfied taking into account that the scenarios found in the multi-objective experiments present results that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level. The thesis hypothesis $H2_{1}$ was partially satisfied since all the previous approaches in search-based tests do not present a Pareto frontier, because studies are needed to comparing the present approach with others such as model-based or FOREPOST tests.
-
-Table \ref{conclusion} present the thesis hypotheses and obtained results.
+Table \ref{conclusion} present the thesis Research Questions and obtained results.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -2153,16 +2164,14 @@ Table \ref{conclusion} present the thesis hypotheses and obtained results.
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 \centering
-\caption{Thesis hypotheses}
+\caption{Thesis Research Questions}
 \label{conclusion}
 \begin{tabular}{|l|l|l|}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-\textbf{Metaheuristic}                                                                                         & \textbf{Hypotheses}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       & \begin{tabular}[c]{@{}l@{}}H1: the multi-objective metaheuristics found\\  relevant test results to the SLA definition.\end{tabular}                                                                                                                                         & Satisfied                \\ \cline{2-3} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Multiobjective}}                                              & \begin{tabular}[c]{@{}l@{}}H2: The multi-objective metaheuristics \\ proposed approach found more relevant test results \\ than the state-of-art approaches of the area.\end{tabular}                                                                                        & Partially satisfied      \\ \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       & \begin{tabular}[c]{@{}l@{}}H3: The hybrid metaheuristics found relevant test \\ results to the SLA definition.\end{tabular}                                                                                                                                                  & Satisfied                \\ \cline{2-3} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Hybrid}}                                                      & \begin{tabular}[c]{@{}l@{}}H4: The hybrid metaheuristics proposed approach \\ found more relevant test results than\\  the state-of-art approaches of the area.\end{tabular}                                                                                                 & Partially satisfied      \\ \hline
+\textbf{Metaheuristic}                                                                                         & \textbf{Research Question}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       Hybrid & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                         & Satisfied                \\  \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       Hybrid + \\ Reinforcement \\ Learning & \begin{tabular}[c]{@{}l@{}} (Research Question 2)How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
 \cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Hybrid + \\ Reinforcement \\ Learning\end{tabular}} & \begin{tabular}[c]{@{}l@{}}H5: The use of hybrid algorithm with reinforcement \\ learning optimize the choice of neighboring \\ solutions to explore, reducing the time needed to obtain\\  the scenarios with the longest response \\ time in the application.\end{tabular} & Satisfied                \\ \hline
 \end{tabular}
 \end{table}
@@ -2174,19 +2183,20 @@ most appropriate and robust parameters. Lastly, there is a need for an adequate 
 
 For the time being, we can not state that the benefits found by using the MOEA / D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions.  More experiments are needed to verify changes related to Pareto frontier in different executions. 
 
-The choice of a fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behaviour. The fitness function is still manually adjusted and additional studies need to be performed to get the best weight values for the fitness function.
+The choice of a fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behaviour. The fitness function is still manually adjusted and additional studies need to be performed to get the best weight values for the fitness function. There is a great difficulty in
+comparing some approaches present in the state-of-art, due to the lack of availability of the tools used. The present research compared the proposed approach with other methods based on the use of single or multiobjective metaheuristics.
 
 
 \section{Future Works}
 
-Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight.
+Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight. Further research should ascertain more exhaustively the variation of the Pareto frontier. New experiments with reinforcement learning in conjunction with multi-objective search algorithms must be performed. The PAES algorithm performs local search is can be benefited with the strategies presented in this research. 
 
 
 
 
 \appendix
 
-...
+
 \bibliographystyle{abnt-alf}
 \bibliography{bibliografia}
 
