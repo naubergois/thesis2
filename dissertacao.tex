@@ -2170,9 +2170,9 @@ Table \ref{conclusion} present the thesis Research Questions and obtained result
 \hline
 \rowcolor[HTML]{C0C0C0} 
 \textbf{Metaheuristic}                                                                                         & \textbf{Research Question}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       Hybrid & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                         & Satisfied                \\  \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       Hybrid + \\ Reinforcement \\ Learning & \begin{tabular}[c]{@{}l@{}} (Research Question 2)How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
-\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Hybrid + \\ Reinforcement \\ Learning\end{tabular}} & \begin{tabular}[c]{@{}l@{}}H5: The use of hybrid algorithm with reinforcement \\ learning optimize the choice of neighboring \\ solutions to explore, reducing the time needed to obtain\\  the scenarios with the longest response \\ time in the application.\end{tabular} & Satisfied                \\ \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       \textbf{Hybrid} & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                         & Satisfied                \\  \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       \begin{tabular}[c]{@{}l@{}} \textbf{Hybrid} + \\ Reinforcement \\ Learning  \end{tabular}                                                                                                                                                   & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 2)} How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
+\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}} Multi-objective  \end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{(Research Question 3)} How to use multi-objective metaheuristics \\ in search-based stress testing to obtain \\ a pareto frontier to improve the definition of SLAs?\end{tabular} & Satisfied                \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2191,6 +2191,7 @@ comparing some approaches present in the state-of-art, due to the lack of availa
 
 Among the future works of the research, the use of new combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight. Further research should ascertain more exhaustively the variation of the Pareto frontier. New experiments with reinforcement learning in conjunction with multi-objective search algorithms must be performed. The PAES algorithm performs local search is can be benefited with the strategies presented in this research. 
 
+Further experiments are needed to see if the benefits found by this thesis in the context of stress testing will be obtained in other contexts.
 
 
 
@@ -3019,7 +3020,7 @@ There are three approaches to stress test execution: Live-User Based Executions,
 The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing use a model to describe the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of test because it depends intrinsically of the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Functional-based notations, Stochastic notations, Transition-based and State-based notations. 
 
 There are several antipatterns that detailed features about common performance problems. Antipatterns
-are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented by IAdapter to an experiment presented in chapter 4.
+are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented by IAdapter IN an experiment presented in chapter 4.
 
 
 
@@ -3143,17 +3144,6 @@ The representation of each individual is encapsulated in the WorkLoad class (Fig
 \label{fig:genomeimpl}
 \end{figure}
 
-
-\subsection{Operation Services}
-
-The services are responsible for performing some operations performed by metaheuristics.
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.6\textwidth]{./images/operationservice.png}
-\caption{WorkLoad class}
-\label{fig:emulator}
-\end{figure}
 
 \subsection{External Dependencies}
 

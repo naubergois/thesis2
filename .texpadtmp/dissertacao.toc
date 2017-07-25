@@ -98,7 +98,7 @@
 \contentsline {section}{\numberline {6.8}Conclusion}{105}
 \contentsline {chapter}{\numberline {7}Conclusion}{107}
 \contentsline {section}{\numberline {7.1}Summary of contributions and Achievements}{107}
-\contentsline {section}{\numberline {7.2}Open Issues}{109}
+\contentsline {section}{\numberline {7.2}Open Issues}{108}
 \contentsline {section}{\numberline {7.3}Future Works}{109}
 \contentsline {chapter}{Bibliography}{111}
 \contentsline {chapter}{Appendix{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Stress Testing}{121}
@@ -128,7 +128,6 @@
 \contentsline {subsection}{\numberline {B.2.1}Test Module}{155}
 \contentsline {subsection}{\numberline {B.2.2}Emulator Module}{157}
 \contentsline {subsection}{\numberline {B.2.3}Test Scenario library}{158}
-\contentsline {subsection}{\numberline {B.2.4}Operation Services}{158}
-\contentsline {subsection}{\numberline {B.2.5}External Dependencies}{158}
-\contentsline {subsubsection}{jMetal}{159}
+\contentsline {subsection}{\numberline {B.2.4}External Dependencies}{158}
+\contentsline {subsubsection}{jMetal}{158}
 \contentsline {subsubsection}{JGAP}{159}
