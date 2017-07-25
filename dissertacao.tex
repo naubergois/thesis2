@@ -119,6 +119,8 @@ framexleftmargin=20pt
 
 \include{acronimos}
 
+\pretextualchapter{Glossary of Terms}
+
 \include{publicacoes}
 
 
@@ -2171,7 +2173,7 @@ Table \ref{conclusion} present the thesis Research Questions and obtained result
 \rowcolor[HTML]{C0C0C0} 
 \textbf{Metaheuristic}                                                                                         & \textbf{Research Question}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
 \cellcolor[HTML]{C0C0C0}                                                                                       \textbf{Hybrid} & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                         & Satisfied                \\  \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       \begin{tabular}[c]{@{}l@{}} \textbf{Hybrid} + \\ Reinforcement \\ Learning  \end{tabular}                                                                                                                                                   & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 2)} How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
+\cellcolor[HTML]{C0C0C0}                                                                                       \begin{tabular}[c]{@{}l@{}} \textbf{Hybrid} + \\ \textbf{Reinforcement} \\ \textbf{Learning}  \end{tabular}                                                                                                                                                   & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 2)} How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
 \cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}} Multi-objective  \end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{(Research Question 3)} How to use multi-objective metaheuristics \\ in search-based stress testing to obtain \\ a pareto frontier to improve the definition of SLAs?\end{tabular} & Satisfied                \\ \hline
 \end{tabular}
 \end{table}
@@ -3080,13 +3082,13 @@ In this section, We present the IAdapter main architecture. The test-bed tool pr
 
 The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extends the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represent an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named Multiobjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
 
-Figure. \ref{fig:step2} presents the Test Module life cycle. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
+Figure. \ref{fig:step2} presents the FlowChart of the Test Module. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
 \centering
 \includegraphics[width=1\textwidth]{./images/step2.png}
-\caption{Test module life cycle.}
+\caption{Flowchart of Test Module.}
 \label{fig:step2}
 \end{minipage}
 \begin{minipage}{.5\textwidth}
