@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  25 JUL 2017 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  26 JUL 2017 03:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1779,20 +1779,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./agradecimentos.tex [6
 
 
-]) [7]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7])
+[8]
 \openout2 = `resumo.aux'.
 
- (./resumo.tex [8
+ (./resumo.tex [9
 
 
 
-] [9
 
 ])
 \openout2 = `abstract.aux'.
 
- (./abstract.tex
-[10
+ (./abstract.tex [10
 
 
 
@@ -3276,7 +3278,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  28777 strings out of 493089
  531717 string characters out of 6134842
- 995018 words of memory out of 5000000
+ 995017 words of memory out of 5000000
  31510 multiletter control sequences out of 15000+600000
  114448 words of font info for 228 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3296,7 +3298,7 @@ texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/zapfding/uzdr.pfb>
 Output written on /Users/naubergois/Downloads/ModeloTeseLatexABNT/.texpadtmp/di
-ssertacao.pdf (162 pages, 8484936 bytes).
+ssertacao.pdf (162 pages, 8477166 bytes).
 PDF statistics:
  728 PDF objects out of 1000 (max. 8388607)
  405 compressed objects within 5 object streams
