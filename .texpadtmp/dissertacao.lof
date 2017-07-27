@@ -1,0 +1,70 @@
+\select@language {english}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An example of neighborhood for a permutation \cite {Talbi2013}.\relax }}{38}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Categories of metaheuristic combinations \cite {Puchinger2005} \relax }}{41}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An optimized Pareto front example\relax }}{42}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces NSGA-II Algorithm\relax }}{45}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparison between SPEA-2 and NSGA-II \cite {Deb2005}\relax }}{47}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Hypervolume metric \cite {Lacour2015}\relax }}{47}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces MOEA/D algorithm subproblems \cite {McConaghy2011}\relax }}{48}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Example of interaction between some agent and the environment\relax }}{51}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Q Learning algorithm\relax }}{52}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Number of publications in SBSE and SBST by year \cite {Afzal2009a} \cite {Harman2015}\relax }}{55}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Number of publications in non-functional SBST by year \cite {Afzal2009a} \cite {Harman2015} \relax }}{56}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Range of metaheuristics by type of non-functional Search Based Test\cite {Afzal2009a}. \relax }}{57}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Use of the algorithms independently \cite {Gois2016}\relax }}{66}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Use of the algorithms collaboratively \cite {Gois2016}\relax }}{66}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Solution representation, crossover and neighborhood operators \cite {Gois2016}\relax }}{67}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Best results obtained in 27 generations\relax }}{71}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Average, median, maximum and minimal fitness value by Search Method\relax }}{75}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Finesse value by generation in all tests\relax }}{76}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Markov Decision Process used by HybridQ\relax }}{80}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces HybridQ Neighborhood Service\relax }}{82}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Maximum fitness value by number of requests\relax }}{87}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces SEDR customized algorithm\relax }}{90}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Flowchart of implemented algorithms\relax }}{91}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Use of the algorithms collaboratively\relax }}{92}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Experiment Pareto Frontier\relax }}{94}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Results obtained without Noise Reduction\relax }}{96}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces MOEA/D Pareto Frontier\relax }}{98}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces NSGA II Pareto Frontier\relax }}{98}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces SPEA2 Pareto Frontier\relax }}{99}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces PAES Pareto Frontier\relax }}{99}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{102}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{103}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Pareto Frontier of the first and second test executions\relax }}{105}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Pareto Frontier of the second and third test executions\relax }}{106}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Load, Performance and Stress Test Process \cite {Jiang2010}\cite {Erinle2013}\relax }}{125}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces TPC-W architecture \cite {MohammadS.Obaidat} \cite {Menasce2002a}\relax }}{132}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Load Runner Scripting\relax }}{133}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Workload modeling based on statistical data \cite {DiLucca2006}\relax }}{136}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Workload modeling based on the generative model \cite {DiLucca2006}\relax }}{137}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces User community modeling language \cite {Wang2013}\relax }}{140}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Stochastic Formcharts Example \cite {Draheim2006b} \cite {Wang2013}\relax }}{140}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Example of a Customer Behavior Model Graph (CBMG) \cite {Menasce2002a} \cite {Jiang2010} \cite {MohammadS.Obaidat}\relax }}{140}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Model-based stress test methodology\relax }}{142}
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Exemplary workload model\relax }}{142}
+\contentsline {figure}{\numberline {A.11}{\ignorespaces The architecture and workflow of FOREPOST\relax }}{143}
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Symptoms of known performance problems \cite {Wert2013a}. \relax }}{145}
+\contentsline {figure}{\numberline {A.13}{\ignorespaces The God class\cite {Wert2013a}. \relax }}{147}
+\contentsline {figure}{\numberline {A.14}{\ignorespaces The God class\cite {Vetoio2011}. \relax }}{147}
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Unbalanced Processing sample \cite {Wert2013a}. \relax }}{148}
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Pipe and Filter sample \cite {Vetoio2011}\relax }}{148}
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Extensive Processing sample \cite {Vetoio2011}.\relax }}{148}
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Circuitous Treasure Hunt sample \cite {Vetoio2011}\relax }}{149}
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Empty Semi Trucks sample \cite {Vetoio2011}.\relax }}{149}
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Tower of Babel sample \cite {Vetoio2011}\relax }}{149}
+\contentsline {figure}{\numberline {A.21}{\ignorespaces One-Lane Bridge sample \cite {Vetoio2011}.\relax }}{149}
+\contentsline {figure}{\numberline {A.22}{\ignorespaces Excessive Dynamic Allocation.\relax }}{150}
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Traffic Jam Response Time \cite {Vetoio2011}.\relax }}{150}
+\contentsline {figure}{\numberline {A.24}{\ignorespaces The Ramp sample \cite {Vetoio2011}.\relax }}{151}
+\contentsline {figure}{\numberline {A.25}{\ignorespaces More is Less sample \cite {Vetoio2011}.\relax }}{151}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces IAdapter life cycle\relax }}{155}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces WorkLoadThreadGroup component\relax }}{156}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces IAdapter main architecture.\relax }}{157}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Test Module class diagram.\relax }}{157}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Flowchart of Test Module.\relax }}{158}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Emulator module\relax }}{158}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces WorkLoadThreadGroup class life cycle.\relax }}{159}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces WorkLoadThreadGroup start method.\relax }}{160}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces WorkLoadThreadGroup threadFinished method.\relax }}{160}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces WorkLoad class\relax }}{161}
