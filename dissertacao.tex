@@ -129,11 +129,11 @@ framexleftmargin=20pt
 
 \item GUI objects - Graphical user interface elements are those elements used by graphical user interfaces to offer a consistent visual language. 
 
-\item Offspring - New solutions created to new to a new generation in an evolutive algorithm \cite{GendreauMichelandPotvin2010}.
+\item Offspring - New solutions created to new to a new generation in an evolutionary algorithms\cite{GendreauMichelandPotvin2010}.
 
 \item Outliers - An observation that is well outside of the expected range of values in a study or experiment, and which is often discarded from the data set \cite{GendreauMichelandPotvin2010}.
 
-\item Pareto optimal-  Set of nondominated solutions in a search-based problem \cite{deb2001multi}.
+\item Pareto optimal-  Set of non-dominated solutions in a search-based problem \cite{deb2001multi}.
 
 \item WorkLoad - Represents the size of the demand that will be imposed on the application under test in an execution. In this thesis, each workload represent an individual in the search space.
 
@@ -201,7 +201,7 @@ This thesis addresses the use of hybrid and multi-objective metaheuristics in co
 
 \item \textbf{(Research Question 2)} How to improve the choice of neighboring solutions in a single-objective metaheuristic to explore, reducing the time needed to obtain the scenarios with the longest response time in the application?
 
-\item \textbf{(Research Question 3)} How to use multi-objective metaheuristics in search-based stress testing to obtain a pareto frontier to improve the definition of SLAs?
+\item \textbf{(Research Question 3)} How to use multi-objective metaheuristics in search-based stress testing to obtain a Pareto frontier to improve the definition of SLAs?
 
 \end{itemize}
 
@@ -1433,7 +1433,7 @@ The Q-learning algorithm is used by Tabu Search or Simulated Annealing to obtain
 
 \section{Experiment with HybridQ Algorithm}
 
-We conducted one experiment in order to verify the effectiveness of the HybridQ. The iterated racing procedure (irace) was applied as an automatic algorithm conguration tool for tunning metaheuristics parameters. Iterated racing is a generalization of the iterated F-race procedure to automatize the arduous task of configuring the parameters of an optimization algorithm \cite{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}. The best parameters obtained from irace was a population size of 5 individuals, a crossover value of 0.7551, a mutation value of 0.7947, an elitism value of 0.5356 and the maximum number of iterations of 16. The experiment ran for 16 generations in an docker environment on a server with 16 Gb of memory and 500 Gb hard disk. The experiment used an initial population of 5 individuals by metaheuristics. The genetic algorithm used the top 4 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 79\% of the population on each generation. The experiments use tabu search, genetic algorithms, simulated annealing, the hybrid metaheuristic approach and the HybridQ approach. 
+We conducted one experiment in order to verify the effectiveness of the HybridQ. The iterated racing procedure (irace) was applied as an automatic algorithm configuration tool for tunning metaheuristics parameters. Iterated racing is a generalization of the iterated F-race procedure to automatize the arduous task of configuring the parameters of an optimization algorithm \cite{ManuelLopez-IbanezJeremieDubois-LacosteLesliePerezCaceresMauroBirattari2016}. The best parameters obtained from irace was a population size of 5 individuals, a crossover value of 0.7551, a mutation value of 0.7947, an elitism value of 0.5356 and the maximum number of iterations of 16. The experiment ran for 16 generations in an docker environment on a server with 16 Gb of memory and 500 Gb hard disk. The experiment used an initial population of 5 individuals by metaheuristics. The genetic algorithm used the top 4 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 79\% of the population on each generation. The experiments use tabu search, genetic algorithms, simulated annealing, the hybrid metaheuristic approach and the HybridQ approach. 
 
 
 The objective function applied is intended to maximize the response time of the scenarios being tested.  In these experiments, better fitness values coincide with finding scenarios with higher values of response time. A penalty is applied when the response time is greater than the  maximum response time expected. The experiment used the following fitness (goal) function:
@@ -2073,7 +2073,7 @@ The following research question is addressed:
 
 \subsection{Variables}
 
-The independent variable is three test executions using collaborative approach withthe algorithms HybridQ and MOEA/D. The dependent variable are the hypervolume and pareto frontier found by each test execution.
+The independent variable is three test executions using collaborative approach with the algorithms HybridQ and MOEA/D. The dependent variable are the hypervolume and Pareto frontier found by each test execution.
 
 \begin{figure}[h]
 \centering
@@ -2101,7 +2101,7 @@ The independent variable is three test executions using collaborative approach w
 
 \subsection{Experiment Results}
 
-Table \ref{tab:results2} presents the experiment results. The variation between stayed around 17\%. Further studies are needed to ascertain more accurately the variation of the pareto frontier.
+Table \ref{tab:results2} presents the experiment results. The variation between stayed around 17\%. Further studies are needed to ascertain more accurately the variation of the Pareto frontier.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
@@ -2112,10 +2112,10 @@ Table \ref{tab:results2} presents the experiment results. The variation between 
 \label{my-label}
 \begin{tabular}{|l|l|ll}
 \cline{1-2}
-\cellcolor[HTML]{EFEFEF}\textbf{Test Execution} & \cellcolor[HTML]{EFEFEF}\textbf{HyperVolume} &                                                     &                                        \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Test Execution} & \cellcolor[HTML]{EFEFEF}\textbf{Hypervolume} &                                                     &                                        \\ \hline
 1                                               & 9.377189                                     & \multicolumn{1}{l|}{\textbf{Average}}               & \multicolumn{1}{l|}{8.652338}          \\ \hline
-2                                               & 9.648418                                     & \multicolumn{1}{l|}{\textbf{Standard Desviation}}   & \multicolumn{1}{l|}{1.49652728764998}  \\ \hline
-3                                               & 6.931407                                     & \multicolumn{1}{l|}{\textbf{Percentual desviation}} & \multicolumn{1}{l|}{0.172962185209359} \\ \hline
+2                                               & 9.648418                                     & \multicolumn{1}{l|}{\textbf{Standard Deviation}}   & \multicolumn{1}{l|}{1.49652728764998}  \\ \hline
+3                                               & 6.931407                                     & \multicolumn{1}{l|}{\textbf{Percent deviation}} & \multicolumn{1}{l|}{0.172962185209359} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2193,7 +2193,7 @@ Table \ref{conclusion} present the thesis Research Questions and obtained result
 \textbf{Metaheuristic}                                                                                         & \textbf{Research Question}                                                                                                                                                                                                                                                          & \textbf{Obtained Result} \\ \hline
 \cellcolor[HTML]{C0C0C0}                                                                                       \textbf{Hybrid} & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                         & Satisfied                \\  \hline
 \cellcolor[HTML]{C0C0C0}                                                                                       \begin{tabular}[c]{@{}l@{}} \textbf{Hybrid} + \\ \textbf{Reinforcement} \\ \textbf{Learning}  \end{tabular}                                                                                                                                                   & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 2)} How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                  & Satisfied                \\  \hline
-\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}} Multi-objective  \end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{(Research Question 3)} How to use multi-objective metaheuristics \\ in search-based stress testing to obtain \\ a pareto frontier to improve the definition of SLAs?\end{tabular} & Satisfied                \\ \hline
+\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}} Multi-objective  \end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{(Research Question 3)} How to use multi-objective metaheuristics \\ in search-based stress testing to obtain \\ a Pareto frontier to improve the definition of SLAs?\end{tabular} & Satisfied                \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2351,7 +2351,7 @@ Usually, a stress test execution it is performed with Driver Based Executions ap
 \begin{itemize}
 \item Benchmark Suite: specialized load driver, designed for one type of system. For example, LoadGen is a load driver specified used to load test the Microsoft Exchange MailServer.
 \item  Centralized Load Drivers: refer to a single load driver, which generates the load.
-\item Peer-to-peer Load Drivers: refer to a set of load drivers, which collectively generate the target testing load. Peer-to-peer load drivers usually have a con- troller component, which coordinates the load generation among the peer load drivers.
+\item Peer-to-peer Load Drivers: refer to a set of load drivers, which collectively generate the target testing load. Peer-to-peer load drivers usually have a controller component, which coordinates the load generation among the peer load drivers.
 \end{itemize}
 
 A stress test need to perform hundreds or thousands of concurrent requests  to the application under test. Automated tools are needed to carry out serious load, stress, and performance testing. Sometimes, there is simply no practical way to provide reliable, repeatable performance tests without using some form of automation. The aim of any automated test tool is to simplify the testing process.
@@ -2365,7 +2365,7 @@ There are several tools to execution of stress testing. Stress testing tools are
 \item Scripting module: Enable recording of end-user activities in different middleware protocols;
 \item Test management module: Allows the creation of test scenarios;
 \item Load injectors: Generate the load with multiple workstations or servers;
-\item Analysis module: Provides the ability to analyse the data collected by each test interation.
+\item Analysis module: Provides the ability to analyse the data collected by each test iteration.
 \end{itemize}
 
 
@@ -2475,7 +2475,7 @@ very simple, allowing the tester choose scripts for a test and a remote computer
 
 \subsection{Software Products}
 
-LoadRunner is one of the most popular industry-standard software products for functional and performance testing. It was originally developed by Mercury Interactive, but nowadays it is commercialized by Hewlett-Packard. LoadRunner supports the definition of user navigations, which are represented using a scripting language. The basic steps are recorded, creating a shell script. Next, this script is then taken off-line, and undergoes further manual steps such as data parameterization and correlations. Finally, the desired performance scripts are obtained after adding transactions and any other required logic (Fig. \ref{fig:loadrunner}). LoadRunner scripting only permits partial reproduction of user dynamism when generating Web workload, because it cannot define either advanced interactions of users, such as parallel browsing behavior, or continuous changes in user’s behaviors \cite{MohammadS.Obaidat}.
+LoadRunner is one of the most popular industry-standard software products for functional and performance testing. It was originally developed by Mercury Interactive, but nowadays it is commercialized by Hewlett-Packard. LoadRunner supports the definition of user navigation, which are represented using a scripting language. The basic steps are recorded, creating a shell script. Next, this script is then taken off-line, and undergoes further manual steps such as data parameterization and correlations. Finally, the desired performance scripts are obtained after adding transactions and any other required logic (Fig. \ref{fig:loadrunner}). LoadRunner scripting only permits partial reproduction of user dynamism when generating Web workload, because it cannot define either advanced interactions of users, such as parallel browsing behavior, or continuous changes in user’s behaviors \cite{MohammadS.Obaidat}.
 
 \begin{figure}[!ht]
 \centering
@@ -2486,7 +2486,7 @@ LoadRunner is one of the most popular industry-standard software products for fu
 
 
 
-WebLOAD is a software tool for Web performance commercialized by RadView. It is oriented to explore the performance of critical Web applications by quantifying the utilization of the main server resources. The tool creates scenarios that try to mimic the navigations of real users. To this end, it provides facilities to record, edit and debug test scripts, which are used to define the scenarios on workload characterization. The execution environment is a console to manage test execution, whose results are analyzed in the Analytics application. Since WebLOAD is a distributed system, it is possible to deploy several load generators to reproduce the desired load. Load generators can also be used as probing clients where a single virtual user is simulated to evaluate specific statistics of a single user. These probing clients resemble the experience of a real user using the system while it is under load \cite{MohammadS.Obaidat}.
+WebLOAD is a software tool for Web performance commercialized by RadView. It is oriented to explore the performance of critical Web applications by quantifying the utilization of the main server resources. The tool creates scenarios that try to mimic the navigation of real users. To this end, it provides facilities to record, edit and debug test scripts, which are used to define the scenarios on workload characterization. The execution environment is a console to manage test execution, whose results are analyzed in the Analytics application. Since WebLOAD is a distributed system, it is possible to deploy several load generators to reproduce the desired load. Load generators can also be used as probing clients where a single virtual user is simulated to evaluate specific statistics of a single user. These probing clients resemble the experience of a real user using the system while it is under load \cite{MohammadS.Obaidat}.
 
 \subsection{Cloud Testing Tools}
 
@@ -2672,7 +2672,7 @@ UCML                                        & \cite{Barber1999}       & Function
 All possible answers of the system, including exceptions, are defined in the functional
 model.  The functional notation defines the authorized input values and models all the possible functional errors during execution \cite{utting2010practical}. Among the several functional models approaches, we can highlight the User Community Modeling Language (UCML). A UCML is a set of symbols that can be used to create visual system usage models and depict associated parameters \cite{Wang2013}. The Fig. \ref{fig:ucml} shows a sample where all users realize a login into the application under test. Once logged in, 40\% of the users navigates on the application, 30\%  of the users realizes downloads. 20\% of users realizes uploads and 10\% of users performs deletions. 
 
-Garousi et al. proposes derivate Stress Test Requirements from an UML model. The input model consists of a number of UML diagrams. Some of
+Garousi et al. proposes derive Stress Test Requirements from an UML model. The input model consists of a number of UML diagrams. Some of
 them are standard in mainstream development methodologies and others are needed to describe the distributed architecture of the system under test (Fig. \ref{fig:modelbased}). Cai and Zeng use activity diagrams to describe variation points in use cases. Variation points describe what varies between the applications of an software product line \cite{XinyingCai2007}. Raulf et al. present an approach for testing of web service compositions using UML profile for Business Process Execution Language (BPEL) \cite{Rauf2009}. Schaefer et al. present the Crushinator, a framework that provides a game-independent testing tool simulating clients that perform http requests using a UML model \cite{Schaefer2013}. Moscher and  Fögen compares the techniques Capture and Replay (CR) and Model-Based Testing (MBT) are using a model named PLeTsPerf. PLeTsPerf describe the system under tests using use cases and activity diagrams \cite{moscher2017facing}. Kim proposes a approach to generate massive virtual clients and realistic traffic. A session is composed of a series of the expected operations made by a user in the target domain using a UML class and a sequence diagram \cite{Kim2005}.
 
 
@@ -3101,7 +3101,7 @@ In this section, We present the IAdapter main architecture. The test-bed tool pr
 
 The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extends the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represent an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named Multiobjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
 
-Figure. \ref{fig:step2} presents the FlowChart of the Test Module. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
+Figure. \ref{fig:step2} presents the Flowchart of the Test Module. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
