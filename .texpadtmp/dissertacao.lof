@@ -29,10 +29,10 @@
 \contentsline {figure}{\numberline {6.7}{\ignorespaces NSGA II Pareto Frontier\relax }}{98}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces SPEA2 Pareto Frontier\relax }}{99}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces PAES Pareto Frontier\relax }}{99}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{102}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{103}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Pareto Frontier of the first and second test executions\relax }}{105}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Pareto Frontier of the second and third test executions\relax }}{106}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{100}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{101}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Pareto Frontier of the first and second test executions\relax }}{103}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Pareto Frontier of the second and third test executions\relax }}{104}
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Load, Performance and Stress Test Process \cite {Jiang2010}\cite {Erinle2013}\relax }}{125}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces TPC-W architecture \cite {MohammadS.Obaidat} \cite {Menasce2002a}\relax }}{132}
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Load Runner Scripting\relax }}{133}
