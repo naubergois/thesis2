@@ -867,22 +867,22 @@ Woehrle and this thesis use multi-objective algorithms to stress testing in diff
 
 The stress testing verifies the system behavior against heavy workloads, which are executed to evaluate a system beyond its limits, validate system response in activity peaks, and verify whether the system is able to recover from these conditions. Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions.  Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique.
 
-SBST has made many achievements, and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties. A variety of metaheuristic search techniques are found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes. The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space.  The application of SBST algorithms to  stress tests involves finding the best- and worst-case execution times (B/WCET) to determine whether timing constraints are fulfilled. here are two measurement units normally associated with the fitness function in a stress test: processor cycles and execution time. The processor cycle approach describes a fitness function in terms of processor cycles. The execution time approach involves executing the application under test and measuring the execution time. Processor cycles measurement is deterministic in the sense that it is independent of system load and results in the same execution times for the same set of input parameters.
+SBST has made many achievements and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties. A variety of metaheuristic search techniques is found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes. The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space.  The application of SBST algorithms to  stress tests involves finding the best- and worst-case execution times (B/WCET) to determine whether timing constraints are fulfilled. here are two measurement units normally associated with the fitness function in a stress test: processor cycles and execution time. The processor cycle approach describes a fitness function in terms of processor cycles. The execution time approach involves executing the application under test and measuring the execution time. Processor cycles measurement is deterministic in the sense that it is independent of system load and results in the same execution times for the same set of input parameters.
 
 The studies can be grouped into two main groups: Search-Based Stress Testing on Safety-critical systems or Search-Based Stress Testing on non Safety-critical systems. Domains such as avionics feature safety-critical systems, whose failure could result in catastrophic consequences.  The importance of software in such systems is permanently increasing due to the need of a higher system
 flexibility. For this reason, software components of these systems are usually subject to safety certification. 
 
-Usually, the application of Search-Based Stress Testing on non safety-critical systems deals with the generation of test cases that causes Service Level Agreement (SLA) violations.T racey et al.  used simulated annealing (SA) to test four
+Usually, the application of Search-Based Stress Testing on non safety-critical systems deals with the generation of test cases that cause Service Level Agreement (SLA) violations. Tracey et al.  used simulated annealing (SA) to test four
 simple programs. The results of the research presented that the use of SA was more effective with a larger parameter space. Di Penta et al. used GA to create test data that violated quality of service (QoS) constraints, causing SLA violations. The approach was applied to two case studies. The first case study was an audio processing workflow, and the second case study, a service producing charts. The next chapter presents the first contribution of this thesis.
 
 \chapter{Stress Search Based Testing using Hybrid Metaheuristic}
 
-This chapter presents an study of the use a hybrid algorithm in search-based stress testing. The research uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on  uses the three algorithms collaboratively (hybrid metaheuristic approach).
+This chapter presents a study of the use a hybrid algorithm in search-based stress testing. The research uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on uses the three algorithms collaboratively (hybrid metaheuristic approach).
 
 In the first approach, the algorithms do not share their best individuals among themselves. Each algorithm evolves in a separate way (Fig. \ref{fig:firstaproach}). The second approach uses the algorithms in a collaborative mode (hybrid metaheuristic). In this approach, the three algorithms share their best individuals found (Fig. \ref{fig:secondapproach}). 
 
 
-The chapter also present three experiments. The first experiment aimed to perform performance, load, and stress testing on a simulated component.The second experiment was performed with a Moodle application. The third experiment carried out to verify the best case scenarios found by the hybrid metaheuristic approach.  The next subsections present details about the used metaheuristic algorithms (Representation, initial population and fitness function).
+The chapter also presents three experiments. The first experiment aimed to perform performance, load, and stress testing on a simulated component.The second experiment was performed with a Moodle application. The third experiment carried out to verify the best case scenarios found by the hybrid metaheuristic approach.  The next subsections present details about the used metaheuristic algorithms (Representation, initial population and fitness function).
 
 \begin{figure}[h]
 \centering
@@ -902,7 +902,7 @@ The chapter also present three experiments. The first experiment aimed to perfor
 
 \section{Representation}
 
-The solution representation provides a common representation for all workloads. Each workload is composed by a linear vector with 21 positions (Figure \ref{fig:solution}  -\ding{202}). The first position represents an metadata with the name of an individual. The next positions represent 10 scenarios and their numbers of users (Figure \ref{fig:solution}  -\ding{203}). The fixed-length genome approach was chosen in reason of the ease of implementation in the JMeter tool. Each scenario is an atomic operation: the scenario must log into the application, run the task goal, and undo any changes performed, returning the application to its original state.
+The solution representation provides a common representation for all workloads. Each workload is composed by a linear vector with 21 positions (Figure \ref{fig:solution}  -\ding{202}). The first position represents a metadata with the name of an individual. The next positions represent 10 scenarios and their numbers of users (Figure \ref{fig:solution}  -\ding{203}). The fixed-length genome approach was chosen in reason of the ease of implementation in the JMeter tool. Each scenario is an atomic operation: the scenario must log into the application, run the task goal, and undo any changes performed, returning the application to its original state.
 
 Figure. \ref{fig:solution} presents the solution representation and an example using the crossover operation. In the example, solution 1 (Figure \ref{fig:solution}  -\ding{204}) has the Login scenario with 2 users, the Search scenario with 4 users, Include scenario with 1 user and the Delete scenario with 2 users.  After the crossover operation with solution 2 (Figure \ref{fig:solution}  -\ding{205}), We obtain a solution with the Login scenario with 2 users, the Search scenario with 4 users, the Update scenario with 3 users and the Include scenario with 5 users (Figure \ref{fig:solution}  -\ding{206}). Figure. \ref{fig:solution} -\ding{207} shows the strategy used by the proposed solution to  obtain the neighbors for the Tabu search and simulated annealing algorithms. The neighbors are obtained by the modification of a single position (scenario or number of users) in the vector.
 
@@ -940,7 +940,7 @@ fit=numberOfUsersWeight*numberOfUsers\\
 \end{aligned}
 \end{equation}
 
-The users and response time factors were chosen because they are common units of measurement in load test tools \cite{Sandler2004}. The proposed solution's fitness function uses a series of manually adjustable user-defined weights (90percentileweight, 80percentileweight,  70percentileweight, maxResponseWeight, and numberOfUsersWeight). These weights make it possible to customize the search plugin's functionality. A penalty is applied when the response time of an application under test runs longer that the service level. The penalty is calculated by the follow equation:
+The users and response time factors were chosen because they are common units of measurement in load test tools \cite{Sandler2004}. The proposed solution's fitness function uses a series of manually adjustable user-defined weights (90percentileweight, 80percentileweight,  70percentileweight, maxResponseWeight, and numberOfUsersWeight). These weights make it possible to customize the search plugin's functionality. A penalty is applied when the response time of an application under test runs longer than the service level. The penalty is calculated by the following equation:
 
 \begin{equation}
 \begin{aligned}
@@ -963,7 +963,7 @@ fit=0.9* 90percentiletime\\
 \end{aligned}
 \end{equation}
 
-This fitness function is the same function represented in the section VII with the manually adjustable user-defined weights filled out. This fitness function intended to find individuals with the highest percentile of 90\%, followed by individuals with a higher percentile time of 80\% and 70\%, maximum response time, and number of users.
+This fitness function has manually adjustable user-defined weights filled out. This fitness function intended to find individuals with the highest percentile of 90\%, followed by individuals with a higher percentile time of 80\% and 70\%, maximum response time, and a number of users.
 
 The first experiment ran for 27 generations, and the second experiment  performed 6 generations, with 300 executions by generation (100 times for each algorithm),  generating 300 new individuals. The experiments used an initial population of 100 individuals. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation.
 
@@ -1070,7 +1070,7 @@ The signed-rank Wilcoxon non-parametrical procedure was used for comparing the r
 
 \subsection{Second Experiment: Moodle Application Test}
 
-The second experiment used a Moodle application installed in a machine with 500 GB of hard disk space and 8 GB of memory. The study used six application scenarios:
+The second experiment used a Moodle application installed on a machine with 500 GB of hard disk space and 8 GB of memory. The study used six application scenarios:
 
 \begin{itemize}
 \item PostDeleteMessage: This scenario posts and deletes messages in the Moodle application.
@@ -1180,9 +1180,9 @@ Table \ref{fig:gened} presents the percentage of genes in all test scenarios by 
 %\label{fig:gened}
 %\end{figure}
 
-\subsection{Third Experiment: Antipatterns}
+\subsection{Third Experiment: Anti-patterns}
 
-In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  The first step uses The Ramp and Circuitous Treasure Hunt antipattern. The second step uses The Tower Babel and Unbalanced Processing antipattern. Each step use two different antipatterns and happy scenarios. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
+In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  The first step uses The Ramp and Circuitous Treasure Hunt anti-pattern. The second step uses The Tower Babel and Unbalanced Processing antipattern. Each step uses two different anti-pattern and happy scenarios. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
 \subsection{Experiment Research Questions}
 
@@ -1193,14 +1193,14 @@ The following research question is addressed:
 
 \subsection{Variables}
 
-The independent variables are the test scenarios (antipatterns and happy scenarios). The dependent variable are: the number of antipatterns found in best workloads and the metaheuristic with the best fitness value.
+The independent variables are the test scenarios (antipatterns and happy scenarios). The dependent variables are: the number of antipatterns found in best workloads and the metaheuristic with the best fitness value.
 
 \subsection{Experiment Hypotheses}
 
 With regard to the antipatterns found by hybrid metaheuristic:
 \begin{itemize}
-\item $H_{0}$ (null hypothesis) :the best workloads found in the experiments contain antipatterns
-\item $H_{1}$  : the best workloads found in the experiments do not contain antipatterns.
+\item $H_{0}$ (null hypothesis):the best workloads found in the experiments contain antipatterns
+\item $H_{1}$ : the best workloads found in the experiments do not contain antipatterns.
 \end{itemize}
 
 \subsection{The Ramp and Circuitous Treasure Hunt step}
@@ -1238,7 +1238,7 @@ Hybrid & 16 & 143 & 426740 & Happy 1 \& 2
 \subsection{The Tower Babel  and Unbalanced Processing step}
 
 
-The experiment was carried out for 6 continuous hours. In this experiment, Scenarios were generated with Tower Babel and Unbalanced Processing antipattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios.
+The experiment was carried out for 6 continuous hours. In this experiment, Scenarios were generated with Tower Babel and Unbalanced Processing anti-pattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios.
 
 \begin{figure}[h]
 \centering
@@ -1249,7 +1249,7 @@ The experiment was carried out for 6 continuous hours. In this experiment, Scena
 
 
 
-Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second experiment. Despite the fact of doing 300 conversions of the JSON format to XML. The antipattern implementation does not return a higher response time than happy paths. While happy paths returns from 10 to 15 seconds from a single user, Tower Babel antipattern has a response time of 10 to 29 seconds. None of the best individuals found implements the Unbalanced Processing antipattern.
+Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second experiment. Despite the fact of doing 300 conversions of the JSON format to XML. The antipattern implementation does not return a higher response time than happy paths. While happy paths return from 10 to 15 seconds from a single user, Tower Babel antipattern has a response time of 10 to 29 seconds. None of the best individuals found implements the Unbalanced Processing antipattern.
 
 
 % Please add the following required packages to your document preamble:
@@ -1269,14 +1269,14 @@ Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second 
 \end{tabular}
 \end{table}
 
-In the second experiment, the metaheuristics converged to scenarios with a happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing antipattern. The hybrid metaheuristic returned individuals with higher fitness scores. The SA algorithm obtained the worst fitness values.
+In the second experiment, the metaheuristics converged to scenarios with a happy path and Tower Babel anti-pattern, excluding the scenarios with Unbalanced Processing anti-pattern. The hybrid metaheuristic returned individuals with higher fitness scores. The SA algorithm obtained the worst fitness values.
 
 \subsection{Threats to validity}
 \begin{itemize}
 \item Construct Validity:
-In this experiment, we just evaluate the use of four antipatterns. However, several antipatterns could be applied.  The common representation and the strategies used for crossover and neighborhood operators need of a better design, using an abstraction pattern to contemplate a major number of possible solutions.
+In this experiment, we just evaluate the use of four antipatterns. However, several anti-patterns could be applied.  The common representation and the strategies used for crossover and neighborhood operators need a better design, using an abstraction pattern to contemplate a major number of possible solutions.
 \item Conclusion Validity:
-The Tower Babel antipattern was not excluded by the metaheuristics used in the experiment, requiring new studies with new approaches and experiments.
+The Tower Babel anti-pattern was not excluded by the metaheuristics used in the experiment, requiring new studies with new approaches and experiments.
 \end{itemize}
 
 
@@ -1290,7 +1290,7 @@ In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was
 
 In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established.
 
-The third experiment was conducted to validate the use of antipatterns with Hybrid algorithm. The experiments use genetic, algorithms, tabu search, simulated annealing and the hybrid algorithm.  We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  In the first step, none of the best workloads has one of the antipattern scenarios. In the second step,  the metaheuristics converged to scenarios with an happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing antipattern. In both experiments the hybrid metaheuristic returned individuals with higher fitness scores. 
+The third experiment was conducted to validate the use of anti-patterns with the Hybrid algorithm. The experiments use genetic, algorithms, tabu search, simulated annealing and the hybrid algorithm.  We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  In the first step, none of the best workloads has one of the anti-pattern scenarios. In the second step,  the metaheuristics converged to scenarios with a happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing anti-pattern. In both experiments, the hybrid metaheuristic returned individuals with higher fitness scores. 
 
 
 \chapter{Stress Search-based Testing using HybridQ approach}
@@ -2336,7 +2336,7 @@ A test script is an executable script that runs one or more test cases. The Scri
 
 \section{Stress Test Execution}
 
-The stress test execution consists of deploying the system and setup test execution; generating the workloads according to the configurations and terminating the load when the load test is completed and recording the system behavior. There are three general approaches of load test executions \cite{Molyneaux2009}\cite{Jiang2010}:
+The stress test execution consists of deploying the system and setup test execution; generating workloads according to the configurations and terminating the load when the load test is completed and recording the system behavior. There are three general approaches of load test executions \cite{Molyneaux2009}\cite{Jiang2010}:
 
 \begin{itemize}
 \item Live-User Based Executions: The test examines a system’s behavior when the system is simultaneously used by many users or execute a load test by employing a group of human testers.
@@ -2501,14 +2501,13 @@ Apache JMeter was the tool chosen for current research due to its open license, 
 Apache JMeter is used to generate heavy loads on the servers or objects to test its strength or analyze overall performance under different load types. To briefly explain the solution how it works, as follows: A Regular Expression Extractor captures the dynamic values as mentioned above and stored in a temporary variable. The values which have been extracted and stored in temporary variables are subsequently utilized by immediate requests/re directions using HTTP samplers \cite{Kiran2015}. JMeter has components organized in a hierarchical manner. The Test Plan is the main component in a JMeter script. A typical test plan will consist of one or more Thread Groups, logic controllers, listeners, timers, assertions, and configuration elements:
 
 \begin{itemize}
-\item Thread Group: Test management module responsible for simulating the users used in a test. All elements of a test plan must be under a thread group.
+\item Thread Group: Test management module responsible for emulating the users used in a test. All elements of a test plan must be under a thread group.
 \item Listeners: Analysis module responsible for providing access to the information gathered by JMeter about the test cases.
 \item Samplers: Load injectors module responsible for sending requests to a server, while Logical Controllers let you customize its logic.
 \item Timers: allow JMeter to delay between each request.
 \item Assertions: test if the application under test it is returning the correct results.
 \item Configuration Elements: configure details about the request protocol and test elements.
 \end{itemize}
-
 
 
 \FloatBarrier
@@ -2529,7 +2528,7 @@ Stress testing projects should start with the development of a model for user wo
 
 The term workload represents the size of the demand that will be imposed on the application under test in an execution. The metric used to measure a workload is dependent on the application domain, such as the length of the video in a transcoding application for multimedia files or the size of the input files in a file compression application \cite{Feitelson2013} \cite{Molyneaux2009} \cite{Goncalves2014}.
 
-The workload is also defined by the load distribution between the identified transactions at a given time. Workload helps researchers study the system behavior identified in several load models. A workload model can be designed to verify the predictability, repeatability, and scalability of a system \cite{Feitelson2013} \cite{Molyneaux2009}. Workload modeling is the attempt to create a simple and generic model that can then be used to generate synthetic workloads. The goal is typically to be able to create workloads that can be used in performance evaluation studies. Sometimes, the synthetic workload is supposed to be similar to those that occur in practice in real systems \cite{Feitelson2013} \cite{Molyneaux2009}.
+The workload is also defined by the load distribution between the identified transactions at a given time. Workload helps researchers study the system behavior identified in several load models. A workload model can be designed to verify the predictability, repeatability, and scalability of a system \cite{Feitelson2013} \cite{Molyneaux2009}. Workload modeling is the attempt to create a simple and generic model that can then be used to generate synthetic workloads. The goal is to create workloads that can be used in performance evaluation studies. Sometimes, the synthetic workload is supposed to be similar to those that occur in practice in real systems \cite{Feitelson2013} \cite{Molyneaux2009}.
 
 There are two kinds of workload models: descriptive and generative. The main difference between the two is that descriptive models just try to mimic the phenomena observed in the workload, whereas generative models try to emulate the process that generated the workload in the first place \cite{Feitelson2013}.
 
@@ -2721,7 +2720,7 @@ used, the model can be annotated with triggering events, which are
 conditions sufficient for the transition to take place, or guards that are necessary
 preconditions for the transition to be fired. The common techniques used for generating test-cases from transition-based notations are Finite State Machines (FSM), Labeled Transition Systems and UML state-charts \cite{Marinescu2015}.
 
-Arantes et al. present a tool named WEB-PerformCharts that generate test cases using state-charts or FSMs \cite{Arantes2014}. Gay et al. present propose an automated steering framework that can adjust the behavior of the model to better match the behavior of the system under test to reduce the rate of false positives.  The model describes as a transition system \cite{Gay2016}. Hessel addressed in her study two model-based problems: how to formalize a coverage criteria and how to generate a test suite to a formal timed system model \cite{Hessel2007}. Ganesan describes how we created a test automation architecture for testing concurrent inter-task communication as carried out by the software bus. The model uses an FSM \cite{Ganesan2016}. Hierons et al. show a formal specification approach to support functional or non-functional tests \cite{Hierons2009}. Vogele et al. present an approach that aims to automate the extraction and transformation of workload specifications for a model-based performance prediction of session-based application systems.  The research also presents transformations to the common load testing tool Apache JMeter and to the Palladio Component Model \cite{Vogele2016} \cite{utting2010practical}. The workload specification formalism (Workload Model) consists of the following components, which are detailed below and illustrated in Fig. \ref{fig:vogel}:
+Arantes et al. present a tool named WEB-PerformCharts that generate test cases using state-charts or FSMs \cite{Arantes2014}. Gay et al. present propose an automated steering framework that can adjust the behavior of the model to better match the behavior of the system under test to reduce the rate of false positives.  The model describes as a transition system \cite{Gay2016}. Hessel addressed in her study two model-based problems: how to formalize coverage criteria and how to generate a test suite to a formal timed system model \cite{Hessel2007}. Ganesan describes how we created a test automation architecture for testing concurrent inter-task communication as carried out by the software bus. The model uses an FSM \cite{Ganesan2016}. Hierons et al. show a formal specification approach to support functional or non-functional tests \cite{Hierons2009}. Vogele et al. present an approach that aims to automate the extraction and transformation of workload specifications for a model-based performance prediction of session-based application systems.  The research also presents transformations to the common load testing tool Apache JMeter and to the Palladio Component Model \cite{Vogele2016} \cite{utting2010practical}. The workload specification formalism (Workload Model) consists of the following components, which are detailed below and illustrated in Fig. \ref{fig:vogel}:
 \begin{itemize}
 \item An Application Model, specifying allowed sequences of service invocations and SUT-specific details for generating valid requests.
 \item A set of Behavior Models, each providing a probabilistic representation of user sessions in terms of invoked services.
@@ -2799,7 +2798,7 @@ The Fig. \ref{fig:forepost} presents the main workflow of FOREPOST solution. The
 
 The user can review the results of clustering (7). These clustered traces are supplied (8) to the Learner that uses them to learn the classification model and (9) output rules. The user can review (10) these rules and mark some of them as erroneous if the user has sufficient evidence to do so. Then the rules are supplied (11) to the Test Script. Finally, the input space is partitioned into clusters that lead to good and bad test cases, to find methods that are specific to good performance test cases. This task is accomplished in parallel to computing rules, and it starts when the Trace Analyzer produces (12) the method and data statistics that are used to construct (13) two matrices (14). Once these matrices are constructed, ICA\footnote{ICA is a technique to separate linearly mixed sources \cite{Luo2015}} decomposes them (15) into the matrices for bad and good test cases correspondingly. Finally, the Advisor (16) determines top methods that performance testers should look at (17) to debug possible performance problems.
 
-\section{Research Question 2: What are the main antipatterns found by stress tests?}
+\section{Research Question 2: What are the main anti-patterns found by stress tests?}
 
  Performance problems share common symptoms and many performance problems described in the literature are defined by a particular set of root causes. Fig. \ref{fig:symptoms}  shows the symptoms of known performance problems \cite{Wert2013a}.
 
@@ -2813,7 +2812,7 @@ The user can review the results of clustering (7). These clustered traces are su
 \end{figure}
 
 
-There are several antipatterns that detailed features about  common performance problems. Antipatterns are conceptually similar to patterns in that they document recurring solutions to common design problems. They are known as
+There are several anti-patterns that detailed features about  common performance problems. Antipatterns are conceptually similar to patterns in that they document recurring solutions to common design problems. They are known as
 antipatterns because their use produces negative consequences.
 
 % Please add the following required packages to your document preamble:
@@ -2822,7 +2821,7 @@ antipatterns because their use produces negative consequences.
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[!h]
 \centering
-\caption{Performance antipatterns}
+\caption{Performance anti-patterns}
 \label{antipatterns}
 \begin{tabular}{|l|l|l|llll}
 \cline{1-3}
@@ -2851,11 +2850,11 @@ Unnecessary Processing                  &                              & \cite{S
 
 
 
-Performance antipatterns document common performance mistakes made in software architectures or designs. These software Performance antipatterns have four primary uses: identifying problems,
+Performance anti-patterns document common performance mistakes made in software architectures or designs. These software Performance anti-patterns have four primary uses: identifying problems,
 focusing on the
 right level of abstraction,
 effectively communicating
-their causes to others, and prescribing solutions \cite{brown1998antipatterns}. Table \ref{antipatterns} present some of the most common performance antipatterns.
+their causes to others and prescribing solutions \cite{brown1998antipatterns}. Table \ref{antipatterns} present some of the most common performance anti-patterns.
 
 
 % Please add the following required packages to your document preamble:
@@ -2885,9 +2884,9 @@ their causes to others, and prescribing solutions \cite{brown1998antipatterns}. 
 %\end{tabular}
 %\end{table}
 
-Blob antipattern is known by various names, including the “god” class [8] and the “blob” [2]. Blob is an antipattern whose problem is on the excessive message traffic generated by a single class or component, a particular resource does the majority of the work in a software. The Blob antipattern occurs when a single class or component either performs all of the work of an application or holds all of the application’s data. Either manifestation results in excessive message traffic that can degrade performance \cite{Cortellessa2007} \cite{Smith2000}.
+Blob anti-pattern is known by various names, including the “god” class [8] and the “blob” [2]. Blob is an anti-pattern whose problem is on the excessive message traffic generated by a single class or component, a particular resource does the majority of the work in a software. The Blob occurs when a single class or component either performs all of the work of an application or holds all of the application’s data. Either manifestation results in excessive message traffic that can degrade performance \cite{Cortellessa2007} \cite{Smith2000}.
 
-A project containing a “god” class usually has a single, complex controller class that is surrounded by simple classes that serve only as data containers. These classes typically contain only accessor operations (operations to get() and set() the data) and perform little or no computation of their own \cite{Smith2000}. According to Figure \ref{fig:godclass} and \ref{fig:godclass2}, a hypothetical system with a BLOB problem is shown: Figure \ref{fig:godclass} presents a sample where the Blob class uses the features A,B,C,D,E,F and G of the hypothetical system, and Fig. \ref{fig:godclass2} shows a static view where  a complex software entity instance, i.e. Sd, is connected to other software instances, e.g. Sa, Sb and Sc, through many dependencies \cite{Vetoio2011}\cite{Wert2013a}.
+A project containing a “god” class usually has a single, complex controller class that is surrounded by simple classes that serve only as data containers. These classes typically contain only accessor operations (operations to get() and set() the data) and perform little or no computation of their own \cite{Smith2000}. According to Figure \ref{fig:godclass} and \ref{fig:godclass2}, a hypothetical system with a BLOB problem is shown: Figure \ref{fig:godclass} presents a sample where the Blob class uses the features A,B,C,D,E,F and G of the hypothetical system, and Fig. \ref{fig:godclass2} shows a static view where a complex software entity instance, i.e. Sd, is connected to other software instances, e.g. Sa, Sb and Sc, through many dependencies \cite{Vetoio2011}\cite{Wert2013a}.
 
 
 
@@ -2917,7 +2916,7 @@ of jobs that will experience very long waiting times. Unbalanced Processing occu
 \label{fig:unbalanced}
 \end{figure}
 
-The pipe and filter architectures  and extensive processing antipattern represents a manifestation of the unbalanced processing antipattern. The pipe and filter architectures occurs when the throughput of the overall system is determined by the slowest filter. Fig \ref{fig:pipefilter} illustrates a software S with a Pipe and Filter Architectures problem:  the operation opx is invoked in a service  and the throughput of the service (\$Th(S)) is lower than the required one. The extensive processing occurs when a process monopolizes a processor and prevents a set of other jobs to be executed until it finishes its computation. The Fig. \ref{fig:extpro} describes a software S with a Extensive Processing problem: the operations opx and opy are alternatively invoked in a service and the response time of the service (\$RT(S)) is larger than the required one \cite{Vetoio2011}.
+The pipe and filter architectures  and extensive processing anti-pattern represent a manifestation of the unbalanced processing anti-pattern. The pipe and filter architectures occur when the throughput of the overall system is determined by the slowest filter. Fig \ref{fig:pipefilter} illustrates a software S with a Pipe and Filter Architectures problem:  the operation opx is invoked in a service  and the throughput of the service (\$Th(S)) is lower than the required one. The extensive processing occurs when a process monopolizes a processor and prevents a set of other jobs to be executed until it finishes its computation. The Fig. \ref{fig:extpro} describes a software S with an Extensive Processing problem: the operations opx and opy are alternatively invoked in a service and the response time of the service (\$RT(S)) is larger than the required one \cite{Vetoio2011}.
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -2935,11 +2934,11 @@ The pipe and filter architectures  and extensive processing antipattern represen
 \end{figure}
 
 
-Circuitous Treasure Hunt antipattern occurs when software retrieves data from a first component, uses those results in a second component, retrieves data from the second component, and so on, until the last results are obtained \cite{Smith2002} \cite{Smith2003}. Circuitous Treasure Hunt
-are typical performance antipatterns that causes  unnecessarily high amount of frequent database requests. The Circuitous Treasure Hunt antipattern is a result of a bad database schema or query design. A common Circuitous Treasure Hunt design creates a data dependency between single queries. For instance, a query requires the
+Circuitous Treasure Hunt anti-pattern occurs when software retrieves data from a first component, uses those results in a second component, retrieves data from the second component, and so on until the last results are obtained \cite{Smith2002} \cite{Smith2003}. Circuitous Treasure Hunt
+are typical performance anti-patterns that causes  unnecessarily high amount of frequent database requests. The Circuitous Treasure Hunt anti-pattern is a result of a bad database schema or query design. A common Circuitous Treasure Hunt design creates a data dependency between single queries. For instance, a query requires the
 result of a previous query as input. The longer the chain of
 dependencies between individual queries the more the Circuitous
-Treasure Hunt antipattern hurts performance \cite{Wert2014}. Fig. \ref{fig:circuit}  shows a software S with a Circuitous Treasure Hunt problem: the software  S generates a large number of database calls by performing several queries up to the final operation \cite{Vetoio2011}.
+Treasure Hunt hurts performance \cite{Wert2014}. Fig. \ref{fig:circuit}  shows a software S with a Circuitous Treasure Hunt problem: the software  S generates a large number of database calls by performing several queries up to the final operation \cite{Vetoio2011}.
 
 
 \begin{figure}[h]
@@ -2959,10 +2958,10 @@ Treasure Hunt sample \cite{Vetoio2011}}
 \end{figure}
 
 Empty Semi Trucks occurs when an excessive number of requests is required to perform a task. It may be due to inefficient use of available bandwidth, an inefficient interface, or both \cite{Arcelli2012}. There is a special case of Empty Semi Trucks that occurs  when many fields in a user interface must be retrieved from a
-remote system. Fig. \ref{fig:trucks} shows a software S with a Empty Semi Trucks problem: the software instance Sa generates an excessive message traffic by sending a high amount of messages with low sizes, much lower than the network bandwidth, hence the network link might have a low utilization value \cite{Vetoio2011}.
+remote system. Fig. \ref{fig:trucks} shows a software S with an Empty Semi Trucks problem: the software instance Sa generates an excessive message traffic by sending a high amount of messages with low sizes, much lower than the network bandwidth, hence the network link might have a low utilization value \cite{Vetoio2011}.
 
-The Tower of Babel antipattern most often occurs when information is translated into an exchange format, such as XML, where the sending process is then parsed and translated into an
-internal format by the receiving process. When the translation and parsing is excessive, the system spends most
+The Tower of Babel anti-pattern most often occurs when information is translated into an exchange format, such as XML, where the sending process is then parsed and translated into an
+internal format by the receiving process. When the translation and parsing are excessive, the system spends most
 of its time doing this and relatively little real work \cite{Smith2003}. Fig. \ref{fig:babel} shows a system with a Tower of Babel problem: the software instances Sd performs the format translation to communicate with other instances many times \cite{Vetoio2011}.
 
 \begin{figure}[H]
@@ -2981,10 +2980,10 @@ of its time doing this and relatively little real work \cite{Smith2003}. Fig. \r
 \end{figure}
 
 
-One-Lane Bridge is an antipattern that occurs when one or a few processes execute concurrently using a shared resource and while the other processes are waiting to use the shared resource. It frequently occurs in applications that access a database. Here, a lock ensures that only one process may update the associated portion of the database at a time. This antipatterns is common when many concurrent threads or processes are waiting for the same shared resources. These can either be passive resources (like semaphores or mutexes) or active resources (like CPU or hard disk). In the first case, we have a typical One Lane Bridge whose critical resource needs to be identified. Figure 3.10 shows a system with a One-Lane Bridge problem:  the software instance Sc receives an excessive number of synchronous calls in a service S and the predicted response time is higher than the required one \cite{Vetoio2011}.
+One-Lane Bridge is an anti-pattern that occurs when one or a few processes execute concurrently using a shared resource and while the other processes are waiting to use the shared resource. It frequently occurs in applications that access a database. Here, a lock ensures that only one process may update the associated portion of the database at a time. This anti-pattern is common when many concurrent threads or processes are waiting for the same shared resources. These can either be passive resources (like semaphores or mutexes) or active resources (like CPU or hard disk). In the first case, we have a typical One Lane Bridge whose critical resource needs to be identified. Figure 3.10 shows a system with a One-Lane Bridge problem:  the software instance Sc receives an excessive number of synchronous calls in a service S and the predicted response time is higher than the required one \cite{Vetoio2011}.
 
 
-Using dynamic allocation, objects are created when they are first accessed and then destroyed when they are no longer needed. Excessive Dynamic Allocation, however, addresses frequent, unnecessary creation and destruction of objects of the same class. Dynamic allocation is expensive, an object created in memory must be allocated from the heap, and any initialization code for the object and the contained objects must be executed. When the object is no longer needed, necessary clean-up must be performed, and the reclaimed memory must be returned to the heap to avoid memory leaks \cite{Smith2002} \cite{Smith2003}.
+Using dynamic allocation, objects are created when they are first accessed and then destroyed when they are no longer needed. Excessive Dynamic Allocation, however, addresses frequent, unnecessary creation and destruction of objects of the same class. Dynamic allocation is expensive, an object created in memory must be allocated from the heap, and any initialization code for the object and the contained objects must be executed. When the object is no longer needed, necessary cleanup must be performed, and the reclaimed memory must be returned to the heap to avoid memory leaks \cite{Smith2002} \cite{Smith2003}.
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -3001,9 +3000,9 @@ Using dynamic allocation, objects are created when they are first accessed and t
 \end{minipage}
 \end{figure}
 
-Fig. \ref{fig:dynallocation} shows an Excessive Dynamic Allocation sample. This example is drawn from a call (an offHook event) and the switch creates a Call object to manage the call. When the call is completed, the Call object is destroyed. Constructing a single Call object is not as excessive. A Call is a complex object that contains several other objects that must also be created. The Excessive Dynamic Allocation occurs when  a switch receive hundreds of thousands of offHook events. In a case like this, the overhead for dynamically allocating call objects adds substantial delays to the time needed to complete a call.
+Fig. \ref{fig:dynallocation} shows an Excessive Dynamic Allocation sample. This example is drawn from a call (an offHook event) and the switch creates a Call object to manage the call. When the call is completed, the Call object is destroyed. Constructing a single Call object is not as excessive. A Call is a complex object that contains several other objects that must also be created. The Excessive Dynamic Allocation occurs when a switch receives hundreds of thousands of offHook events. In a case like this, the overhead for dynamically allocating call objects adds substantial delays to the time needed to complete a call.
 
-The Traffic Jam antipattern occurs if many concurrent threads or processes are waiting for the same  active resources (like CPU or hard disk). This antipatterns produces a large backlog in jobs waiting for service. The performance impact of the Traffic Jam is the transient behavior that produces wide variability in response time. Sometimes it is fine, but at other times, it is unacceptably long. Figure \ref{fig:jam} exhibits a software with a Traffic Jam problem, in which the monitored response time of the operation shows a wide variability in a response time that persists long \cite{Vetoio2011}.
+The Traffic Jam anti-pattern occurs if many concurrent threads or processes are waiting for the same  active resources (like CPU or hard disk). This anti-pattern produces a large backlog in jobs waiting for service. The performance impact of the Traffic Jam is the transient behavior that produces wide variability in response time. Sometimes it is fine, but at other times, it is unacceptably long. Figure \ref{fig:jam} exhibits a software with a Traffic Jam problem, in which the monitored response time of the operation shows a wide variability in a response time that persists long \cite{Vetoio2011}.
 
 
 \begin{figure}[!h]
@@ -3021,21 +3020,21 @@ The Traffic Jam antipattern occurs if many concurrent threads or processes are w
 \end{minipage}
 \end{figure}
 
-Ramp is an antipattern where the processing time increases as the system is used. Ramp can arise in several different ways. Any situation in which the amount of processing required to satisfy a request increases over time will produce the behavior. With the Ramp antipattern, the memory consumption of the application is growing over time. The root causes are the Specific Data Structures, which are growing during operation or which are not properly disposed \cite{Wert2014} \cite{Smith2003}. Fig. \ref{fig:ramp} shows a system  with the Ramp problem:  (i) the monitored response time of the operation opx at time t1, i.e. \$RT(opx, t1), is much lower than at time t2, i.e. \$RT(opx, t2), with t1 < t2; (ii) the monitored throughput of the operation opx at time t1, i.e. \$Th(opx, t1), is much larger than at time t2, i.e. \$Th(opx, t2), with t1 < t2.
+Ramp is an anti-pattern where the processing time increases as the system is used. Ramp can arise in several different ways. Any situation in which the amount of processing required to satisfy a request increases over time will produce the behavior. With the Ramp anti-pattern, the memory consumption of the application is growing over time. The root causes are the Specific Data Structures, which are growing during operation or which are not properly disposed \cite{Wert2014} \cite{Smith2003}. Fig. \ref{fig:ramp} shows a system  with the Ramp problem:  (i) the monitored response time of the operation opx at time t1, i.e. \$RT(opx, t1), is much lower than at time t2, i.e. \$RT(opx, t2), with t1 < t2; (ii) the monitored throughput of the operation opx at time t1, i.e. \$Th(opx, t1), is much larger than at time t2, i.e. \$Th(opx, t2), with t1 < t2.
 
-More is Less occurs when a system spends more time "thrashing” than accomplishing real work because there are too many processes relative to available resources. More is Less is presented when it is running too many programs overtime. This antipattern causes too much system paging and systems spend all their time servicing page faults rather than processing requests. In distributed systems, there are more causes. They include: creating too many database connections and  allowing too many internet connection. Fig. \ref{fig:moreisless} illustrates a system  with a More Is Less problem: There is a processing node PN1 and the monitored runtime parameters (e.g. database connections, etc.) at time t1, i.e. \$Par(PN1[p], t1), are much larger than the same parameters at time t2, i.e. \$Par(PN1[p], t2), with t1 < t2.
+More is Less occurs when a system spends more time "thrashing” than accomplishing real work because there are too many processes relative to available resources. More is Less is presented when it is running too many programs over time. This anti-pattern causes too much system paging and systems spend all their time servicing page faults rather than processing requests. In distributed systems, there are more causes. They include: creating too many database connections and  allowing too many internet connections. Fig. \ref{fig:moreisless} illustrates a system  with a More Is Less problem: There is a processing node PN1 and the monitored runtime parameters (e.g. database connections, etc.) at time t1, i.e. \$Par(PN1[p], t1), are much larger than the same parameters at time t2, i.e. \$Par(PN1[p], t2), with t1 < t2.
 
 \section{Summary}
 
 Stress testing investigates the behavior of the system under conditions
-that overload its resources \cite{Sandler2004} \cite{Lewis2005}. The core activities in conducting an usual Load, Performance and Stress tests are  Identify the test environment, Identify acceptance criteria, Plan and design tests, Prepare the test environment, Record the test plan, Run the tests and Analyze results. This research focuses on the generation and execution of test cases. It is not scope of the research the automatic analysis of the results and the treatment of log of tests. The two main approaches to creating workloads are generative and descriptive workload approaches. The main goal of descriptive workloads is to ensure that the system can function correctly once. Generative workloads  aims to design loads, which are likely to cause functional or non-functional problem. 
+that overload its resources \cite{Sandler2004} \cite{Lewis2005}. The core activities in conducting a usual Load, Performance and Stress tests are  Identify the test environment, Identify acceptance criteria, Plan and design tests, Prepare the test environment, Record the test plan, Run the tests and Analyze results. This research focuses on the generation and execution of test cases. It is not the scope of the research the automatic analysis of the results and the treatment of log of tests. The two main approaches to creating workloads are generative and descriptive workload approaches. The main goal of descriptive workloads is to ensure that the system can function correctly once. Generative workloads  aims to design loads, which are likely to cause a functional or non-functional problem. 
 
-There are three approaches to stress test execution: Live-User Based Executions, Driver Based Executions and Emulation Based Executions. This thesis focuses on user Driver Based Executions where each workload perform several requests to application under test to measure the response time. Apache jmeter was the tool chosen for current research due to its open license, the use of plugins and the ease of integration with jmetal and jgap frameworks.
+There are three approaches to stress test execution: Live-User Based Executions, Driver Based Executions and Emulation Based Executions. This thesis focuses on user Driver Based Executions where each workload performs several requests to an application under test to measure the response time. Apache JMeter was the tool chosen for current research due to its open license, the use of plugins and the ease of integration with jmetal and jgap frameworks.
 
-The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing use a model to describe the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of test because it depends intrinsically of the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Functional-based notations, Stochastic notations, Transition-based and State-based notations. 
+The main approaches to generate test cases to stress testing are: Model-based testing and Search-based testing. Model-based testing uses a model to describe the states and transitions of a system under test. Although the use of models allows greater control of generated test cases, since all test cases are generated from the previously defined model, it is also the main limitation of this approach since the model may not include all possible scenarios of the test because it depends intrinsically on the test designer responsible for creating the models. The most used paradigms in model-based stress testing are:  Functional-based notations, Stochastic notations, Transition-based and State-based notations. 
 
-There are several antipatterns that detailed features about common performance problems. Antipatterns
-are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 antipatterns of which 4 were  implemented by IAdapter IN an experiment presented in chapter 4.
+There are several anti-patterns that detailed features about common performance problems. Antipatterns
+are conceptually similar to patterns in that they document recurring solutions to common design problems. This survey found 10 anti-patterns of which 4 were  implemented by IAdapter IN an experiment presented in chapter 4.
 
 
 
@@ -3057,7 +3056,7 @@ IAdapter is a JMeter plugin designed to perform search-based stress tests. Fig. 
 
 JMeter has components organized  in a hierarchical manner. The IAdapter plugin provides three main components: WorkLoadThreadGroup, WorkLoadSaver, and WorkLoadController.
 
-WorkLoadThreadGroup is a component that creates an initial population and configures the algorithms used in the IAdapter. Fig. \ref{fig:tela1iadapter} presents the main screen of the WorkLoadThreadGroup component. The component has a name \ding{202}, a set of configuration tabs \ding{203}, a list of individuals by generation \ding{204}, a button to generate an initial population \ding{205}, and a button to export the results \ding{206}. WorkLoadThreadGroup component uses the GeneticAlgorithm, TabuSearch and SimulateAnnealing classes.  The WorkLoadSaver component is responsible for saving all data in the database. The operation of the component only requires its inclusion in the test script. WorkLoadController represents a scenario of the test. All actions necessary to test an application should be included in this component. All instances of the component require to be logged in the application under test and bring the application back to its original state.
+WorkLoadThreadGroup is a component that creates an initial population and configures the algorithms used in the IAdapter. Fig. \ref{fig:tela1iadapter} presents the main screen of the WorkLoadThreadGroup component. The component has a name \ding{202}, a set of configuration tabs \ding{203}, a list of individuals by generation \ding{204}, a button to generate an initial population \ding{205}, and a button to export the results \ding{206}. WorkLoadThreadGroup component uses the GeneticAlgorithm, TabuSearch and SimulateAnnealing classes.  The WorkLoadSaver component is responsible for saving all data in the database. The operation of the component only requires its inclusion in the test script. WorkLoadController represents a scenario of the test. All actions necessary to test an application should be included in this component. All instances of the component require being logged in the application under test and bring the application back to its original state.
 
 \begin{figure}[h]
 \centering
@@ -3072,7 +3071,7 @@ WorkLoadThreadGroup is a component that creates an initial population and config
 \vspace*{-.075in}
 
 
-In this section, We present the IAdapter main architecture. The test-bed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extends AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and store the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
+In this section, We present the IAdapter main architecture. The testbed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extend AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and store the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -3093,7 +3092,7 @@ In this section, We present the IAdapter main architecture. The test-bed tool pr
 
 \subsection{Test Module}
 
-The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extends the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represent an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named Multiobjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
+The Test Module (Figure \ref{fig:testbedarch}  -\ding{202}) is responsible for for the loading of all classes that extend AbstractAlgorithm in the classpath and perform the tests under the application. Figure \ref{fig:heuristicclassdiagram} shows the  class diagram for custom and provided heuristics. All heuristic classes extend the class AbstractAlgorithm. The heuristics receives  as input a  list of workloads (Figure \ref{fig:heuristicclassdiagram}  -\ding{203}) and must return a list of output workloads (the individuals selected for the next generation)  (Figure \ref{fig:heuristicclassdiagram}  -\ding{204}). Each workload represents an individual in the search space. There is an abstract class inherited from the AbstractAlgorithm named Multiobjective Algorithm, this class is used by multi-objective metaheuristics, which have a different execution flow in the system.
 
 Figure. \ref{fig:step2} presents the Flowchart of the Test Module. Given an initial population (Figure \ref{fig:step2}  -\ding{202}),  a metaheuristic select a new set of workloads based on an objective function (Figure \ref{fig:step2}  -\ding{203}). The chosen metaheuristic generate a new set of individuals based on crossover or neighborhood operators (Figure \ref{fig:step2}  -\ding{204}).  JMeterEngine run each workload (Figure \ref{fig:step2}  -\ding{206}) and the chosen metaheuristic obtain a fitness value for each workload based on some objective function  (Figure \ref{fig:step2}  -\ding{207}). Each Metaheuristic could define your own objective function. After all these steps the cycle begins until the maximum number of generations it is reached (Figure \ref{fig:step2}  -\ding{208}).
 
@@ -3125,7 +3124,7 @@ The WorkLoadThreadGroup class is responsible for start all threads that go simul
 
 
 
-Figure \ref{fig:startmethod} presents the start method sequence diagram. The WorkLoad Thread Group start method is responsible for load the multi-objective weights, synchronize all threads and get the new workloads from database. Figure \ref{fig:finishMethod} presents the threadFinish method, the method is triggered after the end of execution of each Thread. The method synchronizes all threads (Fig. \ref{fig:finishMethod}-\ding{204} ), waiting for the execution of all instances to finish, stores the results, and starts new tests until the end of all generations (Fig. \ref{fig:finishMethod}-\ding{205} and \ding{206} ).
+Figure \ref{fig:startmethod} presents the start method sequence diagram. The WorkLoad Thread Group start method is responsible for load the multi-objective weights, synchronize all threads and get the new workloads from the database. Figure \ref{fig:finishMethod} presents the threadFinish method, the method is triggered after the end of execution of each Thread. The method synchronizes all threads (Fig. \ref{fig:finishMethod}-\ding{204} ), waiting for the execution of all instances to finish, stores the results, and starts new tests until the end of all generations (Fig. \ref{fig:finishMethod}-\ding{205} and \ding{206} ).
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -3162,7 +3161,7 @@ The representation of each individual is encapsulated in the WorkLoad class (Fig
 
 \subsection{External Dependencies}
 
-This section briefly present the two main external dependencies of the IAdapter: jMetal and JGAP.
+This section brieflys present the two main external dependencies of the IAdapter: jMetal and JGAP.
 
 \subsubsection{jMetal}
 

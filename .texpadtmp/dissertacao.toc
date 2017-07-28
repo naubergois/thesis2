@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {4.4}Experiments with Hybrid Algorithm}{68}
 \contentsline {subsection}{\numberline {4.4.1}First Experiment: Emulated Class Test}{69}
 \contentsline {subsection}{\numberline {4.4.2}Second Experiment: Moodle Application Test}{70}
-\contentsline {subsection}{\numberline {4.4.3}Third Experiment: Antipatterns}{72}
+\contentsline {subsection}{\numberline {4.4.3}Third Experiment: Anti-patterns}{72}
 \contentsline {subsection}{\numberline {4.4.4}Experiment Research Questions}{74}
 \contentsline {subsection}{\numberline {4.4.5}Variables}{74}
 \contentsline {subsection}{\numberline {4.4.6}Experiment Hypotheses}{74}
@@ -121,7 +121,7 @@
 \contentsline {subsubsection}{State-based notation}{143}
 \contentsline {subsection}{\numberline {A.4.2}Other Approaches}{144}
 \contentsline {subsubsection}{Feedback-ORiEnted PerfOrmance Software Testing}{144}
-\contentsline {section}{\numberline {A.5}Research Question 2: What are the main antipatterns found by stress tests?}{145}
+\contentsline {section}{\numberline {A.5}Research Question 2: What are the main anti-patterns found by stress tests?}{145}
 \contentsline {section}{\numberline {A.6}Summary}{151}
 \contentsline {chapter}{Appendix{} B{} -$\tmspace -\thinmuskip {.1667em}$-{} IAdapter }{155}
 \contentsline {section}{\numberline {B.1}IAdapter Visual Components}{155}
