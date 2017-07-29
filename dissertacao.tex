@@ -1592,13 +1592,29 @@ The present study extends the article "Improving stress search based testing usi
 
 \chapter{Search-based stress testing using multi-objective heuristics}
 
-This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics make it possible to create a model that performs search-based stress tests with  two distinct objectives. 
+This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. The thesis examines the use of the multi-objective NSGA-II, SPEA2, PAES and MOEA/D algorithms. Numerous tests obtained response times higher than similar scenarios in other executions. After assessing the obtained results, we found that one of the reasons for higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, we put forward an adaptation of the SEDR algorithm for noise reduction. Fig. \ref{fig:outliers} presents the results without a Noise Reduction algorithm.  MOEA/D metaheuristics obtained the best hypervolume value when compared with other approaches. We propose a collaborative approach using MOEA/D and HybridQ to improve the hypervolume values obtained from the previous experiments. The chapter presents the custom version of three algorithms (SEDR, HybridQ and MOEA/D), five evaluation experiments and a survey applied in a non-functional test team.
 
-The multiobjective algorithm implementation used an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  multiobjective implemented algorithms. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
 
-From the results of the experiments, we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective heuristic in conjunction with the HybridQ algorithm. The chapter presents the adaptions implemented in three algorithms (SEDR, HybridQ and MOEA/D),four evaluation experiments and a survey applied in a non-functional test team. 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1\textwidth]{./images/outliers.png}
+\caption{Results obtained without Noise Reduction}
+\label{fig:outliers}
+\end{figure}
 
-\section{SEDR, HybridQ and MOEA/D adaptions}
+
+The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm. The fourth experiment presents an experiment to assess the collaborative approach using HybridQ and MOEA/D. The fifth experiment presents an initial study to evaluate the Pareto Frontier difference in multiple executions. 
+
+\section{Multi-objective algorithms and SEDER Adaptations}
+
+The multiobjective algorithms applied in the experiments use an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  Multiobjective Algorithms Adaption. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{./images/step3.png}
+\caption{Flowchart of implemented algorithms}
+\label{fig:flowchart}
+\end{figure}
 
 The experiments use a customized version of the SEDR algorithm for noise reduction. The algorithm runs as long as each workload has at least 3 samples or the SEDR condition is satisfied for all workloads ( Figure \ref{fig:sedrcustomized} - \ding{202}). The algorithm adds all workloads in OUTLIERS list to the list of execution ( Figure \ref{fig:sedrcustomized} - \ding{203}). All workloads are performed and the SEDR condition is verified  ( Figure \ref{fig:sedrcustomized} - \ding{204} and \ding{205} ). If the SEDR condition is satisfied the workload is removed from OUTLIERS list ( Figure \ref{fig:sedrcustomized} - \ding{206}) otherwise the workload is included in the list if it is no longer present ( Figure \ref{fig:sedrcustomized} - \ding{207}). 
 
@@ -1608,16 +1624,6 @@ The experiments use a customized version of the SEDR algorithm for noise reducti
 \caption{SEDR customized algorithm}
 \label{fig:sedrcustomized}
 \end{figure}
-
-
-\begin{figure}[!h]
-
-\centering
-\includegraphics[width=0.8\textwidth]{./images/step3.png}
-\caption{Flowchart of implemented algorithms}
-\label{fig:flowchart}
-\end{figure}
-
 
 
 We propose a collaborative hybrid algorithm that uses MOEA/D and HybridQ. The approach consists of each algorithm share our best individuals with each other. Fig. \ref{fig:co2} presents the simple adaptations included in the algorithms that use the best individuals found by each algorithm.
@@ -1753,15 +1759,7 @@ In this section, we present the experimental results, in which we carried out co
 \item MOEAD
 \end{itemize}
 
-The experiment was undertaken with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm. Fig. \ref{fig:outliers} presents the results of the first cycle of executions. Numerous tests obtained response times higher than similar scenarios in other executions. After discussing the obtained results, we found that one of the reasons for higher response time is the occurrence of disk pagination. In order to more accurately verify the response times of the outliers, we adopted the use of a noise reduction strategy in a new test cycle. The hypervolume metric was used to compare the algorithms. We used the emoa package of the R language to calculate the hypervolume.
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1\textwidth]{./images/outliers.png}
-\caption{Results obtained without Noise Reduction}
-\label{fig:outliers}
-\end{figure}
-
+The experiment was undertaken with the JPetStore application in two cycles with or without a noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress tests, which run for 5 days and 2226 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established generations by the algorithm. The hypervolume metric was used to compare the algorithms.  All values used in the hypervolume calculation were normalized. We used the emoa package of the R language to calculate the hypervolume.
 
 \subsection{Experiment Research Questions}
 
