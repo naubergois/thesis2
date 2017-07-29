@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  29 JUL 2017 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  29 JUL 2017 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1862,4 +1862,151 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout6 = `dissertacao.lot'.
 
 
-Underfull \vb
+Underfull \vbox (badness 2600) has occurred while \output is active []
+
+ [23
+
+]
+[24]
+\openout2 = `acronimos.aux'.
+
+ (./acronimos.tex [25
+
+
+]) [26]
+Overfull \hbox (10.27887pt too wide) in paragraph at lines 128--129
+[]\T1/txr/m/n/12 IRace - Al-go-rithm pro-ce-dure to au-tom-a-tize the con-fig-u
+r-ing pa-ram-e-ters of meta-heuris-tics (Manuel
+ []
+
+
+Overfull \hbox (18.94284pt too wide) in paragraph at lines 134--135
+[]\T1/txr/m/n/12 Offspring - New so-lu-tions cre-ated to new to a new gen-er-a-
+tion in evo-lu-tion-ary al-go-rithms(Gendreau,
+ []
+
+[27
+
+
+]
+\openout2 = `publicacoes.aux'.
+
+ (./publicacoes.tex [28
+
+
+]) [29] [30
+
+
+]
+Chapter 1.
+
+Overfull \hbox (8.14476pt too wide) in paragraph at lines 165--171
+[]\T1/txr/m/n/12 There is strong em-pir-i-cal ev-i-dence, that de-fi-cient test
+-ing of both func-tional and non-functional
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Overfull \hbox (3.11992pt too wide) in paragraph at lines 198--199
+\T1/txr/m/n/12 (www.iadapter.org, github.com/naubergois/newiadapter), a JMe-ter
+ plu-gin for per-form-ing search-
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+txr on input line 202.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+) [33]
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
+
+ []
+
+
+Underfull \vbox (badness 3668) has occurred while \output is active []
+
+ [35]
+[36]
+Chapter 2.
+[37
+
+] <./images/neighborhood.png, id=135, 245.91875pt x 163.61125pt>
+File: ./images/neighborhood.png Graphic file (type png)
+
+<use ./images/neighborhood.png>
+Package pdftex.def Info: ./images/neighborhood.png used on input line 289.
+(pdftex.def)             Requested size: 227.62206pt x 151.44537pt.
+
+Overfull \hbox (2.32477pt too wide) in paragraph at lines 296--297
+[]\T1/txr/m/n/12 Single-Solution Based Meta-heuris-tics meth-ods are char-ac-te
+r-ized by a tra-jec-tory in the search
+ []
+
+[38 <./images/neighborhood.png>] [39] [40]
+<./images/metaheuristc2.png, id=148, 509.87338pt x 274.94847pt>
+File: ./images/metaheuristc2.png Graphic file (type png)
+
+<use ./images/metaheuristc2.png>
+Package pdftex.def Info: ./images/metaheuristc2.png used on input line 384.
+(pdftex.def)             Requested size: 364.19667pt x 196.40205pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41 <./images/metaheuristc2.png>]
+<./images/paretofront.png, id=153, 366.36874pt x 291.0875pt>
+File: ./images/paretofront.png Graphic file (type png)
+
+<use ./images/paretofront.png>
+Package pdftex.def Info: ./images/paretofront.png used on input line 399.
+(pdftex.def)             Requested size: 182.09486pt x 144.67726pt.
+ [42 <./images/paretofront.png>] [43]
+<./images/NSGA-2.png, id=163, 490.83376pt x 411.5375pt>
+File: ./images/NSGA-2.png Graphic file (type png)
+
+<use ./images/NSGA-2.png>
+Package pdftex.def Info: ./images/NSGA-2.png used on input line 445.
+(pdftex.def)             Requested size: 227.62206pt x 190.84804pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/speansga.png, id=167, 534.99875pt x 240.9pt>
+File: ./images/speansga.png Graphic file (type png)
+
+<use ./images/speansga.png>
+Package pdftex.def Info: ./images/speansga.png used on input line 486.
+(pdftex.def)             Requested size: 273.14923pt x 122.99704pt.
+
+<./images/hypervolume-annot.png, id=168, 401.5pt x 377.41pt>
+File: ./images/hypervolume-annot.png Graphic file (type png)
+
+<use ./images/hypervolume-annot.png>
+Package pdftex.def Info: ./images/hypervolume-annot.png used on input line 492.
+
+(pdftex.def)             Requested size: 127.46584pt x 119.8177pt.
+
+Underfull \hbox (badness 3333) in paragraph at lines 493--493
+[]\T1/txr/bx/n/12 Figure 2.6: |\T1/txr/m/n/12 Hy-per-vol-um

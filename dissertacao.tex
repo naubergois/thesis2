@@ -1605,7 +1605,7 @@ This chapter present experiments to assert the benefits of multiobjective metahe
 
 The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm. The fourth experiment presents an experiment to assess the collaborative approach using HybridQ and MOEA/D. The fifth experiment presents an initial study to evaluate the Pareto Frontier difference in multiple executions. 
 
-\section{Multi-objective algorithms and SEDER Adaptations}
+\section{Multi-objective algorithms and SEDR Adaptations}
 
 The multiobjective algorithms applied in the experiments use an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  Multiobjective Algorithms Adaption. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
 
