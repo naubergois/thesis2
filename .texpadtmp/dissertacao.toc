@@ -1,0 +1,134 @@
+\select@language {english}
+\contentsline {chapter}{List of Figures}{}
+\contentsline {chapter}{List of Tables}{}
+\contentsline {chapter}{List of Acronyms}{}
+\contentsline {chapter}{Glossary of Terms}{}
+\contentsline {chapter}{Related Publications}{}
+\contentsline {chapter}{\numberline {1}Introduction}{31}
+\contentsline {section}{\numberline {1.1}Motivation}{31}
+\contentsline {section}{\numberline {1.2}Research Questions}{33}
+\contentsline {section}{\numberline {1.3}Contributions}{34}
+\contentsline {section}{\numberline {1.4}Thesis Outline}{35}
+\contentsline {chapter}{\numberline {2}Metaheuristics and Reinforcement Learning}{37}
+\contentsline {section}{\numberline {2.1}Metaheuristics}{37}
+\contentsline {subsection}{\numberline {2.1.1}Trajectory Methods}{38}
+\contentsline {subsubsection}{Neighborhood}{38}
+\contentsline {subsubsection}{Simulated Annealing}{38}
+\contentsline {subsubsection}{Tabu Search}{39}
+\contentsline {subsection}{\numberline {2.1.2}Population-based Metaheuristics}{40}
+\contentsline {subsection}{\numberline {2.1.3}Hybrid Metaheuristics}{41}
+\contentsline {subsection}{\numberline {2.1.4}Multi-objective Metaheuristics}{42}
+\contentsline {subsubsection}{NSGA-II Multi-objective Heuristics}{43}
+\contentsline {subsubsection}{SPEA2: Improving the Strength Pareto Evolutionary Algorithm}{44}
+\contentsline {subsubsection}{Pareto Archived Evolution Strategy}{45}
+\contentsline {subsubsection}{A Multiobjective Evolutionary Algorithm Based on Decomposition}{46}
+\contentsline {subsubsection}{Comparing Multi-Objective Metaheuristics}{48}
+\contentsline {subsection}{\numberline {2.1.5}Metaheuristic Noise Reduction}{49}
+\contentsline {section}{\numberline {2.2}Reinforcement Learning}{50}
+\contentsline {section}{\numberline {2.3}Summary}{52}
+\contentsline {chapter}{\numberline {3}Search-based Stress Testing}{53}
+\contentsline {section}{\numberline {3.1}Load, Performance and Stress Testing}{53}
+\contentsline {section}{\numberline {3.2}Search-Based Testing}{54}
+\contentsline {section}{\numberline {3.3}Search-based Stress testing}{57}
+\contentsline {subsection}{\numberline {3.3.1}Search-Based Stress Testing on Safety-critical Systems}{58}
+\contentsline {subsection}{\numberline {3.3.2}Search-Based Stress Testing on non Safety-critical Systems}{61}
+\contentsline {section}{\numberline {3.4}Similar approaches}{62}
+\contentsline {section}{\numberline {3.5}Summary}{62}
+\contentsline {chapter}{\numberline {4}Stress Search Based Testing using Hybrid Metaheuristic}{65}
+\contentsline {section}{\numberline {4.1}Representation}{65}
+\contentsline {section}{\numberline {4.2}Initial population}{67}
+\contentsline {section}{\numberline {4.3}Objective (fitness) Function}{68}
+\contentsline {section}{\numberline {4.4}Experiments with Hybrid Algorithm}{68}
+\contentsline {subsection}{\numberline {4.4.1}First Experiment: Emulated Class Test}{69}
+\contentsline {subsection}{\numberline {4.4.2}Second Experiment: Moodle Application Test}{70}
+\contentsline {subsection}{\numberline {4.4.3}Third Experiment: Anti-patterns}{72}
+\contentsline {subsection}{\numberline {4.4.4}Experiment Research Questions}{74}
+\contentsline {subsection}{\numberline {4.4.5}Variables}{74}
+\contentsline {subsection}{\numberline {4.4.6}Experiment Hypotheses}{74}
+\contentsline {subsection}{\numberline {4.4.7}The Ramp and Circuitous Treasure Hunt step}{74}
+\contentsline {subsection}{\numberline {4.4.8}The Tower Babel and Unbalanced Processing step}{75}
+\contentsline {subsection}{\numberline {4.4.9}Threats to validity}{76}
+\contentsline {section}{\numberline {4.5}Conclusion}{77}
+\contentsline {chapter}{\numberline {5}Stress Search-based Testing using HybridQ approach}{79}
+\contentsline {subsection}{\numberline {5.0.1}Exploration phase}{79}
+\contentsline {subsection}{\numberline {5.0.2}Exploitation phase}{80}
+\contentsline {subsection}{\numberline {5.0.3}Integration between metaheuristics and the Q-Learning algorithm }{82}
+\contentsline {section}{\numberline {5.1}Experiment with HybridQ Algorithm}{83}
+\contentsline {subsection}{\numberline {5.1.1}Experiment Research Questions}{84}
+\contentsline {subsection}{\numberline {5.1.2}Variables}{84}
+\contentsline {subsection}{\numberline {5.1.3}Experiment Hypotheses}{84}
+\contentsline {subsection}{\numberline {5.1.4}Experiment phases}{85}
+\contentsline {subsection}{\numberline {5.1.5}OpenCart Experiment}{85}
+\contentsline {subsubsection}{Q-Learning Training Phase}{86}
+\contentsline {subsubsection}{Results}{86}
+\contentsline {subsection}{\numberline {5.1.6}Threats to validity}{88}
+\contentsline {section}{\numberline {5.2}Conclusion}{88}
+\contentsline {chapter}{\numberline {6}Search-based stress testing using multi-objective heuristics}{89}
+\contentsline {section}{\numberline {6.1}SEDR, HybridQ and MOEA/D adaptions}{89}
+\contentsline {section}{\numberline {6.2}Experiment with multi-object NSGA-II algorithm}{90}
+\contentsline {subsection}{\numberline {6.2.1}Experiment Research Questions}{93}
+\contentsline {subsection}{\numberline {6.2.2}Variables}{93}
+\contentsline {subsection}{\numberline {6.2.3}Experiment Hypotheses}{93}
+\contentsline {subsection}{\numberline {6.2.4}Results}{93}
+\contentsline {subsection}{\numberline {6.2.5}Threats to Validity}{94}
+\contentsline {subsection}{\numberline {6.2.6}Experiment Conclusion}{95}
+\contentsline {section}{\numberline {6.3}Comparative experiment of Multi-Objective algorithms with Noise Reduction}{95}
+\contentsline {subsection}{\numberline {6.3.1}Experiment Research Questions}{96}
+\contentsline {subsection}{\numberline {6.3.2}Variables}{96}
+\contentsline {subsection}{\numberline {6.3.3}Experiment Hypotheses}{96}
+\contentsline {subsection}{\numberline {6.3.4}Experiment Results}{97}
+\contentsline {subsection}{\numberline {6.3.5}Experiment Conclusion}{98}
+\contentsline {subsection}{\numberline {6.3.6}Threats to Validity}{98}
+\contentsline {section}{\numberline {6.4}Comparative Experiment between HybridQ and MOEA/D}{98}
+\contentsline {subsection}{\numberline {6.4.1}Experiment Research Questions}{99}
+\contentsline {subsection}{\numberline {6.4.2}Variables}{99}
+\contentsline {subsection}{\numberline {6.4.3}Experiment Hypotheses}{99}
+\contentsline {subsection}{\numberline {6.4.4}Experiment Results}{100}
+\contentsline {section}{\numberline {6.5}Experiment with HybridQ and MOEA/D Collaborative approach}{100}
+\contentsline {subsection}{\numberline {6.5.1}Experiment Research Questions}{101}
+\contentsline {subsection}{\numberline {6.5.2}Variables}{101}
+\contentsline {subsection}{\numberline {6.5.3}Experiment Hypotheses}{101}
+\contentsline {subsection}{\numberline {6.5.4}Experiment Results}{102}
+\contentsline {subsection}{\numberline {6.5.5}Experiment Conclusion}{102}
+\contentsline {section}{\numberline {6.6}Analysis of Pareto Frontier in Multiple Executions}{102}
+\contentsline {subsection}{\numberline {6.6.1}Experiment Research Questions}{103}
+\contentsline {subsection}{\numberline {6.6.2}Variables}{103}
+\contentsline {subsection}{\numberline {6.6.3}Experiment Hypotheses}{104}
+\contentsline {subsection}{\numberline {6.6.4}Experiment Results}{104}
+\contentsline {section}{\numberline {6.7}A Survey Study of use of Multi-Objective Algorithms in Search-based Stress testing}{105}
+\contentsline {section}{\numberline {6.8}Conclusion}{107}
+\contentsline {chapter}{\numberline {7}Conclusion}{109}
+\contentsline {section}{\numberline {7.1}Summary of contributions and Achievements}{109}
+\contentsline {section}{\numberline {7.2}Open Issues}{110}
+\contentsline {section}{\numberline {7.3}Future Works}{111}
+\contentsline {chapter}{Bibliography}{113}
+\contentsline {chapter}{Appendix{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Stress Testing}{123}
+\contentsline {section}{\numberline {A.1}Research Questions}{123}
+\contentsline {subsection}{\numberline {A.1.1}Study Selection Criteria}{123}
+\contentsline {section}{\numberline {A.2}Stress Test Process}{125}
+\contentsline {section}{\numberline {A.3}Stress Test Execution}{127}
+\contentsline {subsection}{\numberline {A.3.1}Stress Testing Tools}{128}
+\contentsline {subsection}{\numberline {A.3.2}Comparative Studies}{129}
+\contentsline {subsection}{\numberline {A.3.3}Benchmarks Group}{130}
+\contentsline {subsection}{\numberline {A.3.4}Software Products}{131}
+\contentsline {subsection}{\numberline {A.3.5}Cloud Testing Tools}{133}
+\contentsline {subsection}{\numberline {A.3.6}Apache JMeter}{133}
+\contentsline {section}{\numberline {A.4}Research Question 1: How to model a stress test workload?}{134}
+\contentsline {subsection}{\numberline {A.4.1}Model-based Stress Testing}{137}
+\contentsline {subsubsection}{Functional Notation}{139}
+\contentsline {subsubsection}{Stochastic Notation}{139}
+\contentsline {subsubsection}{Transition-based notation}{141}
+\contentsline {subsubsection}{State-based notation}{143}
+\contentsline {subsection}{\numberline {A.4.2}Other Approaches}{144}
+\contentsline {subsubsection}{Feedback-ORiEnted PerfOrmance Software Testing}{144}
+\contentsline {section}{\numberline {A.5}Research Question 2: What are the main anti-patterns found by stress tests?}{145}
+\contentsline {section}{\numberline {A.6}Summary}{151}
+\contentsline {chapter}{Appendix{} B{} -$\tmspace -\thinmuskip {.1667em}$-{} IAdapter }{155}
+\contentsline {section}{\numberline {B.1}IAdapter Visual Components}{155}
+\contentsline {section}{\numberline {B.2}The IAdapter architecture}{156}
+\contentsline {subsection}{\numberline {B.2.1}Test Module}{157}
+\contentsline {subsection}{\numberline {B.2.2}Emulator Module}{158}
+\contentsline {subsection}{\numberline {B.2.3}Test Scenario library}{159}
+\contentsline {subsection}{\numberline {B.2.4}External Dependencies}{159}
+\contentsline {subsubsection}{jMetal}{159}
+\contentsline {subsubsection}{JGAP}{160}
