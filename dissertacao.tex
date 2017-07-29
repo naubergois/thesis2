@@ -278,10 +278,10 @@ Trajectory methods are characterized by a trajectory in the search space. Two co
 
 \subsubsection{Neighborhood}
 
-The definition of Neighborhood is a required common step for the design of any Single-Solution metaheuristic (S-metaheuristic). The neighborhood structure it is an important piece of the performance of an S-metaheuristic. If the neighborhood structure is not adequate to the problem,
+The definition of Neighborhood is a required common step in the design of any Single-Solution metaheuristic (S-metaheuristic). The neighborhood structure it is an important piece of the performance of an S-metaheuristic. If the neighborhood structure is not adequate to the problem,
 any S-metaheuristic will fail to solve the problem. The neighborhood function N is a mapping: $ N : S \rightarrow N\textsuperscript{2} $ that assigns to each solution s of \textit{S} a set of solutions \textit{N(s)}$\subset$ S \cite{Talbi2013}.
 
-The neighborhood definition depends  representation associated with the problem. For permutation-based representations, a usual neighborhood is based on the swap operator that consists in swapping the location of two elements $s_i$ and $s_j$ of the permutation \cite{Talbi2013}. The Fig. \ref{fig:sperneighborhood} presents a example where a set of neighbors is found by permutation.
+The neighborhood definition depends  representation associated with the problem. For permutation-based representations, a usual neighborhood is based on the swap operator that consists in swapping the location of two elements $s_i$ and $s_j$ of the permutation \cite{Talbi2013}. The Fig. \ref{fig:sperneighborhood} presents an example where a set of neighbors is found by permutation.
 
 
 \begin{figure}[h]
@@ -342,7 +342,7 @@ Tabu Search uses a tabu list to keep track of the last  moves, and don’t allow
 
 \subsection{Population-based Metaheuristics}
 
-Population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The search process is stopped when a stopping criterion is satisfied. Algorithms such as Genetic algorithms (GA), scatter search (SS), estimation of distribution algorithms (EDAs), particle swarm optimization (PSO), bee colony (BC), and artificial immune systems (AISs) belong to this class of metaheuristics \cite{talbi2009metaheuristics}.
+Population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this population is integrated into the current one using  selection procedures. The search process is stopped when a stopping criterion is satisfied. Algorithms such as Genetic algorithms (GA), scatter search (SS), estimation of distribution algorithms (EDAs), particle swarm optimization (PSO), bee colony (BC), and artificial immune systems (AISs) belong to this class of metaheuristics \cite{talbi2009metaheuristics}.
 
 Population-based metaheuristics are comprised of several components \cite{hong2000simultaneously} \cite{shousha2003performance} :
 
@@ -392,7 +392,7 @@ One of the most popular ways of metaheuristic hybridization consists in the use 
 
 \subsection{Multi-objective Metaheuristics}
 
-Many real optimization problems require optimizing multiple conflicting objectives with each other. There is no single optimal solution, but a set of alternative solutions. The objectives that have to be optimized are often in competition with one another and may be contradictory; we may find ourselves trying to balance the different optimization objectives of several different goals \cite{Harman2010}. The image of all the efficient solutions is called the Pareto front or Pareto curve or surface. The shape of the Pareto surface indicates the nature of the trade-off between the different objective functions. An example of a Pareto curve is reported in Fig. \ref{fig:pareto1}. Multi-objective optimization methods have as main purposes to minimize the distance between the nondominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible.
+Many real optimization problems require optimizing multiple conflicting objectives. There is no single optimal solution, but a set of alternative solutions. The objectives that have to be optimized are often in competition with one another and may be contradictory; we may find ourselves trying to balance the different optimization objectives of several distinct goals \cite{Harman2010}. The image of all the efficient solutions is called the Pareto front or Pareto curve or surface. The shape of the Pareto surface indicates the nature of the trade-off between the different objective functions. An example of a Pareto curve is reported in Fig. \ref{fig:pareto1}. Multi-objective optimization methods have as main purposes to minimize the distance between the nondominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible.
 
 \begin{figure}[h]
 \centering
@@ -402,7 +402,7 @@ Many real optimization problems require optimizing multiple conflicting objectiv
 \end{figure}
 
 What distinguishes multi-objective evolutionary algorithms from single objective metaheuristics is how they rank and select individuals in the population. If there is only one objective, individuals are naturally ranked according to this objective, and it is clear which individuals are best and should be selected as
-parents. In the case of multiple objectives, it is still necessary to rank the individuals, but it is no longer obvious how to do this. Most people probably agree that a good approximation to the Pareto front is characterized by:
+parents. In the case of multiple objectives, it is still necessary to rank the individuals, but it is no longer obvious how doing this. Most people probably agree that a good approximation to the Pareto front is characterized by:
 
 \begin{itemize}
 \item  a small distance of the solutions to the true Pareto frontier,
@@ -2168,7 +2168,7 @@ This chapter presents our conclusions, revisits the contributions, shows some li
 \section{Summary of contributions and Achievements}
 
 
-First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid algorithm uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to perform performance, load, and stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in  results with the Hybrid Metaheuristic approach when compared with the other algorithms (\textbf{Research Question 1}). All tests in the experiment were conducted without the need of a tester, automating the execution of stress tests with the JMeter tool \cite{Gois2016}. 
+First, we proposed a hybrid collaborative algorithm to perform search-based stress testing.  The hybrid approach uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to execute stress testing on a simulated component.  In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in  results with the Hybrid Metaheuristic approach when compared with the other algorithms (\textbf{Research Question 1}). All tests in the experiment were conducted without the need of a tester, automating  stress testing with the JMeter tool \cite{Gois2016}. 
 
 
 In order to improve the efficiency of our proposal, we utilize the reinforcement learning technique with the previous hybrid algorithm. The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because of Q-learning. The research has as the premise that the same application under performance tests can be submitted to more than one cycle of tests execution, decreasing the cost of the exploration phase of the Q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtains the best fitness value with a minor number of requests (\textbf{Research Question 2}). 
