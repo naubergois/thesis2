@@ -1551,7 +1551,7 @@ The present study extends the article "Improving stress search based testing usi
 
 \chapter{Search-based stress testing using multi-objective heuristics}
 
-This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics may be more suitable for non-functional search-based tests since these tests usually aim to obtain a result with more than one objective, for example, minimizing the number of users of an application, maximize your response time. We examine the use of the multi-objective NSGA-II, SPEA2, PAES and MOEA/D algorithms. The multi-objective algorithms applied in the experiments use an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  Multiobjective Algorithms Adaption. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
+This chapter present experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. Multi-objective heuristics may be more suitable for non-functional search-based tests since these tests usually aim to obtain a result with more than one objective, for example, minimizing the number of users of an application, maximize your response time. We examine the use of the multi-objective NSGA-II, SPEA2, PAES and MOEA/D algorithms. The multi-objective algorithms applied in the experiments use an adapted implementation of the jMetal framework (\url{http://jmetal.sourceforge.net/}). Figure. \ref{fig:flowchart} presents the flowchart of  Multiobjective Algorithms Adaptation. Given an initial population (Figure \ref{fig:flowchart}  -\ding{202}),  the multiobjective algorithm implementation receives a set of workloads  and generates a new set of individuals  (Figure \ref{fig:flowchart}  -\ding{203}).  JMeterEngine runs each workload (Figure \ref{fig:flowchart}  -\ding{204}) and the multiobjective algorithm ranks and classifies each workload based on the objective functions  (Figure \ref{fig:flowchart}  -\ding{205}).  After all these steps the cycle begins until the maximum number of generations is reached.
 
 \begin{figure}[!h]
 \centering
@@ -1561,13 +1561,13 @@ This chapter present experiments to assert the benefits of multiobjective metahe
 \end{figure}
 
 
-Several experiments were performed to evaluate the use of multi-objective metaheuristics in search-based stress testing. The experiments use the SEDR adaptation presented in Appendix B. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare the four multi-objective algorithms.  MOEA/D metaheuristics obtained the best hypervolume value when compared with other approaches. Consequently, we propose a collaborative approach using MOEA/D and HybridQ to improve the hypervolume values obtained from the previous experiments. Each algorithm share our best individuals with each other. The fourth experiment presents an experiment to assess the collaborative approach using HybridQ and MOEA/D. 
+Several experiments were performed to evaluate the use of multi-objective metaheuristics in search-based stress testing. The experiments use the SEDR adaptation presented in Appendix B. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare the four multi-objective algorithms.  MOEA/D metaheuristics obtained the best hypervolume value when compared with other approaches. Consequently, we propose a collaborative approach using MOEA/D and HybridQ to improve the hypervolume values obtained from the previous experiments. Each algorithm shares our best individuals with each other. The fourth experiment presents an experiment to assess the collaborative approach using HybridQ and MOEA/D. 
 
 Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions. The fifth experiment presents an initial study to evaluate the Pareto Frontier difference in multiple executions. 
 
 \section{Experiment with multi-object NSGA-II algorithm}
 
-In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. This experiment runs to verify the feasibility of using multi-objective heuristics in search-based stress testing. NSGA-II was initially used for its ease of implementation. This experiment try to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with superior response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 milliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions,  was conducted without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the following application features:
+In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. This experiment runs to verify the feasibility of using multi-objective heuristics in search-based stress testing. NSGA-II was initially used for its ease of implementation. This experiment tries to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with superior response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 milliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions,  was conducted without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the following application features:
 
 
 \begin{itemize}
@@ -1675,10 +1675,10 @@ In this work, we just evaluate the use of one multi-objective algorithm. However
 
 The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The experiment found 9 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
 
-\section{Comparative experiment of Multi-Objective algorithms}
+\section{Comparative experiment of Multi-Objective Algorithms}
 
 
-In this section, we present the experimental results, in which we carried out compare four multi-objective algorithms:
+In this section, we present the experimental results, in which we carried out to compare four multi-objective algorithms:
 
 \begin{itemize}
 \item NSGA-II
@@ -1714,7 +1714,7 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 \item With regard to hypervolume of multi-objective algorithms applied in the experiment:
 \begin{itemize}
 \item $H_{1}$: MOEA/D is the algorithm with the higher value of hypervolume in the experiments.
-\item $H_{2}$: NSGA-II is the algorithm with higher value of hypervolume in the experiments.
+\item $H_{2}$: NSGA-II is the algorithm with the higher value of hypervolume in the experiments.
 \item $H_{3}$: SPEA2 is the algorithm with the higher value of hypervolume in the experiments.
 \item $H_{4}$: PAES is the algorithm with the higher value of hypervolume in the experiments.
 \end{itemize}
@@ -1803,7 +1803,7 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{./images/comparative3.png}
-\caption{Comparative grpah between MOEA/D, NSGA-II, SPEA2 and PAES Pareto Frontiers}
+\caption{Comparative graph between MOEA/D, NSGA-II, SPEA2 and PAES Pareto Frontiers}
 \label{fig:comparative3}
 \end{figure}
 
@@ -1818,7 +1818,7 @@ Due to the non-deterministic nature of the problem, we do not guarantee that the
 
 \section{Comparative Experiment between HybridQ and MOEA/D}
 
-This section presents the experimental results carried out to  compare the MOEA/D multi-objective with the HybridQ algorithm. The experiment was conducted with JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 day and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. 
+This section presents the experimental results carried out to compare the MOEA/D multi-objective with the HybridQ algorithm. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 day and 534 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 15 previously established  generations by the algorithm. 
 
 \subsection{Experiment Research Questions}
 
@@ -1855,7 +1855,7 @@ Fig. \ref{fig:singlewithmulti} presents the result of the experiment. Most of th
 
 \section{Experiment with HybridQ and MOEA/D Collaborative approach}
 
-This section presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. The proposition consists of each algorithm share our best individuals with each other. The experiment was conducted with JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 day and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
+This section presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. The proposition consists of each algorithm share our best individuals with each other. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 day and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
 
 \begin{figure}[h]
 \centering
@@ -1930,7 +1930,7 @@ The following research question is addressed:
 
 \subsection{Variables}
 
-The independent variable is three test executions using the collaborative approach with the algorithms HybridQ and MOEA/D. The dependent variable are: the hypervolume and Pareto frontier found by each test execution.
+The independent variable is three test executions using the collaborative approach with the algorithms HybridQ and MOEA/D. The dependent variable is the hypervolume and Pareto frontier found by each test execution.
 
 \begin{figure}[h]
 \centering
