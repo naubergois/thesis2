@@ -199,7 +199,7 @@ This thesis addresses the use of hybrid and multi-objective metaheuristics in co
 
 \begin{itemize}
 
-\item \textbf{(Research Question 1)}  How to improve search-based stress testing using single-objective metaheuristics?
+\item \textbf{(Research Question 1)} How to improve the search for test scenarios in search-based stress testing using single-objective metaheuristics?
 
 \item \textbf{(Research Question 2)} How to improve the choice of neighboring solutions in a single-objective metaheuristic to explore, reducing the time needed to obtain the scenarios with the longest response time in the application?
 
@@ -252,7 +252,7 @@ The remainder of this thesis is organized as follows:
 \textbf{Chapter 5} presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The chapter presents a study that extends the article "Improving stress search based testing using a hybrid metaheuristic approach"  in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search to application failures with a smaller number of requests consuming a shorter time assuming that the same application can be submitted to more than one test execution.
 \\
 
-\textbf{Chapter 6} presents experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm.  The fourth experiment presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. The fifth experiment presents an initial study to evaluate the Pareto Frontier difference in multiple executions. Finally, we present a survey study to assess the use of multi-objective algorithm by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. 
+\textbf{Chapter 6} presents experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm.  The fourth experiment presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. Finally, we present an initial study to evaluate the Pareto Frontier difference in multiple executions. 
 
 \chapter{Metaheuristics and Reinforcement Learning}
 
@@ -1638,7 +1638,7 @@ Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results o
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{./images/pareto0curve.png}
-    \caption{Experiment Pareto Frontier}
+    \caption{Pareto Frontier found in the first experiment using NSGA-II}
 \label{fig:paretofrontier1}
 \end{figure}
 
@@ -1647,7 +1647,7 @@ Fig. \ref{fig:paretofrontier1} and Table \ref{tab:results} present the results o
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[!h]
 \centering
-\caption{Experiment Results}
+\caption{Response time and number of users in optimal scenarios found with NSGA-II}
 \label{tab:results}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -1675,7 +1675,7 @@ In this work, we just evaluate the use of one multi-objective algorithm. However
 
 The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The experiment found 9 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
 
-\section{Comparative experiment of Multi-Objective algorithms with Noise Reduction}
+\section{Comparative experiment of Multi-Objective algorithms}
 
 
 In this section, we present the experimental results, in which we carried out compare four multi-objective algorithms:
@@ -1723,25 +1723,40 @@ The independent variable is the algorithms: NSGA-II, SPEA2, PAES and MOEA/D. The
 
 \subsection{Experiment Results}
 
-Table \ref{tab:hypervolume} shows the hypervolume value of each algorithm. For the hypervolume calculus, the values of the number of users and response time were transformed to the same scale. The highest hypervolume algorithm was the MOEA/D. The test scenarios present in the Pareto frontier were:
+Table \ref{tab:hypervolume} shows the hypervolume value of each algorithm. Dimensionality shows the number of dimensions used in the calculation of hypervolume. For the hypervolume calculus, the values of the number of users and response time were transformed to the same scale. The highest hypervolume algorithm was the MOEA/D. 
+Table \ref{tab:results2} presents the test scenarios found in the Pareto frontier of MOEA/D.
 
-\begin{itemize}
-\item 1 user on Enter the Catalog scenario and response time of 18 milliseconds;
-\item 5 users and response time of 35 milliseconds (1 user on Dog scenario, 1 user on Register scenario, 1 user on Fish scenario and 1 user on Cart scenario);
-\item 22 users and response time of 788 milliseconds (3 users on AddRemoveCart scenario, 7 users on Fish scenario, 5 users on Cart scenario and 7 users on Register scenario);
-\item 72 users and response time of 1074 milliseconds (14 users on Fish scenario, 11 users on Register scenario, 11 users on Cart scenario, 19 users on Enter the Catalog scenario and 17 users on Dogs scenario)
-\item 89 users and response time of 1396 ( 8 users on Dogs scenario, 35 users on Cart scenario, 29 users on AddRemoveCart scenario, 7 users on Enter the Catalog scenario and 10 users on Fish scenario)
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[!h]
+\centering
+\caption{Response time and number of users in optimal scenarios found with MOEA/D}
+\label{tab:results2}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+\textbf{N.} & \textbf{\begin{tabular}[c]{@{}l@{}}USERS\\ \end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}RESP \\ TIME\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}c@{}}Dogs\\ Users\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}l@{}}Enter\\ Catalog\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Fish\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Register\\ Users\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Add\\ Rem.\\ Cart\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Cart\\ Users\end{tabular}} \\ \hline
+\ding{202}           & 1                                                        & 18                                                       &                                                           & 1                                                                 &               &                   &                                                                    &               \\ \hline
+\ding{203}           & 5                                                       & 35                                                        & 1                                                          &                                                                &               & 3                 &                                                                    & 1              \\ \hline
+\ding{204}           & 6                                                       & 50                                                        & 2                                                          &                                                                &               & 3                 &                                                                    & 1              \\ \hline
+\ding{205}           & 7                                                       & 320                                                        &                                                           &                                                                &               & 3                 &                                                                    & 4              \\ \hline
+\ding{206}           & 12                                                       & 410                                                        &                                                           &                                                                &               & 3                 &  5                                                                  & 4              \\ \hline
+\ding{207}           & 22                                                       & 788                                                        &                                                           &                                                                & 7             &     7             &    3                                                                & 5              \\ \hline
+\ding{208}          & 72                                                      & 1074                                                        & 17                                                        & 19                                                                & 14              &  11             &                                                                    & 11            \\ \hline
+\ding{209}           & 89                                                      & 1396                                                        & 8                                                         & 7                                                               & 10             &                 & 29                                                                  & 35              \\ \hline
+\end{tabular}
+\end{table}
 
-\end{itemize}
 
-MOEA/D found two scenarios that approached the established service level for the experiment of 1000 milliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 milliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with a time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level. Figures \ref{fig:moeadnoise}, \ref{fig:paretofrontier2}, \ref{fig:spea2} and  \ref{fig:paes} present the Pareto frontier for each algorithm.
+MOEA/D found two scenarios that approached the established service level for the experiment of 1000 milliseconds. NSGA-II  found a scenario with 49 users and response time of 685 and a scenario with 59 users and response time of 1138 milliseconds. Although the MOEA/D algorithm found the scenario with the lowest number of users with a time close to the service level, the NSGA-II found a scenario with more users with a response time closer to the service level. Figures \ref{fig:moeadnoise}, \ref{fig:paretofrontier2}, \ref{fig:spea2} and  \ref{fig:paes} present the Pareto frontier for each algorithm. Fig. \ref{fig:comparative3} presents a comparative graph between all the algorithms.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 \centering
-\caption{Hypervolume by algorithm with Noise Reduction}
+\caption{Hypervolume by algorithm}
 \label{tab:hypervolume}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -1783,6 +1798,13 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 \caption{PAES Pareto Frontier}
 \label{fig:paes}
 \end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/comparative3.png}
+\caption{Comparative grpah between MOEA/D, NSGA-II, SPEA2 and PAES Pareto Frontiers}
+\label{fig:comparative3}
 \end{figure}
 
 \subsection{Experiment Conclusion}
@@ -1879,7 +1901,7 @@ The results presented by the MOEA/D with HybridQ surpass previous approaches for
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[!h]
 \centering
-\caption{Experiment Results}
+\caption{Response time and number of users in optimal scenarios found with MOEA/D + HybridQ}
 \label{tab:results2}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -1896,7 +1918,7 @@ The results presented by the MOEA/D with HybridQ surpass previous approaches for
 
 \section{Analysis of Pareto Frontier  in Multiple Executions}
 
-This section provides an initial study to evaluate the Pareto frontier difference in multiple executions. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 2 days and 983 executions. The tool automatically selected the next scenarios to be run up to the limit of 23 previously established  generations by the algorithm. Three executions were carried out with different initial populations. Figs. \ref{fig:comp1} and \ref{fig:comp2} presents the comparative results between the three executions (1, 2 and 3).
+Due to the pervasive and non-deterministic nature of the problem, there is no guarantee that the same Pareto frontier will be found in different test executions. This section provides an initial study to evaluate the Pareto frontier difference in multiple executions. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 2 days and 983 executions. The tool automatically selected the next scenarios to be run up to the limit of 23 previously established  generations by the algorithm. Three executions were carried out with different initial populations. Figs. \ref{fig:comp1} and \ref{fig:comp2} presents the comparative results between the three executions (1, 2 and 3).
 
 \subsection{Experiment Research Questions}
 
@@ -1954,99 +1976,6 @@ Table \ref{tab:results2} presents the experiment results. The variation between 
 \end{tabular}
 \end{table}
 
-\section{A Survey Study of use of Multi-Objective Algorithms in Search-based Stress testing}
-
-We conducted a survey study to evaluate the use of multi-objective algorithm by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. The team consists of 4 test designers from 36 to 39 years old. A test designer has 12 years of stress testing experience and 3 test designers have from 1 to 5 years of testing experience.
-
-The experiment took place in July of this year and consists of two stages. The first stage consisted of using the IAdapter tool by test designers. In the second stage, the designers answered a set of questions to evaluate the applied techniques and the IAdapter tool. The initial proposal was to evaluate the use of the JMeter tool with and without the IAdapter plugin. However, the time available for the experiment was reduced due to the participation of test designers in some company projects, allowing the application of the experiment only with the IAdapter plugin. All the test designers who participated in the experiment already had previous experience of using the Apache JMeter tool.
-
-At the beginning of the experiment, test designers had brief guidelines for using IAdapter and the technique of search-based stress testing. After the initial orientations, designers generated the initial population and started the tests. The experiment used the HybridQ and MOEA/D algorithms. The questionnaires had 3 objective questions using the Likert scale and two open questions related to the strengths and weaknesses of the applied techniques. The first question asks if there is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios.
-
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[h]
-\centering
-\caption{Survey of use of Multi-Objective Algorithms - Question 1}
-\label{tab:question1}
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                            \\ \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.6\textwidth} \textbf{ \\ There is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios\\ } \end{minipage}}  \\ \hline
-\textbf{Response Item}                                                                       & \textbf{Number of answers}                                         \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                              & 4                                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                       & 0                                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                     & 0                                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                     & 0                                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                           & 0                                                                  \\ \hline
-\end{tabular}
-\end{table}
-
-The second question asks if there is an improvement in the use of search-based stress testing. Most test designers agreed that the use of search-based tests can improve the team's current test practice using an approach based on capturing and replay test scripts.
-
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[h]
-\centering
-\caption{Survey of use of Multi-Objective Algorithms - Question 2}
-\label{tab:question2}
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                            \\ \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF} \begin{minipage}{0.6\textwidth} \textbf{The use of search-based tests could improve the practice of stress testing} \end{minipage} } \\ \hline
-\textbf{Response Item}                                                       & \textbf{Number of answers}                         \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                              & 0                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                       & 3                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                     & 1                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                     & 0                                                  \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                           & 0                                                  \\ \hline
-\end{tabular}
-\end{table}
-
-The third question asks if the IAdapter tool  found an important test usually not found by the testers.
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[h]
-\centering
-\caption{Survey of use of Multi-Objective Algorithms - Question 3}
-\label{my-label}
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                                      \\ \hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{\begin{tabular}[c]{@{}l@{}}The IAdapter tool found an important test not usually\\ found by the testers\end{tabular}}} \\ \hline
-\textbf{Response Item}                                                                            & \textbf{Number of answers}                                              \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                                   & 0                                                                       \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                            & 3                                                                       \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                          & 0                                                                       \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                          & 1                                                                       \\ \hline
-\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                                & 0                                                                       \\ \hline
-\end{tabular}
-\end{table}
-
-Among the positive points cited by the test designers are:
-
-\begin{itemize}
-\item Automatic identification of new test scenarios.
-\item Identification of the best or worst test scenario.
-\item Ease of Use, which allowed test designers to concentrate more on the analysis of results rather than the execution and design of the tests.
-\item The tool allows you to quickly configure multiple test batteries.
-\item Ability to use learning algorithms.
-\item The tool enables the implementation of new algorithms, making it available according to JMeter standards.
-\end{itemize}
-
-Among the negative points cited by the test designers are:
-
-\begin{itemize}
-\item There is still no way to turn off the verbosity of the plugin's log.
-\item Cannot use other databases besides MySQL.
-\item Absence of a parameter for setting the minimum number of users.
-\item Graphics need to be a bit more intuitive.
-\end{itemize}
-
 
 \section{Conclusion}
 
@@ -2093,50 +2022,30 @@ This chapter presents our conclusions, revisits the contributions, shows some li
 
 \section{Summary of contributions and Achievements}
 
-First, we proposed a hybrid collaborative algorithm to perform search-based stress testing. In order to enhance the efficiency of our proposal, we utilize the reinforcement learning technique with the aforementioned hybrid algorithm. We also proposed the use of multi-objective algorithms in search-based stress testing. To this end, we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. We conduct numerous experiments to evaluate the proposed approaches. The use of multi-objective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. Table \ref{conclusion} presents the thesis Research Question by metaheuristic. The subsequent subsections present the summary of results for each research question.
+First, we proposed a hybrid collaborative algorithm to perform search-based stress testing. In order to enhance the efficiency of our proposal, we utilize the reinforcement learning technique with the aforementioned hybrid algorithm. We also proposed the use of multi-objective algorithms in search-based stress testing. To this end, we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. We conduct numerous experiments to evaluate the proposed approaches. The use of multi-objective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. The subsequent subsections present the summary of results for each research question.
 
-\subsection{(Research Question 1) How to improve search-based stress testing using single-objective metaheuristics?}
+\textbf{(Research Question 1) How to improve the search for test scenarios in search-based stress testing using single-objective metaheuristics?}
 
 
 The hybrid approach uses genetic algorithms, tabu search, and simulated annealing. Three experiments were performed to validate the hybrid metaheuristic. The first experiment aimed to execute stress testing on a simulated component. In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The procedure showed that there was a significant improvement in  results with the Hybrid Metaheuristic approach when compared with the other algorithms. All tests in the experiment were conducted without the need of a tester, automating  stress testing with the JMeter tool \cite{Gois2016}. 
 
 
 
-\subsection{(Research Question 2) How to improve the choice of neighboring solutions in a single-objective metaheuristic to explore, reducing the time needed to obtain the scenarios with the longest response time in the application?}
+\textbf{(Research Question 2) How to improve the choice of neighboring solutions in a single-objective metaheuristic to explore, reducing the time needed to obtain the scenarios with the longest response time in the application?}
 
 
 The HybridQ algorithm is used to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The research assumes that HybridQ is more expensive than Hybrid because of Q-learning. The research has as the premise that the same application under performance tests can be submitted to more than one cycle of tests execution, decreasing the cost of the exploration phase of the Q-learning algorithm used. HybridQ algorithm obtains the maximum value of fitness, but it needs a much greater number of requests than the other algorithms. GA was the algorithm that obtains the best fitness value with a minor number of requests. 
 
 
-\subsection{(Research Question 3) How to use multi-objective metaheuristics in search-based stress testing to obtain a Pareto frontier to improve the definition of SLAs?}
+\textbf{(Research Question 3) How to use multi-objective metaheuristics in search-based stress testing to obtain a Pareto frontier to improve the definition of SLAs?}
 
 The experiment with NSGA-II algorithm discover application scenarios where there is a high response time for a small number of users. The experiment found 8 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application \cite{Gois2017}. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improves the hypervolume values obtained and found more relevant workloads than the previous experiments. The experiments found  scenarios that contributes to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level.
-
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[]
-\centering
-\caption{Thesis Research Questions}
-\label{conclusion}
-\begin{tabular}{|l|l|}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\textbf{Metaheuristic}                                                                                         & \textbf{Research Question}                                                                                                                                                                                                                                                           \\ \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       \textbf{Hybrid} & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 1)} How to improve search-based\\ stress testing using single-objective metaheuristics?\end{tabular}                                                                                                                                                        \\  \hline
-\cellcolor[HTML]{C0C0C0}                                                                                       \begin{tabular}[c]{@{}l@{}} \textbf{Hybrid} + \\ \textbf{Reinforcement} \\ \textbf{Learning}  \end{tabular}                                                                                                                                                   & \begin{tabular}[c]{@{}l@{}} \textbf{(Research Question 2)} How to improve the choice \\ of neighboring solutions in a single-objective metaheuristic to \\ explore, reducing the time needed to obtain the scenarios \\ with the longest response time in the application?\end{tabular}                                                                                                                                                                  \\  \hline
-\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}} Multi-objective \\ + Hybrid \\ + Reinforcement \\ + Learning \end{tabular}} & \begin{tabular}[c]{@{}l@{}}\textbf{(Research Question 3)} How to use multi-objective metaheuristics \\ in search-based stress testing to obtain \\ a Pareto frontier to improve the definition of SLAs?\end{tabular}               \\ \hline
-\end{tabular}
-\end{table}
 
 \section{Open Issues}
 
 There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is sometimes difficult to ensure that the execution times generated in the experiments represent global optimum. More experimentation is also required to determine the most appropriate and robust parameters. Lastly, there is necessary to have an adequate termination criterion to stop the search process. 
 
-For the time being, we cannot state that the benefits found by using MOEA/D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions.   More experiments are needed in order to verify changes related to the Pareto frontier in different executions.
+More experiments are needed to state that the benefits found by using MOEA/D and HybridQ algorithms together can be obtained in other contexts. Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions.  More experiments are needed in order to verify changes related to the Pareto frontier in different executions.
 
 The choice of fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behavior. The fitness function is still manually adjusted and additional studies need to be performed to get the best weight values for the fitness function. There is a great difficulty in
 comparing some approaches present in the state-of-art, due to the lack of availability of the tools used. The present research compared the proposed approach with other methods based on the use of single or multiobjective metaheuristics.
@@ -3027,6 +2936,7 @@ The experiments use a customized version of the SEDR algorithm for noise reducti
 
 \chapter{IAdapter }
 
+This Appendix presents the IAdapter tool used by this research and a survey study to assess the use of the tool by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. 
 
 
 IAdapter is a JMeter plugin designed to perform search-based stress tests. Fig. \ref{fig:iadapterlifecycle} presents the IAdapter Life Cycle. The main difference between IAdapter and JMeter tool is that the IAdapter provide an automated test execution where the new test scenarios are chosen by the test tool.  In a test with JMeter, the tests scenarios are usually chosen by a test designer.
@@ -3160,6 +3070,99 @@ a rich set of classes which can be used as the building blocks of multi-objectiv
 JGAP  is a GA package written in Java and distributed freely. Its design is modular, it is well documented and
 easily extensible, and active developer and user communities
 promote continual improvements. These characteristics support our goals of portability and flexibility. JGap allows in quite nice object way to set lots of genetic properties and use different population transformations. During the JGAP evolution process, chromosomes are exposed to multiple genetic operators that represent mating, mutation, etc. and then are chosen for the next generation during a natural selection phase based upon their fitness which is a measure of how optimal that solution is relative to other potential solutions. JGAP lets us choose what gene class to use to represent each gene in the chromosome. That provides the most flexibility and convenience \cite{Fiebrink2005}.
+
+\section{A Survey Study of the use of the IAdapter}
+
+We conducted a survey study to evaluate the use of IAdapter by the non-functional test team of the Serpro, a company of the Brazilian Federal Government in Fortaleza. The team consists of 4 test designers from 36 to 39 years old. A test designer has 12 years of stress testing experience and 3 test designers have from 1 to 5 years of testing experience.
+
+The experiment took place in July of this year and consists of two stages. The first stage consisted of using the IAdapter tool by test designers. In the second stage, the designers answered a set of questions to evaluate the applied techniques and the IAdapter tool. The initial proposal was to evaluate the use of the JMeter tool with and without the IAdapter plugin. However, the time available for the experiment was reduced due to the participation of test designers in some company projects, allowing the application of the experiment only with the IAdapter plugin. All the test designers who participated in the experiment already had previous experience of using the Apache JMeter tool.
+
+At the beginning of the experiment, test designers had brief guidelines for using IAdapter and the technique of search-based stress testing. After the initial orientations, designers generated the initial population and started the tests. The experiment used the HybridQ and MOEA/D algorithms. The questionnaires had 3 objective questions using the Likert scale and two open questions related to the strengths and weaknesses of the applied techniques. The first question asks if there is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Survey of use of IAdapter - Question 1}
+\label{tab:question1}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                            \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\begin{minipage}{0.6\textwidth} \textbf{ \\ There is an inherent difficulty in the activity of stress testing to find the best or worst case scenarios\\ } \end{minipage}}  \\ \hline
+\textbf{Response Item}                                                                       & \textbf{Number of answers}                                         \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                              & 4                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                       & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                     & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                     & 0                                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                           & 0                                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+The second question asks if there is an improvement in the use of search-based stress testing. Most test designers agreed that the use of search-based tests can improve the team's current test practice using an approach based on capturing and replay test scripts.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Survey of use of IAdapter - Question 2}
+\label{tab:question2}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                            \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF} \begin{minipage}{0.6\textwidth} \textbf{The use of search-based tests could improve the practice of stress testing} \end{minipage} } \\ \hline
+\textbf{Response Item}                                                       & \textbf{Number of answers}                         \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                              & 0                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                       & 3                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                     & 1                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                     & 0                                                  \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                           & 0                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+The third question asks if the IAdapter tool  found an important test usually not found by the testers.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\caption{Survey of use of IAdapter - Question 3}
+\label{my-label}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}\textbf{How much do you agree with the statement below?}}                                                                      \\ \hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{\begin{tabular}[c]{@{}l@{}}The IAdapter tool found an important test not usually\\ found by the testers\end{tabular}}} \\ \hline
+\textbf{Response Item}                                                                            & \textbf{Number of answers}                                              \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Agree}                                                   & 0                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Agree}                                                            & 3                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Neither}                                                          & 0                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Disagree}                                                          & 1                                                                       \\ \hline
+\cellcolor[HTML]{EFEFEF}\textbf{Strongly Disagree}                                                & 0                                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+Among the positive points cited by the test designers are:
+
+\begin{itemize}
+\item Automatic identification of new test scenarios.
+\item Identification of the best or worst test scenario.
+\item Ease of Use, which allowed test designers to concentrate more on the analysis of results rather than the execution and design of the tests.
+\item The tool allows you to quickly configure multiple test batteries.
+\item Ability to use learning algorithms.
+\item The tool enables the implementation of new algorithms, making it available according to JMeter standards.
+\end{itemize}
+
+Among the negative points cited by the test designers are:
+
+\begin{itemize}
+\item There is still no way to turn off the verbosity of the plugin's log.
+\item Cannot use other databases besides MySQL.
+\item Absence of a parameter for setting the minimum number of users.
+\item Graphics need to be a bit more intuitive.
+\end{itemize}
 
 
 
