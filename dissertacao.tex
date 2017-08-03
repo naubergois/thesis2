@@ -2039,9 +2039,9 @@ The HybridQ algorithm is used to optimize the choice of neighboring solutions to
 
 \textbf{(Research Question 3) How to use multi-objective metaheuristics in search-based stress testing to obtain a Pareto frontier to improve the definition of SLAs?}
 
-The experiment with NSGA-II algorithm discover application scenarios where there is a high response time for a small number of users. The experiment found 8 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application \cite{Gois2017}. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improves the hypervolume values obtained and found more relevant workloads than the previous experiments. The experiments found  scenarios that contributes to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level.
+The experiment with NSGA-II algorithm discovers application scenarios where there is a high response time for a small number of users. The experiment found 8 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application \cite{Gois2017}. MOEA/D metaheuristics obtained the best hypervolume value when compared with NSGA II, SPEA2 and PAES. The MOEA/D algorithm dominates most of the results presented by HybridQ. However, we have verified from the experiments that some of the results found by the HybridQ algorithm can contribute to the use of MOEA/D. The collaborative approach (HybridQ+MOEA/D) improves the hypervolume values obtained and found more relevant workloads than the previous experiments. The experiments found  scenarios that contribute to the definition of the service level. To take an example, the second experiment with the hybrid algorithm found scenarios with only 35 users but which already have a response time greater than the maximum defined for the service level.
 
-\section{Open Issues}
+\section{Future Works and Open Issues}
 
 There is a range of future improvements in the proposed approach. Also as a typical search strategy, it is sometimes difficult to ensure that the execution times generated in the experiments represent global optimum. More experimentation is also required to determine the most appropriate and robust parameters. Lastly, there is necessary to have an adequate termination criterion to stop the search process. 
 
@@ -2050,8 +2050,6 @@ More experiments are needed to state that the benefits found by using MOEA/D and
 The choice of fitness function can be a difficult step in Genetic Algorithms. Different fitness functions promote different GA behavior. The fitness function is still manually adjusted and additional studies need to be performed to get the best weight values for the fitness function. There is a great difficulty in
 comparing some approaches present in the state-of-art, due to the lack of availability of the tools used. The present research compared the proposed approach with other methods based on the use of single or multiobjective metaheuristics.
 
-
-\section{Future Works}
 
 Among the future works of the research, the use of different combinatorial optimization algorithms such as very large-scale neighborhood search is one that we can highlight. Further research should ascertain more exhaustively the variation of the Pareto frontier. Further experiments with reinforcement learning in conjunction with multi-objective search algorithms must be performed. The PAES algorithm performs a local search is can be benefited with the strategies outlined in this research. Additional experiments are needed to see if the benefits found by this thesis in the context of stress testing will be obtained in other contexts.
 
@@ -2776,7 +2774,7 @@ The pipe and filter architectures  and extensive processing anti-pattern represe
 
 
 Circuitous Treasure Hunt anti-pattern occurs when software retrieves data from a first component, uses those results in a second component, retrieves data from the second component, and so on until the last results are obtained \cite{Smith2002} \cite{Smith2003}. Circuitous Treasure Hunt
-are typical performance anti-patterns that causes  unnecessarily high amount of frequent database requests. The Circuitous Treasure Hunt anti-pattern is a result of a bad database schema or query design. A common Circuitous Treasure Hunt design creates a data dependency between single queries. For instance, a query requires the
+are typical performance anti-patterns that cause  unnecessarily high amount of frequent database requests. The Circuitous Treasure Hunt anti-pattern is a result of a bad database schema or query design. A common Circuitous Treasure Hunt design creates a data dependency between single queries. For instance, a query requires the
 result of a previous query as input. The longer the chain of
 dependencies between individual queries the more the Circuitous
 Treasure Hunt hurts performance \cite{Wert2014}. Fig. \ref{fig:circuit}  shows a software S with a Circuitous Treasure Hunt problem: the software  S generates a large number of database calls by performing several queries up to the final operation \cite{Vetoio2011}.
@@ -2881,13 +2879,13 @@ are conceptually similar to patterns in that they document recurring solutions t
 \chapter{Adapted SEDR}
 
 
-Software is pervasive, which raises the value of testing it \cite{Sandler2004}. Various actions outside the application under test can cause high response times such as pagination, network usage or even a software upgrade. It is necessary a noisy reduction strategy in stress test in this situations. Noisy optimization is currently receiving increasing popularity for its widespread applications in engineering optimization
+Software is pervasive, which raises the value of testing it \cite{Sandler2004}. Various actions outside the application under test can cause high response times such as pagination, network usage or even a software upgrade. It is necessary a noise reduction strategy in stress test in this situations. Noisy optimization is currently receiving increasing popularity for its widespread applications in engineering optimization
 problems, where the objective functions are often found to be contaminated with noisy \cite{Rakshit2017}. 
 
 
-Standard Error Dynamic Resampling (SEDR), strategy has been employed for solving both noisy single and multi-objective evolutionary
+Standard Error Dynamic Resampling (SEDR), the strategy has been employed for solving both noisy single and multi-objective evolutionary
 optimization problems. The working principle of SEDR is to add samples to a solution sequentially until the standard error of
-the objectives falls below a chosen threshold value \cite{Siegmund2013}. It was proposed in \cite{DiPietro2004} for single-objective optimization problems. In this study we apply SEDR on multi-objective problems by aggregating all objective values to a scalar value. As aggregation the median of the objective standard errors is used. The strategy is concerned with the optimal allocation of sampling budget to a trial solution based on the noise strength at its corresponding position in the search space. The contamination level of noise is captured by the standard error of the mean fitness estimate of a trial solution. The SEDR algorithm is described in Alg. \ref{SEDR}.
+the objectives fall below a chosen threshold value \cite{Siegmund2013}. It was proposed in \cite{DiPietro2004} for single-objective optimization problems. In this study, we apply SEDR on multi-objective problems by aggregating all objective values to a scalar value. As aggregation, the median of the objective standard errors is used. The strategy is concerned with the optimal allocation of sampling budget to a trial solution based on the noise strength at its corresponding position in the search space. The contamination level of noise is captured by the standard error of the mean fitness estimate of a trial solution. The SEDR algorithm is described in Alg. \ref{SEDR}.
 
 
 \begin{algorithm}[h]
@@ -2963,12 +2961,12 @@ WorkLoadThreadGroup is a component that creates an initial population and config
 \end{figure}
 
 \vspace*{-.075in}
-\section{The IAdapter architecture}
+\section{The IAdapter Architecture}
 \label{sec:technique}
 \vspace*{-.075in}
 
 
-In this section, We present the IAdapter main architecture. The testbed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extend AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and store the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
+In this section, We present the IAdapter main architecture. The testbed tool proposed consists of four main modules.  Figure \ref{fig:testbedarch} presents the main architecture of the solution proposed. The emulator module provides workloads to the Test module. The Test module uses a class loader to find all classes that extend AbstractAlgorithm in the classpath and run all workloads with each metaheuristic found. The Test Scenario library provides the scenario representation used by the metaheuristics and stores the testbed results in a database. The Operation services are responsible for finding neighbors of some workload provided as a parameter and perform crossover operations.
 
 \begin{figure}[h]
 \begin{minipage}{.5\textwidth}
@@ -3041,7 +3039,7 @@ Figure \ref{fig:startmethod} presents the start method sequence diagram. The Wor
 
 \subsection{Emulator Module}
 
-The Emulator Module is responsible for implementing and providing successful scenarios and the most common performance antipatterns (Figure \ref{fig:testbedarch}  -\ding{203}). All classes must extend the AbstractJavaSamplerClient class or use JUnit 4. The AbstractJavaSamplerClient class allows the creation of a JMeter Java Request. Figure \ref{fig:emulator} presents the main features of the emulator module. The module implements 2 happy scenarios (Figure \ref{fig:emulator}  -\ding{203}) and  4 antipatterns test scenarios (Figure \ref{fig:emulator}  -\ding{202}), in its first version. The Mock Layer provides emulated databases and components for the test scenarios. The Mock Layer use the Mockito and PowerMocks frameworks (Figure \ref{fig:emulator}  -\ding{204}).
+The Emulator Module is responsible for implementing and providing successful scenarios and the most common performance anti-patterns (Figure \ref{fig:testbedarch}  -\ding{203}). All classes must extend the AbstractJavaSamplerClient class or use JUnit 4. The AbstractJavaSamplerClient class allows the creation of a JMeter Java Request. Figure \ref{fig:emulator} presents the main features of the emulator module. The module implements 2 happy scenarios (Figure \ref{fig:emulator}  -\ding{203}) and  4 anti-patterns test scenarios (Figure \ref{fig:emulator}  -\ding{202}), in its first version. The Mock Layer provides emulated databases and components for the test scenarios. The Mock Layer use the Mockito and PowerMocks frameworks (Figure \ref{fig:emulator}  -\ding{204}).
 
 \subsection{Test Scenario library}
 
@@ -3058,7 +3056,7 @@ The representation of each individual is encapsulated in the WorkLoad class (Fig
 
 \subsection{External Dependencies}
 
-This section brieflys present the two main external dependencies of the IAdapter: jMetal and JGAP.
+This section briefly presents the two main external dependencies of the IAdapter: jMetal and JGAP.
 
 \subsubsection{jMetal}
 
