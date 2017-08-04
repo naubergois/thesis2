@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  3 AUG 2017 01:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  4 AUG 2017 01:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3352,7 +3352,7 @@ texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/zapfding/uzdr.pfb>
 Output written on /Users/naubergois/Downloads/ModeloTeseLatexABNT/.texpadtmp/di
-ssertacao.pdf (164 pages, 8527358 bytes).
+ssertacao.pdf (164 pages, 8514170 bytes).
 PDF statistics:
  735 PDF objects out of 1000 (max. 8388607)
  410 compressed objects within 5 object streams
