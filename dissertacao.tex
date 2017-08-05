@@ -243,13 +243,14 @@ The remainder of this thesis is organized as follows:
 \textbf{Chapter 2} presents initial concepts about the use of metaheuristics, hybrid metaheuristics, multi-objective metaheuristics and reinforcement learning. The chapter briefly introduces the Trajectory and Population-based Metaheuristics.  Subsequently, presents Hybrid and Multi-Objective metaheuristics. Finally, presents the Reinforcement Learning concepts. 
 \\
 
-\textbf{Chapter 3} shows the context where this thesis is inserted and contemporary concepts about Search-based Stress Testing. In particular, two categories of approaches are out-lined: (i) Search-Based Stress Testing on Safety-critical systems; (ii) Search-Based Stress Testing on non Safety-critical systems.
+\textbf{Chapter 3} shows the context where this thesis is inserted and contemporary concepts about Search-based Stress Testing. 
+%In particular, two categories of approaches are out-lined: (i) Search-Based Stress Testing on Safety-critical systems; (ii) Search-Based Stress Testing on non Safety-critical systems.
 \\
 
 \textbf{Chapter 4} presents a hybrid approach that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was developed. Three experiments  were performed to validate the proposed approach. The first experiment was performed on an emulated component, and the second one was performed using an installed Moodle application. The chapter presents the solution representation and the objective function of the proposed approach.
 \\
 
-\textbf{Chapter 5} presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The chapter presents a study that extends the article "Improving stress search based testing using a hybrid metaheuristic approach"  in order to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search to application failures with a smaller number of requests consuming a shorter time assuming that the same application can be submitted to more than one test execution.
+\textbf{Chapter 5} presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The chapter presents a study to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search to application failures with a smaller number of requests consuming a shorter time assuming that the same application can be submitted to more than one test execution.
 \\
 
 \textbf{Chapter 6} presents experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm.  The fourth experiment presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. Finally, we present an initial study to evaluate the Pareto Frontier difference in multiple executions. 
@@ -420,7 +421,7 @@ In  Environmental selection, an archive is maintained which contains a represent
 In Mating selection, the pool of individuals is evaluated in two phases. First, all individuals are compared on the basis of the Pareto dominance. Basically, the information which individuals each individual dominates, is dominated by or is indifferent to is used to define a ranking on the generation pool. Afterwards, this ranking is refined by the incorporation of density information. Various density estimation techniques are used to measure the size of the niche in which a specific individual is located \cite{Zitzler2001}.
 
 
-\subsubsection{NSGA-II Multi-objective Heuristics}
+\subsubsection{NSGA-II: Nondominated Sorting Genetic Algorithm II}
 
 Multi-objective metaheuristics rank individuals according to the defined goals. Deb et al. proposed the Nondominated Sorting Genetic Algorithm II (NSGA-II) algorithm taking into account the need to reduce computational complexity in non-dominated classification while introducing elitism and eliminating subjectivity in the allocation of the sharing parameter \cite{Deb2000}. NSGA-II is a multi-objective algorithm, based on GAs, and implements the concept of dominance, in other words, to classify the total population in fronts according to the degree of dominance. According to NSGA-II, the individuals that are located on the first front are considered the best solutions of that generation, while in the last front are the worst. Using this concept, one can find more consistent results, located closer to the Pareto region, and better adapted to the type of problem.
 
@@ -447,7 +448,7 @@ However, not all fronts can be included in the new population. Thus, Deb et al. 
 \label{fig:nsga2}
 \end{figure}
 
-\subsubsection{SPEA2: Improving the Strength Pareto Evolutionary Algorithm}
+\subsubsection{SPEA2: Strength Pareto Evolutionary Algorithm}
 
 SPEA uses a regular population and an archive. Starting with an initial population and an empty archive the following steps are performed per iteration. First, all non-dominated population members are copied to the archive; any dominated individuals or duplicates are removed. If the size of the updated archive exceeds a predefined limit, further archive members are deleted by a clustering technique which preserves the characteristics of the non-dominated front. Afterwards, fitness values are assigned to both archive and population members. Each individual i in the archive assign a strength value S(i) $\in$ [0, 1], which at the same time represents its fitness value F(i). 0 indicates a non-dominated individual,whereas a high value points out that the individual is dominated by many other ones. S(i) is the number of population members j that are dominated by or equal to i with respect to the objective values, divided by the population size plus one. The algorithmic framework of SPEA2 is described in Alg. \ref{spea2}. An initial population $P_{0}$ and an initial archive are created. The fitness value of all individuals is calculated in population and in the archive (external set). All non-dominated individual are copied to the new archive. Finally, the algorithm select the individual using a tournament selection \cite{Zitzler2001} \cite{Tervonen2017} \cite{MatneiFilho2016}.
 
@@ -496,9 +497,9 @@ The main differences between SPEA2 and NSGA-II are the diversity assignment and 
 \end{figure}
 
 
-\subsubsection{Pareto Archived Evolution Strategy} 
+\subsubsection{PAES: Pareto Archived Evolution Strategy} 
 
-Pareto Archived Evolution Strategy(PAES) is an  evolutionary algorithm which employs
+Pareto Archived Evolution Strategy (PAES) is an  evolutionary algorithm which employs
 local search for the generation of new candidate solutions but
 utilises population information in its selection procedure. The PAES algorithm was developed with two main objectives. The first of these was that the algorithm should be strictly confined to local search i.e. it should use a small change (mutation) operator only, and move from a current solution to a nearby neighbour. The second objective was that the algorithm should be a true Pareto optimiser, treating all non-dominated solutions as having equal value \cite{Knowles1999}. In PAES one parent generates by mutation one
 offspring. The offspring is compared with the parent. If the offspring dominates the parent, the offspring is accepted as
@@ -527,7 +528,7 @@ the next parent and the iteration continues. If the parent dominates the offspri
   \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{A Multiobjective Evolutionary Algorithm Based on Decomposition}
+\subsubsection{MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition}
 
 The Multiobjective Evolutionary Algorithm Based on Decomposition (MOEA/D) is a multiobjective evolutionary algorithm competitive to other well-known multiobjective optimization evolutionary algorithms (MOEAs) such as NSGA-II or SPEA-2 \cite{Michalak2014}. MOEA/D decomposes a multiobjective optimization problem into a number of scalar optimization subproblems and optimizes them simultaneously. Each subproblem is optimized by only using information from its several neighboring subproblems, which makes MOEA/D have lower computational complexity at each generation than MOGLS and non-dominated sorting genetic
 algorithm II (NSGA-II) \cite{Zhang2007}. 
@@ -841,7 +842,9 @@ This chapter presents a study of the use a hybrid algorithm in search-based stre
 In the first approach, the algorithms do not share their best individuals among themselves. Each algorithm evolves in a separate way (Fig. \ref{fig:firstaproach}). The second approach uses the algorithms in a collaborative mode (hybrid metaheuristic). In this approach, the three algorithms share their best individuals found (Fig. \ref{fig:secondapproach}). 
 
 
-The chapter also presents three experiments. The first experiment aimed to perform performance, load, and stress testing on a simulated component.The second experiment was performed with a Moodle application. The third experiment carried out to verify the best case scenarios found by the hybrid metaheuristic approach.  The next subsections present details about the used metaheuristic algorithms (Representation, initial population and fitness function).
+The chapter also presents three experiments. The purpose of the first and second experiments is to validate the use of the representation, the crossover and neighborhood operators and the IAdapter tool. The first experiment aimed to perform performance, load, and stress testing on a simulated component.The second experiment was performed with a Moodle application. The third experiment carried out to verify the best case scenarios found by the hybrid metaheuristic approach with well-known anti-patterns. The anti-patterns will be presented in more detail in appendix A. The next subsections present details about the used metaheuristic algorithms (Representation, initial population and the fitness function).
+
+
 
 \begin{figure}[h]
 \centering
@@ -861,15 +864,29 @@ The chapter also presents three experiments. The first experiment aimed to perfo
 
 \section{Representation}
 
-The solution representation provides a common representation for all workloads. Each workload is composed by a linear vector with 21 positions (Figure \ref{fig:solution}  -\ding{202}). The first position represents a metadata with the name of an individual. The next positions represent 10 scenarios and their numbers of users (Figure \ref{fig:solution}  -\ding{203}). The fixed-length genome approach was chosen in reason of the ease of implementation in the JMeter tool. Each scenario is an atomic operation: the scenario must log into the application, run the task goal, and undo any changes performed, returning the application to its original state.
+The solution representation provides a common representation for all workloads. Figure. \ref{fig:solution-representation} presents the solution representation. Each workload is composed by a linear vector with 21 positions (Figure \ref{fig:solution-representation}  -\ding{202}). The first position represents a metadata with the name of an individual. The next positions represent 10 scenarios and their numbers of users (Figure \ref{fig:solution}  -\ding{203}). The fixed-length genome approach was chosen in reason of the ease of implementation in the JMeter tool. Each scenario is an atomic operation: the scenario must log into the application, run the task goal, and undo any changes performed, returning the application to its original state.
 
-Figure. \ref{fig:solution} presents the solution representation and an example using the crossover operation. In the example, solution 1 (Figure \ref{fig:solution}  -\ding{204}) has the Login scenario with 2 users, the Search scenario with 4 users, Include scenario with 1 user and the Delete scenario with 2 users.  After the crossover operation with solution 2 (Figure \ref{fig:solution}  -\ding{205}), We obtain a solution with the Login scenario with 2 users, the Search scenario with 4 users, the Update scenario with 3 users and the Include scenario with 5 users (Figure \ref{fig:solution}  -\ding{206}). Figure. \ref{fig:solution} -\ding{207} shows the strategy used by the proposed solution to  obtain the neighbors for the Tabu search and simulated annealing algorithms. The neighbors are obtained by the modification of a single position (scenario or number of users) in the vector.
+Figure. \ref{fig:solution} presents the the crossover operator. In the example, solution 1 (Figure \ref{fig:solution}  -\ding{202}) has the Login scenario with 2 users, the Search scenario with 4 users, Include scenario with 1 user and the Delete scenario with 2 users.  After the crossover operation with solution 2 (Figure \ref{fig:solution}  -\ding{203}), We obtain a solution with the Login scenario with 2 users, the Search scenario with 4 users, the Update scenario with 3 users and the Include scenario with 5 users (Figure \ref{fig:solution}  -\ding{204}). Figure. \ref{fig:solution-mutant} -\ding{202} shows the strategy used by the proposed solution to  obtain the neighbors for the Tabu search and simulated annealing algorithms. The neighbors are obtained by the modification of a single position (scenario or number of users)(Figure. \ref{fig:solution-mutant} -\ding{203} and \ding{204}) in the vector.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./images/genomere-representation.png}
+\caption{Solution representation \cite{Gois2016}}
+\label{fig:solution-representation}
+\end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{./images/genomere.png}
-\caption{Solution representation, crossover  and neighborhood operators \cite{Gois2016}}
+\caption{Crossover operator \cite{Gois2016}}
 \label{fig:solution}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./images/genome-mutant.png}
+\caption{Neighborhood operator \cite{Gois2016}}
+\label{fig:solution-mutant}
 \end{figure}
 
 \section{Initial population}
@@ -1040,14 +1057,12 @@ The second experiment used a Moodle application installed on a machine with 500 
 \item Badge: This scenario involves entering the badge page.
 \end{itemize}
 
-The maximum tolerated response time in the test was 30 seconds.  Any  individuals who obtained a time longer than the stipulated maximum time suffered penalties.  The whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established.
-
-Table \ref{tab:secondexperiment} presents the maximum fitness value obtained by the hybrid metaheuristic (HM) approach, genetic algorithm (GA), simulated annealing (SA), and Tabu search (TS) in each generation.
+The maximum tolerated response time in the test was 30 seconds.  Any  individuals who obtained a time longer than the stipulated maximum time suffered penalties.  The whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established. Table \ref{tab:secondexperiment} presents the maximum fitness value obtained by the hybrid metaheuristic (HM) approach, genetic algorithm (GA), simulated annealing (SA), and Tabu search (TS) in each generation.
 
 
 \begin{table}[!h]
 \centering
-\caption{Results obtained from the second experiment}
+\caption{Maximum fitness value obtained by generation from the second experiment}
 \label{tab:secondexperiment}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
@@ -1075,7 +1090,7 @@ The small number of samples of the experiment is insufficient to give a statisti
 % \usepackage{multirow}
 \begin{table}[!h]
 \centering
-\caption{Example of individuals obtained in the second experiment}
+\caption{Six individuals with higher fitness value obtained in the second experiment}
 \label{tab:secondexperiment1}
 \begin{tabular}{|p{0.2cm}|l|l|l|p{0.60cm}|p{0.60cm}|p{0.60cm}|}
 \hline
@@ -1098,38 +1113,38 @@ Id&Fit&Scenario&Users&90per&80per&70per\\ \hline
 \end{table}
 
 
-Table \ref{fig:gened} presents the percentage of genes in all test scenarios by generation with and without collaboration. Most of the genes converged to the MyHome feature, which had the highest application response time.
+%Table \ref{fig:gened} presents the percentage of genes in all test scenarios by generation with and without collaboration. Most of the genes converged to the MyHome feature, which had the highest application response time.
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[!h]
-\centering
-\caption{Percentage of genes in each scenario by generation }
-\label{fig:gened}
-\begin{tabular}{c|c|c|c|c|c|c|c|}
-\hline
-\rowcolor[HTML]{D3D3D3}
-\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFFFF}\textbf{Gen/}}   & \multicolumn{7}{c|}{\cellcolor[HTML]{D3D3D3}\textbf{Non collaboration approach}}                                                                                                                                                       \\ \cline{2-8}
-\multicolumn{1}{|c|}{\textbf{Scenarios}}                      & \cellcolor[HTML]{F8FF00}Initial & \cellcolor[HTML]{F8FF00}1 & \cellcolor[HTML]{F8FF00}2 & \cellcolor[HTML]{F8FF00}3 & \cellcolor[HTML]{F8FF00}4 & \cellcolor[HTML]{F8FF00}5 & \cellcolor[HTML]{F8FF00}6                                \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Badges}          & 20                              & 18                        & 16                        & 24                        & 15                        & 16                        & 17                                                       \\ \hline
-\rowcolor[HTML]{F8FF00}
-\multicolumn{1}{|c|}{\cellcolor[HTML]{F8FF00}\textbf{MyHome}} & \textbf{15}                     & \textbf{59}               & \textbf{55}               & \textbf{48}               & \textbf{53}               & \textbf{50}               & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}\textbf{52}} \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}StartPage}       & 15                              & 10                        & 12                        & 11                        & 20                        & 18                        & \multicolumn{1}{l|}{19}                                  \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Notifications}   & 25                              & 5                         & 11                        & 10                        & 9                         & 10                        & \multicolumn{1}{l|}{9}                                   \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Post}            & 8                               & 3                         & 1                         & 3                         & 1                         & 2                         & \multicolumn{1}{l|}{1}                                   \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Login}           & 17                              & 5                         & 5                         & 4                         & 2                         & 4                         & \multicolumn{1}{l|}{2}                                   \\ \hline
-\multicolumn{1}{l|}{}                                         & \multicolumn{7}{c|}{\cellcolor[HTML]{D3D3D3}\textbf{Collaboration approach}}                                                                                                                                                           \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Badges}          & 20                              & 29                        & 16                        & 25                        & 9                         & 16                        & 9                                                        \\ \hline
-\rowcolor[HTML]{F8FF00}
-\multicolumn{1}{|c|}{\cellcolor[HTML]{F8FF00}\textbf{MyHome}} & \textbf{15}                     & \textbf{29}               & \textbf{69}               & \textbf{49}               & \textbf{74}               & \textbf{66}               & \textbf{76}                                              \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}StartPage}       & 15                              & 22                        & 10                        & 21                        & 10                        & 10                        & 8                                                        \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Nofications}     & 25                              & 10                        & 1                         & 1                         & 2                         & 1                         & 3                                                        \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Post}            & 8                               & 2                         & 1                         & 1                         & 1                         & 2                         & 1                                                        \\ \hline
-\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Login}           & 17                              & 8                         & 3                         & 3                         & 4                         & 5                         & 3                                                        \\ \hline
-\end{tabular}
-\end{table}
+%\begin{table}[!h]
+%\centering
+%\caption{Percentage of genes in each scenario by generation }
+%\label{fig:gened}
+%\begin{tabular}{c|c|c|c|c|c|c|c|}
+%\hline
+%\rowcolor[HTML]{D3D3D3}
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFFFF}\textbf{Gen/}}   & \multicolumn{7}{c|}{\cellcolor[HTML]{D3D3D3}\textbf{Non collaboration approach}}                                                                                                                                                       \\ \cline{2-8}
+%\multicolumn{1}{|c|}{\textbf{Scenarios}}                      & \cellcolor[HTML]{F8FF00}Initial & \cellcolor[HTML]{F8FF00}1 & \cellcolor[HTML]{F8FF00}2 & \cellcolor[HTML]{F8FF00}3 & \cellcolor[HTML]{F8FF00}4 & \cellcolor[HTML]{F8FF00}5 & \cellcolor[HTML]{F8FF00}6                                \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Badges}          & 20                              & 18                        & 16                        & 24                        & 15                        & 16                        & 17                                                       \\ \hline
+%\rowcolor[HTML]{F8FF00}
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{F8FF00}\textbf{MyHome}} & \textbf{15}                     & \textbf{59}               & \textbf{55}               & \textbf{48}               & \textbf{53}               & \textbf{50}               & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}\textbf{52}} \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}StartPage}       & 15                              & 10                        & 12                        & 11                        & 20                        & 18                        & \multicolumn{1}{l|}{19}                                  \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Notifications}   & 25                              & 5                         & 11                        & 10                        & 9                         & 10                        & \multicolumn{1}{l|}{9}                                   \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Post}            & 8                               & 3                         & 1                         & 3                         & 1                         & 2                         & \multicolumn{1}{l|}{1}                                   \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Login}           & 17                              & 5                         & 5                         & 4                         & 2                         & 4                         & \multicolumn{1}{l|}{2}                                   \\ \hline
+%\multicolumn{1}{l|}{}                                         & \multicolumn{7}{c|}{\cellcolor[HTML]{D3D3D3}\textbf{Collaboration approach}}                                                                                                                                                           \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Badges}          & 20                              & 29                        & 16                        & 25                        & 9                         & 16                        & 9                                                        \\ \hline
+%\rowcolor[HTML]{F8FF00}
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{F8FF00}\textbf{MyHome}} & \textbf{15}                     & \textbf{29}               & \textbf{69}               & \textbf{49}               & \textbf{74}               & \textbf{66}               & \textbf{76}                                              \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}StartPage}       & 15                              & 22                        & 10                        & 21                        & 10                        & 10                        & 8                                                        \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Nofications}     & 25                              & 10                        & 1                         & 1                         & 2                         & 1                         & 3                                                        \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Post}            & 8                               & 2                         & 1                         & 1                         & 1                         & 2                         & 1                                                        \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{D3D3D3}Login}           & 17                              & 8                         & 3                         & 3                         & 4                         & 5                         & 3                                                        \\ \hline
+%\end{tabular}
+%\end{table}
 
 
 %\begin{figure}[h]
@@ -1139,22 +1154,22 @@ Table \ref{fig:gened} presents the percentage of genes in all test scenarios by 
 %\label{fig:gened}
 %\end{figure}
 
-\subsection{Third Experiment: Anti-patterns}
+\subsection{Third Experiment: Best-case Scenarios and  Anti-patterns}
 
-In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  The first step uses The Ramp and Circuitous Treasure Hunt anti-pattern. The second step uses The Tower Babel and Unbalanced Processing antipattern. Each step uses two different anti-pattern and happy scenarios. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
+In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  Each step uses two different anti-patterns and happy scenarios. The first step uses The Ramp and Circuitous Treasure Hunt anti-patterns. The second step uses The Tower Babel and Unbalanced Processing anti-patterns. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
-\subsection{Experiment Research Questions}
+\subsubsection{Experiment Research Questions}
 
 The following research question is addressed:
 \begin{itemize}
 \item Does the Hybrid algorithm  finds scenarios without the antipatterns presented?
 \end{itemize}
 
-\subsection{Variables}
+\subsubsection{Variables}
 
 The independent variables are the test scenarios (antipatterns and happy scenarios). The dependent variables are: the number of antipatterns found in best workloads and the metaheuristic with the best fitness value.
 
-\subsection{Experiment Hypotheses}
+\subsubsection{Experiment Hypotheses}
 
 With regard to the antipatterns found by hybrid metaheuristic:
 \begin{itemize}
@@ -1162,13 +1177,13 @@ With regard to the antipatterns found by hybrid metaheuristic:
 \item $H_{1}$ : the best workloads found in the experiments do not contain antipatterns.
 \end{itemize}
 
-\subsection{The Ramp and Circuitous Treasure Hunt step}
+\subsubsection{The Ramp and Circuitous Treasure Hunt step}
 
 The experiment was carried out for 8 continuous hours.  All tests in the experiment were conducted without the need of a tester, automating the process of executing and designing performance test scenarios.In this experiment, Scenarios were generated with the Ramp and Circuitous Treasure antipattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios. Figure \ref{fig:boxplot1} present the fitness value obtained by each metaheuristic.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{./images/antipattern1.png}
+\includegraphics[width=0.6\textwidth]{./images/antipattern1.png}
 \caption{Average, median, maximum and minimal fitness value by Search Method}
 \label{fig:boxplot1}
 \end{figure}
@@ -1194,21 +1209,19 @@ Hybrid & 16 & 143 & 426740 & Happy 1 \& 2
 
 
 
-\subsection{The Tower Babel  and Unbalanced Processing step}
+\subsubsection{The Tower Babel  and Unbalanced Processing step}
 
 
 The experiment was carried out for 6 continuous hours. In this experiment, Scenarios were generated with Tower Babel and Unbalanced Processing anti-pattern as well as scenarios with Happy Scenario 1, Happy Scenario 2 and mixed scenarios.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{./images/antipattern2.png}
+\includegraphics[width=0.9\textwidth]{./images/antipattern2.png}
 \caption{Finesse value by generation in all tests}
 \label{fig:boxplot2}
 \end{figure}
 
-
-
-Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second experiment. Despite the fact of doing 300 conversions of the JSON format to XML. The antipattern implementation does not return a higher response time than happy paths. While happy paths return from 10 to 15 seconds from a single user, Tower Babel antipattern has a response time of 10 to 29 seconds. None of the best individuals found implements the Unbalanced Processing antipattern.
+Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second experiment. Despite the fact of doing 300 conversions of the JSON format to XML. The antipattern implementation does not return a higher response time than happy paths. While happy paths return from 10 to 15 seconds from a single user, Tower Babel antipattern has a response time of 10 to 29 seconds. None of the best individuals found implements the Unbalanced Processing antipattern. In the second experiment, the metaheuristics converged to scenarios with a happy path and Tower Babel anti-pattern, excluding the scenarios with Unbalanced Processing anti-pattern. The hybrid metaheuristic returned individuals with higher fitness scores. The SA algorithm obtained the worst fitness values.
 
 
 % Please add the following required packages to your document preamble:
@@ -1228,9 +1241,9 @@ Table \ref{tab:bestindividuals2} shows the 4 best workloads found in the second 
 \end{tabular}
 \end{table}
 
-In the second experiment, the metaheuristics converged to scenarios with a happy path and Tower Babel anti-pattern, excluding the scenarios with Unbalanced Processing anti-pattern. The hybrid metaheuristic returned individuals with higher fitness scores. The SA algorithm obtained the worst fitness values.
 
-\subsection{Threats to validity}
+
+\subsubsection{Threats to validity}
 \begin{itemize}
 \item Construct Validity:
 In this experiment, we just evaluate the use of four antipatterns. However, several anti-patterns could be applied.  The common representation and the strategies used for crossover and neighborhood operators need a better design, using an abstraction pattern to contemplate a major number of possible solutions.
@@ -1241,15 +1254,7 @@ The Tower Babel anti-pattern was not excluded by the metaheuristics used in the 
 
 \section{Conclusion}
 
-This chapter presented a hybrid metaheuristic approach for use in stress testing. Three experiments were performed to validate the solution. The first experiment was performed on an emulated component. The second experiment was performed using an installed Moodle application.  The collaborative approach obtained better fit values in both first two experiments.
-
-The main contributions presented in this chapter are as follows: The presentation of a hybrid metaheuristic approach for use in stress tests; the development of a JMeter plugin  for search-based tests; and  the automation of the stress test execution process.
-
-In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The significant level adopted was 0.05. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach.
-
-In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established.
-
-The third experiment was conducted to validate the use of anti-patterns with the Hybrid algorithm. The experiments use genetic, algorithms, tabu search, simulated annealing and the hybrid algorithm.  We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  In the first step, none of the best workloads has one of the anti-pattern scenarios. In the second step,  the metaheuristics converged to scenarios with a happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing anti-pattern. In both experiments, the hybrid metaheuristic returned individuals with higher fitness scores. 
+This chapter presented a hybrid metaheuristic approach for use in stress testing. Three experiments were performed to validate the solution. The first experiment was performed on an emulated component. The second experiment was performed using an installed Moodle application.  The collaborative approach obtained better fit values in both first two experiments. The main contributions presented in this chapter are as follows: The presentation of a hybrid metaheuristic approach for use in stress tests; the development of a JMeter plugin  for search-based tests; and  the automation of the stress test execution process. In the first experiment, the signed-rank Wilcoxon non-parametrical procedure was used for comparing the results. The significant level adopted was 0.05. The procedure showed that there was a significant improvement in the results with the Hybrid Metaheuristic approach. In the second experiment, the whole process of stress and performance tests, which took 3 days and about 1800 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of six generations previously established. The third experiment was conducted to validate the use of anti-patterns with the Hybrid algorithm. The experiments use genetic, algorithms, tabu search, simulated annealing and the hybrid algorithm.  We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  In the first step, none of the best workloads has one of the anti-pattern scenarios. In the second step,  the metaheuristics converged to scenarios with a happy path and Tower Babel antipattern, excluding the scenarios with Unbalanced Processing anti-pattern. In both experiments, the hybrid metaheuristic returned individuals with higher fitness scores. 
 
 
 \chapter{Stress Search-based Testing using HybridQ approach}
@@ -1345,7 +1350,7 @@ Phase                         & Exploration         & Exploration
 \end{tabular}
 \end{table}
 
-\subsection{Exploitation phase}
+\section{Exploitation phase}
 
 The main objective of the exploitation phase is to choose the best neighboring solution based on the Q value. The research expected that Q-Learning improve Hybrid algorithm replacing the random characteristic of the tabu search, simulated  annealing and genetic algorithms operators by the direction given by the q-learning in the exploration phase. Algorithm \ref{hybridqexploitation} presents the main steps of exploitation phase. In first line, the algorithm gets the original genome. In lines 2 to 11, HybridQ gets the maximum, the second maximum or the third maximum \textit{q} value, depending on the random value of the random variable.The algorithm chooses one of the three largest values of q. The variation of the highest values was inserted in the algorithm to escape the local optimals. In line 12, the algorithm gets the key value in Table that have the maximum \textit{q} value. In line number 13, The key is separated into two parts using the \# delimiter. The first part of the key is action and the second part is the test scenario. If the action equals '\textit{up}' value, the genome is incremented in its users. If the action equals '\textit{down}' value, the genome is incremented in its users. Finally, the test scenario is changed and the new genome is returned.
 
@@ -1381,7 +1386,7 @@ The main objective of the exploitation phase is to choose the best neighboring s
   \end{algorithmic}
 \end{algorithm}
 
-\subsection{Integration between metaheuristics and the Q-Learning algorithm }
+\section{Integration between metaheuristics and the Q-Learning algorithm }
 
 The Q-learning algorithm is used by Tabu Search or Simulated Annealing to obtain the neighbors and in the mutation operator of the genetic algorithm. Unlike the traditional processes of obtaining neighboring solutions such as random change and permutation, the decision to change a genome gene is made from the action that has the highest value of Q. Fig. \ref{fig:neighservice} presents how one of the neighbors of a test is generated using Q-Learning in IAdapter. The solution uses a service called Q-Neighborhood Service to generate the neighbor from the action that has the highest value of Q.
 
@@ -1616,7 +1621,7 @@ The following research question is addressed:
 
 \subsection{Variables}
 
-The independent variable is the use (or not) of NSGA-II algorithm. The dependent variables are the optimal workload scenario found by the algorithm.
+The independent variable is the use (or not) of NSGA-II algorithm. The dependent variables are the optimal workload scenario found.
 
 \subsection{Experiment Hypotheses}
 
