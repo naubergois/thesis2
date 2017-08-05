@@ -1266,14 +1266,14 @@ This chapter presents a reinforcement learning approach to optimize the choice o
 The solution, named HybridQ, uses the GA, SA and Tabu Search algorithms in a collaborative approach. Just like most reinforcement learning problems the proposed solution works in two different phases: exploration and exploitation. The following subsections show details of the exploration and exploitation phases and the integration between metaheuristics and the Q-Learning algorithm.
 
 
-\subsection{Exploration phase}
+\section{Exploration phase}
 
 The exploration phase uses a markov model, as shown in Fig. \ref{fig:mdphybridq}, the proposed MDP model  has three main states based on response time. A test may have a response time greater than 1.2 times the maximum response time allowed, between 0.8 and 1.2 times the maximum response time allowed or less than 0.8 times the maximum response time allowed. The values of 1.2 and 0.8 were chosen from the assumption of a tolerance margin of 20\% for the application under test. This margin may be higher or lower depending on the business requirements of the application.
 
 
 \begin{figure}[h!]
 \center
-\includegraphics[width=0.4\textwidth]{./images/mdp3.png}
+\includegraphics[width=0.5\textwidth]{./images/mdp3.png}
 \caption{Markov Decision Process used by HybridQ}
 \label{fig:mdphybridq}
 \end{figure}

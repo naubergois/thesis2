@@ -20,7 +20,7 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Average, median, maximum and minimal fitness value by Search Method\relax }}{74}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Finesse value by generation in all tests\relax }}{75}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Markov Decision Process used by HybridQ\relax }}{78}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces HybridQ Neighborhood Service\relax }}{80}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces HybridQ Neighborhood Service\relax }}{81}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Maximum fitness value by number of requests\relax }}{85}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Flowchart of implemented algorithms\relax }}{88}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Pareto Frontier found in the first experiment using NSGA-II\relax }}{91}

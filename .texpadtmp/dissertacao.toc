@@ -49,19 +49,19 @@
 \contentsline {subsubsection}{Threats to validity}{75}
 \contentsline {section}{\numberline {4.5}Conclusion}{76}
 \contentsline {chapter}{\numberline {5}Stress Search-based Testing using HybridQ approach}{77}
-\contentsline {subsection}{\numberline {5.0.1}Exploration phase}{77}
-\contentsline {section}{\numberline {5.1}Exploitation phase}{78}
-\contentsline {section}{\numberline {5.2}Integration between metaheuristics and the Q-Learning algorithm }{80}
-\contentsline {section}{\numberline {5.3}Experiment with HybridQ Algorithm}{81}
-\contentsline {subsection}{\numberline {5.3.1}Experiment Research Questions}{82}
-\contentsline {subsection}{\numberline {5.3.2}Variables}{82}
-\contentsline {subsection}{\numberline {5.3.3}Experiment Hypotheses}{82}
-\contentsline {subsection}{\numberline {5.3.4}Experiment phases}{83}
-\contentsline {subsection}{\numberline {5.3.5}OpenCart Experiment}{83}
+\contentsline {section}{\numberline {5.1}Exploration phase}{77}
+\contentsline {section}{\numberline {5.2}Exploitation phase}{79}
+\contentsline {section}{\numberline {5.3}Integration between metaheuristics and the Q-Learning algorithm }{80}
+\contentsline {section}{\numberline {5.4}Experiment with HybridQ Algorithm}{80}
+\contentsline {subsection}{\numberline {5.4.1}Experiment Research Questions}{82}
+\contentsline {subsection}{\numberline {5.4.2}Variables}{82}
+\contentsline {subsection}{\numberline {5.4.3}Experiment Hypotheses}{83}
+\contentsline {subsection}{\numberline {5.4.4}Experiment phases}{83}
+\contentsline {subsection}{\numberline {5.4.5}OpenCart Experiment}{83}
 \contentsline {subsubsection}{Q-Learning Training Phase}{84}
 \contentsline {subsubsection}{Results}{84}
-\contentsline {subsection}{\numberline {5.3.6}Threats to validity}{86}
-\contentsline {section}{\numberline {5.4}Conclusion}{86}
+\contentsline {subsection}{\numberline {5.4.6}Threats to validity}{86}
+\contentsline {section}{\numberline {5.5}Conclusion}{86}
 \contentsline {chapter}{\numberline {6}Search-based stress testing using multi-objective heuristics}{87}
 \contentsline {section}{\numberline {6.1}Experiment with multi-object NSGA-II algorithm}{88}
 \contentsline {subsection}{\numberline {6.1.1}Experiment Research Questions}{90}
