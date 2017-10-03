@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  5 AUG 2017 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.13)  2 OCT 2017 14:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3336,7 +3336,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  28807 strings out of 493089
  532457 string characters out of 6134842
- 993018 words of memory out of 5000000
+ 994018 words of memory out of 5000000
  31536 multiletter control sequences out of 15000+600000
  121247 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3356,7 +3356,7 @@ texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/zapfding/uzdr.pfb>
 Output written on /Users/naubergois/Downloads/ModeloTeseLatexABNT/.texpadtmp/di
-ssertacao.pdf (162 pages, 8539861 bytes).
+ssertacao.pdf (162 pages, 8542023 bytes).
 PDF statistics:
  732 PDF objects out of 1000 (max. 8388607)
  405 compressed objects within 5 object streams
