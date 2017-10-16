@@ -163,8 +163,7 @@ space are evaluated with respect to the fitness function using a metaheuristic s
 tests cases or perform test executions \cite{Afzal2009a}.
 
 There is strong empirical evidence, that deficient
-testing of both functional and non-functional properties
-is one of the major sources of software and system errors. In 2002, NIST  report found that more than one-third of these costs of software failure could be eliminated by an improved testing infrastructure.
+testing is one of the major sources of software and system errors. In 2002, NIST  report found that more than one-third of these costs of software failure could be eliminated by an improved testing infrastructure.
 Automation of testing is a key concern. Through
 automation, large-scale thorough testing can become
 practical and scalable. However, automated generation of test cases presents challenges. The general problem involves finding a (partial) solution to the path sensitization problem. That is the problem of finding an input to drive the software down a chosen path \cite{Harman2010} \cite{dean2003managing}.
@@ -173,13 +172,8 @@ Software performance is a pervasive quality,  because it is influenced by every 
 
 Typically, stress testing is accomplished using test scripts, which are programs that test designers write to automate testing. These test scripts perform actions or mimicking user actions on GUI objects of the system to feed input data. Contemporary approaches to load testing suffer from limitations. Their cost-effectiveness depends heavily on the actual test scenarios that are used yet there is no support for choosing those scenarios. A poor choice of scenarios could lead to underestimating system response time thereby missing an opportunity to detect a performance problem \cite{Grechanik2012}.
 
-
-Stress testing is an expensive and difficult activity. The exponential
-growth in the complexity of software makes the cost of testing  continued to grow. Test case generation can be seen as a search problem. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search
-space are evaluated with respect to the fitness function using a metaheuristic search technique. Search-based software testing is the application of metaheuristic search techniques to generate software
-tests cases or perform test execution \cite{Afzal2009a}.
-
-Search-based stress testing (SBST) is regarded as a promising approach to verify timing constraints \cite{Afzal2009a}. A common objective of a load search-based test is to find  scenarios that produce execution times that violate the specified timing constraints \cite{Sullivan}. 
+Search-based stress testing (SBST) is regarded as a promising approach to verify timing constraints. Search-based software testing is the application of metaheuristic search techniques to generate software
+tests cases or perform test execution \cite{Afzal2009a}. A common objective of a stress search-based test is to find  scenarios that produce execution times that violate the specified timing constraints \cite{Sullivan}. Test case generation can be seen as a search problem \cite{Afzal2009a}. The test adequacy criterion is transformed into a fitness function and a set of solutions in the searchnspace are evaluated with respect to the fitness function using a metaheuristic search technique.
 
 Experimentation is essential in order to realistically and accurately evaluate search-based stress tests. Experimentation on algorithms is usually made by simulation. Experiments involving search-based stress tests are inherently complex and typically time-consuming and extremely difficult to repeat. Ordinarily, People who might want to duplicate published results, for example, must devote substantial resources to set up and the environmental conditions are likely to be different.
 
@@ -257,7 +251,7 @@ The remainder of this thesis is organized as follows:
 
 \chapter{Metaheuristics and Reinforcement Learning}
 
-This chapter presents concepts and essentials definitions considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
+This chapter presents concepts and essential definitions considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
 
 \section{Metaheuristics}
 
@@ -271,8 +265,9 @@ Metaheuristics are strategies that guide the search process to efficiently explo
 \item One vs. various neighborhood structures. Most metaheuristic algorithms work on one single neighborhood structure. In other words, the fitness landscape topology does not change in the course of the algorithm. Other metaheuristics, such as Variable Neighborhood Search (VNS), use a set of neighborhood structures which gives the possibility to diversify the search by swapping between different fitness
 landscapes.
 
-
 \end{itemize}
+
+This thesis will use the classification between Population-based vs. single point search (Trajectory methods) for the presented metaheuristics.
 
 \subsection{Trajectory Methods}
 
@@ -299,6 +294,8 @@ Single-Solution Based Metaheuristics methods are characterized by a trajectory i
 
 \subsubsection{Simulated Annealing}
 
+
+Simulated annealing (SA)  was one of the first algorithms that had an explicit strategy to escape from local minima. The idea of SA is inspired by the annealing process of metal and glass, which assume a low energy configuration when first heated up and then cooled down sufficiently slowly \cite{Talbi2012}. SA The
 The algorithmic framework of SA is described in Alg. \ref{sa}.  The algorithm starts by generating an initial solution in function \textit{GenerateInitialSolution()}. The initial temperature value is determined in function \textit{SetInitialTemperature()} such that the probability for an uphill move is quite high at the start of the algorithm. At each iteration a solution $\mbox{s}_1$ is randomly chosen in function \textit{PickNeighborAtRandom(N(s))}. If \textit{$\mbox{s}_1$} is better than \textit{s}, then \textit{$\mbox{s}_1$} is accepted as a new current solution. Else, if the move from \textit{s} to \textit{$\mbox{s}_1$} is an uphill move, \textit{$\mbox{s}_1$}  is accepted with a probability which is a function of a temperature parameter \textit{Tk} and \textit{s} \cite{raidl2010metaheuristic}.
 
 \begin{algorithm}[t]
@@ -784,7 +781,9 @@ Pohlheim and Wegener used an extension of genetic algorithms with multiple sub-p
 function. The GA found longer execution times for all the given modules in comparison with systematic testing \cite{Pohlheim2005}. Garousi presented a stress test methodology aimed at increasing the chances of discovering faults related to distributed traffic in distributed systems. The technique uses as input a specified UML 2.0 model of a system, augmented with timing information. The results indicate that the technique is significantly more effective at detecting distributed traffic-related faults when compared to standard test cases based on an operational profile \cite{Garousi2006}. Alesio, Nejati and Briand describe an approach based
 on Constraint Programming (CP) to automate the generation of test cases that reveal, or are likely to, task deadline misses. They evaluate it through a comparison with a state-of-the-art approach based on GAs. In particular, the study compares CP and GA in five case studies for efficiency, effectiveness, and scalability. The experimental results show that, on the larger and more complex case studies, CP performs significantly better than GA. The research proposes a tool-supported, efficient and effective approach based on CP to generate stress test cases that maximize the likelihood of task deadline misses \cite{DiAlesio2013}.
 
-Alesio describes stress test case generation as a search problem over the space of task arrival times. The research locates the worst-case scenarios maximizing deadline misses where each scenario characterizes a test case. The paper combines two strategies, GA and CP. The results show that, in comparison with GA and CP in isolation, GA+CP achieves nearly the same effectiveness as CP and the same efficiency and solution diversity as GA, thus combining the advantages of the two strategies. Alesio concludes that a combined GA+CP approach to stress testing is more likely to scale to large and complex systems \cite{Alesio2015}.
+Alesio describes stress test case generation as a search problem over the space of task arrival times. The research locates the worst-case scenarios maximizing deadline misses where each scenario characterizes a test case. The paper combines two strategies, GA and CP. The results show that, in comparison with GA and CP in isolation, GA+CP achieves nearly the same effectiveness as CP and the same efficiency and solution diversity as GA, thus combining the advantages of the two strategies. Alesio concludes that a combined GA+CP approach to stress testing is more likely to scale to large and complex systems \cite{Alesio2015}. 
+
+The studies presented in this subsection differ from the present approach in the context of the application of the tests. The great majority of the tests in critical applications seek to find a schedule of execution of distributed tasks in order to apply the highest load. This thesis presents an approach that aims to discover the best combination of test scenarios and a number of users in order to obtain the longest response time with the fewest possible users.
 
 \subsection{Search-Based Stress Testing on non Safety-critical Systems}
 
@@ -837,7 +836,7 @@ simple programs. The results of the research presented that the use of SA was mo
 
 \chapter{Stress Search Based Testing using Hybrid Metaheuristic}
 
-This chapter presents a study of the use a hybrid algorithm in search-based stress testing. The research uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on uses the three algorithms collaboratively (hybrid metaheuristic approach).
+This chapter presents a study of the use a hybrid algorithm in search-based stress testing. The research uses genetic algorithms, tabu search, and simulated annealing in two different approaches. The study initially investigated the use of these three algorithms independently. Subsequently, the study will focus on a collaborative approach (hybrid metaheuristic approach).
 
 In the first approach, the algorithms do not share their best individuals among themselves. Each algorithm evolves in a separate way (Fig. \ref{fig:firstaproach}). The second approach uses the algorithms in a collaborative mode (hybrid metaheuristic). In this approach, the three algorithms share their best individuals found (Fig. \ref{fig:secondapproach}). 
 
@@ -925,7 +924,7 @@ penalty=100 * \Delta \\
 \end{aligned}
 \end{equation}
 
-\section{Experiments with Hybrid Algorithm}
+\section{Experiments with the Hybrid Algorithm}
 
 This section presents three experiments. The first one was performed on an emulated component, the second one was performed using an installed Moodle application and the third one was performed using four antipatterns. The experiments used the following fitness function:
 
@@ -1156,7 +1155,7 @@ Id&Fit&Scenario&Users&90per&80per&70per\\ \hline
 
 \subsection{Third Experiment: Best-case Scenarios and  Anti-patterns}
 
-In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  Each step uses two different anti-patterns and happy scenarios. The first step uses The Ramp and Circuitous Treasure Hunt anti-patterns. The second step uses The Tower Babel and Unbalanced Processing anti-patterns. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
+In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  Each step uses two different anti-patterns and happy scenarios. The antipatterns will be presented in the Appendix A. The first step uses The Ramp and Circuitous Treasure Hunt anti-patterns. The second step uses The Tower Babel and Unbalanced Processing anti-patterns. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
 \subsubsection{Experiment Research Questions}
 
@@ -1894,11 +1893,11 @@ The independent variable is the collaborative approach of the algorithms HybridQ
 
 \subsection{Experiment Results}
 
-At the end of 28 generations, the new approach obtains a hypervolume value of the 10.29. The new approach obtains a hypervolume of 10.84 at the end of 50 generations. Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the Pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 milliseconds.
+Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the Pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 milliseconds.
 
 \subsection{Experiment Conclusion}
 
-The results presented by the MOEA/D with HybridQ surpass previous approaches for the same number of generations.
+The results presented by the MOEA/D with HybridQ surpass previous approaches for the same number of generations. At the end of 28 generations, the new approach obtains a hypervolume value of the 10.29. The new approach obtains a hypervolume of 10.84 at the end of 50 generations while the average obtained by the other approaches for the same number of generations is 6.75 (Section 6.2.1). 
 
 
 % Please add the following required packages to your document preamble:
