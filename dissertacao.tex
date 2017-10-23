@@ -207,19 +207,19 @@ The main contributions of this thesis are as follows:
 \begin{itemize}
 \item We propose a hybrid optimization approach in search-based stress testing. The approach uses Tabu Search, Simulated Annealing and Genetic Algorithms. The thesis presents three experiments. The results were published in  \cite{Gois2016}. This proposal refers to our \textbf{Research Question 1} (Chapter 4).
  
-\item We present a hybrid algorithm with the Q-Learning approach. The approach uses reinforcement learning to optimize the choice of neighboring solutions, reducing the time required to obtain the scenarios with the longest response time. This proposal refers to our \textbf{Research Question 2} (Chapter 5).
+\item We present a new version of the hybrid approach with the Q-Learning algorithm. The approach uses reinforcement learning to optimize the choice of neighboring solutions, reducing the time required to obtain the scenarios with the longest response time. This proposal refers to our \textbf{Research Question 2} (Chapter 5).
 
-\item  We investigate the benefits of multiobjective metaheuristics in search-based stress testing. A comprehensive investigation of the use of multi-objective metaheuristics on search-based stress testing was conducted. Part of the results was published in \cite{Gois2017}.This proposal refers to our \textbf{Research Question 3} (Chapter 6).
+\item  We investigate the benefits of multiobjective metaheuristics in search-based stress testing. A comprehensive investigation of the use of multi-objective metaheuristics on search-based stress testing was conducted. Part of the results was published in \cite{Gois2017}. This proposal refers to our \textbf{Research Question 3} (Chapter 6).
 
 \end{itemize}
 
 
-The secondary contributions of this thesis are follows:
+The secondary contributions of this thesis as follows:
 
 \begin{itemize}
-\item The Survey of Stress Testing presented in Appendix A.
-\item A Noise Reduction approach extended of the SEDR algorithm  presented in Appendix B.
-\item The IAdapter tool presented in Appendix C.
+\item A Survey of Stress Testing, presented in Appendix A.
+\item A Noise Reduction approach extending the SEDR algorithm,  presented in Appendix B.
+\item The IAdapter tool, presented in Appendix C.
 
 \end{itemize}
 
@@ -229,51 +229,51 @@ The secondary contributions of this thesis are follows:
 
 The remainder of this thesis is organized as follows:
 
-\textbf{Chapter 2} presents initial concepts about the use of metaheuristics, hybrid metaheuristics, multi-objective metaheuristics and reinforcement learning. The chapter briefly introduces the Trajectory and Population-based Metaheuristics.  Subsequently, presents Hybrid and Multi-Objective metaheuristics. Finally, presents the Reinforcement Learning concepts. 
+\textbf{Chapter 2} presents general concepts about the use of metaheuristics, hybrid metaheuristics, multi-objective metaheuristics and reinforcement learning. The chapter briefly introduces the Trajectory and Population-based Metaheuristics.  Subsequently, it presents Hybrid and Multi-Objective metaheuristics. Finally, it presents the Reinforcement Learning concepts. 
 \\
 
-\textbf{Chapter 3} shows the context where this thesis is inserted and contemporary concepts about Search-based Stress Testing. 
+\textbf{Chapter 3} shows the context  in which this thesis fits  and state of art of Search-based Stress Testing. 
 %In particular, two categories of approaches are out-lined: (i) Search-Based Stress Testing on Safety-critical systems; (ii) Search-Based Stress Testing on non Safety-critical systems.
 \\
 
-\textbf{Chapter 4} presents a hybrid approach that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was developed. Three experiments  were performed to validate the proposed approach. The first experiment was performed on an emulated component, and the second one was performed using an installed Moodle application. The chapter presents the solution representation and the objective function of the proposed approach.
+\textbf{Chapter 4} presents a hybrid approach that combines genetic algorithms, simulated annealing, and tabu search algorithms in stress tests. Three experiments  were performed to validate the proposed approach. The first experiment was performed on an emulated component, and the second one was performed using an installed Moodle application. The chapter presents the conceptual ingredients of the proposed approach.
 \\
 
 \textbf{Chapter 5} presents a reinforcement learning approach to optimize the choice of neighboring solutions to explore, reducing the time needed to obtain the scenarios with the longest response time in the application. The chapter presents a study to ascertain if the use of the Q-learning technique allows the meta-heuristic algorithms to improve the search to application failures with a smaller number of requests consuming a shorter time assuming that the same application can be submitted to more than one test execution.
 \\
 
-\textbf{Chapter 6} presents experiments to assert the benefits of multiobjective metaheuristics in search-based stress testing. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D multi-objective with the HybridQ algorithm.  The fourth experiment presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. Finally, we present an initial study to evaluate the Pareto Frontier difference in multiple executions. 
+\textbf{Chapter 6} presents experiments to assess the benefits of multiobjective metaheuristics in search-based stress testing. The first experiment uses NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The second experiment presents the experimental results to compare four multi-objective algorithms in search-based stress testing. The third experiment shows the results conducted to compare the MOEA/D algorithm with the HybridQ algorithm.  The fourth experiment evaluates a collaborative approach using HybridQ and MOEA/D. Finally, we present an study to evaluate the Pareto Frontier difference in multiple executions. 
 
 \chapter{Metaheuristics and Reinforcement Learning}
 
-This chapter presents concepts and essential definitions considering the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
+This chapter presents concepts and essential definitions realted to the main contributions of this thesis: the single and multi-objective metaheuristics and reinforcement learning. 
 
 \section{Metaheuristics}
 
-Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. Metaheuristic algorithms are approximate and usually non-deterministic and sometimes incorporate mechanisms to avoid getting trapped in confined areas of the search space. There are different ways to classify and describe metaheuristic algorithm \cite{Blum2003}:
+Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. Metaheuristic algorithms are approximate and usually non-deterministic, and sometimes incorporate mechanisms to avoid getting trapped in confined areas of the search space. There are different ways to classify and describe metaheuristic algorithm \cite{Blum2003}:
 
 \begin{itemize}
-\item Nature-inspired vs. non-nature inspired. There are nature-inspired algorithms, like Genetic Algorithms and Ant Algorithms, and non nature-inspired ones such as Tabu Search and Iterated Local Search.
+\item \textbf{Nature-inspired vs. non-nature inspired}. There are nature-inspired algorithms, like Genetic Algorithms and Ant Algorithms, and non nature-inspired ones such as Tabu Search and Iterated Local Search.
 
-\item Population-based vs. single point search (Trajectory methods). Algorithms working on single solutions are called trajectory methods, like Tabu Search, Iterated Local Search and Variable Neighborhood Search. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space.
+\item \textbf{Population-based vs. single point search (Trajectory methods)}. Algorithms working on single solutions are called trajectory methods, like Tabu Search, Iterated Local Search and Variable Neighborhood Search. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space.
 
-\item One vs. various neighborhood structures. Most metaheuristic algorithms work on one single neighborhood structure. In other words, the fitness landscape topology does not change in the course of the algorithm. Other metaheuristics, such as Variable Neighborhood Search (VNS), use a set of neighborhood structures which gives the possibility to diversify the search by swapping between different fitness
+\item \textbf{One vs. various neighborhood structures}. Most metaheuristic algorithms work on one single neighborhood structure. In other words, the fitness landscape topology does not change in the course of the algorithm. Other metaheuristics, such as Variable Neighborhood Search (VNS), use a set of neighborhood structures which gives the possibility to diversify the search by swapping between different fitness
 landscapes.
 
 \end{itemize}
 
-This thesis will use the classification between Population-based vs. single point search (Trajectory methods) for the presented metaheuristics.
+This thesis will use the classification between Population-based vs. single point search (Trajectory methods) for the presented metaheuristics. The next subsections presents Trajectory methods and Population-based metaheuristics.
 
 \subsection{Trajectory Methods}
 
-Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search.
+Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing (SA) and Tabu Search (TS).
 
 \subsubsection{Neighborhood}
 
-The definition of Neighborhood is a required common step in the design of any Single-Solution metaheuristic (S-metaheuristic). The neighborhood structure it is an important piece of the performance of an S-metaheuristic. If the neighborhood structure is not adequate to the problem,
-any S-metaheuristic will fail to solve the problem. The neighborhood function N is a mapping: $ N : S \rightarrow N\textsuperscript{2} $ that assigns to each solution s of \textit{S} a set of solutions \textit{N(s)}$\subset$ S \cite{Talbi2013}.
+The definition of Neighborhood is a required common step in the design of any Single-Solution metaheuristic (S-metaheuristic). The neighborhood is an important piece of an S-metaheuristic. If the neighborhood structure is not adequate to the problem,
+any S-metaheuristic will fail to solve the problem. The neighborhood function $N$ is a mapping $ N : S \rightarrow N\textsuperscript{2} $ that assigns to each solution s of \textit{S} a set of solutions \textit{N(s)}$\subset$ S \cite{Talbi2013}.
 
-The neighborhood definition depends  representation associated with the problem. For permutation-based representations, a usual neighborhood is based on the swap operator that consists in swapping the location of two elements $s_i$ and $s_j$ of the permutation \cite{Talbi2013}. The Fig. \ref{fig:sperneighborhood} presents an example where a set of neighbors is found by permutation.
+The neighborhood definition depends on the representation associated with the problem. For permutation-based representations, a usual neighborhood is based on the swap operator that consists in swapping the location of two elements $e_i$ and $e_j$ of the permutation \cite{Talbi2013}. The Fig. \ref{fig:sperneighborhood} presents an example where a set of neighbors is found by permutation.
 
 
 \begin{figure}[h]
@@ -285,13 +285,14 @@ The neighborhood definition depends  representation associated with the problem.
 
 
 
-Single-Solution Based Metaheuristics methods are characterized by a trajectory in the search space. Two common S-metaheuristics methods are Simulated Annealing and Tabu Search.
+Single-Solution Based Metaheuristics are characterized by a trajectory in the search space. Two common S-metaheuristics are Simulated Annealing and Tabu Search.
 
 \subsubsection{Simulated Annealing}
 
+Simulated annealing emerges from the work of S. Kirkpatrick et al. and V. Cerny. SA is based on the principles of statistical mechanics whereby the annealing process requires heating and then slowly cooling a substance to obtain a strong crys- talline structure. The strength of the structure depends on the rate of cooling metals. If the initial temperature is not sufficiently high or a fast cooling is applied, imperfections are obtained. In this case, the cooling solid will not attain thermal equilibrium at each temperature. Strong crystals are grown from careful and slow cooling. The SA algorithm simulates the energy changes in a system subjected to a cooling process until it converges to an equilibrium state \cite{kirkpatrick1983optimization} \cite{Talbi2013}. 
 
 Simulated annealing (SA)  was one of the first algorithms that had an explicit strategy to escape from local minima. The idea of SA is inspired by the annealing process of metal and glass, which assume a low energy configuration when first heated up and then cooled down sufficiently slowly \cite{Talbi2012}. SA The
-The algorithmic framework of SA is described in Alg. \ref{sa}.  The algorithm starts by generating an initial solution in function \textit{GenerateInitialSolution()}. The initial temperature value is determined in function \textit{SetInitialTemperature()} such that the probability for an uphill move is quite high at the start of the algorithm. At each iteration a solution $\mbox{s}_1$ is randomly chosen in function \textit{PickNeighborAtRandom(N(s))}. If \textit{$\mbox{s}_1$} is better than \textit{s}, then \textit{$\mbox{s}_1$} is accepted as a new current solution. Else, if the move from \textit{s} to \textit{$\mbox{s}_1$} is an uphill move, \textit{$\mbox{s}_1$}  is accepted with a probability which is a function of a temperature parameter \textit{Tk} and \textit{s} \cite{raidl2010metaheuristic}.
+The algorithmic framework of SA is described in Alg. \ref{sa}.  The algorithm starts by generating an initial solution in function \textit{GenerateInitialSolution()}. The initial temperature value is determined in function \textit{SetInitialTemperature()}, such that the probability for an uphill move is quite high at the beginning of the algorithm. At each iteration a solution $\mbox{s}_1$ is randomly chosen in function \textit{PickNeighborAtRandom(N(s))}. If \textit{$\mbox{s}_1$} is better than \textit{s}, then \textit{$\mbox{s}_1$} is accepted as a new current solution. Else, if the move from \textit{s} to \textit{$\mbox{s}_1$} is an uphill move, \textit{$\mbox{s}_1$}  is accepted with a probability which is a function of a temperature parameter \textit{Tk} and \textit{s} \cite{raidl2010metaheuristic}.
 
 \begin{algorithm}[t]
   \caption{Simulated Annealing Algorithm}\label{sa}
@@ -315,13 +316,12 @@ The algorithmic framework of SA is described in Alg. \ref{sa}.  The algorithm st
 
 \subsubsection{Tabu Search}
 
-Tabu Search uses a tabu list to keep track of the last  moves, and don’t allow going back to these \cite{Glover1986}. The algorithmic framework of Tabu Search is described in Alg. \ref{tsa}.  The algorithm starts by generating an initial solution in function \textit{GenerateInitialSolution()} and the tabu lists are initialized as empty lists in function \textit{InitializeTabuLists($\mbox{TL}_1$,...,$\mbox{TL}_r$)}. For performing a move, the algorithm first determines those solutions from the neighborhood \textit{N(s)} of the current solution \textit{s} that contain solution features currently to be found in the tabu lists. They are excluded from the neighborhood, resulting in a restricted set of neighbors \textit{$\mbox{N}_a(s)$}. At each iteration, the best solution \textit{$\mbox{s}_1$} from \textit{$\mbox{N}_a(s)$} is chosen as the new current solution. Furthermore, in procedure \textit{UpdateTabuLists($\mbox{TL}_1$,...,$\mbox{TL}_r$,s,$\mbox{s}_1$)} the corresponding features of this solution are added to the tabu lists.
+Tabu Search uses a tabu list to keep track of the last  moves, and to avoid going back to these \cite{Glover1986}. The algorithmic framework of Tabu Search is described in Alg. \ref{tsa}.  The algorithm starts by generating an initial solution in function \textit{GenerateInitialSolution()} and the tabu lists are initialized as empty lists in function \textit{InitializeTabuLists($\mbox{TL}_1$,...,$\mbox{TL}_r$)}. For performing a move, the algorithm first determines those solutions from the neighborhood \textit{N(s)} of the current solution \textit{s} that contain solution features currently to be found in the tabu lists. They are excluded from the neighborhood, resulting in a restricted set of neighbors \textit{$\mbox{N}_a(s)$}. At each iteration, the best solution \textit{$\mbox{s}_1$} from \textit{$\mbox{N}_a(s)$} is chosen as the new current solution. Furthermore, in procedure \textit{UpdateTabuLists($\mbox{TL}_1$,...,$\mbox{TL}_r$,s,$\mbox{s}_1$)} the corresponding features of this solution are added to the tabu lists.
 
 
 \begin{algorithm}[t]
   \caption{Tabu Search Algorithm}\label{tsa}
-  \begin{algorithmic}[2]
-
+  \begin{algorithmic}[1]
     \State $s\gets GenerateInitialSolution()$
     \State InitializeTabuLists($\mbox{TL}_1$,...,$\mbox{TL}_r$)
     \While{termination conditions not met }
@@ -338,7 +338,7 @@ Tabu Search uses a tabu list to keep track of the last  moves, and don’t allow
 
 Population-based metaheuristics (P-metaheuristics) could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this population is integrated into the current one using  selection procedures. The search process is stopped when a stopping criterion is satisfied. Algorithms such as Genetic algorithms (GA), scatter search (SS), estimation of distribution algorithms (EDAs), particle swarm optimization (PSO), bee colony (BC), and artificial immune systems (AISs) belong to this class of metaheuristics \cite{talbi2009metaheuristics}.
 
-Population-based metaheuristics are comprised of several components \cite{hong2000simultaneously} \cite{shousha2003performance} :
+This thesis uses genetic algorithms in the proposed approaches. Genetic algorithms are comprised of several components \cite{hong2000simultaneously} \cite{shousha2003performance} :
 
 \begin{itemize}
 \item a representation of the solution, referred as the chromosome;
@@ -353,7 +353,7 @@ The crossover operation or recombination recombines two or more individuals to p
   \caption{Genetic Algorithm}\label{gna}
   \begin{algorithmic}[1]
 
-    \State $s\gets GenerateInitialSolution()$
+    \State $s\gets GenerateInitialPopulation()$
     \State Evaluate(P)
     \While{termination conditions not met }
     \State $\mbox{P}_1\gets$ $Recombine(P)$
@@ -395,6 +395,15 @@ Many real optimization problems require optimizing multiple conflicting objectiv
 \label{fig:pareto1}
 \end{figure}
 
+Fig \ref{fig:pareto2} presents a well-converged and well-diversified examples. The Pareto front is well-converged when  there is a small difference between the points found and the supposed Pareto frontier. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./images/paretofrontier3.png}
+\caption{Well-converged and well-diversified pareto frontier}
+\label{fig:pareto2}
+\end{figure}
+
 What distinguishes multi-objective evolutionary algorithms from single objective metaheuristics is how they rank and select individuals in the population. If there is only one objective, individuals are naturally ranked according to this objective, and it is clear which individuals are best and should be selected as
 parents. In the case of multiple objectives, it is still necessary to rank the individuals, but it is no longer obvious how doing this. Most people probably agree that a good approximation to the Pareto front is characterized by:
 
@@ -410,18 +419,18 @@ The approximation of the Pareto-optimal set involves itself two objectives: mini
 
 In  Environmental selection, an archive is maintained which contains a representation of the nondominated front among all solutions considered so far. A member of the archive is only removed if i) a solution has been found that dominates it or ii) the maximum archive size is exceeded and the portion of the front where the archive member is located is overcrowded \cite{Zitzler2001}.
 
-In Mating selection, the pool of individuals is evaluated in two phases. First, all individuals are compared on the basis of the Pareto dominance. Basically, the information which individuals each individual dominates, is dominated by or is indifferent to is used to define a ranking on the generation pool. Afterwards, this ranking is refined by the incorporation of density information. Various density estimation techniques are used to measure the size of the niche in which a specific individual is located \cite{Zitzler2001}.
+In Mating selection, the pool of individuals is evaluated in two phases. First, all individuals are compared on the basis of the Pareto dominance. Basically, the information of individuals each individual dominates, is dominated by or is indifferent to is used to define a ranking on the generation pool. Afterwards, this ranking is refined by the incorporation of density information. Various density estimation techniques are used to measure the size of the niche in which a specific individual is located \cite{Zitzler2001}.
 
 
 \subsubsection{NSGA-II: Nondominated Sorting Genetic Algorithm II}
 
 Multi-objective metaheuristics rank individuals according to the defined goals. Deb et al. proposed the Nondominated Sorting Genetic Algorithm II (NSGA-II) algorithm taking into account the need to reduce computational complexity in non-dominated classification while introducing elitism and eliminating subjectivity in the allocation of the sharing parameter \cite{Deb2000}. NSGA-II is a multi-objective algorithm, based on GAs, and implements the concept of dominance, in other words, to classify the total population in fronts according to the degree of dominance. According to NSGA-II, the individuals that are located on the first front are considered the best solutions of that generation, while in the last front are the worst. Using this concept, one can find more consistent results, located closer to the Pareto region, and better adapted to the type of problem.
 
-The NSGA algorithm II applies a fitness evaluation in an initial population (Figure \ref{fig:nsga2}- \ding{202} and \ding{203}). The populations are ranked using multiple tournament selections, which consist of comparing two solutions (Figure \ref{fig:nsga2}- \ding{204}). In order to estimate the density of the solutions surrounding a particular solution in the population, the common distance between the previous solution and the posterior is calculated for each of the objectives. This distance serves as an estimate of the size of the largest cuboid that includes solution i without including any other solution of the population. A solution i beats another solution if:
+The NSGA algorithm II applies a fitness evaluation in an initial population (Figure \ref{fig:nsga2}- \ding{202} and \ding{203}). The populations are ranked using multiple tournament selections, which consist of comparing two solutions (Figure \ref{fig:nsga2}- \ding{204}). In order to estimate the density of the solutions surrounding a particular solution in the population, the common distance between the previous solution and the posterior is calculated for each of the objectives. This distance serves as an estimate of the size of the largest cuboid that includes solution \textit{i} without including any other solution of the population. A solution \textit{i} beats another solution if:
 
 \begin{itemize}
-\item Solution i has a better rank, then $Rank_i$ <$Rank_j$.
-\item Both solutions have the same rank, but i has a greater Distance than j, then $Rank_i$ = $Rank_j$ and $Distance_i$>$Distance_j$.
+\item Solution \textit{i} has a better rank, then $Rank_i$ <$Rank_j$.
+\item Both solutions have the same rank, but \textit{i} has a greater Distance than \textit{j}, then $Rank_i$ = $Rank_j$ and $Distance_i$>$Distance_j$.
 \end{itemize}
 
 At the end of each analysis a certain group of individuals is classified as belonging to a specific category called the front, and upon completion of the classification process, all individuals will be inserted into one of the n fronts. Front 1 is made up of all nondominated solutions. Front 2 can be achieved by considering all nondominated solutions excluding solutions from front 1. For the determination of front 3, solutions previously classified on front 1 and 2 are excluded, and so on until all individuals have been classified on some front.
@@ -442,7 +451,7 @@ However, not all fronts can be included in the new population. Thus, Deb et al. 
 
 \subsubsection{SPEA2: Strength Pareto Evolutionary Algorithm}
 
-SPEA uses a regular population and an archive. Starting with an initial population and an empty archive the following steps are performed per iteration. First, all non-dominated population members are copied to the archive; any dominated individuals or duplicates are removed. If the size of the updated archive exceeds a predefined limit, further archive members are deleted by a clustering technique which preserves the characteristics of the non-dominated front. Afterwards, fitness values are assigned to both archive and population members. Each individual i in the archive assign a strength value S(i) $\in$ [0, 1], which at the same time represents its fitness value F(i). 0 indicates a non-dominated individual,whereas a high value points out that the individual is dominated by many other ones. S(i) is the number of population members j that are dominated by or equal to i with respect to the objective values, divided by the population size plus one. The algorithmic framework of SPEA2 is described in Alg. \ref{spea2}. An initial population $P_{0}$ and an initial archive are created. The fitness value of all individuals is calculated in population and in the archive (external set). All non-dominated individual are copied to the new archive. Finally, the algorithm select the individual using a tournament selection \cite{Zitzler2001} \cite{Tervonen2017} \cite{MatneiFilho2016}.
+SPEA uses a regular population and an archive. Starting with an initial population and an empty archive the following steps are performed per iteration. First, all non-dominated population members are copied to the archive; any dominated individuals or duplicates are removed. If the size of the updated archive exceeds a predefined limit, further archive members are deleted by a clustering technique which preserves the characteristics of the non-dominated front. Afterwards, fitness values are assigned to both archive and population members. Each individual \textit{i} in the archive assign a strength value \textit{S(i)} $\in$ [0, 1], which at the same time represents its fitness value \textit{F(i)}. 0 indicates a non-dominated individual,whereas a high value points out that the individual is dominated by many other ones. \textit{S(i)} is the number of population members \textit{j} that are dominated by or equal to \textit{i} with respect to the objective values, divided by the population size plus one. The algorithmic framework of SPEA2 is described in Alg. \ref{spea2}. An initial population $P_{0}$ and an initial archive are created. The fitness value of all individuals is calculated in population and in the archive (external set). All non-dominated individual are copied to the new archive. Finally, the algorithm selects the individual using a tournament selection \cite{Zitzler2001} \cite{Tervonen2017} \cite{MatneiFilho2016}.
 
 \begin{algorithm}[h]
   \caption{SPEA2 Algorithm \cite{Zitzler2001}}\label{spea2}
@@ -470,7 +479,7 @@ SPEA uses a regular population and an archive. Starting with an initial populati
   \end{algorithmic}
 \end{algorithm}
 
-The main differences between SPEA2 and NSGA-II are the diversity assignment and replacement. NSGA-II uses a fast non-dominated sorting algorithm and uses Pareto optimal levels as the primary criterion to select solutions. SPEA2 derives the strength of each solution from the number of other solutions it dominates. NSGA-II uses the crowding-distance to maintain a well-spread set of solutions whereas SPEA2 applies the k-nearest neighbor approach (Figure \ref{fig:speansga}) \cite{Tervonen2017} \cite{Deb2005}.
+The main differences between SPEA2 and NSGA-II are the diversity assignment and replacement. NSGA-II uses a fast non-dominated sorting algorithm and uses Pareto optimal levels as the primary criterion to select solutions. SPEA2 derives the strength of each solution from the number of other solutions it dominates. NSGA-II uses the crowding-distance to maintain a well-spread set of solutions whereas SPEA2 applies the \textit{k}-nearest neighbor approach (Figure \ref{fig:speansga}) \cite{Tervonen2017} \cite{Deb2005}.
 
 
 \begin{figure}[h]
@@ -493,7 +502,7 @@ The main differences between SPEA2 and NSGA-II are the diversity assignment and 
 
 Pareto Archived Evolution Strategy (PAES) is an  evolutionary algorithm which employs
 local search for the generation of new candidate solutions but
-utilises population information in its selection procedure. The PAES algorithm was developed with two main objectives. The first of these was that the algorithm should be strictly confined to local search i.e. it should use a small change (mutation) operator only, and move from a current solution to a nearby neighbour. The second objective was that the algorithm should be a true Pareto optimiser, treating all non-dominated solutions as having equal value \cite{Knowles1999}. In PAES one parent generates by mutation one
+utilises population information in its selection procedure. The PAES algorithm was developed with two main objectives. The first of these was that the algorithm should be strictly confined to local search, i.e., it should use a small change (mutation) operator only, and move from a current solution to a nearby neighbour. The second objective was that the algorithm should be a true Pareto optimiser, treating all non-dominated solutions as having equal value \cite{Knowles1999}. In PAES one parent generates by mutation one
 offspring. The offspring is compared with the parent. If the offspring dominates the parent, the offspring is accepted as
 the next parent and the iteration continues. If the parent dominates the offspring, the offspring is discarded and the new mutated solution (a new offspring) is generated. If the offspring and the parent do not dominate each other, a comparison set of previously non-dominated individuals is used \cite{Knowles1999}\cite{Oltean2005}. The algorithmic framework of PAES is described in Alg. \ref{paes}.
 
@@ -528,7 +537,7 @@ algorithm II (NSGA-II) \cite{Zhang2007}.
 NSGA-II, SPEA2 and PAES algorithms  do not associate each individual solution with
 any particular scalar optimization problem. In a scalar objective optimization problem, all the solutions can be compared based
 on their objective function values and the task of a scalar objective evolutionary algorithm (EA) is often to find one single
-optimal solution. MOEA/D explicitly decomposes the problem into scalar optimization subproblems.It solves these subproblems simultaneously by evolving
+optimal solution. MOEA/D explicitly decomposes the problem into scalar optimization subproblems. It solves these subproblems simultaneously by evolving
 a population of solutions. At each generation, the population is
 composed of the best solution found so far for each subproblem. The neighborhood relations among these subproblems are defined based on the distances between their aggregation coefficient vectors \cite{Zhang2007} \cite{McConaghy2011}. Fig. \ref{fig:moead} MOEA/D create a set of subproblems $W_{i}$. Each subproblem $W_{i}$ is improved to obtain the Pareto frontier \cite{McConaghy2011}. 
 
@@ -574,14 +583,14 @@ use of Tchebycheff approach as the decomposition method, with dynamical resource
 
 \subsubsection{Comparing Multi-Objective Metaheuristics}
 
-Deb states that are two orthogonal goals for any multi-objective algorithm \cite{deb2001multi}:
+Deb states that there are two orthogonal goals for any multi-objective algorithm \cite{deb2001multi}:
 
 \begin{itemize}
 \item Identify solutions as close as possible  to the true Pareto frontier;
-\item identify a diverse of sets of solutions distributed across the entire Pareto-optimal surface.
+\item Identify a diverse of sets of solutions distributed across the entire Pareto-optimal surface.
 \end{itemize}
 
-There are several metrics either closeness or diversity. Example of metrics which measure the closeness of Pareto frontier is Error ratio and Set coverage. Example of metrics which measure the diversity are the Spacing and the Spread. The Hypervolume metric measure both closeness and diversity \cite{janssens2010multiple}. The Hypervolume metric calculates the volume in an objective space covered by the non-dominated individuals. The hypervolume was originally proposed by Zitzler and Thiele \cite{Zitzler1999}. It is especially useful when the true Pareto-optimal solution is unknown. For each solution, a hypercube is computed from a reference point and the solution as the diagonal corners of the hypercube ( Figure \ref{fig:hypervolume} ) \cite{janssens2010multiple}. The reference point is found by constructing a vector of worst objects fitness value.
+Examples of metrics which measure the closeness of Pareto frontier is Error ratio and Set coverage. Examples of metrics which measure the diversity are the Spacing and the Spread. The Hypervolume metric measures both closeness and diversity \cite{janssens2010multiple}. The Hypervolume metric calculates the volume in an objective space covered by the non-dominated individuals. The hypervolume was originally proposed by Zitzler and Thiele \cite{Zitzler1999}. It is especially useful when the true Pareto-optimal solution is unknown. For each solution, a hypercube is computed from a reference point and the solution as the diagonal corners of the hypercube ( Figure \ref{fig:hypervolume} ) \cite{janssens2010multiple}. The reference point is found by constructing a vector of worst objects fitness value.
 
 
 %The equation of the hypervolume is:
@@ -595,7 +604,7 @@ There are several metrics either closeness or diversity. Example of metrics whic
 
 \section{Reinforcement Learning}
 
-Reinforcement learning (RL) refers to both a learning problem and a sub-field of machine learning. As a learning problem, it refers to learning to control a system so as to maximize some numerical value which represents a long-term objective. The basic idea of Reinforcement Learning is simply to capture the most important aspects of the real problem, facing a learning agent interacting with its environment to achieve a goal \cite{Sutton2012}. Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner needs to discover which actions yield the most reward by trying them \cite{Sutton2012}. A typical setting where Reinforcement Learning operates is shown in Figure \ref{fig:agentenv}: A controller receives the controlled system’s state and a reward associated with the last state transition. It then calculates an action which is sent back to the system.
+Reinforcement Learning (RL) refers to both a learning problem and a sub-field of machine learning. As a learning problem, it refers to learning to control a system so as to maximize some numerical value which represents a long-term objective. The basic idea of reinforcement learning is simply to capture the most important aspects of the real problem, facing a learning agent interacting with its environment to achieve a goal \cite{Sutton2012}. Reinforcement Learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner needs to discover which actions yield the most reward by trying them \cite{Sutton2012}. A typical setting where reinforcement learning operates is shown in Figure \ref{fig:agentenv}: A controller receives the controlled system’s state and a reward associated with the last state transition. It then calculates an action which is sent back to the system.
 
 \begin{figure}
 \centering
@@ -614,7 +623,7 @@ agent must prefer actions that it has tried in the past and found to be effectiv
 \end{equation}
 
 
-In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{n=0}^{\infty} \gamma\textsuperscript{n}  r_{t}+n $, where $\pi$  is the discounted cumulative reward, $\gamma$ is the discount rate ($01$) and $r_{t}$ is the reward received after  the execution of an action at time t. Figure \ref{fig:qalgo} shows the summary version of Q-Learning algorithm. The first step is to generate the initial state of the MDP. The second step is to choose the best action or a random action based on the reward, hence the actions with best rewards are chosen.
+In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{n=0}^{\infty} \gamma\textsuperscript{n}  r_{t}+n $, where $\pi$  is the discounted cumulative reward, $\gamma$ is the discount rate and $r_{t}$ is the reward received after  the execution of an action at time t. Figure \ref{fig:qalgo} shows the summary version of Q-Learning algorithm. The first step is to generate the initial state of the MDP. The second step is to choose the best action or a random action based on the reward, hence the actions with best rewards are chosen.
 
 \begin{figure}[h]
 \centering
@@ -625,7 +634,7 @@ In Q-Learning, the system's objective is to learn a control policy $\pi = \sum_{
 
 \section{Summary}
 
-Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Algorithms working on single solutions are called trajectory methods. They all share the property of describing a trajectory in the search space during the search process. Population-based metaheuristics perform search processes which describe the evolution of a set of points in the search space. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. Population-based metaheuristics could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards. The next chapter presents the state-of-art of search-based stress testing.
+Metaheuristics are strategies that guide the search process to efficiently explore the search space in order to find optimal solutions. There are different ways to classify and describe metaheuristic algorithm. Trajectory methods are characterized by a trajectory in the search space. Two common trajectory methods are Simulated Annealing and Tabu Search. Population-based metaheuristics could be viewed as an iterative improvement in a population of solutions. First, the population is initialized. Then, a new population of solutions is generated. Finally, this new population is integrated into the current one using some selection procedures. The combination of one metaheuristic with components from other metaheuristics is called a hybrid metaheuristic. One of the most popular ways of metaheuristic hybridization consists in the use of trajectory methods inside population-based methods. Multi-objective optimization methods have as main purposes to minimize the distance between the non-dominated front and the Pareto optimal front and find a set of solutions that are as diverse as possible. Reinforcement learning is the problem of getting an agent to act in the unknown world so as to maximize its rewards. The next chapter presents the state-of-art of search-based stress testing.
 
 \chapter{Search-based Stress Testing}
 
@@ -670,7 +679,7 @@ Search-based software engineering (SBSE) is the application of optimization tech
 Search-based Software Testing (SBST) is the subarea of Search Based Software Engineering concerned with software testing. Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space are evaluated with respect to the fitness function using a metaheuristic search technique \cite{Afzal2009a} \cite{Aleti2016} \cite{Harman2015}. A variety of metaheuristic search techniques is found to be applicable for non-functional testing including simulated annealing, tabu search and genetic algorithms.
 
 In the academic context, a number of studies proving the efficacy of metaheuristics to automate test execution can be found in the literature. Figure \ref{fig:sbsesbst}  shows the growth in papers published on SBST and SBSE. The data is taken from the SBSE repository (\url{http://crestweb.cs.ucl.ac.uk/resources/sbse_repository/}) and Afzal et al. \cite{Afzal2009a} \cite{Harman2015}.
-The aim of the SBSE repository is to contain every SBSE paper. Although no repository can guarantee 100\% precision and recall, the SBSE repository has proved sufficiently usable that it has formed the basis of several other detailed analyses of the literature \cite{Harman2015}.
+The aim of the SBSE repository is to contain every SBSE paper. Although no repository can guarantee 100\% precision and recall, the SBSE repository has proved to be sufficiently usable that it has formed the basis of several other detailed analyses of the literature \cite{Harman2015}.
 
 
 \begin{figure}[h]
@@ -715,7 +724,7 @@ the art, due to the lack of availability of the tools used. The present research
 \end{figure}
 
 
-\section{Search-based Stress testing}
+\section{Search-Based Stress testing}
 
 The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space \cite{Sullivan}.  The application of SBST algorithms to stress tests involves finding the best- and worst-case execution times (B/WCET) to determine whether timing constraints are fulfilled \cite{Afzal2009a}.
 
@@ -763,7 +772,7 @@ flexibility. For this reason, software components of these systems are usually s
 
 Usually, embedded computer systems have to fulfill real-time requirements. A faultless function of the systems does not depend only on their logical correctness but also on their temporal correctness. Dynamic aspects like the duration of computations, the memory actually needed during program execution, and other synchronization of parallel processes are of major importance for the correct function of real-time systems  \cite{J.WegenerK.GrimmM.GrochtmannH.Sthamer1996} .
 
-The concurrent nature of embedded software makes  the order of external events triggering the system tasks are often unpredictable. Such increasing software complexity
+The concurrent nature of embedded software often makes unpredictable the order of external events triggering the system tasks are often unpredictable. Such increasing software complexity
 renders performance analysis and testing increasingly
 challenging. This aspect is reflected by the fact that most existing testing approaches target system functionality rather than performance \cite{DiAlesio2013}. Reactive real-time systems must react to external events within time constraints. Triggered tasks must execute within deadlines. Shousha develops a methodology for the derivation of test cases that aims at maximizing the chance of critical deadline misses \cite{shousha2003performance}.
 
@@ -795,7 +804,7 @@ In the second experiment, the whole process of stress and performance tests, whi
 
 Gois et al. verify the use of a multi-objective algorithm in search-based stress testing. The NSGA-II algorithm was implemented in the IAdapter tool using the jMetal framework. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users.  The experiment found 9 optimal workloads that present a lower number of users with high response times \cite{Gois2017}.
 
-\section{Similar approaches}
+\section{Similar Approaches}
 
 This research and Alesio's approach \cite{Alesio2015} use a hybrid approach with a functional tool in different contexts. Table \ref{tab:alesiogois} presents the main differences between Alesio's and this thesis's approaches. Whereas the present research uses an approach based on usage scenarios performing tests on an application installed in an available environment, Alesio uses sequence diagrams  to select for the arrival time of tasks in systems from  safety-critical domains. 
 
@@ -819,9 +828,9 @@ Woehrle and this thesis use multi-objective algorithms to stress testing in diff
 
 \section{Summary}
 
-The stress testing verifies the system behavior against heavy workloads, which are executed to evaluate a system beyond its limits, validate system response in activity peaks, and verify whether the system is able to recover from these conditions. Search-based software engineering (SBSE) is the application of optimization techniques in solving software engineering problems. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions.  Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space is evaluated with respect to the fitness function using a metaheuristic search technique.
+The stress testing verifies the system behavior against heavy workloads, which are executed to evaluate a system beyond its limits, validate system response in activity peaks, and verify whether the system is able to recover from these conditions. The applicability of optimization techniques in solving software engineering problems is suitable as these problems frequently encounter competing constraints and require near optimal solutions.  Search-based software testing is the application of metaheuristic search techniques to generate software tests. The test adequacy criterion is transformed into a fitness function and a set of solutions in the search space is evaluated with respect to the fitness function using a metaheuristic search technique.
 
-SBST has made many achievements and demonstrated its wide applicability and increasing uptake. Nevertheless, there are pressing open problems and challenges that need more attention like to extend SBST to test non-functional properties. A variety of metaheuristic search techniques is found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes. The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space.  The application of SBST algorithms to  stress tests involves finding the best- and worst-case execution times (B/WCET) to determine whether timing constraints are fulfilled. There are two measurement units normally associated with the fitness function in a stress test: processor cycles and execution time. The processor cycle approach describes a fitness function in terms of processor cycles. The execution time approach involves executing the application under test and measuring the execution time. Processor cycles measurement is deterministic in the sense that it is independent of system load and results in the same execution times for the same set of input parameters.
+A variety of metaheuristic search techniques is found to be applicable for non-functional testing including simulated annealing, tabu search, genetic algorithms, ant colony methods, grammatical evolution, genetic programming and swarm intelligence methods. However, most research studies are limited to making prototypes. The search for the longest execution time is regarded as a discontinuous, nonlinear, optimization problem, with the input domain of the system under test as a search space. There are two measurement units normally associated with the fitness function in a stress test: processor cycles and execution time. The processor cycle approach describes a fitness function in terms of processor cycles. The execution time approach involves executing the application under test and measuring the execution time. Processor cycles measurement is deterministic in the sense that it is independent of system load and results in the same execution times for the same set of input parameters.
 
 The studies can be divided into two main groups: Search-Based Stress Testing on Safety-critical systems or Search-Based Stress Testing on non Safety-critical systems. Domains such as avionics feature safety-critical systems, whose failure could lead to catastrophic consequences.  The importance of software in such systems is permanently increasing due to the need of a higher system
 flexibility. For this reason, software components of these systems are usually subject to safety certification. 
@@ -836,7 +845,7 @@ This chapter presents a study of the use a hybrid algorithm in search-based stre
 In the first approach, the algorithms do not share their best individuals among themselves. Each algorithm evolves in a separate way (Fig. \ref{fig:firstaproach}). The second approach uses the algorithms in a collaborative mode (hybrid metaheuristic). In this approach, the three algorithms share their best individuals found (Fig. \ref{fig:secondapproach}). 
 
 
-The chapter also presents three experiments. The purpose of the first and second experiments is to validate the use of the representation, the crossover and neighborhood operators and the IAdapter tool. The first experiment aimed to perform performance, load, and stress testing on a simulated component.The second experiment was performed with a Moodle application. The third experiment carried out to verify the best case scenarios found by the hybrid metaheuristic approach with well-known anti-patterns. The anti-patterns will be presented in more detail in appendix A. The next subsections present details about the used metaheuristic algorithms (Representation, initial population and the fitness function).
+The chapter also presents three experiments. The purpose of the first and second experiments is to validate the use of the representation, the crossover and neighborhood operators and the IAdapter tool. The first experiment aimed to perform performance, load, and stress testing on a simulated component. The second experiment was performed with a Moodle application. The third experiment was carried out to verify the best case scenarios found by the hybrid metaheuristic approach with well-known anti-patterns. The anti-patterns will be presented in more detail in appendix A. The next subsections present details about the used metaheuristic algorithms (representation, initial population and the fitness function).
 
 
 
@@ -860,7 +869,7 @@ The chapter also presents three experiments. The purpose of the first and second
 
 The solution representation provides a common representation for all workloads. Figure. \ref{fig:solution-representation} presents the solution representation. Each workload is composed by a linear vector with 21 positions (Figure \ref{fig:solution-representation}  -\ding{202}). The first position represents a metadata with the name of an individual. The next positions represent 10 scenarios and their numbers of users (Figure \ref{fig:solution}  -\ding{203}). The fixed-length genome approach was chosen in reason of the ease of implementation in the JMeter tool. Each scenario is an atomic operation: the scenario must log into the application, run the task goal, and undo any changes performed, returning the application to its original state.
 
-Figure. \ref{fig:solution} presents the the crossover operator. In the example, solution 1 (Figure \ref{fig:solution}  -\ding{202}) has the Login scenario with 2 users, the Search scenario with 4 users, Include scenario with 1 user and the Delete scenario with 2 users.  After the crossover operation with solution 2 (Figure \ref{fig:solution}  -\ding{203}), We obtain a solution with the Login scenario with 2 users, the Search scenario with 4 users, the Update scenario with 3 users and the Include scenario with 5 users (Figure \ref{fig:solution}  -\ding{204}). Figure. \ref{fig:solution-mutant} -\ding{202} shows the strategy used by the proposed solution to  obtain the neighbors for the Tabu search and simulated annealing algorithms. The neighbors are obtained by the modification of a single position (scenario or number of users)(Figure. \ref{fig:solution-mutant} -\ding{203} and \ding{204}) in the vector.
+Figure. \ref{fig:solution} presents the crossover operator. In the example, solution 1 (Figure \ref{fig:solution}  -\ding{202}) has the Login scenario with 2 users, the Search scenario with 4 users, the Include scenario with 1 user, and the Delete scenario with 2 users.  After the crossover operation with solution 2 (Figure \ref{fig:solution}  -\ding{203}), we obtain a solution with the Login scenario with 2 users, the Search scenario with 4 users, the Update scenario with 3 users and the Include scenario with 5 users (Figure \ref{fig:solution}  -\ding{204}). Figure. \ref{fig:solution-mutant} -\ding{202} shows the strategy used by the proposed solution to  obtain the neighbors for the Tabu search and simulated annealing algorithms. The neighbors are obtained by the modification of a single position (scenario or number of users)(Figure. \ref{fig:solution-mutant} -\ding{203} and \ding{204}) in the vector.
 
 \begin{figure}[h]
 \centering
@@ -895,7 +904,7 @@ The strategy used by the plugin to instantiate the initial population is to gene
 
 The percentages relate to the distribution of the users in the initial test scenarios of the solution. For example, in a hypothetical test with 100 users, the solution will create initial test scenarios with 30, 60 and 90 users.
 
-\section{Objective (fitness) Function}
+\section{Objective (Fitness) Function}
 
 The proposed solution was designed to be used with independent testing teams in various situations, in which the teams have no direct access to the environment, where the application under test was installed. Therefore, the IAdapter plugin uses a measurement approach as the definition of the fitness function. The fitness function applied to the IAdapter solution is governed by the following equation:
 
@@ -910,7 +919,7 @@ fit=numberOfUsersWeight*numberOfUsers\\
 \end{aligned}
 \end{equation}
 
-The users and response time factors were chosen because they are common units of measurement in load test tools \cite{Sandler2004}. The proposed solution's fitness function uses a series of manually adjustable user-defined weights (90percentileweight, 80percentileweight,  70percentileweight, maxResponseWeight, and numberOfUsersWeight). These weights make it possible to customize the search plugin's functionality. A penalty is applied when the response time of an application under test runs longer than the service level. The penalty is calculated by the following equation:
+The users and response time factors were chosen because they are common units of measurement in load test tools \cite{Sandler2004}. The proposed solution's fitness function uses a series of manually adjustable user-defined weights (90percentileweight, 80percentileweight,  70percentileweight, maxResponseWeight, and numberOfUsersWeight). Percentiles are very helpful when comes to calculating the response times in a stress tests. Would be better to check the 90th(95th) percentiles values, rather than mean. Typically, we’re only interested in the poor performers, so we pick a few top percentiles, like the 70th, 80th and 90th. These weights make it possible to customize the search plugin's functionality. A penalty is applied when the response time of an application under test runs longer than the service level. The penalty is calculated by the following equation:
 
 \begin{equation}
 \begin{aligned}
@@ -988,7 +997,7 @@ public class SimulateConcurrentAccess {
 
 
 Fig.\ref{fig:exp1bestresults} presents the best results in 27 generations applied in the first experiment. The figure shows the results obtained with the algorithms with and without collaboration. The $x$ axis  represents the generation number, and the $y$ axis represents the best fitness value obtained until the current generation.
-A higher value in the figure means that the scenario has a greater response time by the application under test. The results of the experiment showed that the use of cooperation between the three algorithms resulted in finding the individuals with better fitness values.
+A higher value in the figure means that the scenario has a greater response time of the application under test. The results of the experiment showed that the use of cooperation between the three algorithms resulted in finding the individuals with better fitness values.
 
 \begin{figure}[h]
 \centering
@@ -1036,7 +1045,7 @@ GEN & HM & TS  & GA    & SA    \\ \hline
 \end{tabular}
 \end{table}
 
-The signed-rank Wilcoxon non-parametrical procedure was used for comparing the results with Z-value and W-value. The significant level adopted was 0.05. The Z-value obtained was -2.2736 and the p-value was 0.0232. The W-value obtained was 78. The critical value of W for N = 25 at p<= 0.05 was 89.The result was significant at p<= 0.05. The procedure showed that there was a significant improvement in the results with the collaborative approach.
+The signed-rank Wilcoxon non-parametrical procedure was used for comparing the results with Z-value and W-value. The significant level adopted was 0.05. The Z-value obtained was -2.2736 and the p-value was 0.0232. The W-value obtained was 78. The critical value of W for N = 25 at p<= 0.05 was 89. The result was significant at p<= 0.05. The procedure showed that there was a significant improvement in the results with the collaborative approach.
 
 \subsection{Second Experiment: Moodle Application Test}
 
@@ -1086,7 +1095,7 @@ The small number of samples of the experiment is insufficient to give a statisti
 \centering
 \caption{Six individuals with higher fitness value obtained in the second experiment}
 \label{tab:secondexperiment1}
-\begin{tabular}{|p{0.2cm}|l|l|l|p{0.60cm}|p{0.60cm}|p{0.60cm}|}
+\begin{tabular}{|p{0.2cm}|l|l|l|p{0.80cm}|p{0.80cm}|p{0.80cm}|}
 \hline
 Id&Fit&Scenario&Users&90per&80per&70per\\ \hline
 \multirow{2}{*}{1} & \multirow{2}{*}{35800} & MyHome        & 31              & \multirow{2}{*}{30} & \multirow{2}{*}{29} & \multirow{2}{*}{10} \\ \cline{3-4}
@@ -1148,9 +1157,9 @@ Id&Fit&Scenario&Users&90per&80per&70per\\ \hline
 %\label{fig:gened}
 %\end{figure}
 
-\subsection{Third Experiment: Best-case Scenarios and  Anti-patterns}
+\subsection{Third Experiment: Best-case Scenarios and  Antipatterns}
 
-In this subsection, We present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  Each step uses two different anti-patterns and happy scenarios. The antipatterns will be presented in the Appendix A. The first step uses The Ramp and Circuitous Treasure Hunt anti-patterns. The second step uses The Tower Babel and Unbalanced Processing anti-patterns. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
+In this subsection, we present the results of the experiment which we carried out to verify the best case scenarios found by the hybrid metaheuristic approach. We conducted the experiment in two steps in order to verify the effectiveness of the hybrid algorithm.  Each step uses two different anti-patterns and happy scenarios. The antipatterns will be presented in the Appendix A. The first step uses The Ramp and Circuitous Treasure Hunt anti-patterns. The second step uses The Tower Babel and Unbalanced Processing anti-patterns. The experiment ran for 17 generations. The experiment used an initial population of 4 individuals by metaheuristic. The genetic algorithm used the top 10 individuals from each generation in the crossover operation. The Tabu list was configured with the size of 10 individuals and expired every 2 generations.  The mutation operation was applied to 10\% of the population on each generation. The experiment uses tabu search, genetic algorithms and the hybrid metaheuristic approach proposed by Gois et al. \cite{Gois2016}. The objective function applied is intended to maximize the number of users and minimize the response time of the scenarios being tested (Best Case Scenarios).  In this experiment, better fitness values means to find scenarios with more users and lower values of a response time. A penalty is applied when the response time is greater than the  maximum response time expected. 
 
 \subsubsection{Experiment Research Questions}
 
@@ -1260,7 +1269,7 @@ This chapter presents a reinforcement learning approach to optimize the choice o
 The solution, named HybridQ, uses the GA, SA and Tabu Search algorithms in a collaborative approach. Just like most reinforcement learning problems the proposed solution works in two different phases: exploration and exploitation. The following subsections show details of the exploration and exploitation phases and the integration between metaheuristics and the Q-Learning algorithm.
 
 
-\section{Exploration phase}
+\section{Exploration Phase}
 
 The exploration phase uses a markov model, as shown in Fig. \ref{fig:mdphybridq}, the proposed MDP model  has three main states based on response time. A test may have a response time greater than 1.2 times the maximum response time allowed, between 0.8 and 1.2 times the maximum response time allowed or less than 0.8 times the maximum response time allowed. The values of 1.2 and 0.8 were chosen from the assumption of a tolerance margin of 20\% for the application under test. This margin may be higher or lower depending on the business requirements of the application.
 
@@ -1279,7 +1288,7 @@ The algorithm maintains three different tables ( Table \ref{pab:mdp}), one for e
   \caption{Exploration phase table selection }\label{hybridqexploration}
   \begin{algorithmic}[1]    
     \If {responseTime < 0.8 * maxResponseTime }
-    \State return qTableBellowServiceLevel       
+    \State return qTableBelowServiceLevel       
     \EndIf
      \If {responseTime >= 0.8 * maxResponseTime and responseTime <= 1.2* maxResponseTime}
     \State return qTableServiceLevel  
@@ -1337,14 +1346,14 @@ Reduce Users                  & 0.1                 & -0.2                \\
 \rowcolor[HTML]{F8FF00} 
 Phase                         & Exploitation         & Exploitation         \\
 \rowcolor[HTML]{C0C0C0} 
-\textbf{Bellow Service Level} & \textbf{Scenario 1} & \textbf{Scenario 2} \\
+\textbf{Below Service Level} & \textbf{Scenario 1} & \textbf{Scenario 2} \\
 Increment Users               & 0.0                 & 0.2                 \\
 Reduce Users                  & 0.1                 & 0.0                 \\
 Phase                         & Exploration         & Exploration        
 \end{tabular}
 \end{table}
 
-\section{Exploitation phase}
+\section{Exploitation Phase}
 
 The main objective of the exploitation phase is to choose the best neighboring solution based on the Q value. The research expected that Q-Learning improve Hybrid algorithm replacing the random characteristic of the tabu search, simulated  annealing and genetic algorithms operators by the direction given by the q-learning in the exploration phase. Algorithm \ref{hybridqexploitation} presents the main steps of exploitation phase. In first line, the algorithm gets the original genome. In lines 2 to 11, HybridQ gets the maximum, the second maximum or the third maximum \textit{q} value, depending on the random value of the random variable.The algorithm chooses one of the three largest values of q. The variation of the highest values was inserted in the algorithm to escape the local optimals. In line 12, the algorithm gets the key value in Table that have the maximum \textit{q} value. In line number 13, The key is separated into two parts using the \# delimiter. The first part of the key is action and the second part is the test scenario. If the action equals '\textit{up}' value, the genome is incremented in its users. If the action equals '\textit{down}' value, the genome is incremented in its users. Finally, the test scenario is changed and the new genome is returned.
 
@@ -1380,7 +1389,7 @@ The main objective of the exploitation phase is to choose the best neighboring s
   \end{algorithmic}
 \end{algorithm}
 
-\section{Integration between metaheuristics and the Q-Learning algorithm }
+\section{Integration between metaheuristics and the Q-Learning Algorithm }
 
 The Q-learning algorithm is used by Tabu Search or Simulated Annealing to obtain the neighbors and in the mutation operator of the genetic algorithm. Unlike the traditional processes of obtaining neighboring solutions such as random change and permutation, the decision to change a genome gene is made from the action that has the highest value of Q. Fig. \ref{fig:neighservice} presents how one of the neighbors of a test is generated using Q-Learning in IAdapter. The solution uses a service called Q-Neighborhood Service to generate the neighbor from the action that has the highest value of Q.
 
@@ -1451,7 +1460,7 @@ The independent variable is the algorithms used in each experiment. The dependen
 \end{itemize}
 \end{itemize}
 
-\subsection{Experiment phases}
+\subsection{Experiment Phases}
 
 The experiment was conducted in two phases. The first phase verified the number of requisitions and time required for the HybridQ exploration phase. The second phase ran the stress test using GA, Tabu Search, Simulated Annealing, Hybrid and HybridQ algorithms simultaneously.
 
@@ -1472,7 +1481,7 @@ The experiments use the follow application features:
 
 \subsubsection{Q-Learning Training Phase}
 
-The application was submitted to 1 hour of training with the  Q-learning algorithm using all test scenarios  and was obtained the Table \ref{tab:opencartlearning1} with the values of \textit{q}  for response times bellow than service level. The action and state with best q-value is increment the number of users ('up') in Add to Cart feature. The learning phase required 1.431 requisitions for application under test. 
+The application was submitted to 1 hour of training with the  Q-learning algorithm using all test scenarios  and was obtained the Table \ref{tab:opencartlearning1} with the values of \textit{q}  for response times below than service level. The action and state with best q-value is increment the number of users ('up') in Add to Cart feature. The learning phase required 1.431 requisitions for application under test. 
 
 
 % Please add the following required packages to your document preamble:
@@ -1480,7 +1489,7 @@ The application was submitted to 1 hour of training with the  Q-learning algorit
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 \centering
-\caption{Q values for response times bellow than service level}
+\caption{Q values for response times below than service level}
 \label{tab:opencartlearning1}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -1535,7 +1544,7 @@ mean of x mean of y
 
 
 
-\subsection{Threats to validity}
+\subsection{Threats to Validity}
 
 In this work, we just evaluate the use of single objective algorithm. However, several multiobjective algorithms could be applied.  The experiments are performed with the configuration obtained by the irace algorithm, however new experiments are required to verify the sensitivity of the results. It is necessary to compare the current approach with the constraint programming approaches presented in the state of art.
 
@@ -1564,9 +1573,9 @@ Several experiments were performed to evaluate the use of multi-objective metahe
 
 Due to the pervasive and non-deterministic nature of the problem, we do not guarantee that the same Pareto frontier will be found in different test executions. The fifth experiment presents an initial study to evaluate the Pareto Frontier difference in multiple executions. 
 
-\section{Experiment with multi-object NSGA-II algorithm}
+\section{Experiment with Multi-object NSGA-II Algorithm}
 
-In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. This experiment runs to verify the feasibility of using multi-objective heuristics in search-based stress testing. NSGA-II was initially used for its ease of implementation. This experiment tries to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with superior response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore, available at \url{https://hub.docker.com/r/pocking/jpetstore/}. The maximum tolerated response time in the test was 500 milliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions,  was conducted without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the following application features:
+In this section,  we present the experimental results,  in which we carried out to verify the multi-objective NSGA-II   implementation. This experiment runs to verify the feasibility of using multi-objective heuristics in search-based stress testing. NSGA-II was initially used for its ease of implementation. This experiment tries to discover application scenarios where there is a high response time for a small number of users. The relevance of finding scenarios with superior response times is to enable corrective actions before the application under test is released in a production environment. The chosen application was the JPetStore. The experiment was conducted with docker templates on a machine with 8 gigabytes of memory and 500 gigabytes of disk. The docker template used for the experiments were \textit{camillegr/jpetstore} and \textit{naubergois/iadapter-mysql-multi} available at \url{hub.docker.com}. The maximum tolerated response time in the test was 500 milliseconds.  The whole process of stress  tests, which run for 3 days and 492 executions,  was conducted without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 123 previously established  generations by the algorithm. The experiments use the following application features:
 
 
 \begin{itemize}
@@ -1672,7 +1681,26 @@ In this work, we just evaluate the use of one multi-objective algorithm. However
 \subsection{Experiment Conclusion}
 
 
-The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The experiment found 9 optimal workloads that present a lower number of users with high response times. The results of the experiment can help in the decision making of service levels that need to be defined for the application.
+The experiment verified the use of a multi-objective algorithm in a search-based stress testing problem. The experiment uses the NSGA-II algorithm to discover application scenarios where there is a high response time for a small number of users. The experiment found 9 optimal workloads that present a lower number of users with high response times. 
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{l|l|l|l|l|l|l|l|}
+\cline{2-8}
+ & \cellcolor[HTML]{C0C0C0}\textbf{Users} & \cellcolor[HTML]{C0C0C0}\textbf{Dogs} & \cellcolor[HTML]{C0C0C0}\textbf{Enter.Catalog} & \cellcolor[HTML]{C0C0C0}\textbf{Fish} & \cellcolor[HTML]{C0C0C0}\textbf{Register} & \cellcolor[HTML]{C0C0C0}\textbf{Add. Rem. Cart} & \cellcolor[HTML]{C0C0C0}\textbf{Cart} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Resp. Time\\ Correlation\end{tabular}}} & 0.93 & 0.39 & 0.62 & -0.01 & 0.5 & 0.79 & 0.88 \\ \hline
+\end{tabular}
+\end{table}
+
+
+The results of the experiment can help in the decision making of service levels that need to be defined for the application.
+
+
 
 \section{Comparative experiment of Multi-Objective Algorithms}
 
@@ -1808,7 +1836,21 @@ SPEA2              & 5.539566             & 2                       & 7772.26927
 
 \subsection{Experiment Conclusion}
 
-The multi-objective with the higher value of hypervolume find the scenarios with higher response time and lower number of users. However, each algorithm presented relevant results for stress testing. MOEA/D was the algorithm with the highest hypervolume value.
+The multi-objective with the higher value of hypervolume find the scenarios with higher response time and lower number of users. However, each algorithm presented relevant results for stress testing. MOEA/D was the algorithm with the highest hypervolume value. To find out the cause of lower performance in the scenarios found, Pearson's correlation was used. Table \ref{tab:resultdetail3} presents the correlation analysis between response time and response scenarios. The scenarios Fish (0.90), Add Remove Cart (0.71) and Cart (0.89) are the ones that have the greatest correlation with response times, being the scenarios of lower performance of the application.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\caption{Correlation between response time and test scenarios}
+\label{tab:resultdetail3}
+\begin{tabular}{l|l|l|l|l|l|l|l|}
+\cline{2-8}
+ & \cellcolor[HTML]{C0C0C0}\textbf{Users} & \cellcolor[HTML]{C0C0C0}\textbf{Dogs} & \cellcolor[HTML]{C0C0C0}\textbf{Enter.Catalog} & \cellcolor[HTML]{C0C0C0}\textbf{Fish} & \cellcolor[HTML]{C0C0C0}\textbf{Register} & \cellcolor[HTML]{C0C0C0}\textbf{Add. Rem. Cart} & \cellcolor[HTML]{C0C0C0}\textbf{Cart} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Resp. Time\\ Correlation\end{tabular}}} & 0.94 & 0.68 & 0.66 & 0.90 & 0.33 & 0.71 & 0.89 \\ \hline
+\end{tabular}
+\end{table}
 
 \subsection{Threats to Validity}
 
@@ -1852,7 +1894,7 @@ Fig. \ref{fig:singlewithmulti} presents the result of the experiment. Most of th
 \label{fig:singlewithmulti}
 \end{figure}
 
-\section{Experiment with HybridQ and MOEA/D Collaborative approach}
+\section{Experiment with HybridQ and MOEA/D Collaborative Approach}
 
 This section presents an experiment to evaluate the collaborative approach using HybridQ and MOEA/D. The proposition consists of each algorithm share our best individuals with each other. The experiment was conducted with the JPetStore application with the SEDR adapted  noise reduction strategy. The maximum tolerated response time in the test was 1000 milliseconds.  The whole process of stress  tests, which run for 1 day and 983 executions, was carried out without the need for monitoring by a test designer. The tool automatically selected the next scenarios to be run up to the limit of 50 previously established  generations by the algorithm.
 
@@ -1888,12 +1930,7 @@ The independent variable is the collaborative approach of the algorithms HybridQ
 
 \subsection{Experiment Results}
 
-Table \ref{tab:results2} and \ref{fig:singlewithmulti} presents 6 workloads that which are the Pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 milliseconds.
-
-\subsection{Experiment Conclusion}
-
-The results presented by the MOEA/D with HybridQ surpass previous approaches for the same number of generations. At the end of 28 generations, the new approach obtains a hypervolume value of the 10.29. The new approach obtains a hypervolume of 10.84 at the end of 50 generations while the average obtained by the other approaches for the same number of generations is 6.75 (Section 6.2.1). 
-
+Table \ref{tab:results2} and Fig. \ref{fig:singlewithmulti} presents 6 workloads that which are the Pareto optimal solution in the experiment. The algorithm found a workload with 31 users and response time of 1396, above the expected response time of 1000 milliseconds.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
@@ -1912,6 +1949,26 @@ The results presented by the MOEA/D with HybridQ surpass previous approaches for
 \ding{205}           & 28                                                      & 774                                                        &                                                          & 8                                                                &    3          & 3                 &                                                                   8 &     6          \\ \hline
 \ding{206}           & 31                                                      & 1396                                                       & 6                                                          &                                                                &              &    13             & 4                                                                   & 8               \\ \hline
 \ding{207}           & 90                                                     & 1860                                                        & 12                                                          & 11                                                              & 3             &        3          & 30                                                                  &   31            \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Experiment Conclusion}
+
+The results presented by the MOEA/D with HybridQ surpass previous approaches for the same number of generations. At the end of 28 generations, the new approach obtains a hypervolume value of the 10.29. The new approach obtains a hypervolume of 10.84 at the end of 50 generations while the average obtained by the other approaches for the same number of generations is 6.75 (Section 6.2.1). To find out the cause of lower performance in the scenarios found, Pearson's correlation was used. Table \ref{tab:resultdetail2} presents the correlation analysis between response time and response scenarios. The scenarios Add Remove Cart (0.79) and Cart (0.88) are the ones that have the greatest correlation with response times, being the scenarios of lower performance of the application.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\caption{Correlation between response time and test scenarios}
+\label{tab:resultdetail2}
+\begin{tabular}{l|l|l|l|l|l|l|l|}
+\cline{2-8}
+ & \cellcolor[HTML]{C0C0C0}\textbf{Users} & \cellcolor[HTML]{C0C0C0}\textbf{Dogs} & \cellcolor[HTML]{C0C0C0}\textbf{Enter.Catalog} & \cellcolor[HTML]{C0C0C0}\textbf{Fish} & \cellcolor[HTML]{C0C0C0}\textbf{Register} & \cellcolor[HTML]{C0C0C0}\textbf{Add. Rem. Cart} & \cellcolor[HTML]{C0C0C0}\textbf{Cart} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Resp. Time\\ Correlation\end{tabular}}} & 0.93 & 0.39 & 0.62 & -0.01 & 0.5 & 0.79 & 0.88 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -2019,7 +2076,7 @@ For the time being, we cannot state that the benefits found by using MOEA / D an
 
 This chapter presents our conclusions, revisits the contributions, shows some limitations, and proposals for future work. In this thesis, we deal with the use of hybrid metaheuristics, reinforcement learning and multi-objective metaheuristics in Search-based stress testing. A tool named IAdapter, a JMeter plugin for performing search-based load tests, was developed. Several experiments were conducted to validate the proposed approach.
 
-\section{Summary of contributions and Achievements}
+\section{Summary of Contributions and Achievements}
 
 First, we proposed a hybrid collaborative algorithm to perform search-based stress testing. In order to enhance the efficiency of our proposal, we utilize the reinforcement learning technique with the aforementioned hybrid algorithm. We also proposed the use of multi-objective algorithms in search-based stress testing. To this end, we propose an adaptation of the SEDR algorithm for noise reduction and a new approach to the use of a multiobjective metaheuristic in conjunction with the HybridQ algorithm. We conduct numerous experiments to evaluate the proposed approaches. The use of multi-objective metaheuristics has made it possible to delimit a frontier where the response times are below the previously established service level. The subsequent subsections present the summary of results for each research question.
 
@@ -3040,7 +3097,7 @@ Figure \ref{fig:startmethod} presents the start method sequence diagram. The Wor
 
 The Emulator Module is responsible for implementing and providing successful scenarios and the most common performance anti-patterns (Figure \ref{fig:testbedarch}  -\ding{203}). All classes must extend the AbstractJavaSamplerClient class or use JUnit 4. The AbstractJavaSamplerClient class allows the creation of a JMeter Java Request. Figure \ref{fig:emulator} presents the main features of the emulator module. The module implements 2 happy scenarios (Figure \ref{fig:emulator}  -\ding{203}) and  4 anti-patterns test scenarios (Figure \ref{fig:emulator}  -\ding{202}), in its first version. The Mock Layer provides emulated databases and components for the test scenarios. The Mock Layer use the Mockito and PowerMocks frameworks (Figure \ref{fig:emulator}  -\ding{204}).
 
-\subsection{Test Scenario library}
+\subsection{Test Scenario Library}
 
 The representation of each individual is encapsulated in the WorkLoad class (Fig \ref{fig:genomeimpl}). All test scenarios are referenced by string objects named \textit{function1, function2, ..., function8, function9, and function10}.
 

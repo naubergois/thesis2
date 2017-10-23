@@ -1,13 +1,14 @@
 \select@language {english}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces An example of neighborhood for a permutation \cite {Talbi2013}.\relax }}{38}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Categories of metaheuristic combinations \cite {Puchinger2005} \relax }}{41}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An optimized Pareto front example\relax }}{42}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces NSGA-II Algorithm\relax }}{45}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparison between SPEA-2 and NSGA-II \cite {Deb2005}\relax }}{47}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Hypervolume metric \cite {Lacour2015}\relax }}{47}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces MOEA/D algorithm subproblems \cite {McConaghy2011}\relax }}{48}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Example of interaction between some agent and the environment\relax }}{50}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Q Learning algorithm\relax }}{51}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Categories of metaheuristic combinations \cite {Puchinger2005} \relax }}{42}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An optimized Pareto front example\relax }}{43}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Well-converged and well-diversified pareto frontier\relax }}{43}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces NSGA-II Algorithm\relax }}{45}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparison between SPEA-2 and NSGA-II \cite {Deb2005}\relax }}{46}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Hypervolume metric \cite {Lacour2015}\relax }}{46}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces MOEA/D algorithm subproblems \cite {McConaghy2011}\relax }}{49}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Example of interaction between some agent and the environment\relax }}{51}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Q Learning algorithm\relax }}{52}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Number of publications in SBSE and SBST by year \cite {Afzal2009a} \cite {Harman2015}\relax }}{55}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Number of publications in non-functional SBST by year \cite {Afzal2009a} \cite {Harman2015} \relax }}{56}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Range of metaheuristics by type of non-functional Search Based Test\cite {Afzal2009a}. \relax }}{57}
@@ -24,15 +25,15 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Maximum fitness value by number of requests\relax }}{87}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Flowchart of implemented algorithms\relax }}{90}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Pareto Frontier found in the first experiment using NSGA-II\relax }}{93}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces MOEA/D Pareto Frontier\relax }}{96}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces NSGA II Pareto Frontier\relax }}{96}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces MOEA/D Pareto Frontier\relax }}{97}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces NSGA II Pareto Frontier\relax }}{97}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces SPEA2 Pareto Frontier\relax }}{97}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces PAES Pareto Frontier\relax }}{97}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Comparative graph between MOEA/D, NSGA-II, SPEA2 and PAES Pareto Frontiers\relax }}{98}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{99}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{100}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Pareto Frontier of the first and second test executions\relax }}{102}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Pareto Frontier of the second and third test executions\relax }}{103}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces HybridQ and MOEA/D Pareto Frontier\relax }}{100}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Collaborative approach Pareto Frontier\relax }}{101}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Pareto Frontier of the first and second test executions\relax }}{103}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Pareto Frontier of the second and third test executions\relax }}{104}
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Load, Performance and Stress Test Process \cite {Jiang2010}\cite {Erinle2013}\relax }}{121}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces TPC-W architecture \cite {MohammadS.Obaidat} \cite {Menasce2002a}\relax }}{128}
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Load Runner Scripting\relax }}{129}

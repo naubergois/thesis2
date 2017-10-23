@@ -7,12 +7,15 @@
 \contentsline {table}{\numberline {4.4}{\ignorespaces Best individuals found in the first experiment\relax }}{75}
 \contentsline {table}{\numberline {4.5}{\ignorespaces Best individuals found by hybrid algorithm in the second experiment\relax }}{76}
 \contentsline {table}{\numberline {5.1}{\ignorespaces Hypothetical MDP Q-values \relax }}{82}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Q values for response times bellow than service level\relax }}{86}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Q values for response times below than service level\relax }}{86}
 \contentsline {table}{\numberline {6.1}{\ignorespaces Response time and number of users in optimal scenarios found with NSGA-II\relax }}{93}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Response time and number of users in optimal scenarios found with MOEA/D\relax }}{96}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Hypervolume by algorithm\relax }}{96}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Response time and number of users in optimal scenarios found with MOEA/D + HybridQ\relax }}{101}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Experiment Results\relax }}{103}
+\contentsline {table}{\numberline {6.2}{\ignorespaces My caption\relax }}{94}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Response time and number of users in optimal scenarios found with MOEA/D\relax }}{96}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Hypervolume by algorithm\relax }}{96}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Correlation between response time and test scenarios\relax }}{97}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Response time and number of users in optimal scenarios found with MOEA/D + HybridQ\relax }}{101}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Correlation between response time and test scenarios\relax }}{102}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Experiment Results\relax }}{103}
 \contentsline {table}{\numberline {A.1}{\ignorespaces Benchmarks group\relax }}{127}
 \contentsline {table}{\numberline {A.2}{\ignorespaces Software products\relax }}{128}
 \contentsline {table}{\numberline {A.3}{\ignorespaces Summary of studies in model-based stress testing\relax }}{149}
